@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+	    <mobiadmin translate="title" module="mobiadmin">
+		    <title>MobiCommerce</title>
+			<sort_order>31</sort_order>
+			<children>			    
+				<createnewapp>
+				    <title>Create New Mobile App</title>
+                    <sort_order>1</sort_order>
+					<action>mobicommerce/index/new</action>
+				</createnewapp>
+				<appsetting>
+				    <title>Manage Mobile Apps</title>
+                    <sort_order>2</sort_order>
+					<action>mobicommerce/index/index</action>
+			    </appsetting>
+				<appnotification>
+				    <title>Notifications</title>
+                    <sort_order>3</sort_order>
+					<action>mobicommerce/index/notification</action>
+			    </appnotification>
+				<appsupport>
+				    <title>MobiCommerce Support</title>
+                    <sort_order>4</sort_order>
+			    </appsupport>
+			</children>
+	    </mobiadmin>
+    </menu>
+	<acl>
+	    <resources>
+		   <admin>
+		       <children>
+			       <mobiadmin translate="title" module="mobiadmin">
+				       <title>Mobi Commerce</title>
+					   <sort_order>1</sort_order>
+			       </mobiadmin>
+		       </children>
+		   </admin>
+	    </resources>
+	</acl>
+</config>

@@ -1,0 +1,141 @@
+Page Title,Page Title
+Manage content pages of the mobile application. These contents will be displayed under Info section of the mobile app.,Beheer content pagina's van de mobiele applicatie. Deze inhoud zal onder Info deel van de mobiele app worden weergegeven.
+Application Settings,applicatie-instellingen
+Banners,Banners
+Labels and Messages,Labels en Berichten
+CMS Contents,CMS Inhoud
+Push Notifications,push-notificaties
+Product Slider,Product Slider
+Category Icons,categorie Icons
+Select Your Store,Selecteer uw winkel
+Configure The Store,Configureren De Store
+Push Notification,Push Notification
+Activate Push Notification,Activeren Push Notification
+Sandbox mode,sandbox-modus
+GCM API Key,GCM API Key
+Google API Project Number,Google API Project Number
+Upload IOS PEM file,Upload IOS PEM-bestand
+PEM Password,PEM Wachtwoord
+Application Information,Application Information
+App Name on Google Play Store,Naam app op Google Play Store
+App URL on Google Play Store,App URL op Google Play Store
+App Name on Apple Store,App Naam op Apple Store
+App URL on Apple Store,App URL op Apple Store
+Application Description,toepassing Beschrijving
+Application Image,toepassing Afbeelding
+Home Page Banner Images,Home pagina Banner Afbeeldingen
+Label,label
+Message,bericht
+Social Media URLs,Social Media URL's
+CMS Pages,CMS Pagina's
+Link to external page:Link naar externe pagina: ,
+Push Notifications,push-notificaties
+Active: ,actief: 
+Position: ,positie:
+Manage Category Icons,Beheer Categorie Icons
+Apply no icon,Gelden geen pictogram
+Apply Magento Category Thumbnail to all categories,Solliciteer Magento Categorie Miniatuur naar alle categorie&#235;n
+Company Name,Bedrijfsnaam
+Phone Number,Telefoonnummer
+Application Store,Application Store
+"If you have your social media accounts/pages, than activate respective social media plate form and Supply their URL. Activated plate form icons will be displayed on Info section page.","Als je je social media accounts / pagina's, dan activeert respectieve sociale media plaat vorm en leveren hun URL. Geactiveerd plaat vorm pictogrammen op Info sectie pagina weergegeven."
+Personalization,personalisatie
+Pop Up Setting,Pop Up instellen
+Enable Pop Up,Inschakelen Pop Up
+Upload Pop Up Image,Upload Pop Up Image
+Set Pop Up Cookie Time,Set Pop Up Cookie Time
+Cookies Lifetime in Seconds.,Cookies Lifetime in enkele seconden.
+Create New Mobile App,Maak nieuwe Mobile App
+App Name:,App Naam:
+Select the store from thedropdown for which you want to create the mobile app.,Selecteer de winkel van thedropdown waarvoor u naar de mobiele app te maken.
+Want multi store mobile app?,Willen meerdere store mobiele app?
+contact us,contact met ons op
+Splash Screen:,Splash Screen:
+"(Height:2048, Width: 1536)",(Lengte: 2048 Breedte: 1536)
+Don't have splash screen ready? Don't worry you can preview the mobile app with a default mobilecommerce splash screen. At the time of publishing the app for users we will take the splash screen from you and add it into your mobile app.,Heb je geen splash screen er klaar voor? Maak je geen zorgen kunt u de mobiele app met een standaard splash screen mobiele handel een voorbeeld. Op het moment van de publicatie van de app voor gebruikers zullen we het splash screen van u en voeg deze in uw mobiele app.
+Logo:,Logo:
+Don't have logo ready? Don't worry you can preview the mobile app with a default  mobilecommerce logo. At the time of publishing the app for users we will take the logo from you and add it into your mobile app.,Heb je geen logo klaar? Maak je geen zorgen kunt u de mobiele app met een standaard mobiele handel logo voorbeeld. Op het moment van de publicatie van de app voor gebruikers zullen we het logo van u en voeg deze in uw mobiele app.
+Icon:,pictogram:
+"(Height:1024, Width: 1024)",(Lengte: 1024 Breedte: 1024)
+Don't have an App icon ready? Don't worry you can preview the mobile app with mobilecommerce icon. At the time of publishing the app for users we will take the App icon from you and add it into your mobile app.,Hoeft niet een App icoon klaar? Maak je geen zorgen kunt u de mobiele app met mobile commerce icoon voorbeeld. Op het moment van de publicatie van de app voor gebruikers zullen we het pictogram App van u en voeg deze in uw mobiele app.
+Select Theme:,Kies een thema:
+Preview,Voorbeeld
+Email Address:,e-Mailadres
+"Don't worry we do not spam or publish your email address, it will be solely used to create your MobiCommerce support account","Maak je geen zorgen we niet spammen of het publiceren van uw e-mailadres, het zal alleen worden gebruikt om uw MobiCommerce support account aan te maken"
+Phone Number:,Telefoonnummer:
+"Don't worry we do not share your contact number with any third party, it will be solely used to create your MobiCommerce support account","Maak je geen zorgen we geen deel uw telefoonnummer met een derde partij, zal het alleen worden gebruikt om uw MobiCommerce support account aan te maken"
+UDID of your iOS devices (iPhone and iPad):,UDID van je iOS-apparaten (iPhone en iPad):
+Don't have UDID handy? You can submit that later on as well.,Heb je geen UDID handig? U kunt dat later in te dienen over ook.
+"In case of Multiple UDID, enter them with comma (,)separated.","In het geval van meerdere UDID, voer ze met komma's (,) van elkaar gescheiden."
+"Please do not refresh the page, wait while we create your mobile app it will take just 2-3 minutes","Gelieve niet de pagina te vernieuwen, aub, we maken van uw mobiele app zal het slechts 2-3 minuten duren"
+Live Support,Live Support
+Overview,Overzicht
+General Settings,Algemene Instellingen
+Theme Personalization,Thema Personalisatie
+Banners,Banners
+Labels and Messages,Labels en Berichten
+CMS Contents,CMS Inhoud
+Push Notifications,Push-notificaties
+Product Sliders,Product Sliders
+Category Icons,Categorie Icons
+Mobile Website Settings,Mobiele website Instellingen
+App Details,App Details
+App Name :,App Naam:
+App Key :,App Key:
+License Type :,Licentietype:
+Demo license contains all features but it is not authorized version to publish the app on app store. Buy the license and get this app on app stores,"Demolicentie bevat alle functies, maar het is niet geautoriseerde versie van de app op App Store te publiceren. Koop de licentie en krijg deze app op de app stores"
+Buy Now,Koop Nu
+Created Date :,Aangemaakt Datum:
+Android App,Android App
+Android App Status :,Android App Status:
+Download Android App :,Download Android App:
+Email me this URL,E-mail mij deze URL
+Enter your Email Address ,Vul je e-mail adres in
+Android URL will be sent to this email address,Android URL zal naar dit e-mailadres worden verzonden
+Send Email,E-mail verzenden
+"Open the above URL in your android phone browser, it will download the mobile app in your mobile device","Open de bovenstaande URL in je android browser van de telefoon, zal het de mobiele app te downloaden in uw mobiele apparaat"
+If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app,Als je elke mobicommerce demo app in uw mobiele apparaat hebt ge&#239;nstalleerd verwijdert u dat voor het installeren van een nieuwe mobicommerce demo app
+iOS App,iOS App
+"Please provide UDID of your iOS device (iPhone and iPad), to preview the iOS demo app","Gelieve UDID van je iOS-apparaat (iPhone en iPad), om een ??voorbeeld van de iOS-demo app"
+UDID of your iOS devices (iPhone and iPad) :,UDID van je iOS-apparaten (iPhone en iPad):
+"In case of Multiple UDID, enter them comma separated.","In het geval van meerdere UDID, voer ze door komma's gescheiden."
+iOS App Status :,iOS App Status:
+Download iOS App :,Download iOS App:
+Url will be Updated as soon as the app ready to download,Url zal zo spoedig worden bijgewerkt als de app klaar om te downloaden
+QR Code of this URL,QR code van deze URL
+iOS URL will be sent to this email address,iOS URL zal naar dit e-mailadres worden verzonden
+"Open the above URL in your iPhone browser, it will download the mobile app in your mobile device","Open de bovenstaande URL in je iPhone-browser, zal het de mobiele app te downloaden in uw mobiele apparaat"
+If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app,Als je elke mobicommerce demo app in uw mobiele apparaat hebt ge&#239;nstalleerd verwijdert u dat voor het installeren van een nieuwe mobicommerce demo app
+Submitted UDID :,Ingezonden UDID:
+Your iOS demo app is still under process soon we will provide you iOS app for provided UDID,Je iOS-demo app is nog in proces binnenkort zullen wij u voorzien iOS app voor verstrekte UDID
+Mobile Website,Mobiele website
+Mobile Website URL :,Mobiele website URL:
+"This Mobile website created by mobicommerce is currently hosted on our server, once you purchase its license it will be delivered to your server.","Deze Mobiele website gemaakt door mobicommerce wordt momenteel gehost op onze server, als je eenmaal haar licentie aanschaffen zal het naar uw server worden geleverd."
+Android App Deliverables,Android App Deliverables
+Android Status :,Android Status:
+Download Android Deliverables :,Download Android Deliverables:
+iOS App Deliverables,iOS App Deliverables
+Download iOS Deliverables :,Download iOS Deliverables:
+It will take 2-3 days to prepare your deliverables.,Het zal 2-3 dagen duren voordat uw deliverables te bereiden.
+Mobile Website Deliverables,Mobiele website Deliverables
+Download Mobile Website Deliverables :,Download Mobiele website Deliverables:
+Active,Actief
+Mobicommerce Mobile Enable Module,Mobicommerce Mobile inschakelen Module
+Enable Module,Enable Module
+Pop Up Setting,Pop Up instellen
+Enable Pop Up,Inschakelen Pop Up
+Upload Pop Up Image,Upload Pop Up Image
+Set Pop Up Cookie Time,Set Pop Up Cookie Time
+Cookies Lifetime in Seconds.,Cookies Lifetime in enkele seconden.
+days,dagen
+Send push notification to users. Enter the message and send to all users who are using the App.,Stuur push notificatie voor gebruikers. Voer het bericht in en sturen naar alle gebruikers die gebruik maken van de App.
+Notification Maximum Text Length is 255 Characters,Kennisgeving Maximale tekst Lengte is 255 tekens
+Active ,Actief
+Please Make sure your 2195 port is open to send IOS push notifications.,Zorg ervoor dat uw 2195-poort staat open voor IOS push-notificaties te sturen.
+Edit App Settings - ,Bewerken App Instellingen -
+App Key,App Key
+License Type,Licentietype
+Android Status,Android Status
+iOS Status,iOS Status
+App Settings,App Instellingen
+Manage Mobile Apps,Beheer Mobile Apps

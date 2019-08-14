@@ -1,0 +1,135 @@
+Page Title,Titolo della pagina
+Manage content pages of the mobile application. These contents will be displayed under Info section of the mobile app.,Gestire pagine di contenuti dell'applicazione mobile. Questi contenuti verranno visualizzati nella sezione Info sezione del mobile app .
+Application Settings,Impostazioni applicazione
+Banners,Banners
+Labels and Messages,Etichette e messaggi
+CMS Contents,CMS Contents
+Push Notifications,Notifiche Push
+Product Slider,Product Slider
+Category Icons,Categoria Icons
+Select Your Store,Scegli il sito
+Configure The Store,Configurare Store
+Push Notification,push Notification
+Activate Push Notification,Attivare Push Notification
+Sandbox mode,modalit&agrave; Sandbox
+GCM API Key,GCM API Key
+Google API Project Number,Google API Numero del progetto
+Upload IOS PEM file,Carica file di IOS PEM
+PEM Password,PEM Password
+Application Information,Informazioni sull'applicazione
+App Name on Google Play Store,App Nome su Google Play Store
+App URL on Google Play Store,App URL su Google Play Store
+App Name on Apple Store,App Nome su Apple Store
+App URL on Apple Store,App URL su Apple Store
+Application Description,Applicazione Descrizione
+Application Image,Applicazione Immagine
+Home Page Banner Images,Home Banner Images
+Label,etichetta
+Message,messaggio
+Social Media URLs,URL Social Media
+CMS Pages,Pagine CMS
+Link to external page:,Link alla pagina esterna :
+Push Notifications,Notifiche Push
+Active:,attivo :
+Position:,posizione:
+Manage Category Icons,Gestisci Categoria Icons
+Apply no icon,Applicare nessuna icona
+Apply Magento Category Thumbnail to all categories,Applicare Magento Categoria Miniatura a tutte le categorie
+Company Name,Nome Della Ditta
+Phone Number,Numero Di Telefono
+Application Store,Application Store
+"If you have your social media accounts/pages, than activate respective social media plate form and Supply their URL. Activated plate form icons will be displayed on Info section page.","Se hai i tuoi account di social media / pagine , di attivare rispettiva forma piastra social media e fornire i loro URL. Attivato forma piastra icone verranno visualizzate sulla pagina sezione Info ."
+Create New Mobile App,Crea nuova Mobile App
+App Name:,App Nome:
+Select the store from thedropdown for which you want to create the mobile app.,Selezionare il negozio da thedropdown per cui si desidera creare l'applicazione per cellulare.
+Want multi store mobile app?,Vuoi pi&#249; app store cellulare? contattaci
+contact us,contattaci
+Splash Screen:,Splash schermo:
+"(Height:2048, Width: 1536)","(Altezza: 2048, Larghezza: 1536)"
+Don't have splash screen ready? Don't worry you can preview the mobile app with a default mobilecommerce splash screen. At the time of publishing the app for users we will take the splash screen from you and add it into your mobile app.,Non hai splash screen pronto? Non ti preoccupare potete vedere in anteprima l'applicazione per cellulare con una schermata iniziale mobilecommerce default. Al momento della pubblicazione della app per gli utenti ci prenderemo la schermata di avvio da voi e aggiungerlo nella vostra app mobile.
+Logo:,Logo:
+Don't have logo ready? Don't worry you can preview the mobile app with a default  mobilecommerce logo. At the time of publishing the app for users we will take the logo from you and add it into your mobile app.,Non hai logo pronto? Non ti preoccupare potete vedere in anteprima l'applicazione per cellulare con un mobile commerce logo predefinito. Al momento della pubblicazione della app per gli utenti prenderemo il logo da voi e aggiungere nella vostra app mobile.
+Icon:,Icon:
+"(Height:1024, Width: 1024)","(Altezza: 1024, Larghezza: 1024)"
+Don't have an App icon ready? Don't worry you can preview the mobile app with mobilecommerce icon. At the time of publishing the app for users we will take the App icon from you and add it into your mobile app.,Non hai ancora un icona App pronto? Non ti preoccupare potete vedere in anteprima l'applicazione per cellulare con l'icona mobile commerce. Al momento della pubblicazione della app per gli utenti ci prenderemo l'icona App da voi e aggiungerlo nella vostra app mobile.
+Select Theme:,Select Theme:
+Preview,anteprima
+Email Address:,Indirizzo E-Mail:
+"Don't worry we do not spam or publish your email address, it will be solely used to create your MobiCommerce support account","Non ti preoccupare non spam o pubblicare il vostro indirizzo e-mail, sar&#224; utilizzato esclusivamente per creare il tuo account di supporto MobiCommerce"
+Phone Number:,Numero Di Telefono:
+"Don't worry we do not share your contact number with any third party, it will be solely used to create your MobiCommerce support account","Non ti preoccupare non condividiamo il vostro numero di contatto con terze parti, sar&#224; utilizzato esclusivamente per creare il tuo account di supporto MobiCommerce"
+UDID of your iOS devices (iPhone and iPad):,UDID dei vostri dispositivi iOS (iPhone e iPad):
+Don't have UDID handy? You can submit that later on as well.,Non hai a portata di mano UDID? Puoi inviare che in seguito pure.
+"In case of Multiple UDID, enter them with comma (,)separated.","In caso di pi&#249; UDID, li entrare con una virgola (,) separati."
+"Please do not refresh the page, wait while we create your mobile app it will take just 2-3 minutes","Si prega di non aggiornare la pagina, attendi che creiamo il tuo cellulare applicazione ci vorranno solo 2-3 minuti"
+Live Support,Live Support
+Overview,Panoramica
+General Settings,Impostazioni generali
+Theme Personalization,Personalizzazione Theme
+Banners,Banners
+Labels and Messages,Etichette e messaggi
+CMS Contents,CMS Contents
+Push Notifications,Notifiche Push
+Product Sliders,Sliders prodotto
+Category Icons,Categoria Icons
+Mobile Website Settings,Impostazioni sito web mobile
+App Details,App Dettagli
+App Name :,App Nome:
+App Key :,App chiave:
+License Type :,Tipo licenza:
+Demo license contains all features but it is not authorized version to publish the app on app store. Buy the license and get this app on app stores,"Licenza demo contiene tutte le funzioni, ma non &#232; autorizzato a pubblicare la versione della app su App Store. Acquistate la licenza e ottenere questo app su App Store"
+Buy Now,Acquista Ora
+Created Date :,Data di creazione:
+Android App,App Android
+Android App Status :,Android App Status:
+Download Android App :,Scarica App Android:
+Email me this URL,Email me questo URL
+Enter your Email Address ,Inserisci il tuo indirizzo e-mail
+Android URL will be sent to this email address,URL Android verrà inviato a questo indirizzo e-mail
+Send Email,Invia Email
+"Open the above URL in your android phone browser, it will download the mobile app in your mobile device","Aprire la URL sopra nel browser del telefono Android, verrà scaricato l'applicazione per cellulare nel vostro dispositivo mobile"
+If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app,Se avete qualsiasi mobicommerce demo applicazione installata nel vostro dispositivo mobile disinstallare che prima di installare un nuovo mobicommerce demo app
+iOS App,iOS App
+"Please provide UDID of your iOS device (iPhone and iPad), to preview the iOS demo app","Si prega di fornire UDID del dispositivo iOS (iPhone e iPad), per vedere in anteprima la demo app iOS"
+UDID of your iOS devices (iPhone and iPad) :,UDID dei vostri dispositivi iOS (iPhone e iPad):
+"In case of Multiple UDID, enter them comma separated.","In caso di più UDID, inserirli separati da virgole."
+iOS App Status :,iOS App Status:
+Download iOS App :,Scarica iOS App:
+Url will be Updated as soon as the app ready to download,Url verrà aggiornato non appena l'applicazione pronta per il download
+QR Code of this URL,Codice QR di questo URL
+iOS URL will be sent to this email address,iOS URL verrà inviato a questo indirizzo e-mail
+"Open the above URL in your iPhone browser, it will download the mobile app in your mobile device","Aprire la URL sopra nel browser iPhone, verrà scaricato l'applicazione per cellulare nel vostro dispositivo mobile"
+If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app,Se avete qualsiasi mobicommerce demo applicazione installata nel vostro dispositivo mobile disinstallare che prima di installare un nuovo mobicommerce demo app
+Submitted UDID :,UDID Inviato:
+Your iOS demo app is still under process soon we will provide you iOS app for provided UDID,Il tuo iOS demo app &#232; ancora in corso presto vi forniremo iOS app per fornito UDID
+Mobile Website,Mobile Website
+Mobile Website URL :,Cellulare URL del sito web:
+"This Mobile website created by mobicommerce is currently hosted on our server, once you purchase its license it will be delivered to your server.","Questo sito mobile creato da mobicommerce &#232; attualmente ospitato sul nostro server, una volta che si acquista la licenza sarà consegnato al server."
+Android App Deliverables,Android App Deliverables
+Android Status :,Stato Android:
+Download Android Deliverables :,Scarica Deliverables Android:
+iOS App Deliverables,iOS App Deliverables
+Download iOS Deliverables :,Scarica iOS Deliverables:
+It will take 2-3 days to prepare your deliverables.,Ci vorranno 2-3 giorni per preparare i risultati finali.
+Mobile Website Deliverables,Deliverables sito web mobile
+Download Mobile Website Deliverables :,Scarica Mobile Website Deliverables:
+Active,Attivo
+Mobicommerce Mobile Enable Module,Mobicommerce mobile Abilita Module
+Enable Module,Abilita Module
+Pop Up Setting,Pop Up Impostazione
+Enable Pop Up,Abilita Pop Up
+Upload Pop Up Image,Carica Pop Up Immagine
+Set Pop Up Cookie Time,Impostazione Pop Up Cookie Time
+Cookies Lifetime in Seconds.,Cookies Lifetime in pochi secondi.
+days,giorni
+Send push notification to users. Enter the message and send to all users who are using the App.,Invia notifica push agli utenti. Inserisci il messaggio e inviarlo a tutti gli utenti che utilizzano l'app.
+Notification Maximum Text Length is 255 Characters,Notifica lunghezza massima del testo &#232; di 255 caratteri
+Active ,Attivo
+Please Make sure your 2195 port is open to send IOS push notifications.,Assicurati che il tuo porta 2195 &#232; aperta per inviare notifiche push IOS.
+Edit App Settings - ,Modifica impostazioni App -
+App Key,App Key
+License Type,Tipo licenza
+Android Status,Stato Android
+iOS Status,iOS Stato
+Manage Mobile Apps,Gestisci applicazioni mobili
+App Settings,Impostazioni App

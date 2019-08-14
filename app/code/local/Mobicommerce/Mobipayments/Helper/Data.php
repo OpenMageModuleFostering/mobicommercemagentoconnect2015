@@ -1,0 +1,5 @@
+<?php
+class Mobicommerce_Mobipayments_Helper_Data extends Mage_Core_Helper_Abstract
+{
+
+}

@@ -1,0 +1,7 @@
+<?php 
+$isEnable = Mage::getStoreConfig('mobimobileredirect/isactive_group/isactive_value',Mage::app()->getStore());
+if(Mage::helper('mobimobileredirect')->isMobile() && $isEnable=='1'){	
+	$url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'mobi/'.'www/'.'index.html';
+	Mage::app()->getFrontController()->getResponse()->setRedirect($url)->sendResponse();
+}
+?>

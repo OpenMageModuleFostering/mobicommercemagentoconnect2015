@@ -1,0 +1,125 @@
+<?php
+
+$appData = Mage::registry('application_data');
+$app_storeid = $appData['app_storeid'];
+if($app_storeid){
+    $categoryCollection = Mage::getModel('mobiservices/catalog_catalog')->_categoryTreeList($app_storeid);
+}
+
+$CategoryIconCollection = Mage::getModel('mobiadmin/categoryicons')->getCollection();
+$CategoryIconCollection->addFieldToSelect('mci_icon_group');
+$CategoryIconCollection->getSelect()->distinct(true);
+
+
+//moved to be in helper
+$mci_icon_group = array();
+foreach ($CategoryIconCollection as $CategoryIcon){
+	$mci_icon_groups[] = $CategoryIcon->getMciIconGroup();    
+}
+$iconsGroups = array();
+foreach ($mci_icon_groups as $mci_icon_group){
+    $collection = Mage::getModel('mobiadmin/categoryicons')->getCollection()->addFieldToFilter('mci_icon_group',$mci_icon_group );
+    $iconsGroups[$mci_icon_group] = $collection->getData();
+}
+//echo '<pre>'; print_r($iconsGroups); exit;
+$CatIcons = Mage::helper('mobiadmin')->getAppsSelectedCatIcons();
+?>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Manage Category Icons')?></h4>
+	</div>
+	<div id="store_information" class="fieldset ">
+	    <div class="hor-scroll">
+            <table cellspacing="0" class="form-list icon-table">
+                <tbody>
+                    <tr>
+					   <td class="label"><label for="chkNoIcon"><?php echo $this->__('Apply no icon')?></label></td>
+					   <td class="value"><input type="checkbox" id="chkNoIcon" name="chkNoIcon"></td>
+					</tr>
+					<tr>
+					   <td class="label"><label for="chkIsMagentoCategoryThumbnail"><?php echo $this->__('Apply Magento Category Thumbnail to all categories')?></label></td>
+					   <td class="value"><input type="checkbox" id="chkMagentoIcon" name="chkNoIcon"></td>
+					</tr>
+					<?php if($categoryCollection):?>
+					    <?php foreach($categoryCollection as $category):?>
+						    <?php
+							?>						
+							    <tr>
+								    <td class="label"><label for="category_id" ><?php echo $category['name']?></label></td>
+								    <td class="value icon-parent">
+									    <?php $categoryIconValue = Mage::helper('mobiadmin')->getCategoryIconValueByCatId($category['category_id']);
+										if(strpos($categoryIconValue, '/')){
+										    $categoryIconValueFirst = explode("/", $categoryIconValue);
+											$categoryIconValueFirst = $categoryIconValueFirst['1'];
+											$categoryIconValueSecond = explode(".", $categoryIconValueFirst);
+											$categoryIconValueSecond = $categoryIconValueSecond['0'];
+										}else{
+											$categoryIconValueSecond = $categoryIconValue;
+										}
+										if($categoryIconValue =='MAGENTO_CATEGORY_THUMBNAIL'){
+										    $categoryIconValueSecond = 'Magento Category Thumbnail';
+										}
+										?>
+									    <input type="text" class="input-text category-icon-input" value="<?php echo $categoryIconValueSecond?>" placeholder="<?php echo 'Select Icon'?>"/>
+									    <input type="hidden" class="input-text-hidden" value="<?php echo $categoryIconValue?>" name="category-icon[<?php echo $category['category_id']?>]"/>
+                                        <div class="mci-group-icons" style="display:none; height: 200px; overflow: scroll; width: 283px;">
+										    <?php /*foreach($iconsGroups as $iconsGroupKey=>$iconsGroup):?>
+											    <div class="group-<?php echo $iconsGroupKey;?>">
+												   <label style="display:block;"><?php echo $iconsGroupKey;?></label>
+                                                   <?php foreach($iconsGroup as $icons):?>
+												       <img height="20" width="20" dataname="<?php echo $icons['mci_display_name']?>" datavalue="<?php echo $iconsGroupKey.'/'.$icons['mci_name']?>" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'mobi_category_icons/'.$iconsGroupKey.'/'.$icons['mci_name'];?>"/>
+												   <?php endforeach;?>
+												</div>
+											<?php endforeach;*/?>
+										</div>
+									</td>
+								</tr>
+						<?php endforeach;?>
+					<?php endif;?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="my-mci-group-icons" style="display:none;">
+    <?php foreach($iconsGroups as $iconsGroupKey=>$iconsGroup):?>
+		<div class="group-<?php echo $iconsGroupKey;?>">
+		   <label style="display:block;"><?php echo $iconsGroupKey;?></label>
+		   <?php foreach($iconsGroup as $icons):?>
+			   <img height="20" width="20" dataname="<?php echo $icons['mci_display_name']?>" datavalue="<?php echo $iconsGroupKey.'/'.$icons['mci_name']?>" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'mobi_category_icons/'.$iconsGroupKey.'/'.$icons['mci_name'];?>"/>
+		   <?php endforeach;?>
+		</div>
+	<?php endforeach;?>
+<div>
+
+<script>
+jQuery('.icon-table tr .icon-parent .mci-group-icons').each(function(){
+	var icons = jQuery('.my-mci-group-icons').html();
+    jQuery(this).append(icons);
+});
+jQuery(document).ready(function(){
+  jQuery(".category-icon-input").click(function(){
+	  jQuery(this).next().next().toggle();
+      jQuery(this).next('.mci-group-icons').toggle();
+  });
+});
+jQuery(".mci-group-icons div img").click(function(){
+      var dataname = jQuery(this).attr('dataname');
+      var datavalue = jQuery(this).attr('datavalue');
+	  jQuery(this).parents('.icon-parent').find('.input-text-hidden').attr('value',datavalue);
+	  jQuery(this).parents('.icon-parent').find('.category-icon-input').attr('value',dataname);
+	  jQuery(this).parents('.mci-group-icons').css('display','none');
+});
+jQuery('#chkNoIcon').change(function() {
+	if(jQuery(this).is(":checked")) {            
+		jQuery('.category-icon-input').attr("value", 'Select Icon');
+		jQuery('.input-text-hidden').attr("value", '');
+	}
+});
+jQuery('#chkMagentoIcon').change(function() {
+	if(jQuery(this).is(":checked")) {            
+		jQuery('.category-icon-input').attr("value", 'Magento Category Thumbnail');
+		jQuery('.input-text-hidden').attr("value", 'MAGENTO_CATEGORY_THUMBNAIL');
+	}	
+});
+</script>

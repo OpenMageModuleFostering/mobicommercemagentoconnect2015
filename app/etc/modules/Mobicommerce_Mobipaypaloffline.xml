@@ -1,0 +1,11 @@
+<config>
+	<modules>
+		<Mobicommerce_Mobipaypaloffline>
+			<active>true</active>
+			<codePool>local</codePool>
+			<depends>
+				<Mage_Payment />
+			</depends>
+		</Mobicommerce_Mobipaypaloffline>
+	</modules>
+</config>

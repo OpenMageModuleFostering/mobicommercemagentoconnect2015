@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <mobimobileredirect translate="label" module="mobimobileredirect">
+            <label>Mobicommerce Mobile Redirect</label>
+            <sort_order>1000</sort_order>
+        </mobimobileredirect>
+    </tabs>
+	<sections>
+	    <mobimobileredirect translate="label" module="mobimobileredirect">
+		     <label>Mobicommerce Mobile Options</label>
+			 <tab>mobimobileredirect</tab>
+			 <sort_order>1000</sort_order>
+			 <show_in_default>1</show_in_default>
+			 <show_in_website>1</show_in_website>
+			 <show_in_store>1</show_in_store>
+			 <groups>
+			     <isactive_group translate="label" module="mobimobileredirect">
+				     <label>Mobicommerce Mobile Enable Module</label>
+					 <frontend_type>text</frontend_type>
+					 <sort_order>1000</sort_order>
+					 <show_in_default>1</show_in_default>
+                     <show_in_website>1</show_in_website>
+                     <show_in_store>1</show_in_store>
+					 <fields>
+					     <isactive_value translate="label">
+						     <label>Enable Module: </label>
+							 <frontend_type>select</frontend_type>
+                             <sort_order>90</sort_order>
+                             <show_in_default>1</show_in_default>
+                             <show_in_website>1</show_in_website>
+                             <show_in_store>1</show_in_store>
+                             <source_model>adminhtml/system_config_source_yesno</source_model>
+						 </isactive_value>
+					 </fields>
+				  </isactive_group>
+			 </groups>
+		</mobimobileredirect>
+	</sections>
+</config>

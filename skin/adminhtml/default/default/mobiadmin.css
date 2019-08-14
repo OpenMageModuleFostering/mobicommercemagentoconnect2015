@@ -1,0 +1,113 @@
+.input-text.category-icon-input { background: url("images/mobiadmin/dropdown.gif") no-repeat scroll right top / 18px 20px #f5f5f5; cursor: context-menu; }
+.social-url .input-text { margin: 4px; }
+.social-url .label input { margin: 8px; vertical-align: super; }
+.social-url .label img { margin: 0 0 -4px; }
+#pushnotifications { height: auto !important; }
+.advice-content { display: block; width: 360px; }
+.contact-icon { display: inline-block; height: 20px; width: 20px; }
+.email-icon { display: inline-block; height: 20px; width: 20px; }
+.contact-no { font-size: 14px; }
+.email { font-size: 14px; }
+/*.mobinotify { background:red; border-radius: 14px; color: white; display: inline-block; height: 14px; line-height: 14px; text-indent: 3px; width: 14px; }*/
+
+.support-column{}
+.support-column li{padding:0 0 10px 0;}
+.support-column li img{vertical-align:top; padding:0 5px 0 0;}
+.c-app{position:absolute; right:15px; top:15px;}
+
+.mobiadmin-index-edit #application_data_overview_content td.value {
+    padding-right: 5px !important;
+    text-align: left;
+    width: 80%;
+}
+.mobiadmin-index-edit #application_data_general_settings_content td.value {
+    padding-right: 5px !important;
+    text-align: left;
+    width: 80%;
+}
+.mobiadmin-index-edit #application_data_theme_personalization_content td.value {
+    padding-right: 5px !important;
+    text-align: left;
+    width: 80%;
+}
+.mobiadmin-index-edit #application_data_push_notification_content td.value {
+    padding-right: 5px !important;
+    text-align: left;
+    width: 80%;
+}
+.qr-code.popup-qr-code {
+    display: block !important;
+    height: 200px;
+    left: 40%;
+    position: fixed;
+    top: 30%;
+    width: 200px;
+	z-index: 5001;
+}
+
+
+.custom-overlay-close.close-wrapper {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid;
+    border-radius: 13px;
+    color: black;
+    cursor: pointer;
+    display: block !important;
+    font-size: 20px;
+    height: 25px;
+    line-height: 25px;
+    position: absolute;
+    right: -13px;
+    text-indent: 5px;
+    top: -10px;
+    width: 25px;
+    z-index: 5001;
+}
+
+.emailmeparent.popup-email {
+    background: none repeat scroll 0 0 white;
+    display: block !important;
+    height: 200px;
+    left: 40%;
+    padding: 15px;
+    position: fixed;
+    top: 30%;
+    width: 200px;
+    z-index: 5001;
+}
+.emailmeparent .send-email {
+    background: url("images/btn_bg.gif") repeat-x scroll 0 100% #ffac47;
+    border-color: #ed6502 #a04300 #a04300 #ed6502;
+    border-style: solid;
+    border-width: 1px;
+    color: #fff;
+    cursor: pointer;
+    font: bold 12px arial,helvetica,sans-serif;
+    padding: 1px 7px 2px;
+    text-align: center !important;
+    white-space: nowrap;
+}
+.mobiadmin-index-new .advice-content {
+    width: 100%;
+}
+.app-mode {
+    text-transform: capitalize;
+}
+.mobinotify {    
+    background: none repeat scroll 0 0 #fff;
+    border-color: #fff;
+    border-image: none;
+    border-radius: 14px;
+    border-width: 1px;
+    color: #000;
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    width: 18px;
+}
+
+ul li li .mobinotify{
+	background: none repeat scroll 0 0 #d75f07;
+	color: #FFF;
+}

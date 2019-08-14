@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * 
+ */
+-->
+<layout version="0.1.0">   
+    <default>
+	    <reference name="head">
+		    <action method="addJs"><script>mobiadmin/plugin/jquery-1.9.1.min.js</script></action>
+		    <action method="addJs"><script>mobiadmin/fancybox/jquery.fancybox.pack.js</script></action>
+			<action method="addCss"><name>fancybox/jquery.fancybox.css</name></action>
+			<action method="addCss"><name>mobiadmin.css</name></action>
+		</reference>
+    </default>
+	<mobiadmin_index_index>
+	     <reference name="content">
+			<block type="mobiadmin/adminhtml_applications" name="applications"></block>
+		 </reference> 
+    </mobiadmin_index_index>
+    <mobiadmin_index_edit>
+	    <update handle="editor" />
+	    <reference name="head">
+		    <action method="addJs"><script>mage/adminhtml/variables.js</script></action>
+			<action method="addJs"><script>mage/adminhtml/wysiwyg/widget.js</script></action>
+			<action method="addJs"><script>lib/flex.js</script></action>
+			<action method="addJs"><script>lib/FABridge.js</script></action>
+			<action method="addJs"><script>mage/adminhtml/flexuploader.js</script></action>
+			<action method="addJs"><script>mage/adminhtml/browser.js</script></action>
+
+
+
+		    <action method="addJs"><script>mobiadmin/plugin/jquery-1.9.1.min.js</script></action>
+		    <action method="addJs"><script>mobiadmin/colorpicker/colorpicker.js</script></action>
+		    <action method="addJs"><script>mobiadmin/colorpicker/eye.js</script></action>
+		    <action method="addJs"><script>mobiadmin/colorpicker/utils.js</script></action>
+		    <action method="addJs"><script>mobiadmin/colorpicker/layout.js?ver=1.0.2</script></action>
+			<action method="addCss"><name>mobiadmin.css</name></action>
+			<action method="addCss"><name>colorpicker/css/colorpicker.css</name></action>
+			<!-- <action method="addCss"><name>colorpicker/css/layout.css</name></action> -->
+		</reference>
+	    <reference name="left">
+            <block type="mobiadmin/adminhtml_applications_edit_tabs" name="adminhtml.app.edit.tabs"/>
+			<block type="core/template" name="support" template="mobiadmin/application/edit/tab/support.phtml"/>
+        </reference>
+	     <reference name="content">
+		     <block type="mobiadmin/adminhtml_applications_edit" name="app.edit" />
+		     <block type="mobiadmin/adminhtml_applications_edit" name="app.buynow" template="mobiadmin/application/edit/buy.phtml"/>
+		 </reference>
+    </mobiadmin_index_edit>	
+    <mobiadmin_index_new>
+	    <reference name="head">
+		    <action method="addJs"><script>mobiadmin/plugin/jquery-1.9.1.min.js</script></action>
+		    <action method="addJs"><script>mobiadmin/fancybox/jquery.fancybox.pack.js</script></action>
+			<action method="addCss"><name>fancybox/jquery.fancybox.css</name></action>
+			<action method="addCss"><name>mobiadmin.css</name></action>
+		</reference>
+	    <reference name="content">
+		    <block type="adminhtml/template" name="createappform" template="mobiadmin/application/new/createappform.phtml"/>
+		</reference>
+    </mobiadmin_index_new>	
+    <mobiadmin_index_notification>	
+	    <reference name="content">
+			<block type="mobiadmin/adminhtml_notification" name="notification"></block>
+		</reference> 
+    </mobiadmin_index_notification>	
+</layout>

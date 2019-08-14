@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<mobicommerce_personalizer>
+  <option_153>
+    <type>colorpicker</type>
+    <title>Header Background Color</title>
+    <css>.topbar.ui-header, .topmenu-tab, .topmenu-tab tr td.ttl input[type=text] { background: --COLOR--; border-color: --COLOR--; }|.home-banner .swiper-active-switch, .theme-search .listing-style-button a.active { background: --COLOR--; }|.color-primary, .product-slide-horizontal h3, h2.title span { color: --COLOR--; }|.product-menu { background-color: --COLOR-- !important; }|h2.title {border-color: --COLOR--; }|.ui-page-theme-g .ui-btn, html .ui-bar-g .ui-btn, html .ui-body-g .ui-btn, html body .ui-group-theme-g .ui-btn, html head + body .ui-btn.ui-btn-g, .ui-page-theme-g .ui-btn:visited, html .ui-bar-g .ui-btn:visited, html .ui-body-g .ui-btn:visited, html body .ui-group-theme-g .ui-btn:visited, html head + body .ui-btn.ui-btn-g:visited,|.ui-page-theme-g .ui-btn:hover, html .ui-bar-g .ui-btn:hover, html .ui-body-g .ui-btn:hover, html body .ui-group-theme-g .ui-btn:hover, html head + body .ui-btn.ui-btn-g:hover ,.ui-page-theme-g .ui-btn:active, html .ui-bar-g .ui-btn:active, html .ui-body-g .ui-btn:active, html body .ui-group-theme-g .ui-btn:active, html head + body .ui-btn.ui-btn-g:active { background-color: --COLOR--; border-color: --COLOR--; }</css>
+    <description>Configure background color for header of the app</description>
+    <svg_filenames>icon-star-1.svg</svg_filenames>
+    <code_session>fscolorschemeheader</code_session>
+    <default_value>#17728f</default_value>
+    <current_value>#17728f</current_value>
+  </option_153>
+  <option_152>
+    <type>colorpicker</type>
+    <title>Header Font and Icon Color</title>
+    <css>.topbar.ui-header .ui-title,.checkout-process li a.active,.topmenu-tab tr td.ttl input[type=text] { color: --COLOR--; }|.ui-page-theme-g .ui-btn, html .ui-bar-g .ui-btn, html .ui-body-g .ui-btn, html body .ui-group-theme-g .ui-btn, html head + body .ui-btn.ui-btn-g, .ui-page-theme-g .ui-btn:visited, html .ui-bar-g .ui-btn:visited, html .ui-body-g .ui-btn:visited, html body .ui-group-theme-g .ui-btn:visited, html head + body .ui-btn.ui-btn-g:visited,.ui-page-theme-g .ui-btn:hover, html .ui-bar-g .ui-btn:hover, html .ui-body-g .ui-btn:hover, html body .ui-group-theme-g .ui-btn:hover, html head + body .ui-btn.ui-btn-g:hover ,.ui-page-theme-g .ui-btn:active, html .ui-bar-g .ui-btn:active, html .ui-body-g .ui-btn:active, html body .ui-group-theme-g .ui-btn:active, html head + body .ui-btn.ui-btn-g:active {color: --COLOR--; }</css>
+    <description>Configure font and icon color for header of the app</description>
+    <svg_filenames>color1-icon-menu.svg|color1-icon-home.svg|color1-icon-cart.svg|color1-icon-search.svg|color1-icon-back.svg</svg_filenames>
+    <code_session>fscolorscheme1</code_session>
+    <default_value>#ffffff</default_value>
+    <current_value>#ffffff</current_value>
+  </option_152>
+  <option_155>
+    <type>colorpicker</type>
+    <title>Primary Text Color</title>
+    <css>.ui-page-theme-a .ui-radio-on:after, html .ui-bar-a .ui-radio-on:after, html .ui-body-a .ui-radio-on:after, html body .ui-group-theme-a .ui-radio-on:after, .ui-btn.ui-radio-on.ui-btn-a:after  {border-color: --COLOR-- ;}|.ui-page-theme-a .ui-checkbox-on:after, html .ui-bar-a .ui-checkbox-on:after, html .ui-body-a .ui-checkbox-on:after, html body .ui-group-theme-a .ui-checkbox-on:after, .ui-btn.ui-checkbox-on.ui-btn-a:after { background-color:--COLOR-- ;}|.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper, .color-primary, [class^="list-"] h4, .color-primary, [class^="list-"] h4, .ui-select .ui-btn.ui-btn-a, .ui-select .ui-btn.ui-btn-a:hover, .ui-select .ui-btn.ui-btn-a:active, .ui-page-theme-a .ui-checkbox .ui-btn, .ui-page-theme-a .ui-checkbox .ui-btn:hover, .product-detail-text h2,.product-detail-text h2,  .ui-text-link.ui-link, .ui-page-theme-a .ui-body-inherit, .category_menu a, .category_menu a:hover, .category_menu a:active, .category_menu a:visited, .color-light span a.ui-link { color: --COLOR--; }</css>
+    <description>Configure font color for primary text labels such as product name, category name etc.</description>
+    <svg_filenames></svg_filenames>
+    <code_session></code_session>
+    <default_value>#121212</default_value>
+    <current_value>#121212</current_value>
+  </option_155>
+  <option_154>
+    <type>colorpicker</type>
+    <title>Secondary Text Color</title>
+    <css>.color-light, h2.title, [class^="list-"] .cost-line,.form_in h4 { color: --COLOR--; }</css>
+    <description>Configure font color for secondary text labels such as options names, no. of ratings etc.</description>
+    <svg_filenames></svg_filenames>
+    <code_session></code_session>
+    <default_value>#999999</default_value>
+    <current_value>#999999</current_value>
+  </option_154>
+  <option_151>
+    <type>colorpicker</type>
+    <title>Background Color of Secondary Button</title>
+    <css>.design-strip, .ratingbar .bar span { background: --COLOR--; }|.filter-bar li a.active, .filter-bar li:hover a.active, .color-warning { color: --COLOR--; }|.ui-page-theme-d .ui-btn, html .ui-bar-d .ui-btn, html .ui-body-d .ui-btn, html body .ui-group-theme-d .ui-btn, html head + body .ui-btn.ui-btn-d, .ui-page-theme-d .ui-btn:visited, html .ui-bar-d .ui-btn:visited, html .ui-body-d .ui-btn:visited, html body .ui-group-theme-d .ui-btn:visited, html head + body .ui-btn.ui-btn-d:visited,.ui-page-theme-d .ui-btn:hover, html .ui-bar-d .ui-btn:hover, html .ui-body-d .ui-btn:hover, html body .ui-group-theme-d .ui-btn:hover, html head + body .ui-btn.ui-btn-d:hover,.ui-page-theme-d .ui-btn:active, html .ui-bar-d .ui-btn:active, html .ui-body-d .ui-btn:active, html body .ui-group-theme-d .ui-btn:active, html head + body .ui-btn.ui-btn-d:active { background-color: --COLOR--; border-color: --COLOR--; }</css>
+    <description>Configure background color for all small buttons such as +, -, x etc.</description>
+    <svg_filenames></svg_filenames>
+    <code_session></code_session>
+    <default_value>#bcd822</default_value>
+    <current_value>#bcd822</current_value>
+  </option_151>
+  <option_150>
+    <type>colorpicker</type>
+    <title>Text Color of Secondary Button </title>
+    <css>.ui-page-theme-d .ui-btn, html .ui-bar-d .ui-btn, html .ui-body-d .ui-btn, html body .ui-group-theme-d .ui-btn, html head + body .ui-btn.ui-btn-d, .ui-page-theme-d .ui-btn:visited, html .ui-bar-d .ui-btn:visited, html .ui-body-d .ui-btn:visited, html body .ui-group-theme-d .ui-btn:visited, html head + body .ui-btn.ui-btn-d:visited,.ui-page-theme-d .ui-btn:hover, html .ui-bar-d .ui-btn:hover, html .ui-body-d .ui-btn:hover, html body .ui-group-theme-d .ui-btn:hover, html head + body .ui-btn.ui-btn-d:hover,.ui-page-theme-d .ui-btn:active, html .ui-bar-d .ui-btn:active, html .ui-body-d .ui-btn:active, html body .ui-group-theme-d .ui-btn:active, html head + body .ui-btn.ui-btn-d:active { color: --COLOR--; }</css>
+    <description>Configure font color for all small buttons such as +, -, x etc.</description>
+    <svg_filenames></svg_filenames>
+    <code_session></code_session>
+    <default_value>#FFFFFF</default_value>
+    <current_value>#FFFFFF</current_value>
+  </option_150>
+  <option_149>
+    <type>colorpicker</type>
+    <title>Background Color of Small Buttons</title>
+    <css>.ui-page-theme-f .ui-btn, html .ui-bar-f .ui-btn, html .ui-body-f .ui-btn, html body .ui-group-theme-f .ui-btn, html head + body .ui-btn.ui-btn-f, .ui-page-theme-f .ui-btn:visited, html .ui-bar-f .ui-btn:visited, html .ui-body-f .ui-btn:visited, html body .ui-group-theme-f .ui-btn:visited, html head + body .ui-btn.ui-btn-f:visited ,.ui-page-theme-f .ui-btn:hover, html .ui-bar-f .ui-btn:hover, html .ui-body-f .ui-btn:hover, html body .ui-group-theme-f .ui-btn:hover, html head + body .ui-btn.ui-btn-f:hover,.ui-page-theme-f .ui-btn:active, html .ui-bar-f .ui-btn:active, html .ui-body-f .ui-btn:active, html body .ui-group-theme-f .ui-btn:active, html head + body .ui-btn.ui-btn-f:active { background-color: --COLOR--; border-color: --COLOR--; }</css>
+    <description>Configure background color for all secondary buttons such as Register , Forget Password etc.</description>
+    <svg_filenames></svg_filenames>
+    <code_session></code_session>
+    <default_value>#bdbdbd</default_value>
+    <current_value>#bdbdbd</current_value>
+  </option_149>
+  <option_196>
+    <type>colorpicker</type>
+    <title>Rating Color</title>
+    <css>.ratingbar .bar span {background-color: --COLOR-- !important;}|section h3.color-warning {color: --COLOR--;}</css>
+    <description>Rating icon and background color</description>
+    <svg_filenames>color5-icon-star.svg|color5-icon-star-12.svg|color5-icon-star-14.svg|color5-icon-star-34.svg</svg_filenames>
+    <code_session>theme2_rating</code_session>
+    <default_value>#bcd822</default_value>
+    <current_value>#bcd822</current_value>
+  </option_196>
+</mobicommerce_personalizer>

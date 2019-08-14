@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/mobicommercemagentoconnect2015",
+    "type": "magento-module",
+    "license": "GPL",
+    "homepage": "",
+    "description": "Boost your mobile sales with mobile website or native app for iPhone, iPad and Android!",
+    "authors": [
+    {
+        "name": "MobiCommerce",
+        "email": "info@mobi-commerce.net"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

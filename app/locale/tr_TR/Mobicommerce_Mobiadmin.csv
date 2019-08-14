@@ -1,0 +1,139 @@
+Page Title,Sayfa Basligi
+Manage content pages of the mobile application. These contents will be displayed under Info section of the mobile app.,Mobil uygulama icerik sayfalarini yonetmek. Bu icerigi mobil uygulamasi Bilgi bolumunde goruntulenir.
+Application Settings,Uygulama Ayarlari
+Banners,Afisler
+Labels and Messages,Etiketler ve Mesajlar
+CMS Contents,CMS Icerik
+Push Notifications,Bildirimler itin
+Product Slider,Urun Slider
+Category Icons,Kategori Simgeler
+Select Your Store,Sizin Magaza secin
+Configure The Store,Magaza yapilandirma
+Push Notification,Itme Bildirimi
+Activate Push Notification,Itme Bildirimi etkinlestirin
+Sandbox mode,Sandbox modu
+GCM API Key,GCM API Anahtari
+Google API Project Number,Google API Proje Numarasi
+Upload IOS PEM file,IOS PEM dosyasi yukle
+PEM Password,PEM Sifre
+Application Information,Basvuru Bilgileri
+App Name on Google Play Store,Google Play Store'da App Adi
+App URL on Google Play Store,Google Play Store'dan App URL
+App Name on Apple Store,Apple Store App Adi
+App URL on Apple Store,Apple Store App URL
+Application Description,Uygulama Aciklama
+Application Image,Uygulama Goruntu
+Home Page Banner Images,Ana Sayfa Banner Goruntuler
+Label,etiket
+Message,mesaj
+Social Media URLs,Sosyal Medya URL'ler
+CMS Pages,CMS Sayfalar
+Link to external page:,Dis sayfaya link: 
+Push Notifications,Bildirimler itin
+Active: ,aktif: 
+Position: ,Pozisyon:
+Manage Category Icons,Kategori Simgeler y&#246;netin
+Apply no icon,Hi&#231;bir simge Uygula
+Apply Magento Category Thumbnail to all categories,T&#252;m kategorilere Magento Kategori Minik Uygula
+Company Name,Firma Ad?
+Phone Number,Telefon Numaras?
+Application Store,Uygulama maðazasý
+"If you have your social media accounts/pages, than activate respective social media plate form and Supply their URL. Activated plate form icons will be displayed on Info section page.","E?er ilgili sosyal medya plaka formunu etkinle?tirmek ve URL Tedarik daha, sosyal medya hesaplar? / sayfalar? varsa. Aktif plaka formu simgeleri Bilgi b&#246;l&#252;m sayfas?nda g&#246;sterilecektir."
+Personalization,Ki?iselle?tirme
+Pop Up Setting,Ayarlama Pop Up
+Enable Pop Up,Pop Up etkinle?tirin
+Upload Pop Up Image,Pop Up Resim Y&#252;kle
+Set Pop Up Cookie Time,Pop Up &#231;erez Zaman Set
+Cookies Lifetime in Seconds.,Saniyeler i&#231;inde &#231;erezler &#246;m&#252;r.
+Create New Mobile App,Yeni Mobile App Olu&#351;tur
+App Name:,Uygulama Adi:
+Select the store from thedropdown for which you want to create the mobile app.,E&#287;er mobil uygulama olusturmak istedi&#287;iniz thedropdown gelen ma&#287;aza se&#231;in.
+Want multi store mobile app? contact us,&#199;ok ma?aza mobil uygulamas&#305;n&#305; ister misiniz? bize ula&#351;&#305;n
+contact us,bize ula&#351;&#305;n
+Splash Screen:,A&#231;&#305;l&#305;&#351; Ekran&#305;:
+"(Height:2048, Width: 1536)","(Y&#252;kseklik: 2048, Geni&#351;lik: 1536)"
+Don't have splash screen ready? Don't worry you can preview the mobile app with a default mobilecommerce splash screen. At the time of publishing the app for users we will take the splash screen from you and add it into your mobile app.,A&#199;&#305;l&#305;&#351; ekran&#305; haz&#305;r yok mu? E?er varsay&#305;lan mobil ticaret a&#199;&#305;l&#305;&#351; ekran&#305; ile mobil uygulama &#246;nizleme Merak etmeyin. Kullan&#305;c&#305;lar i&#199;in uygulama yay&#305;nlama s&#305;ras&#305;nda sizden ekran&#305; alacak ve mobil uygulamas&#305; i&#199;ine ekleyin.
+Logo:,Logo:
+Don't have logo ready? Don't worry you can preview the mobile app with a default  mobilecommerce logo. At the time of publishing the app for users we will take the logo from you and add it into your mobile app.,Logo haz&#305;r yok mu? E?er varsay&#305;lan mobil ticaret logolu mobil uygulama &#246;nizleme Merak etmeyin. Kullan&#305;c&#305;lar i&#199;in uygulama yay&#305;nlama s&#305;ras&#305;nda sizden logo alacak ve mobil uygulamas&#305; i&#199;ine ekleyin.
+Icon:,simge:
+"(Height:1024, Width: 1024)","(Y&#252;kseklik: 1024, Geni&#351;lik: 1024)"
+Don't have an App icon ready? Don't worry you can preview the mobile app with mobilecommerce icon. At the time of publishing the app for users we will take the App icon from you and add it into your mobile app.,Bir Uygulama simgesi haz&#305;r yok mu? E?er mobil ticaret simgesi ile mobil uygulama &#246;nizleme Merak etmeyin. Kullan&#305;c&#305;lar i&#199;in uygulama yay&#305;nlama s&#305;ras&#305;nda sizden Uygulama simgesini alacak ve mobil uygulamas&#305; i&#199;ine ekleyin.
+Select Theme:,Se&#199;in Tema:
+Preview,&#246;nizleme
+Email Address:,e
+"Don't worry we do not spam or publish your email address, it will be solely used to create your MobiCommerce support account","Biz Spam veya e-posta adresinizi yay&#305;nlamak de?il Merak etmeyin, bu sadece senin MobiCommerce destek hesab&#305; olu&#351;turmak i&#199;in kullan&#305;lacak"
+Phone Number:,Telefon Numaras&#305;:
+"Don't worry we do not share your contact number with any third party, it will be solely used to create your MobiCommerce support account","Biz herhangi bir &#252;&#199;&#252;nc&#252; &#351;ah&#305;sla irtibat numaras&#305; payla&#351;may&#305;n Merak etmeyin, bu sadece senin MobiCommerce destek hesab&#305; olu&#351;turmak i&#199;in kullan&#305;lacak"
+UDID of your iOS devices (iPhone and iPad):,IOS cihazlar (iPhone ve iPad) olarak UDID:
+Don't have UDID handy? You can submit that later on as well.,UDID kullan&#305;&#351;l&#305; yok mu? Sen de o sonradan g&#246;nderebilirsiniz.
+"In case of Multiple UDID, enter them with comma (,)separated.","&#199;oklu UDID durumunda, virg&#252;l ile girmek (,) ayr&#305;lm&#305;&#351;."
+"Please do not refresh the page, wait while we create your mobile app it will take just 2-3 minutes","Biz mobil uygulama olu&#351;tururken sadece 2-3 dakika s&#252;rer bekleyin, sayfay&#305; yenileyin l&#252;tfen"
+Live Support,Canl&#305; Destek
+Overview,Genel bak
+General Settings,Genel Ayarlar
+Theme Personalization,Tema Ki?iselle?tirme
+Banners,Afi?ler
+Labels and Messages,Etiketler ve Mesajlar
+CMS Contents,CMS ?&#231;erik
+Push Notifications,Bildirimler itin
+Product Sliders,&#252;r&#252;n Kayd?r?c?lar
+Category Icons,Kategori Simgeler
+Mobile Website Settings,Mobil Web Sitesi Ayarlar?
+App Details,Uygulama Detaylar&#305;
+App Name :,Uygulama Ad?:
+App Key :,Uygulama Anahtar?:
+License Type :,Lisans T&#252;r&#252;:
+Demo license contains all features but it is not authorized version to publish the app on app store. Buy the license and get this app on app stores,Demo lisans t&#252;m özellikleri i&#231;erir ancak App Store &#252;zerinde uygulama yay?nlamak i&#231;in s&#252;r&#252;m yetkili de?il. Lisans? sat?n al?n ve uygulama ma?azalar? bu app olsun
+Buy Now,?imdi Al
+Created Date :,Kurulu? tarihi:
+Android App,Android Uygulama
+Android App Status :,Android Uygulama Durumu:
+Download Android App :,Android App indirin:
+Email me this URL,Bana bu URL'yi e-posta
+Enter your Email Address ,E-posta adresinizi girin
+Android URL will be sent to this email address,Android URL e-posta adresine gönderilecektir
+Send Email,E-posta Gönder
+"Open the above URL in your android phone browser, it will download the mobile app in your mobile device","Android telefon taray?c?n?zda yukar?daki URL a&#231;?n, bu mobil cihazda mobil uygulamas?n? indirmek olacakt?r"
+If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app,"E?er herhangi bir mobicommerce demo uygulamas? mobil cihaz?n?zda y&#252;kl&#252; varsa, yeni bir mobicommerce demo uygulamas? y&#252;klemeden önce kald?r?n l&#252;tfen"
+iOS App,iOS App
+"Please provide UDID of your iOS device (iPhone and iPad), to preview the iOS demo app",", IOS cihaz?n?zda (iPhone ve iPad) olarak UDID sa?lamak iOS demo uygulamas? önizleme i&#231;in l&#252;tfen"
+UDID of your iOS devices (iPhone and iPad) :,IOS cihazlar (iPhone ve iPad) olarak UDID:
+"In case of Multiple UDID, enter them comma separated.","&#231;oklu UDID durumunda, virg&#252;lle ayr?lm?? onlar? girin."
+iOS App Status :,iOS App Durum:
+Download iOS App :,IOS App indirin:
+Url will be Updated as soon as the app ready to download,URL indirmek i&#231;in haz?r uygulamas? k?sa s&#252;rede G&#252;ncelleme olacak
+QR Code of this URL,Bu URL QR Code
+iOS URL will be sent to this email address,iOS URL e-posta adresine gönderilecektir
+"Open the above URL in your iPhone browser, it will download the mobile app in your mobile device","IPhone taray?c?n?zda yukar?daki URL a&#231;?n, bu mobil cihazda mobil uygulamas?n? indirmek olacakt?r"
+If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app,"E?er herhangi bir mobicommerce demo uygulamas? mobil cihaz?n?zda y&#252;kl&#252; varsa, yeni bir mobicommerce demo uygulamas? y&#252;klemeden önce kald?r?n l&#252;tfen"
+Submitted UDID :,Ekleyen UDID:
+Your iOS demo app is still under process soon we will provide you iOS app for provided UDID,IOS demo uygulamas? yak?nda sa?lanan UDID i&#231;in size iOS app sa?layacak s&#252;reci halen
+Mobile Website,Mobil Web Sitesi
+Mobile Website URL :,Mobil Web Sitesi URL:
+"This Mobile website created by mobicommerce is currently hosted on our server, once you purchase its license it will be delivered to your server.","Mobicommerce taraf?ndan olu?turulan bu Mobil web sitesi ?u anda onun lisans sat?n kez sunucuya teslim edilecek, bizim sunucu &#252;zerinde bar?nd?r?lan."
+Android App Deliverables,Android Uygulama Gönderilenler
+Android Status :,Android Durum:
+Download Android Deliverables :,Android Teslime indir:
+iOS App Deliverables,iOS App Gönderilenler
+Download iOS Deliverables :,IOS Teslime ?ndir:
+It will take 2-3 days to prepare your deliverables.,Bu sizin teslimat haz?rlamak i&#231;in 2-3 g&#252;n s&#252;rer.
+Mobile Website Deliverables,Mobil Web Sitesi Teslim
+Download Mobile Website Deliverables :,Mobil Web Sitesi Teslime ?ndir:
+Active,Aktif
+Mobicommerce Mobile Enable Module,Mobicommerce Mobil Mod&#252;l&#252; etkinle?tirin
+Enable Module,Mod&#252;l&#252; etkinle?tirin
+Pop Up Setting,Ayarlama Pop Up
+Enable Pop Up,Pop Up etkinle?tirin
+Upload Pop Up Image,Pop Up Resim Y&#252;kle
+Set Pop Up Cookie Time,Pop Up &#231;erez Zaman Set
+Cookies Lifetime in Seconds.,Saniyeler i&#231;inde &#231;erezler Öm&#252;r.
+days,g&#252;nler
+Send push notification to users. Enter the message and send to all users who are using the App.,Kullan?c?lara itme bildirim gönder. Mesaj? girin ve App kullanarak t&#252;m kullan?c?lara göndermek.
+Notification Maximum Text Length is 255 Characters,Bildirim Maksimum Metin Uzunlu?u 255 Karakterler oldu?unu
+Active ,Aktif
+Please Make sure your 2195 port is open to send IOS push notifications.,Sizin 2195 portu IOS push bildirimleri göndermek i&#231;in a&#231;?k oldu?undan emin olun l&#252;tfen.
+Edit App Settings - ,D&#252;zenleme Uygulama Ayarlar? -
+App Key,Uygulama Anahtar?
+License Type,Lisans Tipi
+Android Status,Android Durumu
+iOS Status,iOS Durumu

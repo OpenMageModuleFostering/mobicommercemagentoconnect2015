@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Mobicommerce_Mobipayments>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Mobicommerce_Mobipayments>
+	</modules>
+</config>
