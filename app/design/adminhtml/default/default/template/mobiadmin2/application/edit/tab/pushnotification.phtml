@@ -1,0 +1,133 @@
+<?php $testDevices = $this->getTestDevices(); ?>
+
+<div class="entry-edit">
+    <div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Push Notifications [Website]')?></h4>
+	</div>
+	<div class="fieldset">
+	    <div class="hor-scroll">
+            <table cellspacing="0" class="form-list">
+                <tbody>
+                    <tr>
+                        <td class="label"><?php echo $this->__('Select Device Type : ')?></td>
+                        <td class="value">
+                            <select name="push_device_type">
+                                <option value="android"><?php echo $this->__('Android'); ?></option>
+                                <option value="ios"><?php echo $this->__('iOS'); ?></option>
+                            </select>
+                        </td>
+                    </tr>
+				    <tr><p class="guideline-text"><?php echo $this->__('Send push notifications to all app users. Enter the message and send to all customers using your app. Configure test message before sending to all customers on test devices and ensure that it is working fine and delivering correctly.'); ?></p></tr>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Heading'); ?> <span class="required">*</span></label></td>
+                        <td class="value"><input id="pushheading" class="input-text" type="text" name="pushheading"/></td>
+					</tr>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Message'); ?> <span class="required">*</span></label></td>
+                        <td class="value">
+                            <textarea cols="30" id="pushnotifications" class="input-text" name="pushnotifications" maxlength="255"></textarea>
+                            <br><small><?php echo $this->__('Notification Maximum Text Length is 255 Characters'); ?></small>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Deeplink'); ?></label></td>
+                        <td class="value"><input id="banner_row_link_pushdeeplink" class="input-text" type="text" name="pushdeeplink" readonly="" onclick="showPushPopup()" /></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Image')?></label></td>
+                        <td class="value"><input type="file" name="pushfile" accept="image/*" /></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Send To')?></label></td>
+                        <td class="value">
+                            <label for="whom_test"><input type="radio" checked name="whom" id="whom_test" value="test" /><?php echo $this->__('Test Devices'); ?></label>
+                            <label for="whom_all"><input type="radio" name="whom" id="whom_all" value="all" /><?php echo $this->__('All Devices'); ?></label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+	</div>
+
+
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Test Devices')?></h4>
+    </div>
+
+    <div class="grid">
+        <table cellspacing="0" class="data border">
+        <col/>
+            <thead>
+                <tr class="headings">
+                    <th><?php echo $this->__('Email') ?></th>
+                    <th><?php echo $this->__('Name') ?></th>
+                    <th><?php echo $this->__('No of Android Devices') ?></th>
+                    <th><?php echo $this->__('No of iOS Devices') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if(!empty($testDevices['users'])): ?>
+                    <?php foreach($testDevices['users'] as $_email => $_user): ?>
+                        <tr>
+                            <td><?php echo $_email; ?></td>
+                            <td><?php echo $_user['name']; ?></td>
+                            <td><?php echo $_user['androiddevices']; ?></td>
+                            <td><?php echo $_user['iosdevices']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="fieldset">
+        <div class="hor-scroll">
+            <table cellspacing="0" class="form-list">
+                <tbody>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('User Emails')?></label></td>
+                        <td class="value">
+                            <textarea cols="30" class="input-text" name="push_testemails" id="push_testemails"><?php echo implode(',', $testDevices['emails']); ?></textarea>
+                            <br><small><?php echo $this->__('enter comma seprated email addresses'); ?></small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+    </div>
+</div>
+
+<script>
+    function showPushPopup() {
+        var bannerid = 'pushdeeplink';
+        var linkval = '';
+        sUrl ="<?php echo Mage::helper('adminhtml')->getUrl('mobiadmin2/widget/deeplink')?>bannerid/"+bannerid+'/link/'+linkval;
+        oPopup = new Window({
+            id:'popup_window1',
+            className: 'magento',
+            url: sUrl,
+            width: 820,
+            height: 600,
+            minimizable: false,
+            maximizable: false,
+            showEffectOptions: {
+                duration: 0.4
+            },
+            hideEffectOptions:{
+                duration: 0.4
+            },
+            destroyOnClose: true
+        });
+        oPopup.setZIndex(100);
+        oPopup.showCenter(true);
+    }
+</script>
+
+<script type="text/javascript">
+    //< ![CDATA[
+        var customForm = new VarienForm('edit_form');			
+    //]]>
+</script>

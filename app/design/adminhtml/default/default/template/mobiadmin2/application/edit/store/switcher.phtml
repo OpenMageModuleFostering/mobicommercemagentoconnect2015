@@ -1,0 +1,36 @@
+<?php 
+$appdata = Mage::registry('application_data');
+$groupid = $appdata->getAppStoregroupid();
+$stores = Mage::app()->getGroup($groupid)->getStores();
+$selectedstoreid = Mage::app()->getRequest()->getParam('store');
+?>
+<?php /* @var $this Mage_Core_Block_Template */ ?>
+<?php if ($websites = $this->getWebsites()): ?>
+<p class="switcher"><label for="store_switcher"><?php echo $this->__('Choose Store View:') ?></label>
+<select name="store_switcher" id="store_switcher" onchange="return switchStore(this);">
+    <?php foreach ($stores as $store): ?>
+        <option value="<?php echo $store->getStoreId() ?>" <?php if($selectedstoreid == $store->getStoreId()) echo 'selected' ?>><?php echo $store->getName();?></option>
+    <?php endforeach; ?>
+</select>
+<?php echo $this->getHintHtml() ?>
+</p>
+<script type="text/javascript">
+    function switchStore(obj) {
+        var storeParam = obj.value ? 'store/' + obj.value + '/' : '';
+        if (obj.switchParams) {
+            storeParam += obj.switchParams;
+        }
+    <?php if ($this->getUseConfirm()): ?>
+        if (confirm("<?php echo $this->__('Please confirm site switching. All data that hasn\'t been saved will be lost.') ?>")) {
+            setLocation('<?php echo $this->getSwitchUrl() ?>' + storeParam);
+            return true;
+        } else {
+            obj.value = '<?php echo $this->getStoreId() ?>';
+        }
+        return false;
+    <?php else: ?>
+        setLocation('<?php echo $this->getSwitchUrl() ?>' + storeParam);
+    <?php endif; ?>
+    }
+</script>
+<?php endif; ?>

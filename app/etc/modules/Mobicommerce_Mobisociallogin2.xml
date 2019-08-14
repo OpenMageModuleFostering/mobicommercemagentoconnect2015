@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mobicommerce_Mobisociallogin2>
+            <active>true</active>
+            <codePool>local</codePool>
+			<aliasName>Mobisocial Login</aliasName>
+        </Mobicommerce_Mobisociallogin2>
+    </modules>
+</config> 

@@ -1,0 +1,24 @@
+<?php 
+$applicationData = Mage::registry('application_data');
+$applicationCode = $applicationData->getAppCode();
+$applicationName = $applicationData->getAppName();
+$applicationKey = $applicationData->getAppKey();
+$applicationStoreId = $applicationData->getAppStoreid();
+$storerooturl = Mage::app()->getStore($applicationStoreId)->getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK);
+$themename = Mage::helper('mobiadmin2')->getThemeName($applicationCode);
+$version = $applicationData->getVersionType();
+if(!in_array($version, array('001', '002')))
+	$version = '001';
+?>
+<form target="_blank" name="buynow" id="buynow" action="<?php echo Mage::helper('mobiadmin2')->buyNowUrl($version); ?>" method="post">
+<input type="hidden" name="app_name" value="<?php echo $applicationName; ?>"/>
+<input type="hidden" name="app_preview_code" value="<?php echo $applicationKey; ?>"/>
+<input type="hidden" name="app_code" value="<?php echo $applicationCode; ?>"/>
+<?php if($version == '001'): ?>
+	<input type="hidden" name="selectedapp" value="nativeapps"/>
+<?php elseif($version == '002'): ?>
+	<input type="hidden" name="selectedapp" value="nativeapps-widget">
+	<input type="hidden" value="nativeapps-widget" name="selectedoptions">
+<?php endif; ?>
+<input type="hidden" name="store_rooturl" value="<?php echo $storerooturl; ?>"/>
+</form>

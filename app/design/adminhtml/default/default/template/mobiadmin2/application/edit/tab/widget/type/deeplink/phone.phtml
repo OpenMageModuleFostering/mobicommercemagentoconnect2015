@@ -1,0 +1,25 @@
+<?php
+$phone = Mage::app()->getRequest()->getParam('link_type_value');
+?>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Phone Number')?></h4>
+	</div>
+	<div class="fieldset ">
+		<div class="hor-scroll">
+			<table class="form-list" cellspacing="0">
+			    <tbody>
+				    <tr>
+						<input id="linktype" type="hidden" name="type" value="phone">
+					    <td class="label"><label for="website_id"><?php echo $this->__('Phone Number'); ?></label></td>
+						<td class="value">
+							<input type="text" class="linktypevalue required-entry input-text required-entry" value="<?php echo $phone; ?>" name="value">
+							<br>
+							<small class="mbsmall"><?php echo $this->__('Enter Phone number including country code'); ?></small>
+						</td>
+				    </tr>
+			    </tbody>
+			</table>
+		</div>
+	</div>	
+</div>

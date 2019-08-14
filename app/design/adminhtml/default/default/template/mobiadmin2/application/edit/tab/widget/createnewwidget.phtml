@@ -1,0 +1,58 @@
+<div class="widget-new-container">
+    <div class="entry-edit">
+		<div class="entry-edit-head">
+			<h4 class="icon-head head-edit-form fieldset-legend">Select Home Page Widget</h4>
+		</div>
+    </div>
+    <div id="newwidget_data" class="fieldset">
+	    <table class="form-list grid" cellspacing="0" >
+		    <tbody>
+			    <tr>
+				    <td class="label"><label for="select_widget">Select Widget</label></td>
+					<td class="value">
+						<select id="select_widget" class=" select" name="widget[selected_widget]" onchange="callwidget(this)">
+						    <option value=""><?php echo $this->__('Select Widget')?></option>
+						    <option value="widget_image_slider"><?php echo $this->__('Image Slider')?></option>
+						    <option value="widget_category"><?php echo $this->__('Category')?></option>
+						    <option value="widget_product_slider"><?php echo $this->__('Product List')?></option>
+						    <!--
+						    <option value="widget_html"><?php echo $this->__('HTML Content')?></option>
+						    -->
+						    <option value="widget_image"><?php echo $this->__('Image')?></option>
+						</select>
+					</td>
+				</tr>
+		    </tbody>
+	    </table>		
+	</div>	
+</div>
+<div class="widget-selected-content" ></div>
+<script>
+	var cat = "<?php echo Mage::app()->getRequest()->getParam('cat', false); ?>";
+    function callwidget(){
+		var selectedwidget = jQuery( "#select_widget option:selected" ).val();
+		if(selectedwidget != 0){
+			new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/callwidget'); ?>cat/"+cat, {
+				method: 'Post',
+				parameters: {isAjax : 1, widget_code : selectedwidget},
+				onComplete: function(data) {				    
+				},
+				onSuccess: function(response){
+					var json = response.responseText.evalJSON(true);
+					if(json.status == 'success'){
+						jQuery('.widget-selected-content').html(json.widget_block_content);
+					}
+					else{
+						alert(json.error);
+					}
+				},
+				onFailure: function(response){
+					var json = response.responseText.evalJSON(true);
+					alert(json.error);
+				}
+			});
+		}else {
+			jQuery('.widget-selected-content').html('');
+		}
+	}
+</script>

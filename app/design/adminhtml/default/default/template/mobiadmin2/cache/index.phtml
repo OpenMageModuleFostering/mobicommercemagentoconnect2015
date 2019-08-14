@@ -1,0 +1,21 @@
+<div class="content-header">
+    <table cellspacing="0">
+        <tbody>
+        	<tr>
+            	<td style="width:50%;"><h3 class="icon-head head-cache"><?php echo $this->__('MobiCommerce App Cache Management'); ?></h3></td>
+            	<td class="form-buttons">
+            		<?php if($this->getCacheStatus()): ?>
+            			<?php $regenerate_url = Mage::helper("adminhtml")->getUrl("mobicommerce2/cache/regenerate"); ?>
+            			<button type="button" class="scalable" onclick="setLocation('<?php echo $regenerate_url; ?>')"><span><span><span>Regenerate Cache</span></span></span></button>
+
+            			<?php $disable_url = Mage::helper("adminhtml")->getUrl("mobicommerce2/cache/disable"); ?>
+            			<button type="button" class="scalable delete" onclick="confirmSetLocation('Are you sure that you want disable it?', '<?php echo $disable_url; ?>')"><span><span><span>Disable Cache</span></span></span></button>
+            		<?php else: ?>
+            			<?php $enable_url = Mage::helper("adminhtml")->getUrl("mobicommerce2/cache/enable"); ?>
+            			<button type="button" class="scalable" onclick="setLocation('<?php echo $enable_url; ?>')"><span><span><span>Enable Cache</span></span></span></button>
+            		<?php endif; ?>
+            	</td>
+        	</tr>
+    	</tbody>
+    </table>
+</div>

@@ -1,0 +1,56 @@
+<?php
+$analyticsSettings = $this->getAnalyticsSettings();
+?>
+
+<div class="analyticssettings entry-edit">
+	<p class="guideline-text"><?php echo $this->__('Configure google analytics to track results and keep records of how your app is performing.'); ?></p>
+	<div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Android <span class="app-scope">[Website]</span>')?></h4>
+	</div>
+	<div class="fieldset">
+		<table cellspacing="0" class="form-list">
+			<tbody>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Android Analytics : ')?></td>
+					<td class="value">
+						<select name="analyticsSettings[android][status]">
+							<option value="1" <?php if(isset($analyticsSettings['android']['status']) && $analyticsSettings['android']['status'] == '1') echo "selected"; ?> ><?php echo $this->__('Yes'); ?></option>
+							<option value="0" <?php if(isset($analyticsSettings['android']['status']) && $analyticsSettings['android']['status'] == '0') echo "selected"; ?> ><?php echo $this->__('No'); ?></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Android Analytics Code : ')?></td>
+					<td class="value">
+						<input type="text" name="analyticsSettings[android][code]" value="<?php echo $analyticsSettings['android']['code']; ?>" class="input-text">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('iOS <span class="app-scope">[Website]</span>')?></h4>
+	</div>
+	<div class="fieldset">
+		<table cellspacing="0" class="form-list">
+			<tbody>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable iOS Analytics : ')?></td>
+					<td class="value">
+						<select name="analyticsSettings[ios][status]">
+							<option value="1" <?php if(isset($analyticsSettings['ios']['status']) && $analyticsSettings['ios']['status'] == '1') echo "selected"; ?> ><?php echo $this->__('Yes'); ?></option>
+							<option value="0" <?php if(isset($analyticsSettings['ios']['status']) && $analyticsSettings['ios']['status'] == '0') echo "selected"; ?> ><?php echo $this->__('No'); ?></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('iOS Analytics Code : ')?></td>
+					<td class="value">
+						<input type="text" name="analyticsSettings[ios][code]" value="<?php echo $analyticsSettings['ios']['code']; ?>" class="input-text">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,194 @@
+<?php
+$categoryData         = Mage::registry('widgetdata');
+$widget_status        = $categoryData['widget_status'];
+$widget_label         = $categoryData['widget_label'];
+$category_widget_data = unserialize($categoryData['widget_data']);
+$ids                  = $category_widget_data['categories']['id'];
+$cat_ids              = json_decode($ids, true);
+$catidsinput          = implode(",",array_keys($cat_ids));
+
+Mage::getModel('core/session')->unsetData('checked_categories');
+Mage::getModel('core/session')->setData('checked_categories', $cat_ids);
+
+$wtype = Mage::app()->getRequest()->getParam('cat', false);
+?>
+<?php if($categoryData['widget_id']):?>
+	<input type="hidden" name="widget_id" value="<?php echo $categoryData['widget_id']?>"/>
+<?php endif;?>
+<div class="entry-edit">
+	<div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend">Category Widget</h4>
+	</div>
+</div>
+<div class="fieldset">
+	<table class="categoryslider-widget-content form-list" cellspacing="0">
+		<tbody>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Name'); ?><span class="required">*</span></label></td>
+				<td class="value">
+					<input type="text" class="input-text required-entry" value="<?php if(!empty($widget_label)) echo $widget_label; ?>" name="widget[name]"/>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Title'); ?></label></td>
+				<td class="value">
+					<input type="text" class="input-text" value="<?php if($category_widget_data['title']) echo $category_widget_data['title']; ?>" name="widget[widget_data][title]"/>
+				</td>
+			</tr>
+			<?php $widget_title_align = $category_widget_data['title_align']; ?>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Align Title'); ?></label></td>
+				<td class="value">
+					<select name="widget[widget_data][title_align]">
+						<option value="center" <?php if($widget_title_align == 'center') echo "selected"; ?>>Center</option>
+						<option value="left" <?php if($widget_title_align == 'left') echo "selected"; ?>>Left</option>
+						<option value="right" <?php if($widget_title_align == 'right') echo "selected"; ?>>Right</option>
+					</select>
+				</td>
+			</tr>
+			<?php if($wtype): ?>
+				<tr>
+					<td class="label"><label><?php echo $this->__("Add 'All Products' Link"); ?></label></td>
+					<td class="value">
+						<select name="widget[widget_data][link_all_product]">
+							<option <?php if($category_widget_data['link_all_product'] == "no") echo "selected"; ?> value="no"><?php echo $this->__('No don’t show'); ?></option>
+							<option <?php if($category_widget_data['link_all_product'] =="start") echo "selected"; ?> value="start"><?php echo $this->__('Show at the start'); ?></option>
+							<option <?php if($category_widget_data['link_all_product'] == "end") echo "selected"; ?> value="end"><?php echo $this->__('Show at the end'); ?></option>
+						</select>
+						<br>
+						<?php echo $this->__('If set than ‘All Products’ link will be displayed. This setting does not work when ‘Force Navigate to Product List’ settings is enabled'); ?>
+					</td>
+				</tr>
+			<?php endif; ?>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Layout'); ?></label></td>
+				<td class="value">
+					<select name="widget[widget_data][cat_layout]">
+						<option <?php if($category_widget_data['cat_layout'] =="grid") echo "selected"; ?> value="grid"><?php echo $this->__('Grid'); ?></option>
+						<option <?php if($category_widget_data['cat_layout'] =="list") echo "selected"; ?> value="list"><?php echo $this->__('List'); ?></option>
+						<option <?php if($category_widget_data['cat_layout'] =="slider") echo "selected"; ?> value="slider"><?php echo $this->__('Slider'); ?></option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Force Navigate to Product List'); ?></label></td>
+				<td class="value">
+					<input <?php if($category_widget_data['category_force_product_nav'] == 1) echo "checked"; ?> type="radio" value="1" name="widget[widget_data][category_force_product_nav]" />&nbsp;<?php echo $this->__('Yes'); ?>
+					<input <?php if($category_widget_data['category_force_product_nav'] == 0) echo "checked"; ?> type="radio" value="0" name="widget[widget_data][category_force_product_nav]" />&nbsp;<?php echo $this->__('No'); ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Show Thumbnail'); ?></label></td>
+				<td class="value">
+					<input <?php if($category_widget_data['show_thumbnail'] ==1) echo "checked"?> type="radio" value="1" name="widget[widget_data][show_thumbnail]" />&nbsp;<?php echo $this->__('Yes'); ?>
+					<input <?php if($category_widget_data['show_thumbnail'] ==0) echo "checked"?> type="radio" value="0" name="widget[widget_data][show_thumbnail]" />&nbsp;<?php echo $this->__('No'); ?>
+					<br /><?php echo $this->__('Only applicable to list view'); ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Show Name'); ?></label></td>
+				<td class="value">
+					<input <?php if($category_widget_data['show_name'] ==1) echo "checked"; ?> type="radio" value="1" name="widget[widget_data][show_name]" />&nbsp;<?php echo $this->__('Yes'); ?>
+					<input <?php if($category_widget_data['show_name'] ==0) echo "checked"; ?> type="radio" value="0" name="widget[widget_data][show_name]" />&nbsp;<?php echo $this->__('No'); ?>
+					<br /><?php echo $this->__('Only applicable to grid and slider view'); ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Select Category'); ?></label></td>
+				<td class="value"><input type="text" value="<?php if(!empty($catidsinput)) echo $catidsinput; ?>" class="input-text" name="category" readonly/><a id="category_link" href="javascript:void(0)" onclick="toggleMainCategories(this)"><img src="<?php echo $this->getSkinUrl('images/rule_chooser_trigger.gif')?>" alt="" class="v-middle rule-chooser-trigger" title="Select Category"></a></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="hidden" value='<?php if($ids !='') echo $ids; ?>' class="selectedcategories" name="widget[widget_data][categories][id]"/>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="category-grid" style="width: 800px;"></div></td>
+			</tr>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Status'); ?></label></td>
+				<td class="value">
+					 <select name="widget[enable]">
+						 <option <?php if($widget_status == 0) echo "selected"; ?> value="0"><?php echo $this->__('No'); ?></option>
+						 <option <?php if($widget_status == 1) echo "selected"; ?> value="1"><?php echo $this->__('Yes'); ?></option>
+					 </select>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script>
+var cat = "<?php echo Mage::app()->getRequest()->getParam('cat', false); ?>";
+function toggleMainCategories(e)
+{
+	new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/categorygrid'); ?>cat/"+cat, {
+		method: 'Post',
+		parameters: {isAjax : 1, widget_id : "<?php echo $categoryData['widget_id']; ?>"},
+		onComplete: function(data) {				    
+		},
+		onSuccess: function(response){
+			var json = response.responseText.evalJSON(true);
+			if(json.status == 'success'){
+				jQuery('.category-grid').html(json.widget_category_grid);
+			}
+			else{
+				alert(json.error);
+			}
+		},
+		onFailure: function(response){
+			var json = response.responseText.evalJSON(true);
+			alert(json.error);
+		}
+	});
+}
+
+function saveCategory(e) {
+	if(jQuery(e).is(":checked")) {   
+        var categoryid = jQuery(e).val();
+		var categorypos = jQuery(e).parent('td').parent('tr').find('.category-pos').val();
+		var categorynav = jQuery(e).parent('td').parent('tr').find('.category-navigate').val();
+        var checked = '1';
+    } else { 
+		var categoryid = jQuery(e).val();
+		var checked = '0';
+	}
+	jQuery('#loading-mask').hide();
+	
+	new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/checkcategory')?>", {
+		method: 'Post',
+		parameters: {categoryid : categoryid, checked : checked, categorypos:categorypos ,categorynav:categorynav},	
+		onLoading : function(data) {	
+			jQuery('#loading-mask').hide();
+			},		
+		onSuccess: function(response) {				
+			jQuery('.selectedcategories').val(response.responseText);
+		},
+		onFailure: function(response){				
+			alert(json.error);
+		}
+	});
+}
+
+function savePosition(e){
+    var categoryid = jQuery(e).attr('data-categoryid');
+    var categorypos = jQuery(e).val();
+	if(categorypos){
+		jQuery('#loading-mask').hide();
+		new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/savecatposition'); ?>", {
+			method: 'Post',			
+			parameters: {categoryid : categoryid, categorypos:categorypos},
+			onLoading : function(data) {	
+				jQuery('#loading-mask').hide();
+				},		
+			onSuccess: function(response){				
+				jQuery('.selectedproducts').val(response.responseText);				
+			},
+			onFailure: function(response){				
+				alert(json.error);
+			}
+		});
+	}
+}
+</script>

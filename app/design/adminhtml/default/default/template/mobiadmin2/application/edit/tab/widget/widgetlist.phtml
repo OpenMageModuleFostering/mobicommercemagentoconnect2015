@@ -1,0 +1,183 @@
+<?php
+$cat = Mage::app()->getRequest()->getParam('cat', false);
+if(!empty($cat)){
+	$Homewidget = Mage::getModel('mobiadmin2/categorywidget')->getCollection()
+		->addFieldToFilter('widget_category_id', $cat);
+	$Homewidget->setOrder('widget_position','ASC');
+}
+else{
+	$storeid = Mage::app()->getRequest()->getParam('store');
+	$id = Mage::app()->getRequest()->getParam('id');
+	$model = Mage::getModel('mobiadmin2/applications');
+	$model->load((int) $id);
+	$appCode = $model->getAppCode();
+	$Homewidget = Mage::getModel('mobiadmin2/widget')->getCollection()
+		->addFieldToFilter('widget_app_code',$appCode)
+		->addFieldToFilter('widget_store_id',$storeid);
+	$Homewidget->setOrder('widget_position','ASC');	
+}
+
+$canEditPosition = true;
+if(empty($cat)){
+	$versionType = $model->getVersionType();
+	if(!in_array($versionType, array('001', '002')))
+		$versionType = '001';
+
+	if($versionType == '001')
+		$canEditPosition = false;
+}
+?>
+<div class="content-widget-new grid">
+	<p class="guideline-text"><?php echo $this->__('Change the complete look and feel of the home page with widget system. Configure your images, banners, category and product slider directly from this widget page to give desired look and feel to home screen.'); ?></p>
+	<table cellspacing="0" class="data border" id="<?php echo $_htmlName ?>_table">
+	<col/>
+		<?php if(!empty($cat)): ?>
+			<thead>
+				<tr class="headings">
+					<th><?php echo $this->__('Widget Id'); ?></th>
+					<th><?php echo $this->__('Widget Name'); ?></th>
+					<th><?php echo $this->__('Widget Title'); ?></th>
+					<th><?php echo $this->__('Widget Type'); ?></th>
+					<th><?php echo $this->__('Status'); ?></th>
+					<th><?php echo $this->__('Position'); ?></th>
+					<th><?php echo $this->__('Action'); ?></th>
+				</tr>
+			</thead>
+			<tbody id="_container">
+				<?php if(count($Homewidget)):?>
+					<?php $tabindex = 100; ?>
+					<?php foreach($Homewidget as $_widget): ?>
+						<?php $_widget_data = @unserialize($_widget->getWidgetData()); ?>
+						<tr>
+							<td><?php echo $_widget->getWidgetId(); ?></td>
+							<td><?php echo $_widget->getWidgetLabel(); ?></td>
+							<td><?php echo $_widget_data['title']; ?></td>
+							<td>
+								<?php if($_widget->getWidgetCode() == 'widget_image_slider'): ?>
+									<?php echo $this->__('Image Slider')?>
+								<?php elseif($_widget->getWidgetCode() == 'widget_product_slider'): ?>
+									<?php echo $this->__('Product List'); ?>
+								<?php elseif($_widget->getWidgetCode() == 'widget_category'):?>
+									<?php echo $this->__('Category'); ?>
+								<?php elseif($_widget->getWidgetCode() == 'widget_image'): ?>
+									<?php echo $this->__('Image'); ?>
+								<?php elseif($_widget->getWidgetCode() == 'widget_html'): ?>
+									<?php echo $this->__('HTML Content'); ?>
+								<?php endif; ?>
+							</td>
+							<td>
+							<?php if($_widget->getWidgetStatus() == 1):?>
+								<?php echo 'Enable'; ?>
+							<?php else:?>
+								<?php echo 'Disable'; ?>
+							<?php endif;?>
+							</td>
+							<td><input type="text" onchange="markWidgetChange();" name="widget_position[<?php echo $_widget->getWidgetId(); ?>]" class="input-text" value="<?php echo $_widget->getWidgetPosition(); ?>" style="width:50px;" tabindex="<?php echo $tabindex; ?>" /></td>
+							<td><a class="editwidget" onclick="markWidgetChange();" href="<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/callwidget',array(
+									'cat'		  => $_widget->getWidgetCategoryId(),
+									'widget_id'   => $_widget->getWidgetId(),
+									'widget_code' => $_widget->getWidgetCode(),
+									'isAjax'      => true,
+								));
+							?>"><?php echo $this->__("Edit"); ?></a>
+							<a href="<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/category/deletewidget',array(
+									'widget_id' => $_widget->getWidgetId(),
+								));
+							?>" onclick="markWidgetChange(); return confirm('Are you sure?');"><?php echo $this->__("Delete"); ?></a>
+							</td>
+						</tr>
+						<?php $tabindex++; ?>
+					<?php endforeach;?>
+				<?php endif;?>
+			</tbody>
+		<?php else: ?>
+			<thead>
+				<tr class="headings">
+					<th><?php echo $this->__('Widget Id') ?></th>							
+					<th><?php echo $this->__('Widget Name'); ?></th>
+					<th><?php echo $this->__('Widget Title'); ?></th>
+					<th><?php echo $this->__('Widget Type') ?></th>	
+					<th><?php echo $this->__('Status') ?></th>
+					<?php if($canEditPosition): ?>
+						<th><?php echo $this->__('Position') ?></th>
+					<?php endif; ?>
+					<th><?php echo $this->__('Action') ?></th>				
+				</tr>
+			</thead>
+			<tbody id="_container">
+				<?php if(count($Homewidget)): ?>
+					<?php $tabindex = 100; ?>
+						<?php foreach($Homewidget as $hw):?>
+							<?php $_widget_data = @unserialize($hw->getWidgetData()); ?>
+							<tr>
+								<td><?php echo $hw->getWidgetId()?></td>
+								<td><?php echo $hw->getWidgetLabel()?></td>
+								<td><?php echo $_widget_data['title']; ?></td>
+								<td>
+									<?php if($hw->getWidgetCode() == 'widget_image_slider'): ?>
+										<?php echo $this->__('Image Slider')?>
+									<?php elseif($hw->getWidgetCode() == 'widget_product_slider'):?>
+										<?php echo $this->__('Product List')?>
+									<?php elseif($hw->getWidgetCode() == 'widget_category'):?>
+										<?php echo $this->__('Category')?>
+									<?php elseif($hw->getWidgetCode() == 'widget_image'):?>
+										<?php echo $this->__('Image')?>
+									<?php elseif($hw->getWidgetCode() == 'widget_html'):?>
+										<?php echo $this->__('HTML Content')?>
+									<?php endif;?>
+								</td>
+								<td>
+								<?php if($hw->getWidgetStatus() == 1):?>
+									<?php echo 'Enable'; ?>
+								<?php else:?>
+									<?php echo 'Disable'; ?>
+								<?php endif;?>
+								</td>
+								<?php if($canEditPosition): ?>
+									<td><input type="text" onchange="markWidgetChange();" name="widget_position[<?php echo $hw->getWidgetId()?>]" class="input-text" value="<?php echo $hw->getWidgetPosition()?>" style="width:50px;" tabindex="<?php echo $tabindex; ?>" /></td>
+								<?php endif; ?>
+								<td><a class="editwidget" onclick="markWidgetChange();" href="<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/callwidget',array(
+										'widget_id'   => $hw->getWidgetId(),
+										'widget_code' => $hw->getWidgetCode(),
+										'isAjax'      => true,
+									));
+								?>"><?php echo $this->__("Edit")?></a>
+								<?php if($versionType == '002'): ?>
+									<a href="<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/deletewidget',array(
+										'widget_id' => $hw->getWidgetId(),
+									)); ?>" onclick="markWidgetChange(); return confirm('Are you sure?')"><?php echo $this->__("Delete")?></a>
+								<?php endif; ?>
+								</td>
+							</tr>
+						<?php $tabindex++; ?>
+					<?php endforeach;?>
+				<?php endif;?>
+			</tbody>
+		<?php endif; ?>
+	</table>
+</div>
+<script>
+jQuery('.editwidget').click(function( event ) {
+	event.preventDefault();
+	var editwidgeturl = jQuery(this).attr('href');
+	new Ajax.Request(editwidgeturl, {
+		method: 'Post',
+		parameters: {isAjax : 1},
+		onComplete: function(data) {				    
+		},
+		onSuccess: function(response){
+			var json = response.responseText.evalJSON(true);
+			if(json.status == 'success'){
+				jQuery('.content-widget-new').html(json.widget_block_content);
+			}
+			else{
+				alert(json.error);
+			}
+		},
+		onFailure: function(response){
+			var json = response.responseText.evalJSON(true);
+			alert(json.error);
+		}
+	});
+});
+</script>

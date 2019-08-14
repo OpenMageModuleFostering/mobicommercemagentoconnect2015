@@ -1,0 +1,20 @@
+.topbar.ui-header { background-color: #ffc107; border-color: #ffc107; }
+.topbar.ui-header .ui-title, .topbar.ui-header .ui-title span.p-count { color: #3c3c3c; }
+.ui-select span, .category_menu_box .ui-listview .ui-btn.ui-btn-d,.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper,.new-catpage ul li a,.filter-bar .filter-div .filter-by, .filter-bar .filter-div .short-by,.rating-product a h3,h1, h2, h3, h4, h5, h6,.color-primary,[class^="list-"] li, [class^="list-"] li > a,[class^="list-"] h4,.shopping-cart-list .product-name h4,.data-table tr th,.tab-nav.ui-tabs ul li.ui-state-default a,.tab-nav .tab-detail label span.price,.product-slide-horizontal span,.listing-button a.ui-link,label.ui-checkbox-off.ui-btn, label.ui-checkbox-on.ui-btn,label.ui-radio-off.ui-btn, label.ui-radio-on.ui-btn,.or-login,.address-block p,.shopping-cart-total .left.color-light,#order_success p,#review_list .product-detail-text section h3.color-warning,#review_form .rating .left,#storelocator_rating_list .product-detail-text section h3.color-warning { color: rgba(25,25,25,1); }
+p,.ui-page-theme-a a.v-all-right,.product-slide-horizontal .swiper-slide .eachproduct a,.new-catpage ul li li a,.availability p, .availability .data-table,.shopping-cart-list .color-light,.user-menu ul li a,.shopping-cart-list p,.rating,.address-block .user-name,.address-block,.left-call a strong,.data-table tr td,.button-list .li-row,.ui-page-theme-a a, html .ui-bar-a a,html .ui-body-a a, html body .ui-group-theme-a a,input[type=text],input[type=email],input[type=password],input[type=email], input[type=file], input[type=number],input[type=search],input[type=tel],select,textarea,.orderhistory-list a.icon-arow p.color-light,.orderhistory-detail p.color-light,.tab-nav ul li a,.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, .ui-page-theme-a .ui-checkbox-on::after, html .ui-bar-a .ui-checkbox-on::after, html .ui-body-a .ui-checkbox-on::after, html body .ui-group-theme-a .ui-checkbox-on::after, .ui-btn.ui-checkbox-on.ui-btn-a::after, .ui-page-theme-a .ui-flipswitch-active, html .ui-bar-a .ui-flipswitch-active, html .ui-body-a .ui-flipswitch-active, html body .ui-group-theme-a .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active,.filter-bar .filter-div .filter-by span.applied-label, .filter-bar .filter-div .short-by span.applied-label,.ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a { color: rgba(25,25,25,0.7); }
+.color-light,.rating-product .rating-digit,.ui-controlgroup-controls label span,.user-menu ul li.has-optn span,.ratingbar div.right { color: rgba(25,25,25,0.5); }
+::-webkit-input-placeholder{color:rgba(25,25,25,0.7) !important;}
+:-moz-placeholder{color:rgba(25,25,25,0.7) !important;}
+::-moz-placeholder{color:rgba(25,25,25,0.7) !important;}
+:-ms-input-placeholder{color:rgba(25,25,25,0.7) !important;}
+html head + body .ui-btn.ui-btn-c { background-color: #333333; border-color: #333333;}
+html head + body .ui-btn.ui-btn-c { color: #FFFFFF; }
+html head + body .ui-btn.ui-btn-a, html head + body .ui-btn.ui-btn-b { background-color: #969696; border-color: #969696; }
+html head + body .ui-btn.ui-btn-a, html head + body .ui-btn.ui-btn-b { color: #FFFFFF; }
+.price-color,.color-warning,.name-rating .p-name .price-div .main-price,.name-rating .p-name .price-div .old-price,.shopping-cart-total .text-line .right.color-primary,[class^="list-"] .cost-line .price-color,.product-slide-horizontal span.price-color { color: #bd0000; }
+.ratingbar .bar span {background-color: #ff9d00 !important;}
+.rating-product .progress span {background-color: #ff9d00 !important;}
+section h3.color-warning {color: #ff9d00;}
+.persistent_footer {background-color: #f9f9f9;}
+.persistent_footer a.ui-btn, .persistent_footer a.ui-btn span {color: #777777;}
+.persistent_footer li.active a.ui-btn, .persistent_footer li.active a.ui-btn span,.persistent_footer li.active a.ui-btn em.cart-buble {color: #ffc107;}

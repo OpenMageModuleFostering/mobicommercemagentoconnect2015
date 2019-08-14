@@ -38,7 +38,7 @@ class Varien_Data_Form_Element_Textarea extends Varien_Data_Form_Element_Abstrac
         parent::__construct($attributes);
         $this->setType('textarea');
         $this->setExtType('textarea');
-        $this->setRows(2);
+        $this->setRows(4);
         $this->setCols(15);
     }
 
@@ -50,7 +50,7 @@ class Varien_Data_Form_Element_Textarea extends Varien_Data_Form_Element_Abstrac
     public function getElementHtml()
     {
         $this->addClass('textarea');
-        $html = '<textarea id="'.$this->getHtmlId().'" name="'.$this->getName().'" '.$this->serialize($this->getHtmlAttributes()).' >';
+        $html = '<textarea id="'.$this->getHtmlId().'" name="'.$this->getName().'" '.$this->serialize($this->getHtmlAttributes()).'>';
         $html .= $this->getEscapedValue();
         $html .= "</textarea>";
         $html .= $this->getAfterElementHtml();

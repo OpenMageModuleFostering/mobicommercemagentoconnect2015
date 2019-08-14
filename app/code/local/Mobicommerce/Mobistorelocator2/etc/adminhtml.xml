@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <mobiadmin2 module="mobiadmin2">
+		    <children>
+			    <mobistorelocator2 module="mobistorelocator2">
+					<title>Store Locator</title>
+					<sort_order>45</sort_order>
+					<children>
+						<stores module="mobistorelocator2">
+							<title>Manage Stores</title>
+							<sort_order>0</sort_order>
+							<action>mobistorelocator2/adminhtml_store</action>
+						</stores>
+						<holidays module="mobistorelocator2">
+							<title>Manage Holidays</title>
+							<sort_order>1</sort_order>
+							<action>mobistorelocator2/adminhtml_holiday</action>
+						</holidays>
+						<specialdays module="mobistorelocator2">
+							<title>Manage Special Days</title>
+							<sort_order>2</sort_order>
+							<action>mobistorelocator2/adminhtml_specialday</action>
+						</specialdays>
+                        <mobistorelocator2reviewsrating module="mobistorelocator2" translate="title">
+                            <title>Reviews and Rating</title>
+                            <sort_order>4</sort_order>
+                            <children>
+                                <mobistorereviews module="mobistorelocator2">
+                                    <title>Store Reviews</title>
+                                    <sort_order>0</sort_order>
+                                    <action>mobistorelocator2/adminhtml_review</action>
+                                </mobistorereviews>
+                                <mobistorererating module="mobistorelocator2">
+                                    <title>Manage Ratings</title>
+                                    <sort_order>1</sort_order>
+                                    <action>mobistorelocator2/adminhtml_rating</action>
+                                </mobistorererating>
+                                <mobistorepandingreviews module="mobistorelocator2">
+                                    <title>Store Pending Reviews</title>
+                                    <sort_order>1</sort_order>
+                                    <action>mobistorelocator2/adminhtml_review/pendingreview</action>
+                                </mobistorepandingreviews>
+                            </children>
+                        </mobistorelocator2reviewsrating>
+					</children>
+				</mobistorelocator2>
+		    </children>
+        </mobiadmin2>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <mobistorelocator2 module="mobistorelocator2" translate="title">
+                        <title>Store Locator</title>
+                        <sort_order>70</sort_order>               
+                        <children>
+                            <stores module="mobistorelocator2" translate="title">
+                                <title>Manage Stores</title>
+                                <sort_order>0</sort_order>			
+                                <action>mobistorelocator2/adminhtml_store</action>
+                            </stores>					
+                            <holidays module="mobistorelocator2" translate="title">
+                                <title>Manage Holidays</title>
+                                <sort_order>1</sort_order>
+                                <action>mobistorelocator2/adminhtml_holiday</action>
+                            </holidays>
+                            <specialdays module="mobistorelocator2" translate="title">
+                                <title>Guide</title>
+                                <sort_order>2</sort_order>
+                                <action>mobistorelocator2/adminhtml_specialday</action>
+                            </specialdays>
+                            <guide module="mobistorelocator2" translate="title">
+                                <title>Manage Special Days</title>
+                                <sort_order>3</sort_order>
+                                <action>mobistorelocator2/adminhtml_guide</action>
+                            </guide>
+                        </children>
+                    </mobistorelocator2>	
+					<system>
+						<children>
+							<config>
+								<children>
+									<mobistorelocator2 translate="title" module="mobistorelocator2">  
+										<title>StoreLocator ACL</title>  
+										<sort_order>99</sort_order>
+									</mobistorelocator2>
+								</children>
+							</config>
+						</children>
+					</system>
+                </children>
+            </admin>
+        </resources>
+    </acl>			
+</config>

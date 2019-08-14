@@ -1,0 +1,48 @@
+<?php
+$lang_code = '';
+$lang_code = Mage::app()->getRequest()->getParam('lang_code');
+$repeatlangarray = array();
+?>
+<?php /* @var $this Mage_Core_Block_Template */ ?>
+<?php if ($websites = $this->getWebsites()): ?>
+<p class="switcher"><label for="store_switcher"><?php echo $this->__('Choose Language:') ?></label>
+<select name="store_switcher" id="store_switcher" onchange="return switchStore(this);">
+    <?php foreach ($websites as $website): ?>
+	    <?php foreach ($website->getGroups() as $group): ?>
+			<?php foreach ($this->getStores($group) as $store): ?>
+			    <?php 
+				$storeid = $store->getStoreId();
+				$store_lang_code = Mage::getStoreConfig('general/locale/code', $storeid);
+				
+				?>
+                <?php if(in_array($store_lang_code, $repeatlangarray)):?>
+				<?php else:?>
+					<option value="<?php echo $store_lang_code; ?>" <?php if($store_lang_code == $lang_code) echo 'selected' ?>><?php echo Mage::helper('mobiadmin2')->getLocaleLabel($store_lang_code);?></option>
+				<?php endif;?>
+				<?php $repeatlangarray[] = $store_lang_code;?>
+			<?php endforeach; ?>
+		<?php endforeach; ?>
+	<?php endforeach; ?>
+</select>
+<?php echo $this->getHintHtml() ?>
+</p>
+<script type="text/javascript">
+    function switchStore(obj) {
+        var storeParam = obj.value ? 'lang_code/' + obj.value + '/' : '';
+        if (obj.switchParams) {
+            storeParam += obj.switchParams;
+        }
+    <?php if ($this->getUseConfirm()): ?>
+        if (confirm("<?php echo $this->__('Please confirm site switching. All data that hasn\'t been saved will be lost.') ?>")) {
+            setLocation('<?php echo Mage::helper('adminhtml')->getUrl('mobiadmin2/index/labelsmessages') ?>' + storeParam);
+            return true;
+        } else {
+            obj.value = '<?php echo $this->getStoreId() ?>';
+        }
+        return false;
+    <?php else: ?>
+        setLocation('<?php echo Mage::helper('adminhtml')->getUrl('mobiadmin2/index/labelsmessages') ?>' + storeParam);
+    <?php endif; ?>
+    }
+</script>
+<?php endif; ?>

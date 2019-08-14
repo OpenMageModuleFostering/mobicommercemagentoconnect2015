@@ -1,0 +1,82 @@
+<?php
+$bannerData = Mage::registry('widgetdata');
+$widget_status  = $bannerData['widget_status'];
+$slider_widget_data = unserialize($bannerData['widget_data']);
+$banners = $slider_widget_data['banners'];
+?>
+<?php if($bannerData['widget_id']):?>
+	<input type="hidden" name="widget_id" value="<?php echo $bannerData['widget_id']; ?>"/>
+<?php endif;?>
+<div class="entry-edit">
+	<div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Image Slider Widget')?></h4>
+	</div>
+</div>
+<div class="fieldset">
+	<table class="imageslider-widget-content form-list" cellspacing="0">
+		<tbody>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Name'); ?><span class="required">*</span></label></td>
+				<td class="value">
+					<input type="text" class="input-text required-entry" value="<?php if($bannerData['widget_label']) echo $bannerData['widget_label']; ?>" name="widget[name]"/>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Title')?></label></td>
+				<td class="value">
+					<input type="text" class="input-text" value="<?php if(!empty($slider_widget_data['title'])) echo $slider_widget_data['title'];?>" name="widget[widget_data][title]"/>
+				</td>
+			</tr>
+			<?php $widget_title_align = $slider_widget_data['title_align'];?>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Align Title'); ?></label></td>
+				<td class="value">
+					<select name="widget[widget_data][title_align]">
+						<option value="center" <?php if($widget_title_align == 'center') echo "selected"?>>Center</option>
+						<option value="left" <?php if($widget_title_align == 'left') echo "selected"?>>Left</option>
+						<option value="right" <?php if($widget_title_align == 'right') echo "selected"?>>Right</option>
+					</select>
+				</td>
+			</tr> 
+			
+			<?php echo $this->getLayout()->createBlock('mobiadmin2/adminhtml_applications_grid_renderer_button')->toHtml(); ?>
+
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Autoplay Slide Show')?></label></td>
+				<td class="value">
+					<input type="radio" <?php if($slider_widget_data['slide_auto_play'] == 1) echo "checked"?> value="1" name="widget[widget_data][slide_auto_play]" />&nbsp;<?php echo $this->__('Yes')?>
+					<input <?php if($slider_widget_data['slide_auto_play'] == 0) echo "checked"?> type="radio" value="0" name="widget[widget_data][slide_auto_play]" />&nbsp;<?php echo $this->__('No')?>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Autoplay Interval(ms)')?></label></td>
+				<td class="value">
+					<input type="text" class="input-text" value="<?php if(!empty($slider_widget_data['slide_auto_play_interval'])) echo $slider_widget_data['slide_auto_play_interval']?>" name="widget[widget_data][slide_auto_play_interval]"/>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Show Bullets on Slider')?></label></td>
+				<td class="value">
+					<input type="radio" <?php if($slider_widget_data['show_bullet'] == 1) echo "checked"?> value="1" name="widget[widget_data][show_bullet]" />&nbsp;<?php echo $this->__('Yes')?>
+					<input type="radio" <?php if($slider_widget_data['show_bullet'] == 0) echo "checked"?> value="0" name="widget[widget_data][show_bullet]" />&nbsp;<?php echo $this->__('No')?>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Play on Endless Loop')?></label></td>
+				<td class="value">
+					<input type="radio" <?php if($slider_widget_data['play_loop'] == 1) echo "checked"?> value="1" name="widget[widget_data][play_loop]" />&nbsp;<?php echo $this->__('Yes')?>
+					<input type="radio" <?php if($slider_widget_data['play_loop'] == 0) echo "checked"?> value="0" name="widget[widget_data][play_loop]" />&nbsp;<?php echo $this->__('No')?>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Status')?></label></td>
+				<td class="value">
+					 <select name="widget[enable]">
+						 <option <?php if($widget_status == 0) echo "selected"?> value="0"><?php echo $this->__('No'); ?></option>
+						 <option <?php if($widget_status == 1) echo "selected"?> value="1"><?php echo $this->__('Yes'); ?></option>				     
+					 </select>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

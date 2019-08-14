@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Mobicommerce_Mobiadmin2>
+			<active>true</active>
+			<codePool>local</codePool>
+			<depends><Mobicommerce_Mobiservices2/></depends>
+		</Mobicommerce_Mobiadmin2>
+	</modules>
+</config>

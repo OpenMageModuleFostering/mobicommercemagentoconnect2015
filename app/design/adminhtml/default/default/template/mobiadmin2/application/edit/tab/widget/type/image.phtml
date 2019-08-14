@@ -1,0 +1,182 @@
+<?php
+$imageData         = Mage::registry('widgetdata');
+$widget_status     = $imageData['widget_status'];
+$widget_label      = $imageData['widget_label'];
+$image_widget_data = @unserialize($imageData['widget_data']);
+$widget_image      = $image_widget_data['widget_image'];
+$mapcode           = $image_widget_data['mapcode'];
+
+$map_coords = array();
+$map_href = array();
+$regex = "/<area(.*)>/";
+//preg_match_all($regex, htmlspecialchars_decode($mapcode), $matches);
+$matches = explode('<area', htmlspecialchars_decode($mapcode));
+if(!empty($matches)){
+	for($i=0; $i<(count($matches) - 1); $i++){
+		$_match = $matches[$i];
+		if(!empty($_match)){
+			$start = strpos($_match, 'coords="');
+			$end = strpos($_match, '" title=');
+			if($start !== FALSE && $end !== FALSE){
+				$href_start = strpos($_match, 'href="');
+				$href_end = strpos($_match, '" target=');
+
+				$map_coords[] = substr($_match, $start + 8, $end - 8 - $start);
+				$map_href[] = substr($_match, $href_start + 6, $href_end - 6 - $href_start);
+			}
+		}
+	}
+}
+$map_coords = array_unique($map_coords);
+$map_href = array_unique($map_href);
+//echo '<pre>';print_r($imagemap_cords);exit;
+$map_coords = implode('__SEPRATER__', $map_coords);
+$map_href = implode('__SEPRATER__', $map_href);
+//echo $map_coords;exit;
+?>
+<?php $k = Mage::getSingleton('core/session')->getFormKey(); ?>
+<?php if($imageData['widget_id']):?>
+	<input type="hidden" name="widget_id" value="<?php echo $imageData['widget_id']; ?>"/>
+<?php endif;?>
+<div class="entry-edit">
+	<div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Image Widget'); ?></h4>
+	</div>
+</div>
+<div class="fieldset">
+	<table class="image-widget-content form-list" cellspacing="0">
+		<tbody>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Name')?><span class="required">*</span></label></td>
+				<td class="value">				    
+					<input type="text" class="input-text required-entry" value='<?php if(!empty($widget_label)) echo $widget_label; ?>' name="widget[name]"/>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Title')?></label></td>
+				<td class="value">
+					<input type="text" class="input-text" value="<?php if(!empty($image_widget_data['title'])) echo $image_widget_data['title']; ?>" name="widget[widget_data][title]"/>
+				</td>
+			</tr>
+			<?php $widget_title_align = $image_widget_data['title_align'];?>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Align Title')?></label></td>
+				<td class="value">
+					<select name="widget[widget_data][title_align]">
+						<option value="center" <?php if($widget_title_align == 'center') echo "selected"?>><?php echo $this->__('Center'); ?></option>
+						<option value="left" <?php if($widget_title_align == 'left') echo "selected"?>><?php echo $this->__('Left'); ?></option>
+						<option value="right" <?php if($widget_title_align == 'right') echo "selected"?>><?php echo $this->__('Right'); ?></option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Upload Image')?><span class="required">*</span></label></td>
+				<td class="value">
+				    <?php if($widget_image):?>
+					    <a onclick="imagePreview('widget_image'); return false;" href="<?php echo $widget_image?>"><img class="small-image-preview v-middle" id="widget_image" src="<?php echo $widget_image?>" height="25" width="25"/></a>
+					<?php endif;?>
+					<input type="file" class="input-file image_uploader" name="widget_image" onchange="uploadImageAuto();">
+					<input type="hidden" value="<?php echo $widget_image; ?>" id="widget_image_hidden" name="widget_image_hidden">
+					<br>
+                    <a class="widget_image_upload" style="cursor: pointer; text-decoration: none; display:none;"><?php echo $this->__('Upload Image'); ?></a>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label><?php echo $this->__('Status')?></label></td>
+				<td class="value">
+					 <select name="widget[enable]">
+						 <option <?php if($widget_status ==0) echo "selected"?> value="0"><?php echo $this->__('No')?></option>
+						 <option <?php if($widget_status ==1) echo "selected"?> value="1"><?php echo $this->__('Yes')?></option>
+					 </select>
+				</td>
+			</tr>
+			<input type="hidden" name="widget[widget_data][mapcode]" value='<?php if(!empty($mapcode)) echo $mapcode;?>' id="mapcode">
+		</tbody>
+	</table>
+</div>
+
+<div class="entry-edit">
+	<div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Define Image Map (Optional)'); ?></h4>
+	</div>
+</div>
+<div class="fieldset">
+	<h3 id="mobi_iupload_small"><?php echo $this->__('Please upload image from above form'); ?></h3>
+	<iframe id="image-map-iframe" class="image-map-iframe" height="100%" scrolling="yes" src="" style="width:100%; height:100%; background:white;-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; border:0; min-height: 500px;">
+	</iframe>
+</div>
+
+</div>
+
+<script>
+function showPopup() {
+	var bannerid = 'linkURL';
+	var linkval = jQuery("#image-map-iframe").contents().find("#linkURL").val();
+	sUrl ="<?php echo Mage::helper('adminhtml')->getUrl('mobiadmin2/widget/deeplink')?>bannerid/"+bannerid+'/link/'+linkval;
+    oPopup = new Window({
+        id:'popup_window1',
+        className: 'magento',
+        url: sUrl,
+        width: 820,
+        height: 600,
+        minimizable: false,
+        maximizable: false,
+        showEffectOptions: {
+            duration: 0.4
+        },
+        hideEffectOptions:{
+            duration: 0.4
+        },
+        destroyOnClose: true
+    });
+    oPopup.setZIndex(100);
+    oPopup.showCenter(true);
+}
+
+jQuery(function(){
+	jQuery('.widget_image_upload').on('click', function() {
+	    var file_data = jQuery('.image_uploader').prop('files')[0];
+		if(file_data['name'] != '' && typeof file_data['name'] !== "undefined"){
+			jQuery('#loading-mask').show();
+			var form_data = new FormData();
+			form_data.append('file', file_data);
+			var form_key = "<?php echo $k; ?>";
+			form_data.append('isAjax', true);
+			form_data.append('form_key',form_key);
+			var aurl = "<?php echo Mage::helper('adminhtml')->getUrl('mobiadmin2/widget/uploadajaximage')?>"; 
+			jQuery.ajax({
+				url: aurl,
+				type: 'post',  
+				contentType: false,
+				processData: false,
+				data: form_data,
+				success: function(response){
+					var iframe = jQuery(".image-map-iframe");
+					var data = jQuery.parseJSON(response);
+					var imgurl = data.image_url;
+					if( imgurl != ''){
+						jQuery('#widget_image_hidden').val(imgurl);
+						var src ="<?php echo Mage::helper('adminhtml')->getUrl('mobiadmin2/widget/imagemap')?>?imageurl="+imgurl;
+						iframe.attr("src",src);
+						jQuery('#mobi_iupload_small').html('You can Link the image area to particular product, category, CMS page, Phone call etc…. you can link a image to multiple product, category, CMS pages by selecting image area.');
+					}
+				},
+				complete:function(){
+					jQuery('#loading-mask').hide();
+				}
+			});
+		}
+	});
+});
+
+function uploadImageAuto(){
+	jQuery('.widget_image_upload').trigger('click');
+}
+
+var imgurl ="<?php echo $widget_image; ?>";
+if(imgurl != ''){
+	var src ="<?php echo Mage::helper('adminhtml')->getUrl('mobiadmin2/widget/imagemap')?>?imageurl="+imgurl+"&map_coords=<?php echo $map_coords; ?>&map_href=<?php echo $map_href; ?>";
+	var iframe = jQuery(".image-map-iframe");
+	iframe.attr("src",src);
+}
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<tr>
+	<td colspan="10" width="470">
+		<script src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+		<script>
+			latitude = parseFloat(jQuery('#store_latitude').val());
+			longtitude = parseFloat(jQuery('#store_longitude').val());
+			zoom_value = parseInt(jQuery('#zoom_level').val());         
+		</script>
+
+		<div class="mobicommerce-map" id="mobicommerce-map">
+			<a href="javascript:void(0)" onclick="showmap()" id="click-show-map"><?php echo $this->__('Click here to preview on map'); ?></a>
+			<input type="hidden" id="zoom_level_value" name="zoom_level_value">
+			<input type="hidden" id="store_latitude_value" name="store_latitude_value">
+			<input type="hidden" id="store_longtitude_value" name="store_longtitude_value">
+			<div id="button-reset" style="margin-top:20px; margin-bottom: -12px; display:none"><button type="button" onclick="resetMap()"><span><?php echo $this->__('Reset Google Map') ?></span></button></div>
+			<div id="notice-map"></div>
+			<div id="googleMap" style="display: none;height: 400px;width: 700px;margin-top: 20px;border: 1px solid;"></div>
+		</div>
+
+		<script>
+			<?php if (!$this->getRequest()->getParam('id')): ?>
+				jQuery('#mobicommerce-map').css('display','none');
+			<?php endif; ?>   
+			gMap = new StorelocatorMap(latitude, longtitude, zoom_value);
+
+			function showmap(){                    
+				jQuery('#button-reset').css('display','block');
+				jQuery('#googleMap').css('display','block');
+				resetMap();
+				jQuery('#click-show-map').hide();
+			}  
+
+			function resetMap(){
+				<?php $location = $this->getCoodinates(); ?>
+				<?php if ($location): ?>
+					latOld = <?php echo isset($location['lat'])?$location['lat']:23; ?>;
+					longOld = <?php echo isset($location['lng'])?$location['lng']:86; ?>;
+					zoomOdl = 12;
+					jQuery('#store_latitude_value').val(latOld);
+					jQuery('#store_latitude').val(latOld);
+					jQuery('#store_longitude_value').val(longOld);
+					jQuery('#store_longitude').val(longOld);
+					jQuery('#zoom_level_value').val(12);
+					jQuery('#zoom_level').val(12);
+					jQuery('#store_latitude').css('background','rgb(250, 230, 180)');
+					jQuery('#store_longitude').css('background','rgb(250, 230, 180)');
+					jQuery('#zoom_level').css('background','rgb(250, 230, 180)');
+					//var location = new google.maps.LatLng(results[0].geometry.location.lat(),results[0].geometry.location.lng());
+					gMap = new StorelocatorMap(latOld, longOld, 12);
+					gMap.initGoogleMap();
+					var request = {
+					location: gMap.stockholm
+					};
+				<?php endif; ?>
+				// service = new google.maps.places.PlacesService(gMap.map);
+				/// service.textSearch(request, callback);
+			}
+			loadColor_storelocator('click', 1);
+		</script>
+	</td>
+</tr>

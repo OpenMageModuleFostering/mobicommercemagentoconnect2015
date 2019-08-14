@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addCss">
+                <styleSheet>css/mobicommerce/mobistorelocator2/storelocator.css</styleSheet>
+            </action>
+            <action method="addJs">
+                <script>mobicommerce/adminhtml/storelocator2.js</script>
+            </action>
+        </reference>	
+    </default>
+	
+    <mobistorelocator2_adminhtml_store_index>
+        <reference name="content">
+            <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                <action method="setUseConfirm">
+                    <params>0</params>
+                </action>
+            </block>
+            <block type="mobistorelocator2/adminhtml_store" name="store" />
+        </reference>
+    </mobistorelocator2_adminhtml_store_index>
+    
+    <mobistorelocator2_adminhtml_store_edit>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-" />
+        </reference>
+    </mobistorelocator2_adminhtml_store_edit>
+    <mobistorelocator2_adminhtml_holiday_index>
+        <reference name="content">
+            <block type="mobistorelocator2/adminhtml_holiday" name="holiday" />
+        </reference>
+    </mobistorelocator2_adminhtml_holiday_index>
+    
+    <mobistorelocator2_adminhtml_specialday_index>
+        <reference name="content">
+            <block type="mobistorelocator2/adminhtml_specialday" name="specialday" />
+        </reference>
+    </mobistorelocator2_adminhtml_specialday_index>
+    <mobistorelocator2_adminhtml_review_edit> 
+	    <reference name="content">
+            <block type="mobistorelocator2/adminhtml_review_edit" name="store.review">
+			    <action method="setTemplate"><template>mobistorelocator2/storereview.phtml</template></action> 
+			</block>
+        </reference>
+    </mobistorelocator2_adminhtml_review_edit> 	
+</layout>

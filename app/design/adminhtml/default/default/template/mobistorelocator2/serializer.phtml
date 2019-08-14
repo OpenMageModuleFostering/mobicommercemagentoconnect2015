@@ -1,0 +1,41 @@
+<?php $_id = 'id_' . md5(microtime())  ?>
+
+<input type="hidden" name="<?php echo $this->getInputElementName() ?>" id="<?php echo $_id ?>" value="" />
+
+<?php $_gridJsObject = $this->getGridBlock()->getJsObjectName() ?>
+<script type="text/javascript">
+//create serializer controller, that will syncronize grid checkboxes with hidden input
+var mobicommerceObjectController = $H(<?php echo $this->getObjectsJSON() ?>);
+$('<?php echo $_id ?>').value = mobicommerceObjectController.toQueryString();
+
+function mobicommerceRegisterObject(grid, element, checked){
+
+	if(checked){
+		 mobicommerceObjectController.set(element.value,0);
+	}
+	else{
+		mobicommerceObjectController.unset(element.value);
+	}
+	
+	$('<?php echo $_id ?>').value = mobicommerceObjectController.toQueryString();
+	grid.reloadParams = {'<?php echo $this->getReloadParam() ?>[]':mobicommerceObjectController.keys()};
+}
+
+function mobicommerceObjectRowClick(grid, event){
+	var trElement = Event.findElement(event, 'tr');
+	var isInput   = Event.element(event).tagName == 'INPUT';
+	if(trElement){
+		var checkbox = Element.getElementsBySelector(trElement, 'input');
+		if(checkbox[0]){
+			var checked = isInput ? checkbox[0].checked : !checkbox[0].checked;
+			<?php echo $_gridJsObject ?>.setCheckboxChecked(checkbox[0], checked);
+		}
+	}
+}
+
+<?php echo $_gridJsObject ?>.rowClickCallback =	mobicommerceObjectRowClick;
+
+<?php echo $_gridJsObject ?>.checkboxCheckCallback = mobicommerceRegisterObject;
+
+
+</script>

@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">   
+    <default>
+	    <reference name="head">
+		    <action method="addJs"><script>mobiadmin2/plugin/jquery-1.9.1.min.js</script></action>
+		    <action method="addJs"><script>mobiadmin2/fancybox/jquery.fancybox.pack.js</script></action>
+			<action method="addCss"><name>fancybox/jquery.fancybox.css</name></action>
+			<action method="addCss"><name>mobiadmin2.css</name></action>
+		
+		    <action method="addJs"><script>mage/adminhtml/variables.js</script></action>
+			<action method="addJs"><script>mage/adminhtml/wysiwyg/widget.js</script></action>
+			<action method="addJs"><script>lib/flex.js</script></action>
+			<action method="addJs"><script>lib/FABridge.js</script></action>
+			<action method="addJs"><script>mage/adminhtml/flexuploader.js</script></action>
+			<action method="addJs"><script>mage/adminhtml/browser.js</script></action>
+		    <action method="addJs"><script>mobiadmin2/plugin/jquery-1.9.1.min.js</script></action>
+		    <action method="addJs"><script>mobiadmin2/colorpicker/colorpicker.js</script></action>
+		    <action method="addJs"><script>mobiadmin2/colorpicker/eye.js</script></action>
+		    <action method="addJs"><script>mobiadmin2/colorpicker/utils.js</script></action>
+		    <action method="addJs"><script>mobiadmin2/colorpicker/layout.js?ver=1.0.2</script></action>
+			
+			<action method="addCss"><name>colorpicker/css/colorpicker.css</name></action>
+		</reference>
+    </default>
+	<mobiadmin2_index_index>
+	    <reference name="content">
+			<block type="mobiadmin2/adminhtml_applications" name="applications"></block>
+		</reference> 
+    </mobiadmin2_index_index>
+    <mobiadmin2_index_edit>
+	    <update handle="editor" />	    
+	    <reference name="left">
+		    <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+			    <action method="setTemplate">
+					<template>mobiadmin2/application/edit/store/switcher.phtml</template>
+				</action>
+				<action method="setUseConfirm">
+					<params>0</params>
+				</action>
+			</block>
+            <block type="mobiadmin2/adminhtml_applications_edit_tabs" name="adminhtml.app.edit.tabs"/>
+			<block type="core/template" name="support" template="mobiadmin2/application/edit/tab/support.phtml"/>
+        </reference>
+	     <reference name="content">
+		     <block type="mobiadmin2/adminhtml_applications_edit" name="app.edit" />
+		     <block type="mobiadmin2/adminhtml_applications_edit" name="app.buynow" template="mobiadmin2/application/edit/buy.phtml"/>
+		 </reference>
+    </mobiadmin2_index_edit>	
+    <mobiadmin2_index_new>
+	    <reference name="head">
+		    <action method="addJs"><script>mobiadmin2/plugin/jquery-1.9.1.min.js</script></action>
+		    <action method="addJs"><script>mobiadmin2/fancybox/jquery.fancybox.pack.js</script></action>
+			<action method="addCss"><name>fancybox/jquery.fancybox.css</name></action>
+		</reference>
+	    <reference name="content">
+		    <block type="adminhtml/template" name="createappform" template="mobiadmin2/application/new/createappform.phtml"/>
+		</reference>
+    </mobiadmin2_index_new>	
+    <mobiadmin2_index_notification>
+	    <reference name="content">
+			<block type="mobiadmin2/adminhtml_notification" name="notification"></block>
+		</reference> 
+    </mobiadmin2_index_notification>
+	<mobiadmin2_index_labelsmessages>
+	    <reference name="left">
+			<block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+				<action method="setTemplate">
+					<template>mobiadmin2/labelsmessages/store/switcher.phtml</template>
+				</action>
+				<action method="setUseConfirm">
+					<params>0</params>
+				</action>
+			</block>
+			<block type="mobiadmin2/adminhtml_labelsmessages_edit_tabs" name="adminhtml.labelsmessages.edit.tabs"/>
+		</reference>
+		<reference name="content">
+		    <block type="mobiadmin2/adminhtml_labelsmessages_edit" name="labelsmessages.edit">
+			    <!-- <block type="mobiadmin2/adminhtml_labelsmessages_edit_form" name="labelsmessages.edit.form"/> -->
+			</block>
+		    <block type="adminhtml/template" name="createappform" template="mobiadmin2/labelsmessages/labelsmessages.phtml"/>
+		</reference>
+	</mobiadmin2_index_labelsmessages>
+	<mobiadmin2_category_widget>
+		<reference name="head">
+			<action method="addItem"><type>js</type><name>extjs/ext-tree.js</name><params/></action>
+            <action method="addItem"><type>js</type><name>extjs/fix-defer.js</name><params/></action>
+            <action method="addItem"><type>js</type><name>extjs/ext-tree-checkbox.js</name><params/></action>
+            <action method="addItem"><type>js_css</type><name>extjs/resources/css/ext-all.css</name><params/></action>
+            <action method="addItem"><type>js_css</type><name>extjs/resources/css/ytheme-magento.css</name><params/></action>
+
+            <action method="addCss"><name>lib/prototype/windows/themes/magento.css</name></action>
+			<action method="addItem"><type>js_css</type><name>extjs/resources/css/ytheme-magento.css</name></action>
+			<action method="addItem"><type>js_css</type><name>extjs/resources/css/ext-all.css</name></action>
+			<action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+		</reference>
+		
+		<reference name="left">
+			<!--catalog/navigation-->
+			<!--mobiadmin2/adminhtml_category_widget-->
+			<block type="adminhtml/catalog_category_tree" name="catalog.leftnav" template="mobiadmin2/categorywidget/left_nav.phtml" />
+		</reference>
+	    <reference name="content">
+			<block type="mobiadmin2/adminhtml_category_widget" template="mobiadmin2/categorywidget/grid.phtml" name="category_widget"></block>
+		</reference> 
+    </mobiadmin2_category_widget>
+    <mobiadmin2_cache_index>
+	    <reference name="content">
+			<block type="mobiadmin2/adminhtml_cache_index" template="mobiadmin2/cache/index.phtml" name="mobicommerce_cache_management"></block>
+		</reference> 
+    </mobiadmin2_cache_index>
+	<mobiadmin2_widget_categorygrid>
+	    <reference name="root">
+			<block type="mobiadmin2/adminhtml_applications_grid_widget_category" name="root" output="toHtml"/>
+		</reference>
+	</mobiadmin2_widget_categorygrid>
+	<mobiadmin2_widget_productgrid>
+	    <reference name="root">
+			<block type="mobiadmin2/adminhtml_applications_grid_widget_product" name="root" output="toHtml"/>
+		</reference>
+	</mobiadmin2_widget_productgrid>
+	<mobiadmin2_widget_deeplink>
+		<reference name="root">
+			<block type="mobiadmin2/adminhtml_applications_grid_widget_deeplink" name="root" output="toHtml">
+			</block>
+		</reference>
+	</mobiadmin2_widget_deeplink>
+	<mobiadmin2_widget_imagemap>
+	    <reference name="root">
+			<block type="adminhtml/template" name="root" output="toHtml">
+				<action method="setTemplate">
+					<template>mobiadmin2/application/edit/tab/widget/type/image/imagemap.phtml</template>
+				</action>
+			</block>
+		</reference>
+	</mobiadmin2_widget_imagemap>
+</layout>

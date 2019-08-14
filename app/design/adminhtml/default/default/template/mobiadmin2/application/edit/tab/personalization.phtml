@@ -1,0 +1,71 @@
+<?php
+   	$applicationData = Mage::registry('application_data');
+   	$applicationCode = $applicationData->getAppCode();
+   	$themeName = Mage::helper('mobiadmin2')->getThemeName($applicationCode);
+   	$theme_shopperfile = Mage::getBaseDir(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/mobi_assets/v/'.Mage::helper('mobiadmin2')->getMobiBaseVersion().'/theme_files/'.$themeName.'/personalizer'.'/'.'personalizer.xml';
+   	//echo $theme_shopperfile;exit;
+   	if(file_exists($theme_shopperfile)):
+	   $themeFileXmlData = simplexml_load_file($theme_shopperfile) or die("Error: Cannot create object");
+	   $appthemefile = Mage::getBaseDir('media').DS.'mobi_commerce'.DS.$applicationCode.DS.'personalizer/'.'personalizer.xml';
+		?>
+		<div class="personalization entry-edit">
+		    <div class="entry-edit-head">
+			    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Personalization <span class="app-scope">[Website]</span>')?></h4>
+			</div>
+			<div id="store_information" class="fieldset">
+			    <div class="hor-scroll">
+			    	<p class="guideline-text"><?php echo $this->__('Personalize color scheme of the mobile app. You have to restart the app to get reflection of the new color scheme in the app.'); ?></p>
+		            <table cellspacing="0" class="form-list">
+		                <tbody>
+						    <input type="hidden" value="<?php echo $themeName;?>" name="themename"/>
+						    <?php foreach($themeFileXmlData as $personalizatioOption => $themeOptionValue):?>
+							    <tr>
+								    <td class="label"><?php echo $themeOptionValue->title; ?></td>
+								    <td class="value">	
+									    <?php 								
+										if(file_exists ($appthemefile)) {
+											$issetXmlFile = simplexml_load_file($appthemefile);
+											$themeCurrentValue = $issetXmlFile->$personalizatioOption->current_value;
+										}else {
+											$themeCurrentValue = $themeOptionValue->current_value;
+										}
+										?>
+									    <input type="hidden" name="personalizer[<?php echo $personalizatioOption?>][type]" value="<?php echo $themeOptionValue->type; ?>">
+										<input type="hidden" name="personalizer[<?php echo $personalizatioOption?>][title]" value="<?php echo $themeOptionValue->title; ?>">								
+										<input type="hidden" name="personalizer[<?php echo $personalizatioOption?>][css]" value="<?php echo htmlspecialchars($themeOptionValue->css); ?>">
+										<input type="hidden" name="personalizer[<?php echo $personalizatioOption?>][description]" value="<?php echo $themeOptionValue->description; ?>">
+										<input type="hidden" name="personalizer[<?php echo $personalizatioOption?>][svg_filenames]" value="<?php echo $themeOptionValue->svg_filenames; ?>">
+										<input type="hidden" name="personalizer[<?php echo $personalizatioOption?>][code_session]" value="<?php echo $themeOptionValue->code_session; ?>">
+										<input type="hidden" name="personalizer[<?php echo $personalizatioOption?>][default_value]" value="<?php echo $themeOptionValue->default_value; ?>">
+										<input value="<?php echo $themeCurrentValue; ?>" id="colorpickerHidden<?php echo $personalizatioOption; ?>" type="hidden" name="personalizer[<?php echo $personalizatioOption; ?>][current_value]" class="<?php if(isset($themeOptionValue->inlinetype) && $themeOptionValue->inlinetype == 'rgba') echo 'rgba'; ?>">
+										
+										<div id="colorpickerField<?php echo $personalizatioOption?>" style="width:145px; height:24px; display:block; background:<?php if(isset($themeOptionValue->inlinetype) && $themeOptionValue->inlinetype == 'rgba') echo 'rgb('; ?><?php echo $themeCurrentValue; ?><?php if(isset($themeOptionValue->inlinetype) && $themeOptionValue->inlinetype == 'rgba') echo ')'; ?>; border:1px solid black;"><p style="font-size: 14px; line-height: 24px; margin: 0 !important;"><?php //echo $themeCurrentValue; ?></p></div>
+
+										<small style="display:block;"><?php echo $themeOptionValue->description; ?></small>
+									</td>
+									<script>
+									jQuery(function(){
+										jQuery('#colorpickerField<?php echo $personalizatioOption ?>').ColorPicker({
+											color: '<?php echo $themeCurrentValue; ?>',
+											onChange: function (hsb, hex, rgb) {
+												jQuery('#colorpickerField<?php echo $personalizatioOption ?>').css('backgroundColor', '#' + hex);
+												jQuery('#colorpickerHidden<?php echo $personalizatioOption ?>').val('#' + hex);
+												if(jQuery('#colorpickerHidden<?php echo $personalizatioOption ?>').hasClass('rgba')){
+													jQuery('#colorpickerHidden<?php echo $personalizatioOption ?>').val(rgb.r+','+rgb.g+','+rgb.b);
+												}
+											}
+										});
+									});
+									</script>
+								</tr>
+							<?php endforeach;?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	<?php
+	else:
+		echo "Missing persoanlizer file";
+	endif;
+?>

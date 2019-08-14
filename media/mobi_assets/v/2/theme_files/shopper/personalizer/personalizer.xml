@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<mobicommerce_personalizer>
+    <option_1>
+        <type>colorpicker</type>
+        <title>Header Background Color</title>
+        <css>.topbar.ui-header { background-color: --COLOR--; border-color: --COLOR--; }</css>
+        <description>Configure background color for header of the app</description>
+        <svg_filenames></svg_filenames>
+        <code_session></code_session>
+        <default_value>#ffc107</default_value>
+        <current_value>#ffc107</current_value>
+    </option_1>
+    <option_2>
+        <type>colorpicker</type>
+        <title>Header Font and Icon Color</title>
+        <css>.topbar.ui-header .ui-title, .topbar.ui-header .ui-title span.p-count { color: --COLOR--; }</css>
+        <description>Configure font and icon color for header of the app</description>
+        <svg_filenames>icon-menu.svg|icon-cart.svg|menu-sub.svg|icon-home.svg|icon-search.svg|icon-back.svg|icon-next-arrow.svg|icon-close.svg|icon-plus-menu.svg</svg_filenames>
+        <code_session>theme1_topbar</code_session>
+        <default_value>#3c3c3c</default_value>
+        <current_value>#3c3c3c</current_value>
+    </option_2>
+    <option_3>
+        <type>colorpicker</type>
+        <inlinetype>rgba</inlinetype>
+        <title>Text Color</title>
+        <css>.ui-select span, .category_menu_box .ui-listview .ui-btn.ui-btn-d,.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper,.new-catpage ul li a,.filter-bar .filter-div .filter-by, .filter-bar .filter-div .short-by,.rating-product a h3,h1, h2, h3, h4, h5, h6,.color-primary,[class^="list-"] li, [class^="list-"] li > a,[class^="list-"] h4,.shopping-cart-list .product-name h4,.data-table tr th,.tab-nav.ui-tabs ul li.ui-state-default a,.tab-nav .tab-detail label span.price,.product-slide-horizontal span,.listing-button a.ui-link,label.ui-checkbox-off.ui-btn, label.ui-checkbox-on.ui-btn,label.ui-radio-off.ui-btn, label.ui-radio-on.ui-btn,.or-login,.address-block p,.shopping-cart-total .left.color-light,#order_success p,#review_list .product-detail-text section h3.color-warning,#review_form .rating .left,#storelocator_rating_list .product-detail-text section h3.color-warning { color: rgba(--COLOR--,1); }|p,.ui-page-theme-a a.v-all-right,.product-slide-horizontal .swiper-slide .eachproduct a,.new-catpage ul li li a,.availability p, .availability .data-table,.shopping-cart-list .color-light,.user-menu ul li a,.shopping-cart-list p,.rating,.address-block .user-name,.address-block,.left-call a strong,.data-table tr td,.button-list .li-row,.ui-page-theme-a a, html .ui-bar-a a,html .ui-body-a a, html body .ui-group-theme-a a,input[type=text],input[type=email],input[type=password],input[type=email], input[type=file], input[type=number],input[type=search],input[type=tel],select,textarea,.orderhistory-list a.icon-arow p.color-light,.orderhistory-detail p.color-light,.tab-nav ul li a,.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, .ui-page-theme-a .ui-checkbox-on::after, html .ui-bar-a .ui-checkbox-on::after, html .ui-body-a .ui-checkbox-on::after, html body .ui-group-theme-a .ui-checkbox-on::after, .ui-btn.ui-checkbox-on.ui-btn-a::after, .ui-page-theme-a .ui-flipswitch-active, html .ui-bar-a .ui-flipswitch-active, html .ui-body-a .ui-flipswitch-active, html body .ui-group-theme-a .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active,.filter-bar .filter-div .filter-by span.applied-label, .filter-bar .filter-div .short-by span.applied-label,.ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a { color: rgba(--COLOR--,0.7); }|.color-light,.rating-product .rating-digit,.ui-controlgroup-controls label span,.user-menu ul li.has-optn span,.ratingbar div.right { color: rgba(--COLOR--,0.5); }|::-webkit-input-placeholder{color:rgba(--COLOR--,0.7) !important;}|:-moz-placeholder{color:rgba(--COLOR--,0.7) !important;}|::-moz-placeholder{color:rgba(--COLOR--,0.7) !important;}|:-ms-input-placeholder{color:rgba(--COLOR--,0.7) !important;}</css>
+        <description>Configure text color of the app</description>
+        <svg_filenames>icon-chevron-right.svg</svg_filenames>
+        <code_session>theme1_text</code_session>
+        <default_value>25,25,25</default_value>
+        <current_value>25,25,25</current_value>
+    </option_3>
+    <option_4>
+        <type>colorpicker</type>
+        <title>Background Color of Primary Button</title>
+        <css>html head + body .ui-btn.ui-btn-c { background-color: --COLOR--; border-color: --COLOR--;}</css>
+        <description>Configure background color for all primary buttons such as Buy Now, Process to Checkout, Continue, Place Order etc</description>
+        <svg_filenames></svg_filenames>
+        <code_session></code_session>
+        <default_value>#333333</default_value>
+        <current_value>#333333</current_value>
+    </option_4>
+    <option_5>
+        <type>colorpicker</type>
+        <title>Text Color of Primary Button</title>
+        <css>html head + body .ui-btn.ui-btn-c { color: --COLOR--; }</css>
+        <description>Configure text Color of primary buttons such as Buy Now, Process to Checkout, Continue, Place Order etc</description>
+        <svg_filenames>icon-delete.svg</svg_filenames>
+        <code_session>primarybutton</code_session>
+        <default_value>#FFFFFF</default_value>
+        <current_value>#FFFFFF</current_value>
+    </option_5>
+    <option_6>
+        <type>colorpicker</type>
+        <title>Background Color of Secondary Button </title>
+        <css>html head + body .ui-btn.ui-btn-a, html head + body .ui-btn.ui-btn-b { background-color: --COLOR--; border-color: --COLOR--; }</css>
+        <description>Configure background color for all secondary buttons such as -,+, Login, Signup, Forgot Password etc</description>
+        <svg_filenames></svg_filenames>
+        <code_session></code_session>
+        <default_value>#222222</default_value>
+        <current_value>#222222</current_value>
+    </option_6>
+    <option_7>
+        <type>colorpicker</type>
+        <title>Text Color of Secondary Button</title>
+        <css>html head + body .ui-btn.ui-btn-a, html head + body .ui-btn.ui-btn-b { color: --COLOR--; }</css>
+        <description>Configure text Color of secondary buttons such as -,+, Login, Signup, Forgot Password etc</description>
+        <svg_filenames>icon-plus.svg|icon-minus.svg</svg_filenames>
+        <code_session>smallbutton</code_session>
+        <default_value>#FFFFFF</default_value>
+        <current_value>#FFFFFF</current_value>
+    </option_7>
+    <option_8>
+        <type>colorpicker</type>
+        <title>Color of Price</title>
+        <css>.price-color,.color-warning,.name-rating .p-name .price-div .main-price,.name-rating .p-name .price-div .old-price,.shopping-cart-total .text-line .right.color-primary,[class^="list-"] .cost-line .price-color,.product-slide-horizontal span.price-color { color: --COLOR--; }</css>
+        <description>Configure price color</description>
+        <svg_filenames></svg_filenames>
+        <code_session></code_session>
+        <default_value>#191919</default_value>
+        <current_value>#191919</current_value>
+    </option_8>
+    <option_9>
+        <type>colorpicker</type>
+        <title>Rating Color</title>
+        <css>.ratingbar .bar span {background-color: --COLOR-- !important;}|section h3.color-warning {color: --COLOR--;}|.rating-product .progress span{ background-color: --COLOR--; }</css>
+        <description>Configure rating icon and background color</description>
+        <svg_filenames>icon-star.svg|icon-star-12.svg|icon-star-14.svg|icon-star-34.svg</svg_filenames>
+        <code_session>theme1_rating</code_session>
+        <default_value>#ff9d00</default_value>
+        <current_value>#ff9d00</current_value>
+    </option_9>
+    <option_20>
+        <type>colorpicker</type>
+        <title>Footer Background Color</title>
+        <css>.persistent_footer {background-color: --COLOR--;}</css>
+        <description>Configure background color for footer of the app</description>
+        <svg_filenames></svg_filenames>
+        <code_session></code_session>
+        <default_value>#ededed</default_value>
+        <current_value>#ededed</current_value>
+    </option_20>
+    <option_21>
+        <type>colorpicker</type>
+        <title>Footer Font and Icon Color</title>
+        <css>.persistent_footer a.ui-btn, .persistent_footer a.ui-btn span {color: --COLOR--;}</css>
+        <description>Configure font and icon color for footer of the app</description>
+        <svg_filenames>ios-icon-account.svg|ios-icon-cart.svg|ios-icon-home.svg|ios-icon-search.svg|ios-icon-wishlist.svg</svg_filenames>
+        <code_session>bottom_navigation</code_session>
+        <default_value>#777777</default_value>
+        <current_value>#777777</current_value>
+    </option_21>
+    <option_22>
+        <type>colorpicker</type>
+        <title>Footer Active Font and Icon Color</title>
+        <css>.persistent_footer li.active a.ui-btn, .persistent_footer li.active a.ui-btn span,.persistent_footer li.active a.ui-btn em.cart-buble {color: --COLOR--;}</css>
+        <description>Configure font and icon color for active footer of the app</description>
+        <svg_filenames>ios-icon-account-hover.svg|ios-icon-cart-hover.svg|ios-icon-home-hover.svg|ios-icon-search-hover.svg|ios-icon-wishlist-hover.svg</svg_filenames>
+        <code_session>bottom_navigation_hover</code_session>
+        <default_value>#ffc107</default_value>
+        <current_value>#ffc107</current_value>
+    </option_22>
+</mobicommerce_personalizer>

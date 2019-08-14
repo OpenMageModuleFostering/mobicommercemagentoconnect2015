@@ -1,0 +1,143 @@
+<?php echo  Mage::app()->getLayout()->getBlock('head')->setTemplate('page/head.phtml')->toHtml()?>
+<div class="home-widget-content">
+	<div class="content-header">
+		<table cellspacing="0" class="grid-header">
+			<tr>
+				<td class="a-right">
+					<button onclick="savedeeplink()" class="scalable save" type="button"><span><?php echo $this->__('Insert Link')?></span></button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Link Type')?></h4>
+	</div>
+	<div class="fieldset fieldset-wide">
+		<table class="deeplink-widget-content form-list" cellspacing="0">
+			<tbody>
+				<tr>
+					<td class="label"><label for=""></label></td>
+					<td class="value">
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><label for=""><?php echo $this->__('Select Link Type')?></label></td>
+					<td class="value" >
+						<select id="popuplinktype" onchange="selectlinktype()">
+						  <option value="0"><?php echo $this->__('Select')?></option>
+						  <option value="product"><?php echo $this->__('Product Page')?></option>
+						  <option value="category"><?php echo $this->__('Category Page')?></option>
+						  <option value="cms"><?php echo $this->__('Cms Page')?></option>
+						  <option value="phone"><?php echo $this->__('Phone Call')?></option>
+						  <option value="email"><?php echo $this->__('Email')?></option>
+						  <option value="external"><?php echo $this->__('External Webpage Link')?></option>
+						</select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="link-response-content">
+</div>
+<script>
+   <?php $link = Mage::app()->getRequest()->getParam('link'); ?>
+   <?php if(!empty($link)):?>
+           <?php 
+		   $linkparts = explode("||",$link);
+		   ?>
+		   jQuery('#loading-mask',parent.document).show();		   
+	       selectedlinktype = "<?php echo $linkparts['0']?>";
+		   jQuery('#popuplinktype').val(selectedlinktype).trigger('change');
+		   new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/linktype')?>", {
+			    method: 'Post',
+				parameters: {isAjax : 1, link_type : selectedlinktype},
+				onComplete: function(data) {				    
+				},
+				onSuccess: function(response){
+					jQuery('#loading-mask',parent.document).hide();
+					var json = response.responseText.evalJSON(true);
+					if(json.status == 'success'){
+						jQuery('.link-response-content').html(json.deeplink_block_content);
+					}					
+					else{
+						alert(json.error);
+					}
+				},
+				onFailure: function(response) {
+					var json = response.responseText.evalJSON(true);
+					alert(json.error);
+				}
+		   });
+   <?php endif;?>
+   function selectlinktype(){
+	   var selectedlinktype = jQuery( "#popuplinktype option:selected" ).val();
+	   if(selectedlinktype != 0){
+		   jQuery('#loading-mask',parent.document).show();
+		   new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/linktype')?>", {
+			    method: 'Post',
+				parameters: {isAjax : 1, link_type : selectedlinktype},
+				onComplete: function(data) {				    
+				},
+				onSuccess: function(response){
+					jQuery('#loading-mask',parent.document).hide();
+					var json = response.responseText.evalJSON(true);
+					if(json.status == 'success'){
+						jQuery('.link-response-content').html(json.deeplink_block_content);
+					}					
+					else{
+						alert(json.error);
+					}
+				},
+				onFailure: function(response){
+					var json = response.responseText.evalJSON(true);
+					alert(json.error);
+				}
+		   });
+	   }else {
+		   jQuery('.link-response-content').html('');
+	   }
+   }
+   function savedeeplink() {   
+       var type = jQuery('#linktype').val();
+	   if(typeof type ==="undefined"){
+			   alert("Please Select Link Type");
+			   return true;
+		   }
+	   if(typeof type =="0"){
+		   alert("Please Select Link Type");
+		   return true;
+	   }
+	   if (type == 'product' || type == 'category' || type == 'cms') {
+	       var typevalue =  jQuery("input[name=radiochecked]:checked").val();
+		   if(typeof typevalue ==="undefined"){
+			   alert("Please Select On of Item");
+			   return true;
+		   }
+		   if(typeof typevalue ==""){
+			   alert("Please Select On of Item");
+			   return true;
+		   }
+	   }else {
+		   var typevalue = jQuery('.linktypevalue').val();
+		   if(typeof typevalue === 'undefined'){
+			    alert("Please Insert Value");
+                return true;
+		   }
+		   if(! typevalue){
+			   alert("Please Insert Value");
+               return true;
+		   }
+	   }
+	   var link = type+'||'+typevalue;
+	   jQuery('.image-link-value',parent.document).val(link);
+	   jQuery(".magento_close",parent.document).click();
+   }
+</script>
+<style>
+.product-grid .content-header {
+   display:none;
+}
+</style>

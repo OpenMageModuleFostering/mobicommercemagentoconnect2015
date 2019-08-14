@@ -1,0 +1,23 @@
+<?php
+$email = Mage::app()->getRequest()->getParam('link_type_value');
+?>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Email Address')?></h4>
+	</div>
+	<div class="fieldset ">
+		<div class="hor-scroll">
+			<table class="form-list" cellspacing="0">
+			    <tbody>
+				    <tr>
+						<input id="linktype" type="hidden" name="type" value="email">
+					    <td class="label"><label for="website_id"><?php echo $this->__('Email Address')?></label></td>
+						<td class="value">
+							<input  type="text" class="linktypevalue required-entry input-text validate-email" value="<?php echo $email?>" name="value">
+						</td>
+				    </tr>
+			    </tbody>
+			</table>
+		</div>
+	</div>	
+</div>

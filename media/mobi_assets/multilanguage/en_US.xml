@@ -1,0 +1,2243 @@
+<?xml version="1.0"?>
+<mobicommerce_multilanguage>
+  <Please_wait>
+    <mm_type>message</mm_type>
+    <mm_label>Please wait</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Please wait</mm_text>
+    <mm_help>Error: When user trigger new action while previous one is still processsing.</mm_help>
+  </Please_wait>
+  <or>
+    <mm_type>label</mm_type>
+    <mm_label>or</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>or</mm_text>
+    <mm_help>Label: Display to show 2 action options.</mm_help>
+  </or>
+  <Home>
+    <mm_type>label</mm_type>
+    <mm_label>Home</mm_label>
+    <mm_maxlength>8</mm_maxlength>
+    <mm_text>Home</mm_text>
+    <mm_help>Label: Home page title and button title.</mm_help>
+  </Home>
+  <No_internet_connection>
+    <mm_type>message</mm_type>
+    <mm_label>No internet connection</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>No internet connection</mm_text>
+    <mm_help>Message:No internet connection</mm_help>
+  </No_internet_connection>
+  <Shopping_Category>
+    <mm_type>label</mm_type>
+    <mm_label>Shopping Category</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Shopping Category</mm_text>
+    <mm_help>Label: Shopping Category</mm_help>
+  </Shopping_Category>
+  <Oops_There_are_no_categories_to_display>
+    <mm_type>message</mm_type>
+    <mm_label>Oops! There are no categories to display.</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Oops! There are no categories to display.</mm_text>
+    <mm_help>Text: When no category found.</mm_help>
+  </Oops_There_are_no_categories_to_display>
+  <Shop_by_category>
+    <mm_type>label</mm_type>
+    <mm_label>Shop by category</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Shop by category</mm_text>
+    <mm_help>Label: Title to show above category names.</mm_help>
+  </Shop_by_category>
+  <Categories>
+    <mm_type>label</mm_type>
+    <mm_label>Categories</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Categories</mm_text>
+    <mm_help>Label: Title to show on homepage, above the category.</mm_help>
+  </Categories>
+  <All_Products>
+    <mm_type>label</mm_type>
+    <mm_label>All Products</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>All Products</mm_text>
+    <mm_help>Label: Link title, available on top of sub categories, to give option to user to browse all products for selected category. </mm_help>
+  </All_Products>
+  <Profile>
+    <mm_type>label</mm_type>
+    <mm_label>Profile</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Profile</mm_text>
+    <mm_help>Label: Profile page title and button title.</mm_help>
+  </Profile>
+  <List_Page>
+    <mm_type>label</mm_type>
+    <mm_label>List Page</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>List Page</mm_text>
+    <mm_help>Label: Page title</mm_help>
+  </List_Page>
+  <Product_List>
+    <mm_type>label</mm_type>
+    <mm_label>Product List</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Product List</mm_text>
+    <mm_help>Label: Product List page title </mm_help>
+  </Product_List>
+  <products_found>
+    <mm_type>label</mm_type>
+    <mm_label>products found</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>products found</mm_text>
+    <mm_help>Label: Label displayed on product listing page to show No. of products found. </mm_help>
+  </products_found>
+  <Product_Detail>
+    <mm_type>label</mm_type>
+    <mm_label>Product Detail</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Product Detail</mm_text>
+    <mm_help>Label: Product Detail page title</mm_help>
+  </Product_Detail>
+  <Details>
+    <mm_type>label</mm_type>
+    <mm_label>Details</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Details</mm_text>
+    <mm_help>Label: Label displayed above the product detail on product detail page.</mm_help>
+  </Details>
+  <Buy_Now>
+    <mm_type>label</mm_type>
+    <mm_label>Buy Now</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Buy Now</mm_text>
+    <mm_help>Label: Buy Now button title.</mm_help>
+  </Buy_Now>
+  <Choose_an_option>
+    <mm_type>label</mm_type>
+    <mm_label>Choose an option</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Choose an option</mm_text>
+    <mm_help>Label: First option for product options.</mm_help>
+  </Choose_an_option>
+  <Item_added_successfully>
+    <mm_type>message</mm_type>
+    <mm_label>Item added successfully</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Item added successfully</mm_text>
+    <mm_help>Message: When the Item added successfully into the cart. </mm_help>
+  </Item_added_successfully>
+  <We_are_sorry_No_products_found>
+    <mm_type>message</mm_type>
+    <mm_label>We are sorry. No products found.</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>No products found.</mm_text>
+    <mm_help>Text: When no products found for selected search criteria or category.</mm_help>
+  </We_are_sorry_No_products_found>
+  <Load_More>
+    <mm_type>label</mm_type>
+    <mm_label>Load More</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Load More</mm_text>
+    <mm_help>Label: Load More button title, displayed on product listing pages.</mm_help>
+  </Load_More>
+  <Viewers>
+    <mm_type>label</mm_type>
+    <mm_label>Viewers</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Viewers</mm_text>
+    <mm_help>Label: Viewers Label.</mm_help>
+  </Viewers>
+  <Add_to_cart>
+    <mm_type>label</mm_type>
+    <mm_label>Add to cart</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Add to cart</mm_text>
+    <mm_help>Label: Add to cart button title.</mm_help>
+  </Add_to_cart>
+  <Downloadable_link>
+    <mm_type>label</mm_type>
+    <mm_label>Downloadable link</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Downloadable link</mm_text>
+    <mm_help>Label: Downloadable link title. </mm_help>
+  </Downloadable_link>
+  <Review>
+    <mm_type>label</mm_type>
+    <mm_label>Review</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Review</mm_text>
+    <mm_help>Label: Review text and button title.</mm_help>
+  </Review>
+  <No_reviews_found>
+    <mm_type>message</mm_type>
+    <mm_label>No reviews found</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>No reviews found</mm_text>
+    <mm_help>Text: When no reviews found for selected product.</mm_help>
+  </No_reviews_found>
+  <Shopping_Cart>
+    <mm_type>label</mm_type>
+    <mm_label>Shopping Cart</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Shopping Cart</mm_text>
+    <mm_help>Label: Shopping Cart button title.</mm_help>
+  </Shopping_Cart>
+  <QTY>
+    <mm_type>label</mm_type>
+    <mm_label>QTY</mm_label>
+    <mm_maxlength>5</mm_maxlength>
+    <mm_text>QTY</mm_text>
+    <mm_help>Label: Label for product Quantity.</mm_help>
+  </QTY>
+  <TOTAL>
+    <mm_type>label</mm_type>
+    <mm_label>TOTAL</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>TOTAL</mm_text>
+    <mm_help>Label: Label for cart &amp;amp;amp; order total. </mm_help>
+  </TOTAL>
+  <Subtotal>
+    <mm_type>label</mm_type>
+    <mm_label>Subtotal</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Subtotal</mm_text>
+    <mm_help>Label: Label for cart &amp;amp;amp; order subtotal.</mm_help>
+  </Subtotal>
+  <Tax>
+    <mm_type>label</mm_type>
+    <mm_label>Tax</mm_label>
+    <mm_maxlength>5</mm_maxlength>
+    <mm_text>Tax</mm_text>
+    <mm_help>Label: Label for cart &amp;amp;amp; order Tax.</mm_help>
+  </Tax>
+  <Discount>
+    <mm_type>label</mm_type>
+    <mm_label>Discount</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Discount</mm_text>
+    <mm_help>Label: Label for cart &amp;amp;amp; order discount. </mm_help>
+  </Discount>
+  <Grand_Total>
+    <mm_type>label</mm_type>
+    <mm_label>Grand Total</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Grand Total</mm_text>
+    <mm_help>Label: Label for cart &amp;amp;amp; order grand total.</mm_help>
+  </Grand_Total>
+  <The_shopping_cart_is_empty>
+    <mm_type>message</mm_type>
+    <mm_label>The shopping cart is empty.</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>The shopping cart is empty.</mm_text>
+    <mm_help>Error: When the shopping cart is empty.</mm_help>
+  </The_shopping_cart_is_empty>
+  <Cart_updated_successfully>
+    <mm_type>message</mm_type>
+    <mm_label>Cart updated successfully</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Cart updated successfully</mm_text>
+    <mm_help>Message: When the cart updated successfully.</mm_help>
+  </Cart_updated_successfully>
+  <Update_Cart>
+    <mm_type>label</mm_type>
+    <mm_label>Update Cart</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Update Cart</mm_text>
+    <mm_help>Label: Update Cart button title. </mm_help>
+  </Update_Cart>
+  <Proceed_To_Checkout>
+    <mm_type>label</mm_type>
+    <mm_label>Proceed To Checkout</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Proceed To Checkout</mm_text>
+    <mm_help>Label: Proceed to checkout</mm_help>
+  </Proceed_To_Checkout>
+  <Checkout>
+    <mm_type>label</mm_type>
+    <mm_label>Checkout</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Checkout</mm_text>
+    <mm_help>Label: Checkout button title.</mm_help>
+  </Checkout>
+  <Cart_is_empty>
+    <mm_type>message</mm_type>
+    <mm_label>Cart is empty</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Cart is empty</mm_text>
+    <mm_help>Text: When the cart is empty. </mm_help>
+  </Cart_is_empty>
+  <One_of_your_cart_item_is_having_error>
+    <mm_type>message</mm_type>
+    <mm_label>One of your cart item is having error</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>One of your cart item is having problem</mm_text>
+    <mm_help>Text: When one of the cart item is having error such as not available or so.</mm_help>
+  </One_of_your_cart_item_is_having_error>
+  <Login>
+    <mm_type>label</mm_type>
+    <mm_label>Login</mm_label>
+    <mm_maxlength>7</mm_maxlength>
+    <mm_text>Login</mm_text>
+    <mm_help>Label: Login button title.</mm_help>
+  </Login>
+  <Enter_your_username_password_to_get_access>
+    <mm_type>message</mm_type>
+    <mm_label>Enter your username password to get access.</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Enter your username password to get access.</mm_text>
+    <mm_help>Error: When requested action required login.</mm_help>
+  </Enter_your_username_password_to_get_access>
+  <Username>
+    <mm_type>label</mm_type>
+    <mm_label>Username</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Username</mm_text>
+    <mm_help>Label: Label for Username field.</mm_help>
+  </Username>
+  <Password>
+    <mm_type>label</mm_type>
+    <mm_label>Password</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Password</mm_text>
+    <mm_help>Label: Label for password field.</mm_help>
+  </Password>
+  <Sign_Up>
+    <mm_type>label</mm_type>
+    <mm_label>Sign Up</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Sign Up</mm_text>
+    <mm_help>Label: Sign Up button title.</mm_help>
+  </Sign_Up>
+  <Enter_username>
+    <mm_type>message</mm_type>
+    <mm_label>Enter username</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter username</mm_text>
+    <mm_help>Error: When username is empty.</mm_help>
+  </Enter_username>
+  <Enter_password>
+    <mm_type>message</mm_type>
+    <mm_label>Enter password</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter password</mm_text>
+    <mm_help>Error: When password is empty. </mm_help>
+  </Enter_password>
+  <Invalid_username_or_password>
+    <mm_type>message</mm_type>
+    <mm_label>Invalid username or password</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Invalid username or password</mm_text>
+    <mm_help>Error: When Invalid username or password entered.</mm_help>
+  </Invalid_username_or_password>
+  <First_name>
+    <mm_type>label</mm_type>
+    <mm_label>First name</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>First name</mm_text>
+    <mm_help>Label: Label for firstname field.</mm_help>
+  </First_name>
+  <Last_name>
+    <mm_type>label</mm_type>
+    <mm_label>Last name</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Last name</mm_text>
+    <mm_help>Label: Label for lastname field.</mm_help>
+  </Last_name>
+  <Your_Email>
+    <mm_type>label</mm_type>
+    <mm_label>Your Email</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Your Email</mm_text>
+    <mm_help>Label: Label for email address field.</mm_help>
+  </Your_Email>
+  <Submit>
+    <mm_type>label</mm_type>
+    <mm_label>Submit</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Submit</mm_text>
+    <mm_help>Label: Submit button title.</mm_help>
+  </Submit>
+  <Checkout_As_Guest>
+    <mm_type>label</mm_type>
+    <mm_label>Checkout as Guest</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Checkout as Guest</mm_text>
+    <mm_help>Label: Checkout as Guest</mm_help>
+  </Checkout_As_Guest>
+  <Signup_Form>
+    <mm_type>label</mm_type>
+    <mm_label>Signup Form</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Signup Form</mm_text>
+    <mm_help>Label: Signup Form page title.</mm_help>
+  </Signup_Form>
+  <Signup>
+    <mm_type>label</mm_type>
+    <mm_label>Signup</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Signup</mm_text>
+    <mm_help>Label: Signup button title.</mm_help>
+  </Signup>
+  <Enter_firstname>
+    <mm_type>message</mm_type>
+    <mm_label>Enter firstname</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter firstname</mm_text>
+    <mm_help>Error: When firstname is empty. </mm_help>
+  </Enter_firstname>
+  <Enter_lastname>
+    <mm_type>message</mm_type>
+    <mm_label>Enter lastname</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter lastname</mm_text>
+    <mm_help>Error: When lastname is empty.</mm_help>
+  </Enter_lastname>
+  <Enter_email>
+    <mm_type>message</mm_type>
+    <mm_label>Enter email</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter email address</mm_text>
+    <mm_help>Error: When email address is empty.</mm_help>
+  </Enter_email>
+  <Please_enter_valid_email>
+    <mm_type>message</mm_type>
+    <mm_label>Please enter valid email</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Please enter valid email address</mm_text>
+    <mm_help>Error: When email address is invalid.</mm_help>
+  </Please_enter_valid_email>
+  <Registration_done_successfully>
+    <mm_type>message</mm_type>
+    <mm_label>Registration done successfully</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Congratulation! You are successfully registered </mm_text>
+    <mm_help>Message: When successfully registration has been done. </mm_help>
+  </Registration_done_successfully>
+  <Please_check_your_email>
+    <mm_type>message</mm_type>
+    <mm_label>Please check your email</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Please check your email</mm_text>
+    <mm_help>Message: When user reset their password. </mm_help>
+  </Please_check_your_email>
+  <Forgot_Password>
+    <mm_type>label</mm_type>
+    <mm_label>Forgot Password</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Forgot Password</mm_text>
+    <mm_help>Label: Forgot Password button title.</mm_help>
+  </Forgot_Password>
+  <Billing_And_Shipping_Details>
+    <mm_type>label</mm_type>
+    <mm_label>Billing &amp; Shipping Details</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Billing &amp;amp;amp; Shipping Details</mm_text>
+    <mm_help>Label:Billing &amp;amp;amp; Shipping Details</mm_help>
+  </Billing_And_Shipping_Details>
+  <Billing>
+    <mm_type>label</mm_type>
+    <mm_label>Billing</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Billing</mm_text>
+    <mm_help>Label: Label for Billing</mm_help>
+  </Billing>
+  <Address>
+    <mm_type>label</mm_type>
+    <mm_label>Address</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Address</mm_text>
+    <mm_help>Label: Label for address field, available on payment page. </mm_help>
+  </Address>
+  <Payment>
+    <mm_type>label</mm_type>
+    <mm_label>Payment</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Payment</mm_text>
+    <mm_help>Label: Label for payment field, available on payment page.</mm_help>
+  </Payment>
+  <Continue>
+    <mm_type>label</mm_type>
+    <mm_label>Continue</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Continue</mm_text>
+    <mm_help>Label: Continue button title. </mm_help>
+  </Continue>
+  <Billing_Address>
+    <mm_type>label</mm_type>
+    <mm_label>Billing Address</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Billing Address</mm_text>
+    <mm_help>Label: Label for Billing Address.</mm_help>
+  </Billing_Address>
+  <Select_a_billing_address_from_your_address_book_or_enter_a_new_address>
+    <mm_type>label</mm_type>
+    <mm_label>Select a billing address from your address book or enter a new address.</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Select a billing address from your address book or enter a new address.</mm_text>
+    <mm_help>Label: Title available on billing addresses drop down.</mm_help>
+  </Select_a_billing_address_from_your_address_book_or_enter_a_new_address>
+  <New_Address>
+    <mm_type>label</mm_type>
+    <mm_label>New Address</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>New Address</mm_text>
+    <mm_help>Label: Title for New Billing Address form.</mm_help>
+  </New_Address>
+  <Company>
+    <mm_type>label</mm_type>
+    <mm_label>Company</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Company</mm_text>
+    <mm_help>Label: Label for company field, available on address page. </mm_help>
+  </Company>
+  <City>
+    <mm_type>label</mm_type>
+    <mm_label>City</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>City</mm_text>
+    <mm_help>Label: Label for city field, available on address page. </mm_help>
+  </City>
+  <State>
+    <mm_type>label</mm_type>
+    <mm_label>State</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>State</mm_text>
+    <mm_help>Label: Label for state field, available on address page. </mm_help>
+  </State>
+  <Country>
+    <mm_type>label</mm_type>
+    <mm_label>Country</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Country</mm_text>
+    <mm_help>Label: Label for country field, available on address page. </mm_help>
+  </Country>
+  <select>
+    <mm_type>label</mm_type>
+    <mm_label>select</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>select</mm_text>
+    <mm_help>Label: Label for drop downs. </mm_help>
+  </select>
+  <Billing_street>
+    <mm_type>label</mm_type>
+    <mm_label>Billing street</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Billing street</mm_text>
+    <mm_help>Label: Label for billing street field, available on address page. </mm_help>
+  </Billing_street>
+  <Postcode>
+    <mm_type>label</mm_type>
+    <mm_label>Postcode</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Postcode</mm_text>
+    <mm_help>Label: Label for postcode field, available on address page. </mm_help>
+  </Postcode>
+  <Telephone>
+    <mm_type>label</mm_type>
+    <mm_label>Telephone</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Telephone</mm_text>
+    <mm_help>Label: Label for telephone field, available on address page. </mm_help>
+  </Telephone>
+  <Fax>
+    <mm_type>label</mm_type>
+    <mm_label>Fax</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Fax</mm_text>
+    <mm_help>Label: Label for fax field, available on address page. </mm_help>
+  </Fax>
+  <Same_as_billing>
+    <mm_type>label</mm_type>
+    <mm_label>Same as billing</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Same as billing</mm_text>
+    <mm_help>Label: Label for Same as billing option. </mm_help>
+  </Same_as_billing>
+  <Shipping_Address>
+    <mm_type>label</mm_type>
+    <mm_label>Shipping Address</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Shipping Address</mm_text>
+    <mm_help>Label: Title for Shipping Address form.</mm_help>
+  </Shipping_Address>
+  <Select_a_shipping_address_from_your_address_book_or_enter_a_new_address>
+    <mm_type>label</mm_type>
+    <mm_label>Select a shipping address from your address book or enter a new address.</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Select a shipping address from your address book or enter a new address.</mm_text>
+    <mm_help>Label: Title available on shipping addresses drop down.</mm_help>
+  </Select_a_shipping_address_from_your_address_book_or_enter_a_new_address>
+  <Shipping_street>
+    <mm_type>label</mm_type>
+    <mm_label>Shipping street</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Shipping street</mm_text>
+    <mm_help>Label: Label for shipping street field, available on address page. </mm_help>
+  </Shipping_street>
+  <Enter_billing_firstname>
+    <mm_type>message</mm_type>
+    <mm_label>Enter billing firstname</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter billing firstname</mm_text>
+    <mm_help>Error: When billing firstname is empty.</mm_help>
+  </Enter_billing_firstname>
+  <Enter_billing_lastname>
+    <mm_type>message</mm_type>
+    <mm_label>Enter billing lastname</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter billing lastname</mm_text>
+    <mm_help>Error: When billing lastname is empty.</mm_help>
+  </Enter_billing_lastname>
+  <Enter_billing_city>
+    <mm_type>message</mm_type>
+    <mm_label>Enter billing city</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter billing city</mm_text>
+    <mm_help>Error: When billing city is empty.</mm_help>
+  </Enter_billing_city>
+  <Enter_billing_state>
+    <mm_type>message</mm_type>
+    <mm_label>Enter billing state</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter billing state</mm_text>
+    <mm_help>Error: When billing state is empty.</mm_help>
+  </Enter_billing_state>
+  <Enter_billing_country>
+    <mm_type>message</mm_type>
+    <mm_label>Enter billing country</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter billing country</mm_text>
+    <mm_help>Error: When billing country is empty.</mm_help>
+  </Enter_billing_country>
+  <Enter_billing_street>
+    <mm_type>message</mm_type>
+    <mm_label>Enter billing street</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter billing street</mm_text>
+    <mm_help>Error: When billing street is empty.</mm_help>
+  </Enter_billing_street>
+  <Enter_billing_postcode>
+    <mm_type>message</mm_type>
+    <mm_label>Enter billing postcode</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter billing postcode</mm_text>
+    <mm_help>Error: When billing postcode is empty.</mm_help>
+  </Enter_billing_postcode>
+  <Enter_billing_telephone>
+    <mm_type>message</mm_type>
+    <mm_label>Enter billing telephone</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter billing telephone</mm_text>
+    <mm_help>Error: When billing telephone is empty.</mm_help>
+  </Enter_billing_telephone>
+  <Enter_shipping_firstname>
+    <mm_type>message</mm_type>
+    <mm_label>Enter shipping firstname</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter shipping firstname</mm_text>
+    <mm_help>Error: When shipping firstname is empty.</mm_help>
+  </Enter_shipping_firstname>
+  <Enter_shipping_lastname>
+    <mm_type>message</mm_type>
+    <mm_label>Enter shipping lastname</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter shipping lastname</mm_text>
+    <mm_help>Error: When shipping lastname is empty.</mm_help>
+  </Enter_shipping_lastname>
+  <Enter_shipping_city>
+    <mm_type>message</mm_type>
+    <mm_label>Enter shipping city</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter shipping city</mm_text>
+    <mm_help>Error: When shipping city is empty.</mm_help>
+  </Enter_shipping_city>
+  <Enter_shipping_state>
+    <mm_type>message</mm_type>
+    <mm_label>Enter shipping state</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter shipping state</mm_text>
+    <mm_help>Error: When shipping state is empty.</mm_help>
+  </Enter_shipping_state>
+  <Enter_shipping_country>
+    <mm_type>message</mm_type>
+    <mm_label>Enter shipping country</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter shipping country</mm_text>
+    <mm_help>Error: When shipping country is empty.</mm_help>
+  </Enter_shipping_country>
+  <Enter_shipping_street>
+    <mm_type>message</mm_type>
+    <mm_label>Enter shipping street</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter shipping street</mm_text>
+    <mm_help>Error: When shipping street is empty.</mm_help>
+  </Enter_shipping_street>
+  <Enter_shipping_postcode>
+    <mm_type>message</mm_type>
+    <mm_label>Enter shipping postcode</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter shipping postcode</mm_text>
+    <mm_help>Error: When shipping postcode is empty.</mm_help>
+  </Enter_shipping_postcode>
+  <Enter_shipping_telephone>
+    <mm_type>message</mm_type>
+    <mm_label>Enter shipping telephone</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter shipping telephone</mm_text>
+    <mm_help>Error: When shipping telephone is empty.</mm_help>
+  </Enter_shipping_telephone>
+  <Shipping_Method>
+    <mm_type>label</mm_type>
+    <mm_label>Shipping Method</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Shipping Method</mm_text>
+    <mm_help>Label: Shipping Method page title. </mm_help>
+  </Shipping_Method>
+  <Select_shipping_method>
+    <mm_type>label</mm_type>
+    <mm_label>Select shipping method</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Select shipping method</mm_text>
+    <mm_help>Label: Label for Select shipping method options.</mm_help>
+  </Select_shipping_method>
+  <Please_select_shipment_method>
+    <mm_type>message</mm_type>
+    <mm_label>Please select shipment method</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Select shipment method</mm_text>
+    <mm_help>Error: When shipment method is not selected.</mm_help>
+  </Please_select_shipment_method>
+  <Payment_Method>
+    <mm_type>label</mm_type>
+    <mm_label>Payment Method</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Payment Method</mm_text>
+    <mm_help>Label: Payment Method page title. </mm_help>
+  </Payment_Method>
+  <Select_payment_method>
+    <mm_type>label</mm_type>
+    <mm_label>Select payment method</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Select payment method</mm_text>
+    <mm_help>Label: Label for Select payment method options.</mm_help>
+  </Select_payment_method>
+  <Please_select_payment_method>
+    <mm_type>message</mm_type>
+    <mm_label>Please select payment method</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Select payment method</mm_text>
+    <mm_help>Error: When payment method is not selected.</mm_help>
+  </Please_select_payment_method>
+  <Oops_something_wrong_happened>
+    <mm_type>message</mm_type>
+    <mm_label>Oops, something wrong happened</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Oops, something wrong happened</mm_text>
+    <mm_help>Error: When magento return unexpected error.</mm_help>
+  </Oops_something_wrong_happened>
+  <Credit_Card>
+    <mm_type>label</mm_type>
+    <mm_label>Credit Card</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Credit Card</mm_text>
+    <mm_help>Label: Label for credit card field, available on payment page. </mm_help>
+  </Credit_Card>
+  <Name_on_card>
+    <mm_type>label</mm_type>
+    <mm_label>Name on card</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Name on card</mm_text>
+    <mm_help>Label: Label for name of card field, available on payment page. </mm_help>
+  </Name_on_card>
+  <Credit_card_type>
+    <mm_type>label</mm_type>
+    <mm_label>Credit card type</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Credit card type</mm_text>
+    <mm_help>Label: Label for CC type field, available on payment page. </mm_help>
+  </Credit_card_type>
+  <Credit_card_number>
+    <mm_type>label</mm_type>
+    <mm_label>Credit card number</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Credit card number</mm_text>
+    <mm_help>Label: Label for CC number field, available on payment page. </mm_help>
+  </Credit_card_number>
+  <Expiration_Date>
+    <mm_type>label</mm_type>
+    <mm_label>Expiration Date</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Expiration Date</mm_text>
+    <mm_help>Label: Label for CC expiry date field, available on payment page. </mm_help>
+  </Expiration_Date>
+  <Month>
+    <mm_type>label</mm_type>
+    <mm_label>Month</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Month</mm_text>
+    <mm_help>Label: Label for CC expiry month field, available on payment page. </mm_help>
+  </Month>
+  <Year>
+    <mm_type>label</mm_type>
+    <mm_label>Year</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Year</mm_text>
+    <mm_help>Label: Label for CC expiry year field, available on payment page. </mm_help>
+  </Year>
+  <Card_Verification_Number>
+    <mm_type>label</mm_type>
+    <mm_label>Card Verification Number</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Card Verification Number</mm_text>
+    <mm_help>Label: Label for CC verification number field, available on payment page. </mm_help>
+  </Card_Verification_Number>
+  <Please_enter_name_on_card_field>
+    <mm_type>message</mm_type>
+    <mm_label>Please enter name on card field</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter name on card</mm_text>
+    <mm_help>Error: When name on card is empty.</mm_help>
+  </Please_enter_name_on_card_field>
+  <Please_select_credit_card_type_field>
+    <mm_type>message</mm_type>
+    <mm_label>Please select credit card type field</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Select credit card type</mm_text>
+    <mm_help>Error: When credit card type is not selected.</mm_help>
+  </Please_select_credit_card_type_field>
+  <Please_select_credit_card_number_field>
+    <mm_type>message</mm_type>
+    <mm_label>Please select credit card number field</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter credit card number</mm_text>
+    <mm_help>Error: When credit card number is empty.</mm_help>
+  </Please_select_credit_card_number_field>
+  <Please_set_expiry_month_field>
+    <mm_type>message</mm_type>
+    <mm_label>Please set expiry month field</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Set expiry month</mm_text>
+    <mm_help>Error: When expiry month is empty.</mm_help>
+  </Please_set_expiry_month_field>
+  <Please_set_expiry_year_field>
+    <mm_type>message</mm_type>
+    <mm_label>Please set expiry year field</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Set expiry year</mm_text>
+    <mm_help>Error: When expiry year is empty.</mm_help>
+  </Please_set_expiry_year_field>
+  <Please_set_card_verification_number>
+    <mm_type>message</mm_type>
+    <mm_label>Please set card verification number</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Set card verification number</mm_text>
+    <mm_help>Error: When card verification number is empty.</mm_help>
+  </Please_set_card_verification_number>
+  <Order_Review>
+    <mm_type>label</mm_type>
+    <mm_label>Order Review</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Order Review</mm_text>
+    <mm_help>Label: Order Review page title. </mm_help>
+  </Order_Review>
+  <Agreements>
+    <mm_type>label</mm_type>
+    <mm_label>Agreements</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Agreements</mm_text>
+    <mm_help>Label: Label for Agreements, available on oprder review screen.</mm_help>
+  </Agreements>
+  <Please_select_all_agreements>
+    <mm_type>message</mm_type>
+    <mm_label>Please select all agreements</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Accept terms and condition</mm_text>
+    <mm_help>Error: When user did not agreed on sign up terms.</mm_help>
+  </Please_select_all_agreements>
+  <Shipping_and_Handling>
+    <mm_type>label</mm_type>
+    <mm_label>Shipping &amp; Handling</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Shipping &amp;amp;amp; Handling</mm_text>
+    <mm_help>Label: Label for Shipping &amp;amp;amp; Handling.</mm_help>
+  </Shipping_and_Handling>
+  <Place_Order>
+    <mm_type>label</mm_type>
+    <mm_label>Place Order</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Place Order</mm_text>
+    <mm_help>Label: Place Order button title.</mm_help>
+  </Place_Order>
+  <Order_Success>
+    <mm_type>label</mm_type>
+    <mm_label>Order Success</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Order Success</mm_text>
+    <mm_help>Label: Order Success page title. </mm_help>
+  </Order_Success>
+  <Thank_you_for_your_purchase>
+    <mm_type>message</mm_type>
+    <mm_label>Thank you for your purchase!</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Thank you for your purchase!</mm_text>
+    <mm_help>Message: When order successfully placed. </mm_help>
+  </Thank_you_for_your_purchase>
+  <You_will_receive_an_order_confirmation_email_with_details_of_your_order_and_a_link_to_track_its_progress>
+    <mm_type>message</mm_type>
+    <mm_label>You will receive an order confirmation email with details of your order and a link to track its progress.</mm_label>
+    <mm_maxlength>200</mm_maxlength>
+    <mm_text>You will receive an order confirmation email with details of your order and a link to track its progress.</mm_text>
+    <mm_help>Text: When order successfully placed </mm_help>
+  </You_will_receive_an_order_confirmation_email_with_details_of_your_order_and_a_link_to_track_its_progress>
+  <Continue_Shopping>
+    <mm_type>label</mm_type>
+    <mm_label>Continue Shopping</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Continue Shopping</mm_text>
+    <mm_help>LabeL: Continue Shopping button title. </mm_help>
+  </Continue_Shopping>
+  <Error>
+    <mm_type>label</mm_type>
+    <mm_label>Error</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Error</mm_text>
+    <mm_help>Label: Error </mm_help>
+  </Error>
+  <Wishlist_added_successfully>
+    <mm_type>message</mm_type>
+    <mm_label>Wishlist added successfully</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Item successfully added into wishlist</mm_text>
+    <mm_help>Message: When item added into Wishlist.</mm_help>
+  </Wishlist_added_successfully>
+  <Item_removed_successfully>
+    <mm_type>message</mm_type>
+    <mm_label>Item removed successfully</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Item removed from wishlist</mm_text>
+    <mm_help>Message: When Item removed from wishlist.</mm_help>
+  </Item_removed_successfully>
+  <Wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>Wishlist</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Wishlist</mm_text>
+    <mm_help>Label: Wishlist page title. </mm_help>
+  </Wishlist>
+  <Remove>
+    <mm_type>label</mm_type>
+    <mm_label>Remove</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Remove</mm_text>
+    <mm_help>Label: Remove button title.</mm_help>
+  </Remove>
+  <No_wishlist_items_found>
+    <mm_type>message</mm_type>
+    <mm_label>No wishlist items found</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>No wishlist items found</mm_text>
+    <mm_help>Text: When No wishlist items found.</mm_help>
+  </No_wishlist_items_found>
+  <Orders>
+    <mm_type>label</mm_type>
+    <mm_label>Orders</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Orders</mm_text>
+    <mm_help>Label: Orders history page title.</mm_help>
+  </Orders>
+  <Order_History>
+    <mm_type>label</mm_type>
+    <mm_label>Order History</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Order History</mm_text>
+    <mm_help>Label: Order History button title. </mm_help>
+  </Order_History>
+  <We_are_sorry_No_orders_found>
+    <mm_type>message</mm_type>
+    <mm_label>We are sorry. No orders found</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>No orders found</mm_text>
+    <mm_help>Text: When no order history found. </mm_help>
+  </We_are_sorry_No_orders_found>
+  <Order_Detail>
+    <mm_type>label</mm_type>
+    <mm_label>Order Detail</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Order Detail</mm_text>
+    <mm_help>Label: Order Detail page title. </mm_help>
+  </Order_Detail>
+  <Ordered_Items>
+    <mm_type>label</mm_type>
+    <mm_label>Ordered Items</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Ordered Items</mm_text>
+    <mm_help>Label: Ordered Items block heading or title. </mm_help>
+  </Ordered_Items>
+  <Order_Number>
+    <mm_type>label</mm_type>
+    <mm_label>Order Number</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Order Number</mm_text>
+    <mm_help>Label: Label for Order Number.</mm_help>
+  </Order_Number>
+  <Order_Date>
+    <mm_type>label</mm_type>
+    <mm_label>Order Date</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Order Date</mm_text>
+    <mm_help>Label: Label for Order Date.</mm_help>
+  </Order_Date>
+  <User>
+    <mm_type>label</mm_type>
+    <mm_label>User</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>User</mm_text>
+    <mm_help>Label: Label for User.</mm_help>
+  </User>
+  <Info>
+    <mm_type>label</mm_type>
+    <mm_label>Info</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>About Us</mm_text>
+    <mm_help>Label: About page title (CMS/about module)</mm_help>
+  </Info>
+  <Add_To_Wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>Add To Wishlist</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Add To Wishlist</mm_text>
+    <mm_help>Label: Add To Wishlist button title.</mm_help>
+  </Add_To_Wishlist>
+  <Logout>
+    <mm_type>label</mm_type>
+    <mm_label>Logout</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Logout</mm_text>
+    <mm_help>Label: Logout button title.</mm_help>
+  </Logout>
+  <Search_Product>
+    <mm_type>label</mm_type>
+    <mm_label>Search Product</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Search Product</mm_text>
+    <mm_help>Label: Search Product.</mm_help>
+  </Search_Product>
+  <Apply>
+    <mm_type>label</mm_type>
+    <mm_label>Apply</mm_label>
+    <mm_maxlength>8</mm_maxlength>
+    <mm_text>Apply</mm_text>
+    <mm_help>Label: Apply button title (to apply discount)</mm_help>
+  </Apply>
+  <Couponcode_Applied_Successfully>
+    <mm_type>message</mm_type>
+    <mm_label>Couponcode Applied Successfully</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Coupon code applied Successfully</mm_text>
+    <mm_help>Message: When coupon code is applied.</mm_help>
+  </Couponcode_Applied_Successfully>
+  <Couponcode_Removed_Successfully>
+    <mm_type>message</mm_type>
+    <mm_label>Couponcode Removed Successfully</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Coupon code removed Successfully</mm_text>
+    <mm_help>Message: When coupon code is removed. </mm_help>
+  </Couponcode_Removed_Successfully>
+  <Discount_Code>
+    <mm_type>label</mm_type>
+    <mm_label>Discount Code</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Discount Code</mm_text>
+    <mm_help>Label: Label for Discount Code.</mm_help>
+  </Discount_Code>
+  <Update_Wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>Update Wishlist</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Update Wishlist</mm_text>
+    <mm_help>Label: Update Wishlist button title.</mm_help>
+  </Update_Wishlist>
+  <Item_updated_successfully>
+    <mm_type>message</mm_type>
+    <mm_label>Item updated successfully</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Item updated successfully</mm_text>
+    <mm_help>Message: When wishlist updated successfully.</mm_help>
+  </Item_updated_successfully>
+  <Cant_Load_Wishlist_Item>
+    <mm_type>message</mm_type>
+    <mm_label>Cant Load Wishlist Item</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Cant Load Wishlist Item</mm_text>
+    <mm_help>Error: When requested wishlist item Can not Load. </mm_help>
+  </Cant_Load_Wishlist_Item>
+  <Please_Select>
+    <mm_type>message</mm_type>
+    <mm_label>Please select </mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Please select</mm_text>
+    <mm_help>Error: To show error message for required product option, please note that title of the custom field will be added after this text such as &amp;amp;quot;Please select colors&amp;amp;quot;</mm_help>
+  </Please_Select>
+  <product_downloadable_links>
+    <mm_type>label</mm_type>
+    <mm_label>Product Downloadable Links</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Product Downloadable Links</mm_text>
+    <mm_help>Label: Label for Product Downloadable Links.</mm_help>
+  </product_downloadable_links>
+  <Please_enter_coupon_code>
+    <mm_type>message</mm_type>
+    <mm_label>Please Enter Coupon Code</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Invalid coupon code</mm_text>
+    <mm_help>Error: When coupon code is invalid.</mm_help>
+  </Please_enter_coupon_code>
+  <Please_Login_To_Continue>
+    <mm_type>message</mm_type>
+    <mm_label>Please Login To Continue</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Please login to continue</mm_text>
+    <mm_help>Error: When action required login </mm_help>
+  </Please_Login_To_Continue>
+  <Customer_First_Name_Is_Required>
+    <mm_type>message</mm_type>
+    <mm_label>Customer First Name Is Required</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter firstname</mm_text>
+    <mm_help>Error: When firstname is empty in signup form. </mm_help>
+  </Customer_First_Name_Is_Required>
+  <Customer_Last_Name_Is_Required>
+    <mm_type>message</mm_type>
+    <mm_label>Customer Last Name Is Required</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter lastname</mm_text>
+    <mm_help>Error: When lastname is empty in signup form. </mm_help>
+  </Customer_Last_Name_Is_Required>
+  <Customer_Email_Is_Required>
+    <mm_type>message</mm_type>
+    <mm_label>Customer Email Is Required</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter email address</mm_text>
+    <mm_help>Error: When email address is empty in signup form. </mm_help>
+  </Customer_Email_Is_Required>
+  <Customer_Password_Is_Required>
+    <mm_type>message</mm_type>
+    <mm_label>Customer Password Is Required</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter password</mm_text>
+    <mm_help>Error: When password is empty in signup form. </mm_help>
+  </Customer_Password_Is_Required>
+  <Account_Already_Exists>
+    <mm_type>message</mm_type>
+    <mm_label>Account Already Exists</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Account already exists</mm_text>
+    <mm_help>Error: When email address already exists.</mm_help>
+  </Account_Already_Exists>
+  <Cannot_Save_Customer_Address>
+    <mm_type>message</mm_type>
+    <mm_label>Cannot Save Customer Address</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Can\'t save customer address</mm_text>
+    <mm_help>Error: When error occure while saving customer Address.</mm_help>
+  </Cannot_Save_Customer_Address>
+  <No_Data_Found>
+    <mm_type>message</mm_type>
+    <mm_label>No Data Found</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>No data found</mm_text>
+    <mm_help>Error: When no data found for requested page.</mm_help>
+  </No_Data_Found>
+  <Product_Does_Not_Exists>
+    <mm_type>message</mm_type>
+    <mm_label>Product Does Not Exists</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Product no longer available</mm_text>
+    <mm_help>Error: When requested product is no londer available.</mm_help>
+  </Product_Does_Not_Exists>
+  <Cannot_Specify_Product>
+    <mm_type>message</mm_type>
+    <mm_label>Cannot Specify Product</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Requested item not found</mm_text>
+    <mm_help>Error: When requested product is not exist or available or product id is not passed in proper format.</mm_help>
+  </Cannot_Specify_Product>
+  <Please_Pass_Item_Id>
+    <mm_type>message</mm_type>
+    <mm_label>Please Pass Item Id</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Requested item not found</mm_text>
+    <mm_help>Error: When requested product is not exist or available or product id is not passed in proper format.</mm_help>
+  </Please_Pass_Item_Id>
+  <Wishlist_Does_Not_Exists>
+    <mm_type>message</mm_type>
+    <mm_label>Wishlist Does Not Exists</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Opps! Item can\'t load</mm_text>
+    <mm_help>Error: When wishlist can\'t load because of unexpected error.</mm_help>
+  </Wishlist_Does_Not_Exists>
+  <Item_Does_Not_Exists>
+    <mm_type>message</mm_type>
+    <mm_label>Item Does Not Exists</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Requested item not found</mm_text>
+    <mm_help>Error: When requested product is not exist or available or product id is not passed in proper format.</mm_help>
+  </Item_Does_Not_Exists>
+  <Please_Pass_Product_Id>
+    <mm_type>message</mm_type>
+    <mm_label>Please Pass Product Id</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Requested item not found</mm_text>
+    <mm_help>Error: When requested product is not exist or available or product id is not passed in proper format.</mm_help>
+  </Please_Pass_Product_Id>
+  <Cannot_Load_Wishlist_Item>
+    <mm_type>message</mm_type>
+    <mm_label>Cannot Load Wishlist Item</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Requested item not found</mm_text>
+    <mm_help>Error: When system can not load wishlist Item.</mm_help>
+  </Cannot_Load_Wishlist_Item>
+  <Product_Is_Unavailable>
+    <mm_type>message</mm_type>
+    <mm_label>Product Is Unavailable</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Requested item no longer available</mm_text>
+    <mm_help>Error: When requested product is no longer available.</mm_help>
+  </Product_Is_Unavailable>
+  <Item_Has_Been_Deleted_From_Cart>
+    <mm_type>message</mm_type>
+    <mm_label>Item Has Been Deleted From Cart</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Item has been deleted from cart</mm_text>
+    <mm_help>Error: When Item has been deleted from cart.</mm_help>
+  </Item_Has_Been_Deleted_From_Cart>
+  <Not_All_Products_Are_Available_In_The_Requested_Quantity>
+    <mm_type>message</mm_type>
+    <mm_label>Not All Products Are Available In The Requested Quantity</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Not all products are available in the requested auantity</mm_text>
+    <mm_help>Error: When any of the product from cart is no longer available.</mm_help>
+  </Not_All_Products_Are_Available_In_The_Requested_Quantity>
+  <Please_Agree_To_All_The_Terms_And_Conditions_Before__Placing_The_Order>
+    <mm_type>message</mm_type>
+    <mm_label>Please Agree To All The Terms And Conditions Before  Placing The Order</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Accept all terms and conditions before placing the order</mm_text>
+    <mm_help>Error: When user did not agree on all required addreement while placing order.</mm_help>
+  </Please_Agree_To_All_The_Terms_And_Conditions_Before__Placing_The_Order>
+  <Filter>
+    <mm_type>label</mm_type>
+    <mm_label>Filter</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Filter</mm_text>
+    <mm_help>Label: Label for Filters.</mm_help>
+  </Filter>
+  <Reset_Filter>
+    <mm_type>label</mm_type>
+    <mm_label>Reset Filter</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Reset Filter</mm_text>
+    <mm_help>Label: Reset Filter link title.</mm_help>
+  </Reset_Filter>
+  <Reset>
+    <mm_type>label</mm_type>
+    <mm_label>Reset</mm_label>
+    <mm_maxlength>10</mm_maxlength>
+    <mm_text>Reset</mm_text>
+    <mm_help>Label: Reset button title.</mm_help>
+  </Reset>
+  <Popularity>
+    <mm_type>label</mm_type>
+    <mm_label>Popularity</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Popularity</mm_text>
+    <mm_help>Label: Label for filter: Popularity option. </mm_help>
+  </Popularity>
+  <Price-High_To_Low>
+    <mm_type>label</mm_type>
+    <mm_label>Price-High To Low</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Price: High To Low</mm_text>
+    <mm_help>Label: Label for filter: Price-High To Low option. </mm_help>
+  </Price-High_To_Low>
+  <Price-Low_To_High>
+    <mm_type>label</mm_type>
+    <mm_label>Price-Low To High</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Price: Low To High</mm_text>
+    <mm_help>Label: Label for filter: Price-Low To High option.</mm_help>
+  </Price-Low_To_High>
+  <Rating>
+    <mm_type>label</mm_type>
+    <mm_label>Rating</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Rating</mm_text>
+    <mm_help>Label: Label for filter: Rating option </mm_help>
+  </Rating>
+  <Name-A_To_Z>
+    <mm_type>label</mm_type>
+    <mm_label>Name-A To Z</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Name: A To Z</mm_text>
+    <mm_help>Label: Label for filter: Name-A To Z option.</mm_help>
+  </Name-A_To_Z>
+  <Name-Z_To_A>
+    <mm_type>label</mm_type>
+    <mm_label>Name-Z To A</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Name: Z To A</mm_text>
+    <mm_help>Label: Label for filter: Name-Z To A option.</mm_help>
+  </Name-Z_To_A>
+  <Newest>
+    <mm_type>label</mm_type>
+    <mm_label>Newest</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Newest</mm_text>
+    <mm_help>Label: Label for filter: Newest option.</mm_help>
+  </Newest>
+  <Submit_Review>
+    <mm_type>label</mm_type>
+    <mm_label>Submit Review</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Submit Review</mm_text>
+    <mm_help>Label: Submit Review button title.</mm_help>
+  </Submit_Review>
+  <User_Reviews>
+    <mm_type>label</mm_type>
+    <mm_label>User Reviews</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>User Reviews</mm_text>
+    <mm_help>Label: User Reviews page title. </mm_help>
+  </User_Reviews>
+  <No_Reviews_Found>
+    <mm_type>label</mm_type>
+    <mm_label>No Reviews Found</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>No Reviews Found</mm_text>
+    <mm_help>Label: Text as No Reviews Found</mm_help>
+  </No_Reviews_Found>
+  <Average_User_Rating>
+    <mm_type>label</mm_type>
+    <mm_label>Average User Rating</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Average User Rating</mm_text>
+    <mm_help>Label: Label for Average User Rating.</mm_help>
+  </Average_User_Rating>
+  <Reviews>
+    <mm_type>label</mm_type>
+    <mm_label>Reviews</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Reviews</mm_text>
+    <mm_help>Label: Label for Reviews.</mm_help>
+  </Reviews>
+  <Nickename>
+    <mm_type>label</mm_type>
+    <mm_label>Nickename</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Nickename</mm_text>
+    <mm_help>Label: Label for Nickename field, available on submit review form.</mm_help>
+  </Nickename>
+  <Summary_Of_Your_Review>
+    <mm_type>label</mm_type>
+    <mm_label>Summary Of Your Review</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Summary Of Your Review</mm_text>
+    <mm_help>Label: Label for review summary field, available on submit review form.</mm_help>
+  </Summary_Of_Your_Review>
+  <Comments>
+    <mm_type>label</mm_type>
+    <mm_label>Comments</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Comments</mm_text>
+    <mm_help>Label: Label for comments field, available on submit review form.</mm_help>
+  </Comments>
+  <You_May_Also_Like>
+    <mm_type>label</mm_type>
+    <mm_label>You May Also Like</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>You May Also Like</mm_text>
+    <mm_help>Label: Label for related product slider on product detail page.</mm_help>
+  </You_May_Also_Like>
+  <Please_Select_One_Of_Each_Of_The_Ratings>
+    <mm_type>message</mm_type>
+    <mm_label>Please Select One Of Each Of The Ratings</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Select one of each of the ratings</mm_text>
+    <mm_help>Error: When feedback ratings is not selected for the product.</mm_help>
+  </Please_Select_One_Of_Each_Of_The_Ratings>
+  <Please_Enter_Nickename>
+    <mm_type>message</mm_type>
+    <mm_label>Please Enter Nickename</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter your nickename</mm_text>
+    <mm_help>Error: When feedback nickename is empty.</mm_help>
+  </Please_Enter_Nickename>
+  <Please_Enter_Summary>
+    <mm_type>message</mm_type>
+    <mm_label>Please Enter Summary</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter overall feedback</mm_text>
+    <mm_help>Error: When feedback summary is empty.</mm_help>
+  </Please_Enter_Summary>
+  <Please_Enter_Comments>
+    <mm_type>message</mm_type>
+    <mm_label>Please Enter Comments</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Enter your comments</mm_text>
+    <mm_help>Error: When feedback comments is empty.</mm_help>
+  </Please_Enter_Comments>
+  <Recently_Viewed>
+    <mm_type>label</mm_type>
+    <mm_label>Recently Viewed</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Recently Viewed</mm_text>
+    <mm_help>Label: Recently Viewed</mm_help>
+  </Recently_Viewed>
+  <Plugin_Not_Supported>
+    <mm_type>message</mm_type>
+    <mm_label>Plugin Not Supported</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>This action can\'t be performed on this device. Required support is not available on this device.</mm_text>
+    <mm_help>Error: When the device is not supported for requested action such as share functionality.</mm_help>
+  </Plugin_Not_Supported>
+  <Share>
+    <mm_type>label</mm_type>
+    <mm_label>Share</mm_label>
+    <mm_maxlength>7</mm_maxlength>
+    <mm_text>Share</mm_text>
+    <mm_help>Label:Share button title.</mm_help>
+  </Share>
+  <Shopping_Products>
+    <mm_type>label</mm_type>
+    <mm_label>Shopping Products</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Products</mm_text>
+    <mm_help>Label:Label for Shopping Products, available on left panel on product detail page.</mm_help>
+  </Shopping_Products>
+  <Edit>
+    <mm_type>label</mm_type>
+    <mm_label>Edit</mm_label>
+    <mm_maxlength>6</mm_maxlength>
+    <mm_text>Edit</mm_text>
+    <mm_help>Label:Edit button title, available on wishlist page. </mm_help>
+  </Edit>
+  <More_Information>
+    <mm_type>label</mm_type>
+    <mm_label>More Information</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>More Information</mm_text>
+    <mm_help>Label:More information about product</mm_help>
+  </More_Information>
+  <Share_App>
+    <mm_type>label</mm_type>
+    <mm_label>Share App</mm_label>
+    <mm_maxlength>12</mm_maxlength>
+    <mm_text>Share App</mm_text>
+    <mm_help>Label:Share app on CMS page</mm_help>
+  </Share_App>
+  <Sample_Links>
+    <mm_type>label</mm_type>
+    <mm_label>Sample Links</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Sample  Links</mm_text>
+    <mm_help>Label:Sample Links on product detail page</mm_help>
+  </Sample_Links>
+  <Maximum_Number_Of_Characters>
+    <mm_type>label</mm_type>
+    <mm_label>Maximum number of characters</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Maximum number of characters</mm_text>
+    <mm_help>Label:Maximum number of characters for configurable product</mm_help>
+  </Maximum_Number_Of_Characters>
+  <Payment_Cancelled>
+    <mm_type>message</mm_type>
+    <mm_label>Payment Cancelled</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Payment Cancelled</mm_text>
+    <mm_help>Message:Payment cancelled when user cancel payment</mm_help>
+  </Payment_Cancelled>
+  <Tracking_Numbers>
+    <mm_type>label</mm_type>
+    <mm_label>Tracking Numbers</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Tracking Numbers</mm_text>
+    <mm_help>Label:Tracking Numbers on order detail page</mm_help>
+  </Tracking_Numbers>
+  <Track>
+    <mm_type>label</mm_type>
+    <mm_label>Track</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Track</mm_text>
+    <mm_help>Label:Button on order detail page</mm_help>
+  </Track>
+  <Installment>
+    <mm_type>label</mm_type>
+    <mm_label>Installment</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Installment</mm_text>
+    <mm_help>Label:On product detail page</mm_help>
+  </Installment>
+  <Installment_Amount>
+    <mm_type>label</mm_type>
+    <mm_label>Installment Amount</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Installment Amount</mm_text>
+    <mm_help>Label:On product detail page</mm_help>
+  </Installment_Amount>
+  <Total_Amount>
+    <mm_type>label</mm_type>
+    <mm_label>Total Amount</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Total Amount</mm_text>
+    <mm_help>Label:On product detail page</mm_help>
+  </Total_Amount>
+  <Single_Shot>
+    <mm_type>label</mm_type>
+    <mm_label>Single Shot</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Single Shot</mm_text>
+    <mm_help>Label:For payuapi gateway on credit card page</mm_help>
+  </Single_Shot>
+  <Please_select_installment_option>
+    <mm_type>message</mm_type>
+    <mm_label>Please Select Installment Option</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Please Select Installment Option</mm_text>
+    <mm_help>Message:On credit card page where installment option is required</mm_help>
+  </Please_select_installment_option>
+  <January>
+    <mm_type>label</mm_type>
+    <mm_label>January</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>January</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </January>
+  <February>
+    <mm_type>label</mm_type>
+    <mm_label>February</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>February</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </February>
+  <March>
+    <mm_type>label</mm_type>
+    <mm_label>March</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>March</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </March>
+  <April>
+    <mm_type>label</mm_type>
+    <mm_label>April</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>April</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </April>
+  <May>
+    <mm_type>label</mm_type>
+    <mm_label>May</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>May</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </May>
+  <June>
+    <mm_type>label</mm_type>
+    <mm_label>June</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>June</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </June>
+  <July>
+    <mm_type>label</mm_type>
+    <mm_label>July</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>July</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </July>
+  <August>
+    <mm_type>label</mm_type>
+    <mm_label>August</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>August</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </August>
+  <September>
+    <mm_type>label</mm_type>
+    <mm_label>September</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>September</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </September>
+  <October>
+    <mm_type>label</mm_type>
+    <mm_label>October</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>October</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </October>
+  <November>
+    <mm_type>label</mm_type>
+    <mm_label>November</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>November</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </November>
+  <December>
+    <mm_type>label</mm_type>
+    <mm_label>December</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>December</mm_text>
+    <mm_help>Label:Month name on credit card page</mm_help>
+  </December>
+  <You_Earn>
+    <mm_type>label</mm_type>
+    <mm_label>You Earn</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>You Earn</mm_text>
+    <mm_help>Label:You Earn</mm_help>
+  </You_Earn>
+  <Reward_Points>
+    <mm_type>label</mm_type>
+    <mm_label>Reward Points</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Reward Points</mm_text>
+    <mm_help>Label:Reward Points</mm_help>
+  </Reward_Points>
+  <Use_Reward_Points>
+    <mm_type>label</mm_type>
+    <mm_label>Use Reward Points</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Use Reward Points</mm_text>
+    <mm_help>Label:Use Reward Points</mm_help>
+  </Use_Reward_Points>
+  <Estimate_Shipping_And_Tax>
+    <mm_type>label</mm_type>
+    <mm_label>Estimate Shipping And Tax</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Estimate Shipping And Tax</mm_text>
+    <mm_help>Label:Estimated Shipping and Tax</mm_help>
+  </Estimate_Shipping_And_Tax>
+  <Get_A_Quote>
+    <mm_type>label</mm_type>
+    <mm_label>Get A Quote</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Get A Quote</mm_text>
+    <mm_help>Label:Get a Quote</mm_help>
+  </Get_A_Quote>
+  <Update_Total>
+    <mm_type>label</mm_type>
+    <mm_label>Update Total</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Update Total</mm_text>
+    <mm_help>Label:Update Total</mm_help>
+  </Update_Total>
+  <Update_Order_Data>
+    <mm_type>label</mm_type>
+    <mm_label>Update Order Data</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Update Order Data</mm_text>
+    <mm_help>Label:Update Order Data</mm_help>
+  </Update_Order_Data>
+  <Position>
+    <mm_type>label</mm_type>
+    <mm_label>Position</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Position</mm_text>
+    <mm_help>Label:Position</mm_help>
+  </Position>
+  <Preferred_Language>
+    <mm_type>label</mm_type>
+    <mm_label>Preferred Language</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Preferred Language</mm_text>
+    <mm_help>Label:Preferred Language</mm_help>
+  </Preferred_Language>
+  <Preferred_Currency>
+    <mm_type>label</mm_type>
+    <mm_label>Preferred Currency</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Preferred Currency</mm_text>
+    <mm_help>Label:Preferred Currency</mm_help>
+  </Preferred_Currency>
+  <User_Profile>
+    <mm_type>label</mm_type>
+    <mm_label>User Profile</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>User Profile</mm_text>
+    <mm_help>Label:User Profile</mm_help>
+  </User_Profile>
+  <Address_Book>
+    <mm_type>label</mm_type>
+    <mm_label>Address Book</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Address Book</mm_text>
+    <mm_help>Label:Address Book</mm_help>
+  </Address_Book>
+  <Edit_Contact_Information>
+    <mm_type>label</mm_type>
+    <mm_label>Edit Contact Information</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Edit Contact Information</mm_text>
+    <mm_help>Label:Edit Contact Information</mm_help>
+  </Edit_Contact_Information>
+  <Change_Password>
+    <mm_type>label</mm_type>
+    <mm_label>Change Password</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Change Password</mm_text>
+    <mm_help>Label:Change Password</mm_help>
+  </Change_Password>
+  <Current_Password>
+    <mm_type>label</mm_type>
+    <mm_label>Current Password</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Current Password</mm_text>
+    <mm_help>Label:Current Password</mm_help>
+  </Current_Password>
+  <New_Password>
+    <mm_type>label</mm_type>
+    <mm_label>New Password</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>New Password</mm_text>
+    <mm_help>Label:New Password</mm_help>
+  </New_Password>
+  <Confirm_New_Password>
+    <mm_type>label</mm_type>
+    <mm_label>Confirm New Password</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Confirm New Password</mm_text>
+    <mm_help>Label:Confirm New Password</mm_help>
+  </Confirm_New_Password>
+  <Store_Information>
+    <mm_type>label</mm_type>
+    <mm_label>Store Information</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Store Information</mm_text>
+    <mm_help>Label:Store Information</mm_help>
+  </Store_Information>
+  <Store_Events>
+    <mm_type>label</mm_type>
+    <mm_label>Store Events</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Store Events</mm_text>
+    <mm_help>Label:Store Events</mm_help>
+  </Store_Events>
+  <Store_Team>
+    <mm_type>label</mm_type>
+    <mm_label>Store Team</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Store Team</mm_text>
+    <mm_help>Label:Store Team</mm_help>
+  </Store_Team>
+  <Default_Billing_Address>
+    <mm_type>label</mm_type>
+    <mm_label>Default Billing Address</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Default Billing Address</mm_text>
+    <mm_help>Label:Default Billing Address</mm_help>
+  </Default_Billing_Address>
+  <Default_Shipping_Address>
+    <mm_type>label</mm_type>
+    <mm_label>Default Shipping Address</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Default Shipping Address</mm_text>
+    <mm_help>Label:Default Shipping Address</mm_help>
+  </Default_Shipping_Address>
+  <Additional_Addresses>
+    <mm_type>label</mm_type>
+    <mm_label>Additional Addresses</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Additional Addresses</mm_text>
+    <mm_help>Label:Additional Addresses</mm_help>
+  </Additional_Addresses>
+  <Add_New_Address>
+    <mm_type>label</mm_type>
+    <mm_label>Add New Address</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Add New Address</mm_text>
+    <mm_help>Label:Add New Address</mm_help>
+  </Add_New_Address>
+  <Edit_Address>
+    <mm_type>label</mm_type>
+    <mm_label>Edit Address</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Edit Address</mm_text>
+    <mm_help>Label:Edit Address</mm_help>
+  </Edit_Address>
+  <Use_As_My_Default_Billing_Address>
+    <mm_type>label</mm_type>
+    <mm_label>Use As My Default Billing Address</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Use As My Default Billing Address</mm_text>
+    <mm_help>Label:Use As My Default Billing Address</mm_help>
+  </Use_As_My_Default_Billing_Address>
+  <Use_As_My_Default_Shipping_Address>
+    <mm_type>label</mm_type>
+    <mm_label>Use As My Default Shipping Address</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Use As My Default Shipping Address</mm_text>
+    <mm_help>Label:Use As My Default Shipping Address</mm_help>
+  </Use_As_My_Default_Shipping_Address>
+  <Save_Address>
+    <mm_type>label</mm_type>
+    <mm_label>Save Address</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Save Address</mm_text>
+    <mm_help>Label:Save Address</mm_help>
+  </Save_Address>
+  <Newsletters>
+    <mm_type>label</mm_type>
+    <mm_label>Newsletters</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Newsletters</mm_text>
+    <mm_help>Label:Newsletters</mm_help>
+  </Newsletters>
+  <Return_Request>
+    <mm_type>label</mm_type>
+    <mm_label>Return Request</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Return Request</mm_text>
+    <mm_help>Label:Return Request</mm_help>
+  </Return_Request>
+  <Submit_New_Return_Request>
+    <mm_type>label</mm_type>
+    <mm_label>Submit New Return Request</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Submit New Return Request</mm_text>
+    <mm_help>Label:Submit New Return Request</mm_help>
+  </Submit_New_Return_Request>
+  <Return_Request_History>
+    <mm_type>label</mm_type>
+    <mm_label>Return Request History</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Return Request History</mm_text>
+    <mm_help>Label:Return Request History</mm_help>
+  </Return_Request_History>
+  <New_Return_Request>
+    <mm_type>label</mm_type>
+    <mm_label>New Return Request</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>New Return Request</mm_text>
+    <mm_help>Label:New Return Request</mm_help>
+  </New_Return_Request>
+  <Select_Order>
+    <mm_type>label</mm_type>
+    <mm_label>Select Order</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Select Order</mm_text>
+    <mm_help>Label:Select Order</mm_help>
+  </Select_Order>
+  <Company>
+    <mm_type>label</mm_type>
+    <mm_label>Company</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Company</mm_text>
+    <mm_help>Label:Company</mm_help>
+  </Company>
+  <Package_Condition>
+    <mm_type>label</mm_type>
+    <mm_label>Package Condition</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Package Condition</mm_text>
+    <mm_help>Label:Package Condition</mm_help>
+  </Package_Condition>
+  <Resolution_Type>
+    <mm_type>label</mm_type>
+    <mm_label>Resolution Type</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Resolution Type</mm_text>
+    <mm_help>Label:Resolution Type</mm_help>
+  </Resolution_Type>
+  <Additional_Information>
+    <mm_type>label</mm_type>
+    <mm_label>Additional Information</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Additional Information</mm_text>
+    <mm_help>Label:Additional Information</mm_help>
+  </Additional_Information>
+  <Product_Delivery_Status>
+    <mm_type>label</mm_type>
+    <mm_label>Product Delivery Status</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Product Delivery Status</mm_text>
+    <mm_help>Label:Product Delivery Status</mm_help>
+  </Product_Delivery_Status>
+  <I_Agree>
+    <mm_type>label</mm_type>
+    <mm_label>I Agree</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>I Agree</mm_text>
+    <mm_help>Label:I Agree</mm_help>
+  </I_Agree>
+  <Other_People_Marked_This_Product_With_These_Tags>
+    <mm_type>label</mm_type>
+    <mm_label>Other People Marked This Product With These Tags</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Other People Marked This Product With These Tags</mm_text>
+    <mm_help>Label:Other People Marked This Product With These Tags</mm_help>
+  </Other_People_Marked_This_Product_With_These_Tags>
+  <Add_Your_Tags>
+    <mm_type>label</mm_type>
+    <mm_label>Add Your Tags</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Add Your Tags</mm_text>
+    <mm_help>Label:Add Your Tags</mm_help>
+  </Add_Your_Tags>
+  <Store_Locator>
+    <mm_type>label</mm_type>
+    <mm_label>Store Locator</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Store Locator</mm_text>
+    <mm_help>Label:Store Locator</mm_help>
+  </Store_Locator>
+  <Send_App_Feedback>
+    <mm_type>label</mm_type>
+    <mm_label>Send App Feedback</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Send App Feedback</mm_text>
+    <mm_help>Label:Send App Feedback</mm_help>
+  </Send_App_Feedback>
+  <Preferencies>
+    <mm_type>label</mm_type>
+    <mm_label>Preferencies</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Preferencies</mm_text>
+    <mm_help>Label:Preferencies</mm_help>
+  </Preferencies>
+  <Language>
+    <mm_type>label</mm_type>
+    <mm_label>Language</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Language</mm_text>
+    <mm_help>Label:Language</mm_help>
+  </Language>
+  <Currency>
+    <mm_type>label</mm_type>
+    <mm_label>Currency</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Currency</mm_text>
+    <mm_help>Label:Currency</mm_help>
+  </Currency>
+  <Contact_Us>
+    <mm_type>label</mm_type>
+    <mm_label>Contact Us</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Contact Us</mm_text>
+    <mm_help>Label:Contact Us</mm_help>
+  </Contact_Us>
+  <Login_or_Signup>
+    <mm_type>label</mm_type>
+    <mm_label>Login or Signup</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Login or Signup</mm_text>
+    <mm_help>Label:Login or Signup</mm_help>
+  </Login_or_Signup>
+  <My_Account>
+    <mm_type>label</mm_type>
+    <mm_label>My Account</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>My Account</mm_text>
+    <mm_help>Label:My Account</mm_help>
+  </My_Account>
+  <List>
+    <mm_type>label</mm_type>
+    <mm_label>List</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>List</mm_text>
+    <mm_help>Label:List</mm_help>
+  </List>
+  <Grid>
+    <mm_type>label</mm_type>
+    <mm_label>Grid</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Grid</mm_text>
+    <mm_help>Label:Grid</mm_help>
+  </Grid>
+  <Image>
+    <mm_type>label</mm_type>
+    <mm_label>Image</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Image</mm_text>
+    <mm_help>Label:Image</mm_help>
+  </Image>
+  <View_All>
+    <mm_type>label</mm_type>
+    <mm_label>View All</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>View All</mm_text>
+    <mm_help>Label:View All</mm_help>
+  </View_All>
+  <Monday>
+    <mm_type>label</mm_type>
+    <mm_label>Monday</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Monday</mm_text>
+    <mm_help>Label:Monday</mm_help>
+  </Monday>
+  <Tuesday>
+    <mm_type>label</mm_type>
+    <mm_label>Tuesday</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Tuesday</mm_text>
+    <mm_help>Label:Tuesday</mm_help>
+  </Tuesday>
+  <Wednesday>
+    <mm_type>label</mm_type>
+    <mm_label>Wednesday</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Wednesday</mm_text>
+    <mm_help>Label:Wednesday</mm_help>
+  </Wednesday>
+  <Thursday>
+    <mm_type>label</mm_type>
+    <mm_label>Thursday</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Thursday</mm_text>
+    <mm_help>Label:Thursday</mm_help>
+  </Thursday>
+  <Friday>
+    <mm_type>label</mm_type>
+    <mm_label>Friday</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Friday</mm_text>
+    <mm_help>Label:Friday</mm_help>
+  </Friday>
+  <Saturday>
+    <mm_type>label</mm_type>
+    <mm_label>Saturday</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Saturday</mm_text>
+    <mm_help>Label:Saturday</mm_help>
+  </Saturday>
+  <Sunday>
+    <mm_type>label</mm_type>
+    <mm_label>Sunday</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Sunday</mm_text>
+    <mm_help>Label:Sunday</mm_help>
+  </Sunday>
+  <Special_Days>
+    <mm_type>label</mm_type>
+    <mm_label>Special Days</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Special Days</mm_text>
+    <mm_help>Label:Special Days</mm_help>
+  </Special_Days>
+  <Holidays>
+    <mm_type>label</mm_type>
+    <mm_label>Holidays</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Holidays</mm_text>
+    <mm_help>Label:Holidays</mm_help>
+  </Holidays>
+  <Clear_All>
+    <mm_type>label</mm_type>
+    <mm_label>Clear All</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Clear All</mm_text>
+    <mm_help>Label:Clear All</mm_help>
+  </Clear_All>
+  <Apply>
+    <mm_type>label</mm_type>
+    <mm_label>Apply</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Apply</mm_text>
+    <mm_help>Label:Apply</mm_help>
+  </Apply>
+  <Sort_By>
+    <mm_type>label</mm_type>
+    <mm_label>Sort By</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Sort By</mm_text>
+    <mm_help>Label:Sort By</mm_help>
+  </Sort_By>
+  <No_Stores_Found>
+    <mm_type>label</mm_type>
+    <mm_label>No Stores Found</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>No Stores Found</mm_text>
+    <mm_help>Label:when no stores found on store locator selected criteria</mm_help>
+  </No_Stores_Found>
+  <Nearby>
+    <mm_type>label</mm_type>
+    <mm_label>Nearby</mm_label>
+    <mm_maxlength>25</mm_maxlength>
+    <mm_text>Nearby</mm_text>
+    <mm_help>Label:Nearby</mm_help>
+  </Nearby>
+  <Your_order_id_is>
+    <mm_type>label</mm_type>
+    <mm_label>Your Order ID is</mm_label>
+    <mm_maxlength>200</mm_maxlength>
+    <mm_text>Your Order ID is</mm_text>
+    <mm_help>Label:You Order ID is</mm_help>
+  </Your_order_id_is>
+  <Placed_On>
+    <mm_type>label</mm_type>
+    <mm_label>Placed On</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Placed On</mm_text>
+    <mm_help>Label:Placed On</mm_help>
+  </Placed_On>
+  <Items>
+    <mm_type>label</mm_type>
+    <mm_label>Items</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>Items</mm_text>
+    <mm_help>Label:Items</mm_help>
+  </Items>
+  <km>
+    <mm_type>label</mm_type>
+    <mm_label>km</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>km</mm_text>
+    <mm_help>Label:km</mm_help>
+  </km>
+  <miles>
+    <mm_type>label</mm_type>
+    <mm_label>miles</mm_label>
+    <mm_maxlength>20</mm_maxlength>
+    <mm_text>miles</mm_text>
+    <mm_help>Label:miles</mm_help>
+  </miles>
+  <Near_Me>
+    <mm_type>label</mm_type>
+    <mm_label>Near Me</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Near Me</mm_text>
+    <mm_help>Label:Near Me</mm_help>
+  </Near_Me>
+  <By_Region>
+    <mm_type>label</mm_type>
+    <mm_label>By Region</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>By Region</mm_text>
+    <mm_help>Label:By Region</mm_help>
+  </By_Region>
+  <Show_All>
+    <mm_type>label</mm_type>
+    <mm_label>Show All</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Show All</mm_text>
+    <mm_help>Label:Show All</mm_help>
+  </Show_All>
+  <Loading_More_Products>
+    <mm_type>label</mm_type>
+    <mm_label>Loading more products &#x2026;</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Loading more products &amp;hellip;</mm_text>
+    <mm_help>Label: Show mre products label while loading more products</mm_help>
+  </Loading_More_Products>
+  <Closed>
+    <mm_type>label</mm_type>
+    <mm_label>Closed</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Closed</mm_text>
+    <mm_help>Label:text on storelocator page</mm_help>
+  </Closed>
+  <Search_by_Category>
+    <mm_type>label</mm_type>
+    <mm_label>Search By Category</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Search By Category</mm_text>
+    <mm_help>Label:Cateogry popup page heading</mm_help>
+  </Search_by_Category>
+  <Find_a_Store>
+    <mm_type>label</mm_type>
+    <mm_label>Find a Store</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Find a Store</mm_text>
+    <mm_help>Label:Storelocator heading</mm_help>
+  </Find_a_Store>
+  <Store_Location>
+    <mm_type>label</mm_type>
+    <mm_label>Store Location</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Store Location</mm_text>
+    <mm_help>Label:Store Location</mm_help>
+  </Store_Location>
+  <Store_Details>
+    <mm_type>label</mm_type>
+    <mm_label>Store Details</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Store Details</mm_text>
+    <mm_help>Label:Store Details</mm_help>
+  </Store_Details>
+  <Hours_of_Operation>
+    <mm_type>label</mm_type>
+    <mm_label>Hours Of Operation</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Hours Of Operation</mm_text>
+    <mm_help>Label:Hours Of Operation</mm_help>
+  </Hours_of_Operation>
+  <Store_Pictures>
+    <mm_type>label</mm_type>
+    <mm_label>Store Pictures</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Store Pictures</mm_text>
+    <mm_help>Label:Store Pictures</mm_help>
+  </Store_Pictures>
+  <Apply_Filter>
+    <mm_type>label</mm_type>
+    <mm_label>Apply Filter</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Apply Filter</mm_text>
+    <mm_help>Label:Apply Filter</mm_help>
+  </Apply_Filter>
+  <Rate_This_App>
+    <mm_type>label</mm_type>
+    <mm_label>Rate This App</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Rate This App</mm_text>
+    <mm_help>Label:Rate This App</mm_help>
+  </Rate_This_App>
+  <No_Addresses_Found>
+    <mm_type>label</mm_type>
+    <mm_label>No Addresses Found</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>No Addresses Found</mm_text>
+    <mm_help>Label:No Addresses Found</mm_help>
+  </No_Addresses_Found>
+  <View_Store>
+    <mm_type>label</mm_type>
+    <mm_label>View Store</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>View Store</mm_text>
+    <mm_help>Label:On store listing map</mm_help>
+  </View_Store>
+  <Rate_It>
+    <mm_type>label</mm_type>
+    <mm_label>Rate It</mm_label>
+    <mm_maxlength>50</mm_maxlength>
+    <mm_text>Rate It</mm_text>
+    <mm_help>Label:Rate It</mm_help>
+  </Rate_It>
+  <Additional_Address_Entries>
+    <mm_type>label</mm_type>
+    <mm_label>Additional Address Entries</mm_label>
+    <mm_maxlength>100</mm_maxlength>
+    <mm_text>Additional Address Entries</mm_text>
+    <mm_help>Label:Additional Address Entries</mm_help>
+  </Additional_Address_Entries>
+  <Search>
+    <mm_type>label</mm_type>
+    <mm_label>Search</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Search</mm_text>
+    <mm_help>Label:Footer Navigation Search Text</mm_help>
+  </Search>
+  <Cart>
+    <mm_type>label</mm_type>
+    <mm_label>Cart</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Cart</mm_text>
+    <mm_help>Label:Footer navigation Cart Text</mm_help>
+  </Cart>
+  <Account>
+    <mm_type>label</mm_type>
+    <mm_label>Account</mm_label>
+    <mm_maxlength>15</mm_maxlength>
+    <mm_text>Account</mm_text>
+    <mm_help>Label:Footer navigation Account Text</mm_help>
+  </Account>
+</mobicommerce_multilanguage>

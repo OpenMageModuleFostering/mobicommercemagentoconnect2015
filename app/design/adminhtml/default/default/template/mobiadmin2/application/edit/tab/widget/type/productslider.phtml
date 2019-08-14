@@ -1,0 +1,219 @@
+<?php
+$productData = Mage::registry('widgetdata');
+$widget_status  = $productData['widget_status'];
+$widget_label  = $productData['widget_label'];
+$prodcut_widget_data = unserialize($productData['widget_data']);
+$ids = $prodcut_widget_data['products']['id'];
+$product_ids = json_decode($ids, true);
+Mage::getModel('core/session')->unsetData('checked_products');
+Mage::getModel('core/session')->setData('checked_products',$product_ids);
+?>
+
+<?php if($productData['widget_id']):?>
+	<input type="hidden" name="widget_id" value="<?php echo $productData['widget_id']?>"/>
+<?php endif;?>
+<div class="entry-edit">
+	<div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Product List Widget'); ?></h4>
+	</div>
+</div>
+<div class="fieldset">
+	<table class="productslider-widget-content form-list" cellspacing="0">
+		<tbody>
+			<tr>
+				<td class="label"><label for=""></label></td>
+				<td class="value">
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Name')?><span class="required">*</span></label></td>
+				<td class="value">
+					<input type="text" class="input-text required-entry" value="<?php if(!empty($widget_label)) echo $widget_label;?>" name="widget[name]"/>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Title')?></label></td>
+				<td class="value">
+					<input type="text" class="input-text" value="<?php if(!empty($prodcut_widget_data['title'])) echo $prodcut_widget_data['title'];?>" name="widget[widget_data][title]"/>
+				</td>
+			</tr>
+			<?php $widget_title_align = $prodcut_widget_data['title_align'];?>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Align Title')?></label></td>
+				<td class="value">
+					<select name="widget[widget_data][title_align]">
+						<option value="center" <?php if($widget_title_align == 'center') echo "selected"?>>Center</option>
+						<option value="left" <?php if($widget_title_align == 'left') echo "selected"?>>Left</option>
+						<option value="right" <?php if($widget_title_align == 'right') echo "selected"?>>Right</option>
+					</select>
+				</td>
+			</tr>
+			<?php $widget_type = $prodcut_widget_data['type'];?>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Type')?></label></td>
+				<td class="value">
+					<select name="widget[widget_data][type]">
+						<option value="slider" <?php if($widget_type == 'slider') echo "selected"?>>Slider</option>
+						<option value="list" <?php if($widget_type == 'list') echo "selected"?>>List</option>
+						<option value="grid" <?php if($widget_type == 'grid') echo "selected"?>>Grid</option>
+						<option value="image_view" <?php if($widget_type == 'image_view') echo "selected"?>>Large Image View</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Show Name')?></label></td>
+				<td class="value">
+					<input type="radio" <?php if($prodcut_widget_data['show_name'] == 1) echo "checked";?> value="1" name="widget[widget_data][show_name]" />&nbsp;<?php echo $this->__('Yes')?>
+					<input type="radio" <?php if($prodcut_widget_data['show_name'] == 0) echo "checked";?> value="0" name="widget[widget_data][show_name]" />&nbsp;<?php echo $this->__('No')?>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Show Price')?></label></td>
+				<td class="value">
+					<input type="radio" <?php if($prodcut_widget_data['show_price'] == 1) echo "checked";?> value="1" name="widget[widget_data][show_price]" />&nbsp;<?php echo $this->__('Yes')?>
+					<input type="radio" <?php if($prodcut_widget_data['show_price'] == 0) echo "checked";?> value="0" name="widget[widget_data][show_price]" />&nbsp;<?php echo $this->__('No')?>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Show Review'); ?></label></td>
+				<td class="value">
+					<input type="radio" <?php if($prodcut_widget_data['show_review'] == 1) echo "checked";?> value="1" name="widget[widget_data][show_review]" />&nbsp;<?php echo $this->__('Yes'); ?>
+					<input type="radio" <?php if($prodcut_widget_data['show_review'] == 0) echo "checked";?> value="0" name="widget[widget_data][show_review]" />&nbsp;<?php echo $this->__('No'); ?>
+					<br /><?php echo $this->__('Not applicable to Slider view'); ?>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Which Product you want to show')?></label></td>
+				<td class="value">
+				<select name="widget[widget_data][productslider_type]" onchange="toggleProducts(this)" id="productslider_type">
+					<option><?php echo $this->__("Select")?></option>
+					<option <?php if($prodcut_widget_data['productslider_type'] == "selected") echo "selected";?> value="selected"><?php echo $this->__("Selected Products")?></option>
+					<option <?php if($prodcut_widget_data['productslider_type'] == "newarrivals") echo "selected";?> value="newarrivals"><?php echo $this->__("New Arrivals")?></option>
+					<option <?php if($prodcut_widget_data['productslider_type'] == "bestseller") echo "selected";?> value="bestseller"><?php echo $this->__("Best Seller")?></option>
+					<option <?php if($prodcut_widget_data['productslider_type'] == "productviewed") echo "selected";?> value="productviewed"><?php echo $this->__("Product Viewed")?></option>
+				</select>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="product-grid" style="width: 800px;"></div></td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Status')?></label></td>
+				<td class="value">
+					 <select name="widget[enable]">
+						 <option <?php if($widget_status == 0) echo "selected";?> value="0"><?php echo $this->__('No')?></option>
+						 <option <?php if($widget_status == 1) echo "selected";?>  value="1"><?php echo $this->__('Yes')?></option>
+					 </select>
+				</td>
+			</tr>
+			<tr>
+			<td>
+			    <input type="hidden" value='<?php if($ids !='') echo $ids; ?>' class="selectedproducts" name="widget[widget_data][products][id]"/>
+			</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script type="text/javascript">
+	var cat = "<?php echo Mage::app()->getRequest()->getParam('cat', false); ?>";
+</script>
+<?php if($prodcut_widget_data['productslider_type'] == "selected"):?>
+<script>
+	new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/productgrid'); ?>cat/"+cat, {
+		method: 'Post',
+		parameters: {isAjax : 1, widget_id : "<?php echo $productData['widget_id']; ?>"},
+		onComplete: function(data) {				    
+		},
+		onSuccess: function(response){
+			var json = response.responseText.evalJSON(true);
+			if(json.status == 'success'){
+				jQuery('.product-grid').html(json.widget_product_grid);
+			}
+			else{
+				alert(json.error);
+			}
+		},
+		onFailure: function(response){
+			var json = response.responseText.evalJSON(true);
+			alert(json.error);
+		}
+	});
+</script>
+<?php endif;?>
+<script>
+function toggleProducts(e)
+{
+	var selectedwidget = jQuery( "#productslider_type" ).val();
+	if(selectedwidget == 'selected'){
+		new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/productgrid'); ?>cat/"+cat, {
+			method: 'Post',
+			parameters: {isAjax : 1, widget_id : "<?php echo $productData['widget_id']?>"},
+			onComplete: function(data) {				    
+			},
+			onSuccess: function(response){
+				var json = response.responseText.evalJSON(true);
+				if(json.status == 'success'){
+					jQuery('.product-grid').html(json.widget_product_grid);
+				}
+				else{
+					alert(json.error);
+				}
+			},
+			onFailure: function(response){
+				var json = response.responseText.evalJSON(true);
+				alert(json.error);
+			}
+		});
+	}else{
+		jQuery('.product-grid').html('');
+	}
+}
+
+function saveProduct(e){
+	if(jQuery(e).is(":checked")) {   
+        var productid = jQuery(e).val();
+        var productpos = jQuery(e).parent('td').parent('tr').find('.prod_position').val();
+        var checked = '1';
+    } else { 
+		var productid = jQuery(e).val();
+		var productpos = jQuery(e).parent('td').parent('tr').find('.prod_position').val();
+		var checked = '0';
+	}
+	jQuery('#loading-mask').hide();
+	
+	new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/checkproduct')?>", {
+		method: 'Post',
+		
+		parameters: {productid : productid, prod_position:productpos, checked : checked},	onLoading : function(data) {	
+			jQuery('#loading-mask').hide();
+			},		
+		onSuccess: function(response){				
+			jQuery('.selectedproducts').val(response.responseText);				
+		},
+		onFailure: function(response){				
+			alert(json.error);
+		}
+	});
+}
+
+function savePosition(e){
+    var productid = jQuery(e).attr('data-productid');
+    var productpos = jQuery(e).val();
+	if(productid){
+		jQuery('#loading-mask').hide();
+		new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/saveprodposition')?>", {
+			method: 'Post',			
+			parameters: {productid : productid, prod_position:productpos},
+			onLoading : function(data) {	
+				jQuery('#loading-mask').hide();
+				},		
+			onSuccess: function(response){				
+				jQuery('.selectedproducts').val(response.responseText);				
+			},
+			onFailure: function(response){				
+				alert(json.error);
+			}
+		});
+	}
+}
+</script>

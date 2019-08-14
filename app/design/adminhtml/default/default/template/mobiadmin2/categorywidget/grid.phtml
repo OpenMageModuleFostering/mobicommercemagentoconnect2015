@@ -1,0 +1,217 @@
+<?php $cat = $this->getRequest()->getParam('cat', false); ?>
+<div class="content-header">
+    <table cellspacing="0" class="grid-header">
+        <tr>
+            <td class="a-right">
+                <button onclick="editForm.submit();" class="scalable save" type="button"><span><?php echo $this->__('Save'); ?></span></button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="entry-edit">
+	<form id="edit_form" method="post" enctype="multipart/form-data">
+		<script type="text/javascript">
+		    //< ![CDATA[
+		        editForm = new varienForm('edit_form', '');
+		    //]]>
+		</script>
+		<input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+		<input type="hidden" name="widgetChange" id="widgetChange" value="0">
+		<?php if(!empty($cat)): ?>
+			<div class="content-header">
+				<h3 class="icon-head head-categories"><?php echo $this->getCategoryName(); ?></h3>
+				<div class="content-buttons-placeholder">
+					<p class="content-buttons form-buttons">
+						<button onclick="showwidgets();" class="scalable" type="button"><span><?php echo $this->__('Widgets List'); ?></span></button>
+						<button onclick="createwidget();" class="scalable save" type="button"><span><?php echo $this->__('Add New Widget'); ?></span></button>
+							</td>
+					</p>
+				</div>
+			</div>
+
+			<div class="entry-edit">
+			    <div class="entry-edit-head">
+				    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Thumbnail Image'); ?></h4>
+				</div>
+				<div class="fieldset">
+					<div class="hor-scroll">
+						<table cellspacing="0" class="form-list">
+							<tbody>
+								<tr>
+									<td class="label">
+										<label for=""><?php echo $this->__('Upload Image'); ?><span class="required">*</span></label>
+									</td>
+									<td class="value">
+										<input type="file" class="input-file _image_uploader" name="category_thumbnail" accept="image/*">
+										<br>
+										<small class="mbsmall"><?php echo $this->__('(Uploaded image will be used to show on Mobile App)'); ?></small>
+									</td>
+								</tr>
+								<?php $thumbnail = $this->getCategoryThumbnail(); ?>
+								<?php if($thumbnail): ?>
+									<tr>
+										<td class="label">&nbsp;</td>
+										<td class="value">
+											<img src="<?php echo Mage::getBaseUrl('media').'mobi_commerce/category/'; ?><?php echo $thumbnail['mci_thumbnail']; ?>" alt="category" width="200px" />
+										</td>
+									</tr>
+								<?php endif; ?>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="widget-lists">
+				<div class="content-widget-new grid">
+					<table cellspacing="0" class="data border" id="_table">
+						<thead>
+							<tr class="headings">
+								<th><?php echo $this->__('Widget Id'); ?></th>
+								<th><?php echo $this->__('Widget Name'); ?></th>
+								<th><?php echo $this->__('Widget Title'); ?></th>
+								<th><?php echo $this->__('Widget Type'); ?></th>
+								<th><?php echo $this->__('Status'); ?></th>
+								<th><?php echo $this->__('Position'); ?></th>
+								<th><?php echo $this->__('Action'); ?></th>
+							</tr>
+						</thead>
+						<tbody id="_container">
+							<?php $widgets = $this->getCategoryWidgets(); ?>
+							<?php if(count($widgets)):?>
+								<?php $tabindex = 100; ?>
+								<?php foreach($widgets as $_widget): ?>
+									<?php $_widget_data = @unserialize($_widget->getWidgetData()); ?>
+									<tr>
+										<td><?php echo $_widget->getWidgetId(); ?></td>
+										<td><?php echo $_widget->getWidgetLabel(); ?></td>
+										<td><?php echo $_widget_data['title']; ?></td>
+										<td>
+											<?php if($_widget->getWidgetCode() == 'widget_image_slider'): ?>
+												<?php echo $this->__('Image Slider')?>
+											<?php elseif($_widget->getWidgetCode() == 'widget_product_slider'): ?>
+												<?php echo $this->__('Product List'); ?>
+											<?php elseif($_widget->getWidgetCode() == 'widget_category'):?>
+												<?php echo $this->__('Category'); ?>
+											<?php elseif($_widget->getWidgetCode() == 'widget_image'): ?>
+												<?php echo $this->__('Image'); ?>
+											<?php elseif($_widget->getWidgetCode() == 'widget_html'): ?>
+												<?php echo $this->__('HTML Content'); ?>
+											<?php endif; ?>
+										</td>
+										<?php if($_widget->getWidgetStatus() == 1):?>
+										<td><?php echo 'Enable'; ?></td>
+										<?php else:?>
+										<td><?php echo 'Disable'; ?></td>
+										<?php endif;?>
+										<td><input type="text" name="widget_position[<?php echo $_widget->getWidgetId(); ?>]" class="input-text" value="<?php echo $_widget->getWidgetPosition(); ?>" style="width:50px;" tabindex="<?php echo $tabindex; ?>" /></td>
+										<td><a class="editwidget" href="<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/callwidget',array(
+												'cat'		  => $_widget->getWidgetCategoryId(),
+												'widget_id'   => $_widget->getWidgetId(),
+												'widget_code' => $_widget->getWidgetCode(),
+												'isAjax'      => true,
+											));
+										?>"><?php echo $this->__("Edit"); ?></a>
+										<a href="<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/category/deletewidget',array(
+												'widget_id' => $_widget->getWidgetId(),
+											));
+										?>" onclick="return confirm('Are you sure?');"><?php echo $this->__("Delete"); ?></a>
+										</td>
+									</tr>
+									<?php $tabindex++; ?>
+								<?php endforeach;?>
+							<?php endif;?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		<?php else: ?>
+			<span>
+				<?php echo $this->__('With category widget you can define product display in the way you wanted. Select Grid, List or Image view. Configure them with as much detail as you want like pricing, reviews, product name and rating. Create widgets like product display, Shop by Category, New Arrivals and many more.'); ?>
+
+				<br><br>
+				<?php echo $this->__('Leave blank If you don’t want to customize the landing pages'); ?>
+			</span>
+		<?php endif; ?>
+		<div class="content-widget-new1"></div>
+	</form>
+</div>
+<script>
+	var cat = "<?php echo Mage::app()->getRequest()->getParam('cat', false); ?>";
+	function createwidget(){
+		markWidgetChange();
+		new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/widget/createwidget'); ?>cat/"+cat, {
+			method: 'Post',
+			parameters: {isAjax : 1},
+			onComplete: function(data) {				    
+			},
+			onSuccess: function(response){
+				var json = response.responseText.evalJSON(true);
+				if(json.status == 'success'){
+		            jQuery('.content-widget-new').html(json.widget_new_block);
+				}
+				else{
+					alert(json.error);
+				}
+			},
+			onFailure: function(response){
+				var json = response.responseText.evalJSON(true);
+				alert(json.error);
+			}
+		});
+	}
+
+	function showwidgets(){
+		markWidgetChange();
+		var url ="<?php echo Mage::helper('adminhtml')->getUrl('mobicommerce2/category/widgetlist'); ?>cat/"+cat;
+		new Ajax.Request(url, {
+			method: 'Post',
+			parameters: {isAjax : 1},
+			onComplete: function(data) {
+			},
+			onSuccess: function(response){
+				var json = response.responseText.evalJSON(true);
+				if(json.status == 'success'){
+		            jQuery('.widget-lists').html(json.widget_list_block);
+				}
+				else{
+					alert(json.error);
+				}
+			},
+			onFailure: function(response){
+				var json = response.responseText.evalJSON(true);
+				alert(json.error);
+			}
+		});
+	}
+
+	jQuery('.editwidget').click(function( event ) {
+		markWidgetChange();
+		event.preventDefault();
+		var editwidgeturl = jQuery(this).attr('href');
+		new Ajax.Request(editwidgeturl, {
+			method: 'Post',
+			parameters: {isAjax : 1},
+			onComplete: function(data) {				    
+			},
+			onSuccess: function(response){
+				var json = response.responseText.evalJSON(true);
+				if(json.status == 'success'){
+					jQuery('.content-widget-new').html(json.widget_block_content);
+				}
+				else{
+					alert(json.error);
+				}
+			},
+			onFailure: function(response){
+				var json = response.responseText.evalJSON(true);
+				alert(json.error);
+			}
+		});
+	});
+	function markWidgetChange()
+	{
+		jQuery('#widgetChange').val('1');
+	}
+</script>
