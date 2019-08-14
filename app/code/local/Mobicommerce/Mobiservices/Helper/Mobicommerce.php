@@ -16,4 +16,27 @@ class Mobicommerce_Mobiservices_Helper_Mobicommerce extends Mage_Core_Helper_Abs
               rmdir($dir); 
         } 
     }
+
+    public function getProductPriceByCurrency($price=null)
+    {
+        return Mage::helper('core')->currency($price, false, false);
+    }
+
+    /**
+     * Check to see if mobile version is supported or not
+     */
+    public function isMobileVersionSupported()
+    {
+        $supportedVersions = array(
+            "1.3.1",
+            "1.3.3",
+            "1.4.0",
+            );
+
+        $version = Mage::getBlockSingleton('mobiservices/connector')->_getConnectorVersion();
+        if(in_array($version, $supportedVersions))
+            return true;
+        else
+            return false;
+    }
 }

@@ -5,7 +5,7 @@ class Mobicommerce_Mobiservices_ConfigController extends Mobicommerce_Mobiservic
 	public function indexAction()
 	{
 		$data = $this->getData();
-		Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/external'))->__install102ScriptAction();
+		//Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/external'))->__install102ScriptAction();
 		$information = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/config'))->getAllInitialData($data);
 		$this->printResult($information);		
 	}
@@ -35,12 +35,5 @@ class Mobicommerce_Mobiservices_ConfigController extends Mobicommerce_Mobiservic
 		$data = $this->getData();
 		$states = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/config'))->getAgreements($data);
 		$this->printResult($states);
-	}
-
-	public function deleteApplicationAction()
-	{
-		$data = $this->getData();
-		$information = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/config'))->deleteApplication($data);
-		$this->printResult($information);
 	}
 }

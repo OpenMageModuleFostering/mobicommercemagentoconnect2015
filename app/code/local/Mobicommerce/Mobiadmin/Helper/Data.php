@@ -7,38 +7,42 @@ class Mobicommerce_Mobiadmin_Helper_Data extends Mage_Core_Helper_Abstract
 	{
 		$appdata = Mage::registry('application_data');
 		$appcode = $appdata->getAppCode();
+		$storeid = Mage::app()->getRequest()->getParam('store', null);
+
 		$collection = Mage::getModel('mobiadmin/appsetting')->getCollection();
-		$CmsPageCollection = $collection->addFieldToFilter('app_code',$appcode)->addFieldToFilter('setting_code','cms_settings');
-		$CmsPageCollection = $CmsPageCollection->getData();
-		$CmsPageData = $CmsPageCollection['0'];
-		$CmsPageDataValues = $CmsPageData['value'];	
-		$allCmsPageSetting = Mage::helper('mobiadmin')->_jsonUnserialize($CmsPageDataValues);		
-		$allCmsPageSetting = $allCmsPageSetting['en_US'];		
-		return $allCmsPageSetting;
+		$collection->addFieldToFilter('app_code', $appcode)->addFieldToFilter('setting_code','cms_settings');
+		$collection->addFieldToFilter('storeid', $storeid);
+		$data = $collection->getFirstItem()->getValue();
+		$data = Mage::helper('mobiadmin')->_jsonUnserialize($data);		
+		$data = $data['en_US'];
+		return $data;
 	}
 
 	public function getAppLocaleCode()
 	{
-		$appdata = Mage::registry('application_data');
-		$storeId = $appdata->getAppStoreid();
-		$storeLocaleCode = Mage::getStoreConfig('general/locale/code',$storeId);
-		return $storeLocaleCode;
+		$storeid = Mage::app()->getRequest()->getParam('store', null);
+		$locale = Mage::getStoreConfig('general/locale/code', $storeid);
+		return $locale;
 	}
 
 	public function getProductSliderCollection()
 	{
 		$appdata = Mage::registry('application_data');
 		$appcode = $appdata->getAppCode();
-		$collection = Mage::getModel('mobiadmin/appwidget')->getCollection();
-		$sliderCollection = $collection->addFieldToFilter('app_code',$appcode)->addFieldToFilter('app_type','product-slider')->setOrder('slider_position', 'ASC');
-		return $sliderCollection;
+		$storeid = Mage::app()->getRequest()->getParam('store', null);
+		$collection = Mage::getModel('mobiadmin/appwidget')->getCollection()
+			->addFieldToFilter('app_code', $appcode)
+			->addFieldToFilter('storeid', $storeid)
+			->addFieldToFilter('app_type', 'product-slider')
+			->setOrder('slider_position', 'ASC');
+		return $collection;
 	}
 
 	public function getProductCollectionForSlider()
 	{
-		$appdata = Mage::registry('application_data');
-        $storeId = $appdata->getAppStoreid();
-		$collection = Mage::getModel('catalog/product')->getCollection()->setStoreId($storeId)
+		$storeid = Mage::app()->getRequest()->getParam('store', null);
+		$collection = Mage::getModel('catalog/product')->getCollection()
+			->setStoreId($storeid)
 			->addAttributeToSelect('*')
 			->addAttributeToFilter('status', array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED));
 		Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($collection);
@@ -54,54 +58,63 @@ class Mobicommerce_Mobiadmin_Helper_Data extends Mage_Core_Helper_Abstract
 		$model = Mage::getModel('mobiadmin/applications');
 		$model->load((int) $id);
 		$appcode = $model->getAppCode();
-		$collection = Mage::getModel('mobiadmin/appsetting')->getCollection();
-		$collection = $collection->addFieldToFilter('app_code',$appcode)->addFieldToFilter('setting_code','category_icons');
+		$collection = Mage::getModel('mobiadmin/appsetting')->getCollection()
+			->addFieldToFilter('app_code', $appcode)
+			->addFieldToFilter('setting_code', 'category_icons');
         
-		$selectedIconCollection = $collection->getData();
-		$selectedIconCollection = $selectedIconCollection['0']['value'];
-		$selectedIconCollection = Mage::helper('mobiadmin')->_jsonUnserialize($selectedIconCollection);
-        return $selectedIconCollection;
+		$data = $collection->getData();
+		$data = $data['0']['value'];
+		$data = Mage::helper('mobiadmin')->_jsonUnserialize($data);
+        return $data;
 	}
 
 	public function getBannerImages()
 	{
 		$appdata = Mage::registry('application_data');
 		$appcode = $appdata->getAppCode();
-		$collection = Mage::getModel('mobiadmin/appsetting')->getCollection();
-		$collection = $collection->addFieldToFilter('app_code',$appcode)->addFieldToFilter('setting_code','banner_settings');
-		$bannersCollection = $collection->getData();
-		$bannersCollection = $bannersCollection['0']['value'];        
-		$bannersCollection = Mage::helper('mobiadmin')->_jsonUnserialize($bannersCollection);
-		return $bannersCollection;
+		$storeid = Mage::app()->getRequest()->getParam('store');
+		$collection = Mage::getModel('mobiadmin/appsetting')->getCollection()
+			->addFieldToFilter('app_code', $appcode)
+			->addFieldToFilter('setting_code', 'banner_settings')
+	    	->addFieldToFilter('storeid', $storeid);
+
+		$data = $collection->getData();
+		$data = $data['0']['value'];        
+		$data = Mage::helper('mobiadmin')->_jsonUnserialize($data);
+		return $data;
 	}
 
 	public function getCategoryIconSettings()
 	{
 		$appdata = Mage::registry('application_data');
 		$appcode = $appdata->getAppCode();
-		$collection = Mage::getModel('mobiadmin/appsetting')->getCollection();
-		$collection = $collection->addFieldToFilter('app_code',$appcode)->addFieldToFilter('setting_code','category_icons');
+		$collection = Mage::getModel('mobiadmin/appsetting')->getCollection()
+			->addFieldToFilter('app_code', $appcode)
+			->addFieldToFilter('setting_code', 'category_icons');
 
-		if($collection->count() > 0){
-			$categoryIconsCollection = $collection->getData();
-			$categoryIconsCollection = $categoryIconsCollection['0']['value'];        
-			$categoryIconsCollection = Mage::helper('mobiadmin')->_jsonUnserialize($categoryIconsCollection);
-			return $categoryIconsCollection;
+		if($collection->getSize() > 0){
+			$data = $collection->getData();
+			$data = $data['0']['value'];        
+			$data = Mage::helper('mobiadmin')->_jsonUnserialize($data);
+			return $data;
 		}
 		return null;
 	}
 
 	public function getBannerImagesByAppCode($appcode)
 	{
-		$collection = Mage::getModel('mobiadmin/appsetting')->getCollection();
-		$collection = $collection->addFieldToFilter('app_code', $appcode)->addFieldToFilter('setting_code','banner_settings');
-		$bannersCollection = $collection->getData();
-		$bannersCollection = $bannersCollection['0']['value'];
-		$bannersCollection = Mage::helper('mobiadmin')->_jsonUnserialize($bannersCollection);
-		return $bannersCollection;
+		$storeid = Mage::app()->getRequest()->getParam('store');
+		$collection = Mage::getModel('mobiadmin/appsetting')->getCollection()
+			->addFieldToFilter('app_code', $appcode)
+			->addFieldToFilter('storeid', $storeid)
+			->addFieldToFilter('setting_code', 'banner_settings');
+		$data = $collection->getData();
+		$data = $data['0']['value'];
+		$data = Mage::helper('mobiadmin')->_jsonUnserialize($data);
+		return $data;
 	}
 
-	public function getBestSellerProduct($storeId)
+	public function getBestSellerProduct($storeid)
 	{  
 		$collection = Mage::getResourceModel('catalog/product_collection')
             ->addAttributeToSelect(Mage::getSingleton('catalog/config')->getProductAttributes())
@@ -110,7 +123,7 @@ class Mobicommerce_Mobiadmin_Helper_Data extends Mage_Core_Helper_Abstract
         $collection->getSelect()
             ->joinLeft(
                 array('aggregation' => $collection->getResource()->getTable('sales/bestsellers_aggregated_monthly')),
-                "e.entity_id = aggregation.product_id AND aggregation.store_id={$storeId}",
+                "e.entity_id = aggregation.product_id AND aggregation.store_id={$storeid}",
                 array('SUM(aggregation.qty_ordered) AS sold_quantity')
             )
             ->group('e.entity_id')
@@ -120,10 +133,10 @@ class Mobicommerce_Mobiadmin_Helper_Data extends Mage_Core_Helper_Abstract
 		return $collection;     
 	}
 
-	public function getNewProductCollection($storeId)
+	public function getNewProductCollection($storeid)
 	{
 		$todayDate = Mage::app()->getLocale()->date()->toString(Varien_Date::DATETIME_INTERNAL_FORMAT);
-        $collection = Mage::getModel('catalog/product')->setStoreId($storeId)
+        $collection = Mage::getModel('catalog/product')->setStoreId($storeid)
 			->getCollection()
 			->addAttributeToFilter('news_from_date', array('date' => true, 'to' => $todayDate))
 			->addAttributeToFilter('news_to_date', array('or'=> array(
@@ -136,22 +149,21 @@ class Mobicommerce_Mobiadmin_Helper_Data extends Mage_Core_Helper_Abstract
 		return $collection;		
 	}
 
-	public function getThemeName($appCode)
+	public function getThemeName($appcode)
 	{
-		$collection = Mage::getModel('mobiadmin/appsetting')->getCollection();
-		$collection = $collection->addFieldToFilter('app_code',$appCode)->addFieldToFilter('setting_code','theme_folder_name');
-		$themeCollection = $collection->getData();
-		$themename = $themeCollection['0']['value'];
-		return $themename;
+		$collection = Mage::getModel('mobiadmin/appsetting')->getCollection()
+			->addFieldToFilter('app_code', $appcode)
+			->addFieldToFilter('setting_code', 'theme_folder_name');
+		$data = $collection->getData();
+		return $data['0']['value'];
 	}
 
-	public function setLanguageCodeData($localeCode)
+	public function setLanguageCodeData($locale)
 	{
-        $languageCollection = Mage::getModel('mobiadmin/multilanguage')->getCollection()->addFieldToFilter('mm_language_code',$localeCode);
-        $languageCollectionCount = $languageCollection->count();
-		if(empty($languageCollectionCount)){
+        $collection = Mage::getModel('mobiadmin/multilanguage')->getCollection()->addFieldToFilter('mm_language_code', $locale);
+        $count = $collection->getSize();
+		if(empty($count)){
 			$resource = Mage::getSingleton('core/resource');
-			$readConnection = $resource->getConnection('core_read');
 			$writeConnection = $resource->getConnection('core_write');
 			$query = "INSERT INTO ".Mage::getSingleton('core/resource')->getTableName('mobicommerce_multilanguage')." (mm_language_code, mm_type, mm_label_code, mm_label, mm_maxlength, mm_text, mm_help) SELECT '".$localeCode."' AS mm_language_code, mm_type, mm_label_code, mm_label, mm_maxlength, mm_text, mm_help FROM ".Mage::getSingleton('core/resource')->getTableName('mobicommerce_multilanguage')." WHERE mm_language_code = 'en_US'";
 			$writeConnection->query($query);
@@ -176,8 +188,13 @@ class Mobicommerce_Mobiadmin_Helper_Data extends Mage_Core_Helper_Abstract
 
 	public function getCountUnreadNotification()
 	{
-		$collection = Mage::getModel('mobiadmin/notification')->getCollection()->addFieldToFilter('read_status','0');
-		return $collection->count();
+		$table = Mage::getSingleton('core/resource')->getTableName('mobicommerce_notification');
+		$tableExists = Mage::getSingleton('core/resource')->getConnection('core_write')->showTableStatus($table);
+		if($tableExists){
+			$collection = Mage::getModel('mobiadmin/notification')->getCollection()->addFieldToFilter('read_status', '0');
+			return $collection->count();
+		}
+		return 0;
 	}
 
 	public function curlBuildUrl()

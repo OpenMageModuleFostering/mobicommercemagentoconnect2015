@@ -1,7 +1,6 @@
 <?php
- 
-class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
-{
+class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Edit extends Mage_Adminhtml_Block_Widget_Form_Container {
+	
     public function __construct()
     {
 		parent::__construct();

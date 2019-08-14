@@ -1,6 +1,6 @@
 <?php
-class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Edit_Tab_Form extends Mage_Adminhtml_Block_Widget_Form
-{
+class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Edit_Tab_Form extends Mage_Adminhtml_Block_Widget_Form {
+	
    protected function _prepareForm()
    {
        	$form = new Varien_Data_Form();
@@ -11,7 +11,7 @@ class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Edit_Tab_Form extends 
 	   	$applicationKey = $applicationData->getAppKey();
 
        	//Push Notification section
-	   	$fieldset = $form->addFieldset('pushnotification', array('legend'=>$this->__('Push Notification')));
+	   	$fieldset = $form->addFieldset('pushnotification', array('legend'=>$this->__('Push Notification <span class="app-scope">[Website]</span>')));
 	   	$fieldset->addField('appcode', 'hidden', array(
 			'name'     => 'appcode',
 			'value'    => $applicationCode,
@@ -108,7 +108,7 @@ class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Edit_Tab_Form extends 
        		));
        
        //Application Iformation
-	   	$fieldset = $form->addFieldset('app_info', array('legend'=>$this->__('Application Information')));
+	   	$fieldset = $form->addFieldset('app_info', array('legend'=>$this->__('Application Information <span class="app-scope">[Website]</span>')));
 	   	$collection = Mage::getModel('mobiadmin/appsetting')->getCollection();
 	   	$appinfoCollection = $collection->addFieldToFilter('app_code',$applicationCode)->addFieldToFilter('setting_code','appinfo');
 	   	$appInfoData = $appinfoCollection->getData();

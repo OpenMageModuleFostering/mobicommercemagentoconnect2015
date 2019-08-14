@@ -1,9 +1,4 @@
 <?xml version="1.0"?>
-<!--
-/**
- * 
- */
--->
 <layout version="0.1.0">   
     <default>
 	    <reference name="head">
@@ -27,9 +22,6 @@
 			<action method="addJs"><script>lib/FABridge.js</script></action>
 			<action method="addJs"><script>mage/adminhtml/flexuploader.js</script></action>
 			<action method="addJs"><script>mage/adminhtml/browser.js</script></action>
-
-
-
 		    <action method="addJs"><script>mobiadmin/plugin/jquery-1.9.1.min.js</script></action>
 		    <action method="addJs"><script>mobiadmin/colorpicker/colorpicker.js</script></action>
 		    <action method="addJs"><script>mobiadmin/colorpicker/eye.js</script></action>
@@ -40,6 +32,14 @@
 			<!-- <action method="addCss"><name>colorpicker/css/layout.css</name></action> -->
 		</reference>
 	    <reference name="left">
+		    <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+			    <action method="setTemplate">
+					<template>mobiadmin/application/edit/store/switcher.phtml</template>
+				</action>
+				<action method="setUseConfirm">
+					<params>0</params>
+				</action>
+			</block>
             <block type="mobiadmin/adminhtml_applications_edit_tabs" name="adminhtml.app.edit.tabs"/>
 			<block type="core/template" name="support" template="mobiadmin/application/edit/tab/support.phtml"/>
         </reference>

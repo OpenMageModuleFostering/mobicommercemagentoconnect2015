@@ -1,15 +1,21 @@
 <?php
-$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$mediaUrl         = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 $defaultSplashUrl = $mediaUrl.'mobi_assets/defaults/splash.png';
-$defaultLogoUrl = $mediaUrl.'mobi_assets/defaults/logo.png';
-$defaultIconUrl = $mediaUrl.'mobi_assets/defaults/icon.png';
-$theme_file = $mediaUrl.'mobi_assets/theme_files/';
-$adminSession = Mage::getSingleton('admin/session');
-$userEmail = $adminSession->getUser()->getEmail();
-?>
-<?php
-$options = Mage::getSingleton('adminhtml/system_store')->getStoreValuesForForm(false, true);
-$themes = array(array('label' => 'Shopper','name' => 'shopper'),array('label' => 'Fashion And Style','name' => 'fashion_and_style'));
+$defaultLogoUrl   = $mediaUrl.'mobi_assets/defaults/logo.png';
+$defaultIconUrl   = $mediaUrl.'mobi_assets/defaults/icon.png';
+$theme_file       = $mediaUrl.'mobi_assets/theme_files/';
+$adminSession     = Mage::getSingleton('admin/session');
+$userEmail        = $adminSession->getUser()->getEmail();
+$themes           = array(
+	array(
+		'label' => 'Shopper',
+		'name' => 'shopper'
+		),
+	array(
+		'label' => 'Fashion And Style',
+		'name' => 'fashion_and_style'
+		)
+	);
 ?>
 <div class="content-header">
     <table cellspacing="0" class="grid-header">
@@ -34,24 +40,24 @@ $themes = array(array('label' => 'Shopper','name' => 'shopper'),array('label' =>
                     <td class="value"><input class="input-text required-entry" name="appname" /></td>
                 </tr>
 				<tr>
-                    <td class="label"><?php echo $this->__('Select Store:')?> <span class="required">*</span></td>
+                    <td class="label"><?php echo $this->__('Default Mobile Store:')?> <span class="required">*</span></td>
                     <td class="value">
 						<select class="select" name="store">
-							<?php $count =1; ?>
-							<?php foreach($options as $option):?>
-								<?php if($count == 1):?>
-									
-								<?php else:?>
-									<optgroup label="<?php echo $option['label']?>"><?php echo $option['label']?>
-									<?php if(isset($option['value'])):?>
-										<?php foreach($option['value'] as $optionvalue):?>
-										<option value="<?php echo $optionvalue['value']?>"><?php echo $optionvalue['label']?></option>
-										<?php endforeach;?>
-									<?php endif;?>
-									</optgroup>
-								<?php endif;?>
-								<?php $count++;?>
-							<?php endforeach;?>
+							<?php
+							foreach (Mage::app()->getWebsites() as $website) {
+								?>
+								<optgroup label="<?php echo $website->getName(); ?>">
+									<?php
+								    foreach ($website->getGroups() as $group) {
+								        ?>
+								        <option value="<?php echo $group->getGroupId(); ?>"><?php echo $group->getName(); ?></option>
+								        <?php
+								    }
+								    ?>
+							    </optgroup>
+							    <?php
+							}
+							?>
 						</select>
 						<br><small class="advice-content"><?php echo $this->__('Select the store from thedropdown for which you want to create the mobile app.')?><br><?php echo $this->__('Want multi store mobile app?')?>&nbsp;<a style="text-transform:capitalize;" target="_blank" href="http://www.mobi-commerce.net/contacts"><?php echo $this->__('contact us')?></a></small>
 					</td>
@@ -97,7 +103,6 @@ $themes = array(array('label' => 'Shopper','name' => 'shopper'),array('label' =>
 								$preview_images[] = $value;
 							} 
 						}
-						//print_r($dir); exit;
 						?>
 					    <div class="theme-option">
 					        <input type="radio" name="apptheme" class="validate-one-required-by-name" <?php if($theme['name'] =='shopper') echo 'checked=\"checked"'?> value="<?php echo $theme['name']?>"/><?php echo $this->__($theme['label'])?>  

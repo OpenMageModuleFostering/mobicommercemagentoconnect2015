@@ -42,7 +42,7 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Config extends Mobicommerce_Mobiserv
         $information['data']['categories']       = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/catalog_catalog'))->_categoryTreeList($store_id, $data['appcode']);
         $information['data']['homedata']         = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/home'))->_getHomeData($data);
         $information['data']['CMS']              = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/appsetting'))->getCmsdata($data);
-        $information['data']['language']         = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/language'))->getLanguageData($storeInfo['store_info']['locale_identifier']);
+        $information['data']['language']         = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/language'))->getLanguageData(Mage::app()->getLocale()->getLocaleCode());
         $information['data']['push']             = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/appsetting'))->getPushdata($data);
         $information['data']['popup']            = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/appsetting'))->getPopupdata($data);
         $information['data']['countries']        = $this->_getCounties();

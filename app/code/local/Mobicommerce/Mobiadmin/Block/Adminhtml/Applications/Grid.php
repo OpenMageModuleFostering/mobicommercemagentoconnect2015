@@ -1,6 +1,6 @@
 <?php
-class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Grid extends Mage_Adminhtml_Block_Widget_Grid 
-{
+class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Grid extends Mage_Adminhtml_Block_Widget_Grid  {
+    
     public function __construct() 
 	{
 		parent::__construct();

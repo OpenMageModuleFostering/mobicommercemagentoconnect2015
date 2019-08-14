@@ -1,7 +1,25 @@
 <?php 
 $isEnable = Mage::getStoreConfig('mobimobileredirect/isactive_group/isactive_value',Mage::app()->getStore());
-if(Mage::helper('mobimobileredirect')->isMobile() && $isEnable=='1'){	
-	$url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'mobi/'.'www/'.'index.html';
-	Mage::app()->getFrontController()->getResponse()->setRedirect($url)->sendResponse();
+if(Mage::helper('mobimobileredirect')->isMobile() && $isEnable=='1'){
+	$mobiCurrentUrl = Mage::helper('core/url')->getCurrentUrl();
+	$mobiRestrictedPages = array(
+		"standard",
+		"redirect",
+		"success",
+		"cancel",
+		"failure",
+		"checkout",
+		);
+	$mobiRedirect = true;
+	foreach($mobiRestrictedPages as $_mobipage){
+		$mobipos = strpos($mobiCurrentUrl, $_mobipage);
+		if($mobipos !== FALSE){
+			$mobiRedirect = false;
+		}
+	}
+	if($mobiRedirect){
+		$url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'mobi/'.'www/'.'index.html';
+		Mage::app()->getFrontController()->getResponse()->setRedirect($url)->sendResponse();
+	}
 }
 ?>

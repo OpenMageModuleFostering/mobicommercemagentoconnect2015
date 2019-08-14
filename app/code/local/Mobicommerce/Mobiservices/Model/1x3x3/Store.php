@@ -7,6 +7,20 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Store extends Mobicommerce_Mobiservi
         parent::__construct();
     }
 
+    protected function getAllStores()
+    {
+        $stores = array();
+        $store_id = Mage::app()->getStore()->getStoreId();
+        $groupId = Mage::app()->getStore($store_id)->getGroupId();
+        $storeViews = Mage::app()->getGroup($groupId)->getStores();
+        foreach($storeViews as $_store){
+            $stores[] = $_store->getData();
+        }
+        $information = $this->successStatus();
+        $information['data']['stores'] = $stores;
+        return $information;
+    }
+
     public function getStoreList($data)
     {
         $information = $this->successStatus();
@@ -18,8 +32,23 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Store extends Mobicommerce_Mobiservi
 
         $stores = array();
         if($collection){
-            foreach($collection as $_collection)
-            $stores[] = $_collection->getData();
+            foreach($collection as $_collection){
+                $sd = $_collection->getData();
+                $pictures = array();
+                $pictureCollection = Mage::getModel('asd_store/store_picture')->getCollection()
+                    ->addStoreFilter($_collection->getStoreId())
+                    ->addOrderByPosition();
+
+                if($pictureCollection){
+                    foreach($pictureCollection as $_pcollection){
+                        $d = $_pcollection->getData();
+                        $d['picture_url'] = $_pcollection->getImageUrl();
+                        $pictures[] = $d;
+                    }
+                }
+                $sd['pictures'] = $pictures;
+                $stores[] = $sd;
+            }
         }
 
         $information['data']['stores'] = $stores;

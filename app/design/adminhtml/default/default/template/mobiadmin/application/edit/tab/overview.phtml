@@ -1,23 +1,23 @@
 <?php
-$applicationData = Mage::registry('application_data');
-$applicationCode = $applicationData->getAppCode();
-$applicationKey = $applicationData->getAppKey();
-$applicationName = $applicationData->getAppName();
-$applicationCreatedTime = $applicationData->getCreatedTime();
-$applicationAndroidUrl = $applicationData->getAndroidUrl();
-$applicationIosUrl = $applicationData->getIosUrl();
+$applicationData          = Mage::registry('application_data');
+$applicationCode          = $applicationData->getAppCode();
+$applicationKey           = $applicationData->getAppKey();
+$applicationName          = $applicationData->getAppName();
+$applicationCreatedTime   = $applicationData->getCreatedTime();
+$applicationAndroidUrl    = $applicationData->getAndroidUrl();
+$applicationIosUrl        = $applicationData->getIosUrl();
 $applicationAndroidStatus = $applicationData->getAndroidStatus();
-$applicationIosStatus = $applicationData->getIosStatus();
-$applicationCreatedTime =  strtotime($applicationCreatedTime);
-$licenseType = $applicationData->getAppMode();
-$Submittedudid = $applicationData->getUdid();
-$mobileWebsiteUrl = $applicationData->getWebappUrl();
-$addonParams = @unserialize($applicationData->getAddonParameters());
+$applicationIosStatus     = $applicationData->getIosStatus();
+$applicationCreatedTime   = strtotime($applicationCreatedTime);
+$licenseType              = $applicationData->getAppMode();
+$Submittedudid            = $applicationData->getUdid();
+$mobileWebsiteUrl         = $applicationData->getWebappUrl();
+$addonParams              = @unserialize($applicationData->getAddonParameters());
 
 ?>
 <div class="overview entry-edit">
     <div class="entry-edit-head">
-	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('App Details')?></h4>
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('App Details <span class="app-scope">[Website]</span>')?></h4>
 	</div>
 	<table cellspacing="0" class="form-list">
 		<tbody>
@@ -47,7 +47,7 @@ $addonParams = @unserialize($applicationData->getAddonParameters());
 	</table>
 	<?php if($licenseType == 'demo'):?>
 	    <div class="entry-edit-head">
-			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Android App')?></h4>
+			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Android App <span class="app-scope">[Website]</span>')?></h4>
 		</div>
 		<table cellspacing="0" class="form-list">
 			<tbody>
@@ -95,7 +95,7 @@ $addonParams = @unserialize($applicationData->getAddonParameters());
 		</table>
 		<?php if($Submittedudid == ''): ?>
 		<div class="entry-edit-head">
-			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('iOS App')?></h4>
+			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('iOS App <span class="app-scope">[Website]</span>')?></h4>
 		</div>
 		
 		<table cellspacing="0" class="form-list">
@@ -117,7 +117,7 @@ $addonParams = @unserialize($applicationData->getAddonParameters());
 		<?php endif;?>
 		<?php if(!empty($Submittedudid)):?>
 		<div class="entry-edit-head">
-			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('iOS App')?></h4>
+			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('iOS App <span class="app-scope">[Website]</span>')?></h4>
 		</div>
 		<table cellspacing="0" class="form-list">
 			<tbody>
@@ -177,7 +177,7 @@ $addonParams = @unserialize($applicationData->getAddonParameters());
 		</table>
 		<?php endif;?>
 		<div class="entry-edit-head">
-			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Mobile Website')?></h4>
+			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Mobile Website <span class="app-scope">[Website]</span>')?></h4>
 		</div>
 		<table cellspacing="0" class="form-list">
 			<tbody>
@@ -212,7 +212,7 @@ $addonParams = @unserialize($applicationData->getAddonParameters());
 	<?php endif;?>
 	<?php if($licenseType == 'live'):?>
 	    <div class="entry-edit-head">
-			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Android App Deliverables')?></h4>
+			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Android App Deliverables <span class="app-scope">[Website]</span>')?></h4>
 		</div>
 		<table cellspacing="0" class="form-list">
 			<tbody>
@@ -248,7 +248,7 @@ $addonParams = @unserialize($applicationData->getAddonParameters());
 			</tbody>
 		</table>
 		<div class="entry-edit-head">
-			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('iOS App Deliverables')?></h4>
+			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('iOS App Deliverables <span class="app-scope">[Website]</span>')?></h4>
 		</div>
 		<table cellspacing="0" class="form-list">
 			<tbody>
@@ -306,7 +306,7 @@ $addonParams = @unserialize($applicationData->getAddonParameters());
 
 
        <div class="entry-edit-head">
-			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Mobile Website')?></h4>
+			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Mobile Website <span class="app-scope">[Website]</span>')?></h4>
 		</div>
 		<table cellspacing="0" class="form-list">
 			<tbody>
@@ -347,7 +347,7 @@ $addonParams = @unserialize($applicationData->getAddonParameters());
 
 		<?php else:?>
 		<div class="entry-edit-head">
-			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Mobile Website Deliverables')?></h4>
+			<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Mobile Website Deliverables <span class="app-scope">[Website]</span>')?></h4>
 		</div>
 		<table cellspacing="0" class="form-list">
 			<tbody>

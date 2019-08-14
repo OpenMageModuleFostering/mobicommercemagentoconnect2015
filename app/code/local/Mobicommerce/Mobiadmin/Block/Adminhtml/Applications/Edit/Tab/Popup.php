@@ -1,11 +1,11 @@
 <?php
-class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Edit_Tab_Popup extends Mage_Adminhtml_Block_Widget_Form
-{
+class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Edit_Tab_Popup extends Mage_Adminhtml_Block_Widget_Form {
+	
 	protected function _prepareForm()
     {
 	    $form = new Varien_Data_Form();
         $this->setForm($form);
-		$fieldset = $form->addFieldset('mobile_data', array('legend'=>$this->__('Mobicommerce Mobile Enable Module')));
+		$fieldset = $form->addFieldset('mobile_data', array('legend'=>$this->__('Mobicommerce Mobile Enable Module <span class="app-scope">[Website]</span>')));
         $EnableRedirect = Mage::getStoreConfig('mobimobileredirect/isactive_group/isactive_value');
 		if($EnableRedirect == 0){
 		   $ShowSettting ='Disable';
@@ -17,7 +17,7 @@ class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Edit_Tab_Popup extends
 			'text'  => Mage::helper('mobiadmin')->__($ShowSettting),
         	));
         
-        $fieldset = $form->addFieldset('application_data', array('legend'=>$this->__('Pop Up Setting')));
+        $fieldset = $form->addFieldset('application_data', array('legend'=>$this->__('Pop Up Setting <span class="app-scope">[Website]</span>')));
 		$applicationData = Mage::registry('application_data');
 		$applicationCode = $applicationData->getAppCode();
 

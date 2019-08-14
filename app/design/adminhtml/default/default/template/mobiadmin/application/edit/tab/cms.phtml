@@ -1,12 +1,12 @@
 <?php 
 $configSettings = Mage::getSingleton('cms/wysiwyg_config')->getConfig();
-  $configSettings['files_browser_window_url'] = $this->getBaseUrl().'admin/cms_wysiwyg_images/index/';
-  Mage::getSingleton('cms/wysiwyg_config')->setConfig($configSettings);
+$configSettings['files_browser_window_url'] = $this->getBaseUrl().'admin/cms_wysiwyg_images/index/';
+Mage::getSingleton('cms/wysiwyg_config')->setConfig($configSettings);
 $cmsSettings = Mage::helper('mobiadmin')->getAppCmsPage();
 $cmsPages = $cmsSettings['cms_pages'];?>
 <div class="entry-edit">
     <div class="entry-edit-head">
-	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Store Information')?></h4>
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Store Information [STORE VIEW]')?></h4>
 	</div>
 	<div id="store_information" class="fieldset ">
 	    <div class="hor-scroll">
@@ -35,7 +35,7 @@ $cmsPages = $cmsSettings['cms_pages'];?>
 	</div>
 
 	<div class="entry-edit-head">
-	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Social Media URLs')?></h4>
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Social Media URLs <span class="app-scope">[STORE VIEW]</span>')?></h4>
 	</div>
 	
 
@@ -114,7 +114,7 @@ $cmsPages = $cmsSettings['cms_pages'];?>
 	</div>
 
 	<div class="entry-edit-head">
-	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('CMS Pages')?></h4>
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('CMS Pages <span class="app-scope">[STORE VIEW]</span>')?></h4>
 	</div>
 	<div id="store_information" class="fieldset ">
 	    <div class="hor-scroll">

@@ -44,28 +44,28 @@
                 <class>Mobicommerce_Mobiadmin_Model_Resource</class>
                 <entities>
                     <applications>
-                         <table>mobicommerce_applications</table>
+                        <table>mobicommerce_applications</table>
                     </applications>
 					<multilanguage>
-                         <table>mobicommerce_multilanguage</table>
+                        <table>mobicommerce_multilanguage</table>
                     </multilanguage>
 					<appsetting>
-                         <table>mobicommerce_applications_settings</table>
+                        <table>mobicommerce_applications_settings</table>
                     </appsetting>
 					<appwidget>
-                         <table>mobi_app_widgets</table>
+                        <table>mobi_app_widgets</table>
                     </appwidget>
 					<categoryicons>
-					     <table>mobicommerce_category_icons</table>
+					    <table>mobicommerce_category_icons</table>
 					</categoryicons>
 					<devicetokens>
-					     <table>mobicommerce_devicetokens</table>
+					    <table>mobicommerce_devicetokens</table>
 					</devicetokens>
 					<notification>
-					     <table>mobicommerce_notification</table>
+					    <table>mobicommerce_notification</table>
 					</notification>
 					<licence>
-					     <table>mobicommerce_licence</table>
+					    <table>mobicommerce_licence</table>
 					</licence>
                 </entities>
             </mobiadmin_resource>
@@ -91,22 +91,40 @@
 		    </mobiadmin_read>
 	   </resources>
 	   <events>
-	       <controller_action_predispatch>
+	       <mobicommerce_mobiadmin_createapp_predispatch>
 		        <observers>
-					<controller_action_before>
+					<mobicommerce_mobiadmin_ini_observer>
 						<class>mobiadmin/observer</class>
-						<method>hookToControllerActionPreDispatch</method>
-					</controller_action_before>
+						<method>createMobicommerceIniIfNotExists</method>
+					</mobicommerce_mobiadmin_ini_observer>
 				</observers>
-	       </controller_action_predispatch>
+	       </mobicommerce_mobiadmin_createapp_predispatch>
 		   <sales_convert_quote_to_order>
                 <observers>
-                    <saveplatform>
+                    <mobicommerce_mobiadmin_saveplatform_observer>
                         <class>mobiadmin/observer</class>
                         <method>sales_convert_quote_to_order</method> 
-                    </saveplatform>
+                    </mobicommerce_mobiadmin_saveplatform_observer>
                 </observers>
             </sales_convert_quote_to_order>
+            <store_add>
+                <observers>
+                    <mobicommerce_mobiadmin_store_add_observer>
+                        <type>singleton</type>
+                        <class>mobiadmin/observer</class>
+                        <method>applyStoreIdToExistingApps</method>
+                    </mobicommerce_mobiadmin_store_add_observer>
+                </observers>
+            </store_add>
+            <store_delete>
+                <observers>
+                    <mobicommerce_mobiadmin_store_delete_observer>
+                        <type>singleton</type>
+                        <class>mobiadmin/observer</class>
+                        <method>deleteStoreIdToExistingApps</method>
+                    </mobicommerce_mobiadmin_store_delete_observer>
+                </observers>
+            </store_delete>
 	   </events>
     </global>
 	<admin>
@@ -130,11 +148,11 @@
         </layout> 
 		<translate>
 		    <modules>
-			   <mobiadmin>
-			       <files>
+			   	<mobiadmin>
+			       	<files>
 				       <default>Mobicommerce_Mobiadmin.csv</default>
-				   </files>
-			   </mobiadmin>
+				   	</files>
+			   	</mobiadmin>
 			</modules>
 		</translate>
 	</adminhtml>

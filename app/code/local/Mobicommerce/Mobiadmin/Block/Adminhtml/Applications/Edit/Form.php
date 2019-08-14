@@ -5,7 +5,6 @@ class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Edit_Form extends Mage
 	{
 		$form = new Varien_Data_Form(array(
 			'id'      => 'edit_form',
-			'action'  => $this->getUrl('*/*/save', array('id' => $this->getRequest()->getParam('id'))),
 			'method'  => 'post',
 			'enctype' => 'multipart/form-data',
 			));

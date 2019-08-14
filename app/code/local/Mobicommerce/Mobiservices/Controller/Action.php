@@ -29,6 +29,13 @@ abstract class Mobicommerce_Mobiservices_Controller_Action extends Mage_Core_Con
 
     public function printResult($data)
     {
+        $data['data']['version_support'] = Mage::helper('mobiservices/mobicommerce')->isMobileVersionSupported();
+        if(!$data['data']['version_support']){
+            $data['status']  = "FAIL";
+            $data['messagecode'] = "N101";
+            $data['message'] = "This is outdated version. Please upgrade app.";
+        }
+
         $json_data = $this->dataToJson($data);
         if(isset($_GET['callback']) && $_GET['callback']!=''){
            print $_GET['callback'] ."(".$json_data.")";

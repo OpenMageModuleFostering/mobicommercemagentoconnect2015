@@ -1,13 +1,13 @@
 <?php
-class Mobicommerce_Mobiadmin_Block_Adminhtml_Menu extends Mage_Adminhtml_Block_Page_Menu
-{
+class Mobicommerce_Mobiadmin_Block_Adminhtml_Menu extends Mage_Adminhtml_Block_Page_Menu {
+    
 	/**
      * Retrieve Adminhtml Menu array
      *
      * @return array
      */
     public function getMenuArray()
-    {		
+    {
 		$notificationCount = Mage::helper('mobiadmin')->getCountUnreadNotification();
 		$menuArray = $this->_buildMenuArray();
 		$mobiadmin = $menuArray['mobiadmin'];
@@ -17,7 +17,6 @@ class Mobicommerce_Mobiadmin_Block_Adminhtml_Menu extends Mage_Adminhtml_Block_P
 				$menuArray['mobiadmin']['children']['appnotification']['mobiclass'] = '<sup class="mobinotify">'.$notificationCount.'</sup>';
 			}
             $menuArray['mobiadmin']['children']['appsupport']['click'] = 'window.open(\'http://support.mobi-commerce.net/\');';
-			
 		}
         return $menuArray;
     }

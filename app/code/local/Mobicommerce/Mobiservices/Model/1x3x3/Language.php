@@ -11,11 +11,11 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Language extends Mobicommerce_Mobise
 		if($languageCollection->getSize()){
 			foreach($languageCollection as $languageData){
 				$languageArray[$languageData['mm_label_code']] = array(
-					'label'     => $languageData['mm_label'],
-					'maxlength' => $languageData['mm_maxlength'],
+					//'label'     => $languageData['mm_label'],
+					//'maxlength' => $languageData['mm_maxlength'],
 					'text'      => $languageData['mm_text'],
-					'help'      => $languageData['mm_help'],
-					'type'      => $languageData['mm_type']
+					//'help'      => $languageData['mm_help'],
+					//'type'      => $languageData['mm_type']
 					);
 			}
 			return array($locale_identifier => array('labels' => $languageArray));;

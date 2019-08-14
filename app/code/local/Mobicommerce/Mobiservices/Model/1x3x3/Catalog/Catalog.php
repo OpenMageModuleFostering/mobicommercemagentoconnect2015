@@ -567,8 +567,7 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Catalog_Catalog extends Mobicommerce
                 $_taxHelper = Mage::helper('tax');
                 $_minimalPriceValue = $product->getMinimalPrice();
                 //$_exclTax = $_taxHelper->getPrice($product, $_minimalPriceValue);
-                //$_inclTax = $_taxHelper->getPrice($product, $_minimalPriceValue, true);  
-                //print_r($product->getData());exit; 
+                //$_inclTax = $_taxHelper->getPrice($product, $_minimalPriceValue, true);
                 
                 /* custom code added for getting minimum and maximum price for grouped product */
                 $groupedProduct = $product;
@@ -758,7 +757,6 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Catalog_Catalog extends Mobicommerce
     public function getConfigurableProductOptions($product)
     {
 		$options    = array();
-		$currentProduct = $product;    	
     	$attributes = $product->getTypeInstance(true)->getConfigurableAttributes($product);
 
         if (!$this->hasAllowProducts()) {
@@ -806,6 +804,13 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Catalog_Catalog extends Mobicommerce
                     if (isset($options[$attributeId][$p['value_index']])) {
                         $productsIndex = $options[$attributeId][$p['value_index']];
                     }
+                    $price = $product->getFinalPrice();
+                	if(empty($price))
+                		$price = $product->getPrice();
+                    if($p['is_percent'] == '1'){
+                    	$attInfo['prices'][$p_key]['pricing_value'] = (($price * $attInfo['prices'][$p_key]['pricing_value']) / 100);
+                    }
+                    $attInfo['prices'][$p_key]['pricing_final_value'] = $price + $attInfo['prices'][$p_key]['pricing_value'];
                     $attInfo['prices'][$p_key]['dependence_option_ids'] = $productsIndex;
                 }
             }
@@ -899,6 +904,7 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Catalog_Catalog extends Mobicommerce
 						'option_title' => $product->getName(),
 						'option_type'  => 'text',
 						'option_price' => $product->getFinalPrice(),
+						//"option_thumbnail_url" => Mage::helper('catalog/image')->init($product, 'thumbnail')->resize(200)->__toString(),
                     	);
                 }
             }

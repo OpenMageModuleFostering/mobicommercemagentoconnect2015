@@ -1,13 +1,9 @@
 <?php
 $bannersImages = Mage::helper('mobiadmin')->getBannerImages();
-
-//echo '<pre>';print_r($bannersImages);exit;
-//echo '</pre>';
 ?>
 <div class="entry-edit">
-
     <div class="entry-edit-head">
-	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Home Page Banner Images')?></h4>
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Home Page Banner Images <span class="app-scope">[STORE VIEW]</span>')?></h4>
 	</div>
 	<div id="store_information" class="fieldset ">
 	    <div class="hor-scroll">

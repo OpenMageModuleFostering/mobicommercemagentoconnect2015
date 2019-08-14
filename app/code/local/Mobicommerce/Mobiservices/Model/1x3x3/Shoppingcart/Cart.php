@@ -280,8 +280,10 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
                 'product_id'            => $product->getId(),
                 'name'                  => $product->getName(),
                 'price'                 => $item->getPrice(),
+                'price_incl_tax'        => $item->getPriceInclTax(),
                 'product_type'          => $item->getProductType(),
                 'row_total'             => $item->getRowTotal(),
+                'row_total_incl_tax'    => $item->getRowTotalInclTax(),
                 'product_thumbnail_url' => Mage::helper('catalog/image')->init($product, 'thumbnail')->resize(200)->__toString(),
                 'qty'                   => $item->getQty(),
                 'max_qty'               => (int) $inventory->getQty(),
@@ -568,7 +570,7 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
     {
         $code = $method->getCode();
         $list = $this->_getPaymentMethodTypes();
-        if (in_array($code, $this->_getAllowedMethods())) {
+        if (in_array($code, $this->_getAllowedMethods())){
             $type = $list[$code];
         }else{
             $type = 1;
@@ -576,14 +578,14 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
         $detail = array();
         $detail['title'] = $method->getTitle();
         $detail['code'] = strtoupper($method->getCode());
-        if ($type == 0) {
-            if ($code == "checkmo") {
+        if ($type == 0){
+            if ($code == "checkmo"){
                 $detail['payable_to']            = $method->getConfigData('payable_to');
                 $detail['payable_to_label']      = "Payable To";
                 $detail['mailing_address']       = $method->getConfigData('mailing_address');
                 $detail['mailing_address_label'] = "Mailing Address";
                 $detail['show_type']             = 0;
-            } else if(in_array($code, array('banktransfer', 'cashondelivery', 'mobipaypaloffline'))) {
+            }else if(in_array($code, array('banktransfer', 'cashondelivery', 'mobipaypaloffline'))){
                 $detail['instructions'] = $method->getConfigData('instructions');
                 $detail['show_type']    = 0;
             }
@@ -614,7 +616,7 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
                 $detail['instructions'] = $instructions;
                 $detail['show_type']    = 0;
             }
-            else if(in_array($code, array('cashondeliverypayment'))) {
+            else if(in_array($code, array('cashondeliverypayment'))){
                 $detail['cost_default'] = $method->getConfigData('cost');
                 $detail['instructions'] = $method->getConfigData('cost');
                 $detail['show_type']    = 0;
@@ -622,8 +624,8 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
             else {
                 $detail['show_type'] = 0;
             }
-        } elseif ($type == 1) {
-            if($code == 'paymill_creditcard') {
+        }elseif($type == 1){
+            if($code == 'paymill_creditcard'){
                 try{
                     $detail['configData'] = Mage::getModel('mobipayments/paymill')->getConfigData();
                 }
@@ -631,16 +633,16 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
                     $detail['configData'] = null;
                 }
             }
-            $detail['cc_types']  = $this->_getPaymentMethodAvailableCcTypes($method);
+            $detail['cc_types'] = $this->_getPaymentMethodAvailableCcTypes($method);
             $detail['useccv']    = $method->getConfigData('useccv');
             $detail['show_type'] = 1;
-        } elseif ($type == 2) {
+        }elseif ($type == 2){
             $detail['email']      = $method->getConfigData('business_account');
             $detail['client_id']  = $method->getConfigData('client_id');
             $detail['is_sandbox'] = $method->getConfigData('is_sandbox');
             $detail['bncode']     = "Magestore_SI_MagentoCE";
             $detail['show_type']  = 2;
-        } elseif($type == 9) {
+        }elseif($type == 9){
             $detail['show_type'] = 9;
             $detail['urls'] = array(
                 'redirect_url' => $method->getOrderPlaceRedirectUrl(),
@@ -749,6 +751,18 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
                 $detail['urls']['update_order_url'] = Mage::getUrl('paypal/express/updateOrder');
                 $detail['urls']['cancel_url'] = Mage::getUrl('checkout/cart');
             }
+            else if(in_array($method->getCode(), array(
+                'atos_standard'
+                ))){
+                $cc_types = explode(',', $method->getCctypes());
+                $detail['cc_types'] = array();
+                if(!empty($cc_types)){
+                    foreach($cc_types as $_cctype){
+                        $detail['cc_types'][$_cctype] = $_cctype;
+                    }
+                }
+                $detail['urls']['cancel_url'] = Mage::getUrl("atos/payment/cancel", array("_secure" => true));
+            }
 
             if(empty($detail['urls']['success_url']))
                 $detail['urls']['success_url'] = Mage::getUrl("checkout/onepage/success", array("_secure" => true));
@@ -777,6 +791,7 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
             'cashondelivery',
             'phoenix_cashondelivery',
             'cashondeliverypayment',
+            'ig_cashondelivery',
             'checkmo',
             'banktransfer',
             'bankpayment',
@@ -795,6 +810,8 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
             'atos_standard',
             'atos_euro',
             'atos_cofidis3x',
+            'mgntpasat4b_standard',
+            'systempay_standard',
         );
     }
 
@@ -808,6 +825,7 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
             'zooz'                   => 2,
             'transfer_mobile'        => 0,
             'cashondelivery'         => 0,
+            'ig_cashondelivery'      => 0,
             'phoenix_cashondelivery' => 0,
             'cashondeliverypayment'  => 0,
             'checkmo'                => 0,
@@ -828,6 +846,8 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
             'atos_standard'          => 9,
             'atos_euro'              => 9,
             'atos_cofidis3x'         => 9,
+            'mgntpasat4b_standard'   => 9,
+            'systempay_standard'     => 9,
         );        
     }    
 
@@ -869,8 +889,8 @@ class Mobicommerce_Mobiservices_Model_1x3x3_Shoppingcart_Cart extends Mobicommer
     {
         $ccTypes = Mage::getSingleton('payment/config')->getCcTypes();
         $methodCcTypes = explode(',', $method->getConfigData('cctypes'));
-        foreach ($ccTypes as $code => $title) {
-            if (!in_array($code, $methodCcTypes)) {
+        foreach ($ccTypes as $code => $title){
+            if(!in_array($code, $methodCcTypes)){
                 unset($ccTypes[$code]);
             }
         }

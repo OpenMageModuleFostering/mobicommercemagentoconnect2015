@@ -1,12 +1,13 @@
 <?php
-class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_Action
-{
+class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_Action {
+    
     public function indexAction()
     {
+    	Mage::dispatchEvent('mobicommerce_mobiadmin_createapp_predispatch', array());
 	    $this->loadLayout();
 		$this->_setActiveMenu('mobiadmin');	
 		$this->getLayout()->getBlock('head')->setTitle('Manage Mobile Apps');
-	    $this->renderLayout();	
+	    $this->renderLayout();
 	}
     
 	public function _setLanguageCode($localeCode)
@@ -14,44 +15,273 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
        Mage::helper('mobiadmin')->setLanguageCodeData($localeCode);
 	}
 
+	public function newAction()
+	{
+		Mage::dispatchEvent('mobicommerce_mobiadmin_createapp_predispatch', array());
+	    $this->loadLayout();
+		$this->_setActiveMenu('mobiadmin');	
+		$this->getLayout()->getBlock('head')->setTitle('Create New Mobile App');
+	    $this->renderLayout();
+	}
+
+	public function createAppAction()
+	{
+		$max_execution_time = ini_get('max_execution_time');
+		if($max_execution_time != -1 && $max_execution_time < 300){
+			ini_set('max_execution_time', 300);
+		}
+		$max_input_time = ini_get('max_input_time');
+		if($max_input_time != -1 && $max_input_time < 300){
+			ini_set('max_input_time', 300);
+		}
+
+		$refererUrl = $this->_getRefererUrl();
+		
+		$postData = Mage::app()->getRequest()->getPost();
+		if(!isset($postData)){
+			Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
+			return;
+		}
+
+		$groupid = $postData['store'];
+		$storeid = Mage::app()->getGroup($groupid)->getDefaultStore()->getStoreId();
+		$configurations = array(
+			'connectorVersionCode'   => '7656583d7b9a7c664e9b0dd4c04b2f8124ba94ef',
+			'max_execution_time'     => ini_get('max_execution_time'),
+			'max_input_time'         => ini_get('max_input_time'),
+			'ipaddress'              => isset($_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:'',
+			'add_store_code_to_urls' => Mage::getStoreConfig('web/url/use_store'),
+			'default_store_code'     => Mage::app()->getGroup($groupid)->getDefaultStore()->getCode(),
+			);
+
+		$validation = true;
+		if(!empty($_FILES)){
+			$images = array(
+				"appsplash" => "Splash",
+				"applogo"   => "Logo",
+				"appicon"   => "Icon",
+				);
+
+			foreach($images as $_image_name => $_image_label){
+				if($_FILES[$_image_name]['name'] != '' && strtolower(PATHINFO($_FILES[$_image_name]['name'], PATHINFO_EXTENSION)) != 'png'){
+					Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__($_image_label.' must be png'));
+					Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
+					$validation = false;
+				}
+			}
+
+			if(!$validation){
+				Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
+				return;
+			}
+		}
+
+		$this->__sendEmailBeforeCreateApp($postData);
+		
+		$curlData = $postData;
+		$media_path = Mage::getBaseDir('media') .DS. 'mobi_commerce';
+		$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'mobi_commerce/';
+		$mediaMobiAssetUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'mobi_assets/defaults/';
+		
+		$images = array(
+			"appsplash" => array(
+				"w" => 1536,
+				"h" => 2048
+				),
+			"applogo" => array(
+				"w" => 1024,
+				"h" => 1024
+				),
+			"appicon" => array(
+				"w" => 1024,
+				"h" => 1024
+				)
+			);
+		foreach($images as $_image_name => $_image_size){
+			if(isset($_FILES[$_image_name]['name']) && !empty($_FILES[$_image_name]['name'])){			
+				try{
+					$size = getimagesize($_FILES[$_image_name]['tmp_name']);
+
+					if($size[0] != $_image_size['w'] || $size[1] != $_image_size['h']){
+						Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__(ucfirst($_image_name).' Icon dimenssion must be '.$_image_size['w'].'X'.$_image_size['h']));
+						Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
+					    Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);			
+					    return;
+					}
+
+					$uploader = new Varien_File_Uploader($_image_name);
+					$uploader->setAllowRenameFiles(false);
+					$uploader->setAllowCreateFolders(true);
+					$filename =  time() . $_FILES[$_image_name]['name'];				
+					$uploader->save($media_path, $filename);
+					$curlData[$_image_name] = $mediaUrl.$filename; 
+				}catch(Exception $e){
+					Mage::log($e);
+					$this->_redirectError(502);
+				}
+			}
+		}
+		
+		if(!isset($curlData['appsplash'])){
+			$curlData['appsplash'] = $mediaMobiAssetUrl.'splash.png'; 
+		}
+		if(!isset($curlData['applogo'])){
+			$curlData['applogo'] = $mediaMobiAssetUrl.'logo.png'; 
+		}
+		if(!isset($curlData['appicon'])){
+			$curlData['appicon'] = $mediaMobiAssetUrl.'icon.png'; 
+		}
+
+		$this->__resetConnection();
+
+		$curlData['approoturl'] = Mage::app()->getStore($storeid)->getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);
+		$curlData['media_url'] = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+		/* code for licence key */
+		$LicenceModel = Mage::getModel('mobiadmin/licence')->getCollection();
+		$licencekey = "";
+		if($LicenceModel->getLastItem()){
+			$licencekey = $LicenceModel->getLastItem()->getMlLicenceKey();
+		}
+		$curlData['applicencekey'] = $licencekey;
+		/* code for licence key - upto here */
+
+		$curlData['configurations'] = $configurations;
+        $fields_string = http_build_query($curlData);
+		$ch = curl_init();
+
+		$url = Mage::helper('mobiadmin')->curlBuildUrl().'build/add'; 
+		curl_setopt($ch, CURLOPT_HEADER, FALSE);
+		curl_setopt($ch, CURLOPT_NOBODY, TRUE);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($ch,CURLOPT_URL, $url);
+		curl_setopt($ch,CURLOPT_POST, count($curlData));
+		curl_setopt($ch,CURLOPT_POSTFIELDS, http_build_query($curlData));
+		$result = curl_exec($ch);
+		//print_r($result);exit;
+		curl_close($ch);
+		$result = json_decode($result, true);
+		
+		$this->__resetConnection();
+		
+		if(isset($result)){
+		    if($result['status'] == 'success'){				
+				$appid = null;
+				if($result['data']['appcode']){
+					$data = array(
+						"groupId"               => $groupid,
+						"app_name"              => $curlData['appname'],
+						"app_code"              => $result['data']['appcode'],
+						"app_preview_code"      => $result['data']['appkey'],
+						"app_logo"              => $curlData['applogo'],
+						"app_theme_folder_name" => $curlData['apptheme'],
+						"android_status"        => $result['data']['android_status'],
+						"android_url"           => $result['data']['android_url'],
+						"ios_status"            => $result['data']['ios_status'],
+						"ios_url"               => $result['data']['ios_url'],
+						"udid"					=> $curlData['udid'],
+						"webapp_url"            => $result['data']['webapp_url'],
+						"app_license_key"		=> $licencekey,
+						);
+				    $appobject = Mage::getModel('mobiadmin/applications')->saveApplicationData($data);
+				    $appid = $appobject['appid'];
+				}else{
+				    Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__($result['message']));
+					Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
+				}
+				Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__($result['message']));
+				$this->_redirect('mobicommerce/index/edit', 
+					array(
+					'id'       => $appid,
+					'_current' => true
+                ));
+		    }else {
+				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__($result['message']));
+				Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
+			    Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
+				return;
+			}
+		}else{
+		   Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
+	       return;
+		}
+	}
+
 	public function editAction()
     {
 		$id = $this->getRequest()->getParam('id', null);
 		$model = Mage::getModel('mobiadmin/applications');
-		if($id)
-		{
+		if($id){
 			$model->load((int) $id);
-            if ($model->getId()) {                
+            if ($model->getId()){
                 $data = Mage::getSingleton('adminhtml/session')->getFormData(true);
-                if ($data) {
+                if($data){
                     $model->setData($data)->setId($id);
                 }
-            } else {
+            }
+			else{
                 Mage::getSingleton('adminhtml/session')->addError(Mage::helper('mobiadmin')->__('Application does not exist'));
                 $this->_redirect('*/*/');
             }
 		}
-		Mage::register('application_data', $model);
-        $appLocaleCode = Mage::helper('mobiadmin')->getAppLocaleCode();
-		if($appLocaleCode){
-		    $this->_setLanguageCode($appLocaleCode);
+
+		$storeid = $this->getRequest()->getParam('store', null);
+		$groupid = $model->getAppStoregroupid();
+		$default_storeid = Mage::app()->getGroup($groupid)->getDefaultStoreId();
+		$stores = Mage::app()->getGroup($groupid)->getStores();
+		if(empty($storeid)){
+			$url = Mage::helper('adminhtml')->getUrl('mobicommerce/index/edit', array('id' => $id, 'store' => $default_storeid));
+			Mage::app()->getFrontController()->getResponse()->setRedirect($url);
+			return;
 		}
-	    $this->loadLayout();
-		$this->_setActiveMenu('mobiadmin');	
-		$applicationData = Mage::registry('application_data');
-		$this->getLayout()->getBlock('head')->setTitle($this->__('Edit App '.$applicationData->getAppName()));
-	    $this->getLayout()->getBlock('head')->setCanLoadExtJs(true);
-        $this->renderLayout();	
+
+		if(!$this->storeExistsInGroup($storeid, $stores)){
+			Mage::getSingleton('adminhtml/session')->addError(Mage::helper('mobiadmin')->__('Store does not exist'));
+                $this->_redirect('*/*/');
+		}
+
+		if($this->getRequest()->getPost()){
+			$this->update();
+		}
+		else{
+			Mage::register('application_data', $model);
+			$locale = Mage::helper('mobiadmin')->getAppLocaleCode();
+			if($locale){
+				$this->_setLanguageCode($locale);
+			}
+			$this->loadLayout();
+			$this->_setActiveMenu('mobiadmin');	
+			$this->getLayout()->getBlock('head')->setTitle($this->__('Edit App '.$model->getAppName()));
+			$this->getLayout()->getBlock('head')->setCanLoadExtJs(true);
+			$this->renderLayout();
+		}
 	}
 
-	public function saveAction()
+	protected function storeExistsInGroup($storeid, $stores = null)
+	{
+		if(empty($stores))
+			return false;
+
+		$storeids = array();
+		foreach($stores as $_store){
+			$storeids[] = $_store->getStoreId();
+		}
+
+		if(in_array($storeid, $storeids))
+			return true;
+		else
+			return false;
+	}
+
+	public function update()
 	{
 		if($this->getRequest()->getPost()){
+			$storeid = $this->getRequest()->getParam('store', null);
             $appid = Mage::app()->getRequest()->getPost('appid');
             $postData = $this->getRequest()->getPost();
 			$appCode = $postData['appcode'];
 			$appKey = $postData['appkey'];
-            $error = false;
+            $errors = false;
+
 			/*
 			* Saving personalize Data in Media Application Folder
 			*/
@@ -77,7 +307,7 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			* Create Css File
 			*/
 			$theme_folder_name = $postData['themename'];
-            if(file_exists ($appUrlXmlFile)){
+            if(file_exists($appUrlXmlFile)){
 				$appCssFile = Mage::getBaseDir('media').DS.'mobi_commerce'.DS.$appCode.DS.'personalizer'.DS.'personalizer.css';
 				$svgParentFolder =  Mage::getBaseDir('media').DS.'mobi_assets'.DS.'theme_files'.DS.$theme_folder_name.DS.'personalizer'.DS.'svg';
 				$svgFolder =  Mage::getBaseDir('media').DS.'mobi_commerce'.DS.$appCode.DS.'personalizer'.DS.'svg';
@@ -114,29 +344,8 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 				file_put_contents($appCssFile,implode($cssOptionPart,"\r\n"));
 			}
 
-			/*
-			* Saving Application Store Id in Database 
-			*/
-			$setStore = $postData['ddlStore'];
-			$appCode = $postData['appcode'];
-			$applicationsCollection  = Mage::getModel('mobiadmin/applications')->getCollection();
-			$applicationsCollection = $applicationsCollection
-				->addFieldToFilter('app_code', $appCode);
-			
-            foreach($applicationsCollection as $application){
-			   $application->setData('app_storeid', $setStore)->save();
-			}
-
-            /*
-			* Create Media Url From Media Aplication Path
-			*/
-
-            $appinfoimageurl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/'. 'mobi_commerce'.'/'.$appCode.'/'.'appinfo'.'/' ;
-
-            /*
-			* Create Media Url From Media Aplication Path For Banner
-			*/
-            $appgalleryimageurl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/'. 'mobi_commerce'.'/'.$appCode.'/'.'home_banners'.'/' ;
+            $appinfoimageurl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/'. 'mobi_commerce'.'/'.$appCode.'/'.'appinfo'.'/';
+            $appgalleryimageurl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/'. 'mobi_commerce'.'/'.$appCode.'/'.'home_banners'.'/';
 
             /*
 			* Saving Push Notification Data With IOSPEM File Uploader
@@ -228,7 +437,7 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			/*
 			* Save Labels and Messages Store Wise Data
 			*/
-            $localeCode = Mage::getStoreConfig('general/locale/code',$setStore);
+            $localeCode = Mage::getStoreConfig('general/locale/code', $storeid);
 			$languageData = $postData['language_data'];
 			foreach ($languageData as $mm_id=>$mm_text){
 				$applicationLanguageCollection = Mage::getModel('mobiadmin/multilanguage')->getCollection();
@@ -276,6 +485,7 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 
 				$sliderCollection = Mage::getModel('mobiadmin/appwidget')->getCollection();
 				$sliderCollection = $sliderCollection->addFieldToFilter('app_code', $appCode)
+					->addFieldToFilter('storeid', $storeid)
 					->addFieldToFilter('slider_code', $_slidercode);
 
 				foreach($sliderCollection as $_sliderCollection) {
@@ -324,6 +534,7 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			$applicationSettingCollection = Mage::getModel('mobiadmin/appsetting')->getCollection();
 			$applicationSettingCollection = $applicationSettingCollection
 				->addFieldToFilter('app_code', $appCode)
+				->addFieldToFilter('storeid', $storeid)
 			    ->addFieldToFilter('setting_code', 'cms_settings');
 			foreach($applicationSettingCollection as $cmssetting){
 			   $cmssetting->setData('value',$cmscontentarray)->save();
@@ -383,6 +594,7 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
             $applicationSettingCollection = Mage::getModel('mobiadmin/appsetting')->getCollection();
 			$applicationSettingCollection = $applicationSettingCollection
 				->addFieldToFilter('app_code',$appCode)
+				->addFieldToFilter('storeid', $storeid)
 			    ->addFieldToFilter('setting_code','banner_settings');
 			foreach($applicationSettingCollection as $bannersColl){
 			   $bannersColl->setData('value',$bannerValue)->save();
@@ -486,6 +698,9 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 				$result = json_decode($result, true);
 				if(isset($result)) {
 					if($result['status'] == 'success'){
+						$applicationsCollection  = Mage::getModel('mobiadmin/applications')->getCollection()
+							->addFieldToFilter('app_code', $appCode);
+			
 						foreach($applicationsCollection as $application){
 						   	$application
 							   ->setData('udid', $udids)
@@ -503,7 +718,7 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 					}
 				}
 			}
-            if(!empty($errors) && isset($errors)){
+            if(isset($errors) && !empty($errors)){
                 Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__($errors));
 			}else{
 				$message = $this->__('Application is successfully Save.');
@@ -606,14 +821,6 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 		return false;
 	}
 
-	public function newAction()
-	{
-	    $this->loadLayout();
-		$this->_setActiveMenu('mobiadmin');	
-		$this->getLayout()->getBlock('head')->setTitle('Create New Mobile App');
-	    $this->renderLayout();
-	}
-
 	public function notificationAction()
 	{
 	    $this->loadLayout();
@@ -686,253 +893,28 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
         $this->_redirect('mobicommerce/index/notification');	   
 	}
 
-	public function createAppAction()
-	{
-		$max_execution_time = ini_get('max_execution_time');
-		if($max_execution_time != -1 && $max_execution_time < 300){
-			ini_set('max_execution_time', 300);
-		}
-		$max_input_time = ini_get('max_input_time');
-		if($max_input_time != -1 && $max_input_time < 300){
-			ini_set('max_input_time', 300);
-		}
-
-		$configurations = array(
-			'connectorVersionCode' => 'fd1ecc4eab5a737f70cfb9939064a24368a1efec',
-			'max_execution_time'   => ini_get('max_execution_time'),
-			'max_input_time'       => ini_get('max_input_time'),
-			'ipaddress'			   => isset($_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:'',
-			);
-
-		$refererUrl = $this->_getRefererUrl();
-		$validation = true;
-		if(!empty($_FILES)){
-			if($_FILES['appsplash']['name'] != '' && strtolower(PATHINFO($_FILES['appsplash']['name'], PATHINFO_EXTENSION)) != 'png'){
-				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('Splash must be png'));
-				Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
-				$validation = false;
-			}
-
-			if($_FILES['applogo']['name'] != '' && strtolower(PATHINFO($_FILES['applogo']['name'], PATHINFO_EXTENSION)) != 'png'){
-				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('Logo must be png'));
-				Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
-				$validation = false;
-			}
-
-			if($_FILES['appicon']['name'] != '' && strtolower(PATHINFO($_FILES['appicon']['name'], PATHINFO_EXTENSION)) != 'png'){
-				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('Icon must be png'));
-				Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
-				$validation = false;
-			}
-
-			if(!$validation){
-				Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
-				return;
-			}
-		}
-		
-		$postData = Mage::app()->getRequest()->getPost();
-		if(!isset($postData)){
-			Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
-			return;
-		}
-		$this->_sendEmailBeforeCreateApp($postData);
-		
-		$curlData = $postData;
-		$media_path = Mage::getBaseDir('media') .DS. 'mobi_commerce';
-		$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'mobi_commerce/';
-		$mediaMobiAssetUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'mobi_assets/defaults/';
-		
-		if(isset($_FILES['appsplash']['name']) && !empty($_FILES['appsplash']['name'])){			
-			try{
-				$uploader = new Varien_File_Uploader('appsplash');
-				$uploader->setAllowRenameFiles(false);
-				$uploader->setAllowCreateFolders(true);
-				$imgFilename =  time() .$_FILES['appsplash']['name'];				
-				$uploader->save($media_path, $imgFilename);
-				$curlData['appsplash'] = $mediaUrl.$imgFilename; 
-			}catch(Exception $e){
-				Mage::log($e);
-				$this->_redirectError(502);
-			}
-		}
-
-		if(isset($_FILES['applogo']['name']) && !empty($_FILES['applogo']['name'])){
-			try{
-				$uploader = new Varien_File_Uploader('applogo');
-				$uploader->setAllowRenameFiles(false);
-				$imgFilename =  time() .$_FILES['applogo']['name'];
-				$uploader->save($media_path, $imgFilename);
-				$curlData['applogo'] = $mediaUrl.$imgFilename; 
-			} catch(Exception $e){
-				Mage::log($e);
-				$this->_redirectError(502);
-			}
-		}
-
-		if(isset($_FILES['appicon']['name']) && !empty($_FILES['appicon']['name'])){
-			try{
-				$uploader = new Varien_File_Uploader('appicon');
-				$uploader->setAllowRenameFiles(false);
-				$imgFilename =  time() .$_FILES['appicon']['name'];
-				$uploader->save($media_path, $imgFilename);
-				$curlData['appicon'] = $mediaUrl.$imgFilename; 
-			}catch(Exception $e){
-				Mage::log($e);
-				$this->_redirectError(502);
-			}
-		}
-
-		$db = Mage::getSingleton('core/resource')->getConnection('core_read');
-		$db->closeConnection();
-		$db->getConnection();
-		$db = Mage::getSingleton('core/resource')->getConnection('core_write');
-		$db->closeConnection();
-		$db->getConnection();
-		
-		if(isset($curlData['appsplash'])){
-			$size = getimagesize($curlData['appsplash']);
-			$maxWidth = 1536;
-            $maxHeight = 2048;
-			if($size[0] != $maxWidth || $size[1] != $maxHeight){
-				@unlink($curlData['appsplash']);
-				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('Appsplash Icon dimenssion must be 1536X2048'));
-				Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
-			    Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);			
-			    return;
-			}
-		}
-		if(isset($curlData['appicon'])){
-			$size = getimagesize($curlData['appicon']);
-			$maxWidth = 1024;
-            $maxHeight = 1024;
-			if ($size[0] != $maxWidth || $size[1] != $maxHeight){
-				@unlink($curlData['appicon']);
-				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('App Icon dimenssion must be 1024X1024'));
-				Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
-			    Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
-			    return;
-			}
-		}
-		if(!isset($curlData['appsplash'])){
-			$curlData['appsplash'] = $mediaMobiAssetUrl.'splash.png'; 
-		}
-		if(!isset($curlData['applogo'])){
-			$curlData['applogo'] = $mediaMobiAssetUrl.'logo.png'; 
-		}
-		if(!isset($curlData['appicon'])){
-			$curlData['appicon'] = $mediaMobiAssetUrl.'icon.png'; 
-		}
-
-        $storeId = $curlData['store'];
-        $curlData['approoturl'] = Mage::app()->getStore($storeId)->getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK);
-		$curlData['media_url'] = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
-		/* code for licence key */
-		$LicenceModel = Mage::getModel('mobiadmin/licence')->getCollection();
-		$licencekey = "";
-		if($LicenceModel->getLastItem()){
-			$licencekey = $LicenceModel->getLastItem()->getMlLicenceKey();
-		}
-		$curlData['applicencekey'] = $licencekey;
-		/* code for licence key - upto here */
-		
-		$curlData['configurations'] = $configurations;
-        $fields_string = http_build_query($curlData);
-		$ch = curl_init();
-
-		$url = Mage::helper('mobiadmin')->curlBuildUrl().'build/add'; 
-		curl_setopt($ch, CURLOPT_HEADER, FALSE);
-		curl_setopt($ch, CURLOPT_NOBODY, TRUE);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($ch,CURLOPT_URL, $url);
-		curl_setopt($ch,CURLOPT_POST, count($curlData));
-		curl_setopt($ch,CURLOPT_POSTFIELDS, http_build_query($curlData));
-		$result = curl_exec($ch);	
-		curl_close($ch);
-		$result = json_decode($result, true);
-		
-		$db = Mage::getSingleton('core/resource')->getConnection('core_read');
-		$db->closeConnection();
-		$db->getConnection();
-		$db = Mage::getSingleton('core/resource')->getConnection('core_write');
-		$db->closeConnection();
-		$db->getConnection();
-		
-		if(isset($result)){
-		    if($result['status'] == 'success'){
-				$saveData = array();
-				$saveData['app_name'] = $curlData['appname'];
-				$saveData['app_code'] = $result['data']['appcode'];
-				$saveData['app_preview_code'] = $result['data']['appkey'];
-				$saveData['app_logo'] = $curlData['applogo'];
-				$saveData['app_theme_folder_name'] = $curlData['apptheme'];
-				$android_url = $result['data']['android_url'];
-				$ios_url = $result['data']['ios_url'];
-				$android_status = $result['data']['android_status'];
-				$ios_status = $result['data']['ios_status'];
-				$webapp_url = $result['data']['webapp_url'];
-				$saveData['webapp_url'] = $webapp_url;
-				$udids = $curlData['udid'];
-				if(!empty($udids)){
-                    $saveData['udid'] = $udids;
-				}
-				$saveData['android_url'] = $android_url;
-				$saveData['ios_url'] = $ios_url;
-				$saveData['android_status'] = $android_status;
-				$saveData['ios_status'] = $ios_status;
-				if(!empty($licencekey)) {
-                    $saveData['app_license_key'] = $licencekey;
-				}
-				$appid = null;
-				if($saveData['app_code']){
-				    $appobject = Mage::getModel('mobiadmin/applications')->saveApplicationData($saveData ,$storeId);
-				    $appid = $appobject['appid'];
-				}else{
-				    Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__($result['message']));
-					Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
-				}
-				Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__($result['message']));
-				$this->_redirect('mobicommerce/index/edit', 
-					array(
-					'id'       => $appid,
-					'_current' => true
-                ));
-		    }else {
-				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__($result['message']));
-				Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
-			    Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
-				return;
-			}
-		}else{
-		   Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
-	       return;
-		}
-	}
-
 	public function sendemailAction()
 	{
 	    $postData = Mage::app()->getRequest()->getPost();
 		$isAjax = Mage::app()->getRequest()->getParam('isAjax');
 		if($isAjax) {
 			$user = Mage::getSingleton('admin/session');
-			$userEmail = $user->getUser()->getEmail();
-			$userFirstname = $user->getUser()->getFirstname();
-		    $fromEmail = $userEmail;
-			$fromName = $userFirstname; 
-			$toEmail = $postData['emailid'];
+			$fromEmail = $user->getUser()->getEmail();
+			$from = $user->getUser()->getFirstname();
+			$to = $postData['emailid'];
 			if($postData['templatetype'] == 'android'){
-				$body = "<b>Hello</b>, <br><br> ".$fromName." has sent you a MobiCommerce Android Demo App to review, by clicking the URL you can download and install the Mobile app in your Mobile Device.<br><br> MobiCommerce Android  App URL: ".$postData['appurl']." <br><br><i>'".$this->__('Note: If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app')."'</i> <br><br> Regards";
+				$body = "<b>Hello</b>, <br><br> ".$from." has sent you a MobiCommerce Android Demo App to review, by clicking the URL you can download and install the Mobile app in your Mobile Device.<br><br> MobiCommerce Android  App URL: ".$postData['appurl']." <br><br><i>'".$this->__('Note: If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app')."'</i> <br><br> Regards";
 			}elseif($postData['templatetype'] == 'ios'){
-				$body = "<b>Hello</b>, <br><br> ".$fromName." has sent you a MobiCommerce iOS Demo App to review, by clicking the URL you can download and install the Mobile app in your Mobile Device.<br><br> MobiCommerce iOS  App URL: ".$postData['appurl']." <br><br><i>'".$this->__('Note: If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app')."'</i> <br><br> Regards";
+				$body = "<b>Hello</b>, <br><br> ".$from." has sent you a MobiCommerce iOS Demo App to review, by clicking the URL you can download and install the Mobile app in your Mobile Device.<br><br> MobiCommerce iOS  App URL: ".$postData['appurl']." <br><br><i>'".$this->__('Note: If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app')."'</i> <br><br> Regards";
 			}elseif($postData['templatetype'] == 'website'){
-				$body = "<b>Hello</b>, <br><br> ".$fromName." has sent you a MobiCommerce provided Mobile Website to review, by clicking the URL you can review mobile website in your Mobile Devices.<br><br> MobiCommerce Mobile Website URL: ".$postData['appurl']."  <br><br> Regards";
+				$body = "<b>Hello</b>, <br><br> ".$from." has sent you a MobiCommerce provided Mobile Website to review, by clicking the URL you can review mobile website in your Mobile Devices.<br><br> MobiCommerce Mobile Website URL: ".$postData['appurl']."  <br><br> Regards";
 			}
 			$subject = "Mobicommerce App URL";
 			$mail = new Zend_Mail();
 			$mail->setBodyText('Mobicommerce App Url');
 			$mail->setBodyHtml($body);
-			$mail->setFrom($fromEmail, $fromName);
-			$mail->addTo($toEmail);
+			$mail->setFrom($fromEmail, $from);
+			$mail->addTo($to);
 			$mail->setSubject($subject);
 			try{
 			    $mail->send();
@@ -947,33 +929,41 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 		}		
 	}
 
-	public function _sendEmailBeforeCreateApp($postdata)
+	protected function __sendEmailBeforeCreateApp($data)
 	{
-		if(!empty($postdata)){
-			$appName = $postdata['appname'];
-			$storeId = $postdata['store'];
-            $storeUrl = Mage::app()->getStore($storeId)->getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK);
-			$emailId = $postdata['primaryemail'];
-			$phone = $postdata['phone'];
-			if(!empty($postdata['udid'])){
-				$udid = $postdata['udid'];
+		if(!empty($data)){
+			$groupId = $data['store'];
+			$storeId = 0;
+			foreach (Mage::app()->getWebsites() as $website){
+			    foreach ($website->getGroups() as $group){
+			    	if($group->getGroupId() == $groupId){
+			    		$storeId = $group->getDefaultStoreId();
+			    	}
+			    }
 			}
-			$body = "App Name:- ".$appName." <br>  Store Url:-  ".$storeUrl." <br> Email Id :- ".$emailId." <br> Phone Number:- ".$phone."";
-            $toEmail = Mage::helper('mobiadmin')->mobicommerceEmailId();
-			$subject = "Create App Request From ".$storeUrl;
+            $storeUrl = Mage::app()->getStore($storeId)->getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);
+			$body = "App Name:- ".$data['appname']." <br>  Store Url:-  ".$storeUrl." <br> Email Id :- ".$data['primaryemail']." <br> Phone Number:- ".$data['phone']."";
+            $to = Mage::helper('mobiadmin')->mobicommerceEmailId();
 			$user = Mage::getSingleton('admin/session');
-			$userEmail = $user->getUser()->getEmail();
-			$userFirstname = $user->getUser()->getFirstname();
-		    $fromEmail = $userEmail;
-			$fromName = $userFirstname; 
+			$from = $user->getUser()->getEmail();
 			$mail = new Zend_Mail();
 			$mail->setBodyText('Mobicommerce Create App Request');
 			$mail->setBodyHtml($body);
-			$mail->setFrom($fromEmail, $appName);
-			$mail->addTo($toEmail, 'Mobicommerce');
-			$mail->setSubject($subject);
+			$mail->setFrom($from, $data['appname']);
+			$mail->addTo($to, 'Mobicommerce');
+			$mail->setSubject("Create App Request From ".$storeUrl);
 			try {$mail->send();}
 			catch (Exception $e){}
 		}
+	}
+
+	protected function __resetConnection()
+	{
+		$db = Mage::getSingleton('core/resource')->getConnection('core_read');
+		$db->closeConnection();
+		$db->getConnection();
+		$db = Mage::getSingleton('core/resource')->getConnection('core_write');
+		$db->closeConnection();
+		$db->getConnection();
 	}
 }
