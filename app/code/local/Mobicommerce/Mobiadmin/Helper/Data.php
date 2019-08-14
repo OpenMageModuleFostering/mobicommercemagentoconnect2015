@@ -165,7 +165,7 @@ class Mobicommerce_Mobiadmin_Helper_Data extends Mage_Core_Helper_Abstract
 		if(empty($count)){
 			$resource = Mage::getSingleton('core/resource');
 			$writeConnection = $resource->getConnection('core_write');
-			$query = "INSERT INTO ".Mage::getSingleton('core/resource')->getTableName('mobicommerce_multilanguage')." (mm_language_code, mm_type, mm_label_code, mm_label, mm_maxlength, mm_text, mm_help) SELECT '".$localeCode."' AS mm_language_code, mm_type, mm_label_code, mm_label, mm_maxlength, mm_text, mm_help FROM ".Mage::getSingleton('core/resource')->getTableName('mobicommerce_multilanguage')." WHERE mm_language_code = 'en_US'";
+			$query = "INSERT INTO ".Mage::getSingleton('core/resource')->getTableName('mobicommerce_multilanguage')." (mm_language_code, mm_type, mm_label_code, mm_label, mm_maxlength, mm_text, mm_help) SELECT '".$locale."' AS mm_language_code, mm_type, mm_label_code, mm_label, mm_maxlength, mm_text, mm_help FROM ".Mage::getSingleton('core/resource')->getTableName('mobicommerce_multilanguage')." WHERE mm_language_code = 'en_US'";
 			$writeConnection->query($query);
 		}
 	}	

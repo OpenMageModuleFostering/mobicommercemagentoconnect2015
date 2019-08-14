@@ -198,4 +198,31 @@ class Mobicommerce_Mobiservices_Helper_Shoppingcart extends Mage_Core_Helper_Abs
             $this->formatOptionsCart(Mage::helper('catalog/product_configuration')->getCustomOptions($item))
             );
     }
+
+    public function getBurgerlyonSelectedOptions($item){
+        $option = unserialize($item->getOptionByCode('info_buyRequest')->getValue());
+        //print_r($option);exit;
+        $bundle_option = array();
+        if(isset($option['bundle_option']) && !empty($option['bundle_option'])){
+            foreach($option['bundle_option'] as $_option_key => $_option){
+                $bundle_option[$_option_key] = array();
+                foreach($_option as $_okey => $_ovalue){
+                    $bundle_option[$_option_key][$_ovalue] = $_ovalue;
+                    //continue;
+                    if(isset($option['customoption'][$_option_key][$_ovalue])){
+                        //$bundle_option[$_option_key] = array();
+                        foreach($option['customoption'][$_option_key][$_ovalue] as $_customoption_key => $_customoption){
+                            $bundle_option[$_option_key][$_ovalue] = array();
+                            foreach($_customoption as $_customoption2_key => $_customoption2){
+                                $bundle_option[$_option_key][$_ovalue][$_customoption_key][$_customoption2] = "";
+                            }
+                            //print_r($bundle_option[$_option_key]);exit;
+                        }
+                    }
+                }
+            }
+        }
+        //return $option;
+        return $bundle_option;
+    }
 }
