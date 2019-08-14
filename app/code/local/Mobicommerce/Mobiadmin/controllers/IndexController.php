@@ -1,7 +1,6 @@
 <?php
 class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_Action
 {
-	
     public function indexAction()
     {
 	    $this->loadLayout();
@@ -47,8 +46,8 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 
 	public function saveAction()
 	{
-		if ( $this->getRequest()->getPost()){
-            $AppId = Mage::app()->getRequest()->getPost('appid');
+		if($this->getRequest()->getPost()){
+            $appid = Mage::app()->getRequest()->getPost('appid');
             $postData = $this->getRequest()->getPost();
 			$appCode = $postData['appcode'];
 			$appKey = $postData['appkey'];
@@ -77,7 +76,6 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			/*
 			* Create Css File
 			*/
-
 			$theme_folder_name = $postData['themename'];
             if(file_exists ($appUrlXmlFile)){
 				$appCssFile = Mage::getBaseDir('media').DS.'mobi_commerce'.DS.$appCode.DS.'personalizer'.DS.'personalizer.css';
@@ -119,7 +117,6 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			/*
 			* Saving Application Store Id in Database 
 			*/
-			
 			$setStore = $postData['ddlStore'];
 			$appCode = $postData['appcode'];
 			$applicationsCollection  = Mage::getModel('mobiadmin/applications')->getCollection();
@@ -129,8 +126,7 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
             foreach($applicationsCollection as $application){
 			   $application->setData('app_storeid', $setStore)->save();
 			}
-			
-            
+
             /*
 			* Create Media Url From Media Aplication Path
 			*/
@@ -145,13 +141,10 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
             /*
 			* Saving Push Notification Data With IOSPEM File Uploader
 			*/
-			if($_FILES['upload_iospem_file']['name'] != '')
-			{				
+			if($_FILES['upload_iospem_file']['name'] != ''){				
 				try{
 					$uploader = new Varien_File_Uploader('upload_iospem_file');
-                    //$uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'));
                     $uploader->setAllowRenameFiles(false);
-                    $uploader->setFilesDispersion(false);
                     $uploader->setAllowCreateFolders(true);
 					$media_path = Mage::getBaseDir('media') .DS. 'mobi_commerce'.DS.$appCode.DS.'appinfo'.DS ;
 					$iospemFilename = time() . $_FILES['upload_iospem_file']['name'];
@@ -187,8 +180,8 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 
             $applicationSettingCollection = Mage::getModel('mobiadmin/appsetting')->getCollection();
 			$applicationSettingCollection = $applicationSettingCollection
-				->addFieldToFilter('app_code',$appCode)
-			    ->addFieldToFilter('setting_code','push_notification');
+				->addFieldToFilter('app_code', $appCode)
+			    ->addFieldToFilter('setting_code', 'push_notification');
 			foreach($applicationSettingCollection as $pushnotification){
 			   $pushnotification->setData('value',$pushNotificationSerData)->save();
 			}
@@ -196,14 +189,12 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			/*
 			* Saving Application Information Data With App Share Image
 			*/
-			
 			if($_FILES['app_share_image']['name'] != '')
 			{
 				try{
 					$uploader = new Varien_File_Uploader('app_share_image');
                     $uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'));
                     $uploader->setAllowRenameFiles(false);
-                    $uploader->setFilesDispersion(false);
                     $uploader->setAllowCreateFolders(true);
 					$media_path = Mage::getBaseDir('media') .DS. 'mobi_commerce'.DS.$appCode.DS.'appinfo'.DS ;
 					$shareImagename = time() . $_FILES['app_share_image']['name'];
@@ -221,8 +212,7 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 				$appInfoData['app_share_image'] = $postData['app_share_image']['value'];
 			}
 
-			if(isset($postData['app_share_image']['delete']) && $postData['app_share_image']['delete'] == 1)
-			{
+			if(isset($postData['app_share_image']['delete']) && $postData['app_share_image']['delete'] == 1){
 			    $appInfoData['app_share_image'] = '';
 			}
 
@@ -234,14 +224,11 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
             foreach($applicationSettingCollection as $appinfo){
 			    $appinfo->setData('value',$appInfoJsonData)->save();
 			}
-			
             
 			/*
 			* Save Labels and Messages Store Wise Data
 			*/
-			
             $localeCode = Mage::getStoreConfig('general/locale/code',$setStore);
-			
 			$languageData = $postData['language_data'];
 			foreach ($languageData as $mm_id=>$mm_text){
 				$applicationLanguageCollection = Mage::getModel('mobiadmin/multilanguage')->getCollection();
@@ -253,180 +240,76 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 				}
 			}	        
 
-			
-			/*
-			* Save Feature Product Slider Data
-			*/
-            $featured_products = $postData['featured-products'];
-            $featuresliderName = $postData['featured-products-slider-name'];
-            $featuresliderPosition = $postData['featured-products-slider-position'];
-            $featuresliderStatus = $postData['featured-products-slider-status'];
-            $selectedFeatureProduct = array();	
+			/* save product slider data */
+			$productSliders = array(
+				'featured-products'         => array("settings" => false, "products" => true),
+				'best-collection'           => array("settings" => false, "products" => true),
+				'new-arrivals'              => array("settings" => false, "products" => true),
+				'best-sellers'              => array("settings" => false, "products" => true),
+				'new-arrivals-automated'    => array("settings" => false, "products" => false),
+				'best-sellers-automated'    => array("settings" => true, "products" => false),
+				'recently-viewed-automated' => array("settings" => false, "products" => false),
+				);
+			foreach($productSliders as $_slidercode => $_sliderparams){
+				$sliderStatus = isset($postData[$_slidercode.'-slider-status']) ? $postData[$_slidercode.'-slider-status'] : NULL;
+				if(empty($sliderStatus))
+					$sliderStatus = '0';
+				else
+					$sliderStatus = '1';
 
-			foreach($featured_products as $index=>$featured_product){					 
-				 foreach($featured_products[$index] as $selectedfeature){
-				      $selectedFeatureProduct[] = $selectedfeature;
-				 }			     
-			}
-			$selectedFeatureProduct = implode(",",$selectedFeatureProduct);
-			
-			if(!empty($featuresliderStatus)){
-			    $slider_status = '1';
-			}else{
-			    $slider_status = '0';
-			}	
-			
-			$productSliderCollection = Mage::getModel('mobiadmin/appwidget')->getCollection();
-			$productSliderCollection = $productSliderCollection->addFieldToFilter('app_code',$appCode)
-				                                               ->addFieldToFilter('slider_code','featured-products');
+				$sliderPosition = $postData[$_slidercode.'-slider-position'];
+				$sliderName = $postData[$_slidercode.'-slider-name'];
+				$sliderProducts = $postData[$_slidercode];
+				$selectedProduct = array();
+				if($_sliderparams['products']){
+					foreach($sliderProducts as $spIndex => $sp){					 
+						foreach($sp as $_sp){
+						    $selectedProduct[] = $_sp;
+						}
+					}
+				}
+				$selectedProduct = implode(",", $selectedProduct);
+				$sliderSettings = '';
+				if($_sliderparams['settings']){
+					$sliderSettings = json_encode($postData[$_slidercode]);
+				}
 
-			foreach($productSliderCollection as $productSlider) {
-			   $productSlider->setData('slider_label',$featuresliderName)
-				             ->setData('slider_position',$featuresliderPosition)
-				             ->setData('slider_productIds',$selectedFeatureProduct)
-				             ->setData('slider_status',$slider_status)
-				             ->save();
-			}
+				$sliderCollection = Mage::getModel('mobiadmin/appwidget')->getCollection();
+				$sliderCollection = $sliderCollection->addFieldToFilter('app_code', $appCode)
+					->addFieldToFilter('slider_code', $_slidercode);
 
-			/*
-			* Save Best Collection Product Slider Data
-			*/
-            $best_collection = $postData['best-collection'];
-            $bestsliderName = $postData['best-collection-slider-name'];
-            $bestsliderPosition = $postData['best-collection-slider-position'];
-            $bestsliderStatus = $postData['best-collection-slider-status'];
-            $selectedBestProduct = array();	
-			foreach($best_collection as $index=>$bestCollection){			     
-				 foreach($best_collection[$index] as $selectedbest){
-				      $selectedBestProduct[] = $selectedbest;
-				 }			     
+				foreach($sliderCollection as $_sliderCollection) {
+				   	$_sliderCollection->setData('slider_label', $sliderName)
+						->setData('slider_position', $sliderPosition)
+						->setData('slider_productIds', $selectedProduct)
+						->setData('slider_status', $sliderStatus)
+						->setData('slider_settings', $sliderSettings)
+						->save();
+				}
 			}
-			$selectedBestProduct = implode(",",$selectedBestProduct);			
-			if(isset($bestsliderStatus)){
-			    $slider_status = '1';
-			}else{
-			    $slider_status = '0';
-			}
-			$productSliderCollection = Mage::getModel('mobiadmin/appwidget')->getCollection();
-			$productSliderCollection = $productSliderCollection->addFieldToFilter('app_code',$appCode)
-				                                               ->addFieldToFilter('slider_code','best-collection');
-			foreach($productSliderCollection as $productSlider) {
-			   $productSlider->setData('slider_label',$bestsliderName)
-				             ->setData('slider_position',$bestsliderPosition)
-				             ->setData('slider_productIds',$selectedBestProduct)
-				             ->setData('slider_status',$slider_status)
-				             ->save();
-			}
-            
-			/*
-			* Save New Arrivals Product Slider Data
-			*/			
-            $new_arrivals = $postData['new-arrivals'];
-            $newsliderName = $postData['new-arrivals-slider-name'];
-            $newsliderPosition = $postData['new-arrivals-slider-position'];
-            $newsliderStatus = $postData['new-arrivals-slider-status'];
-            $selectedNewProduct = array();	
+			/* save product slider data - upto here */
 
-			foreach($new_arrivals as $index=>$new_arrival){			     
-				 foreach($new_arrivals[$index] as $selectednew){
-				      $selectedNewProduct[] = $selectednew;
-				 }			     
+			$category_icons = array('MAGENTO_CATEGORY_THUMBNAIL' => 0);
+			if(isset($postData['chkNoIcon'])){
+				$category_icons = array('MAGENTO_CATEGORY_THUMBNAIL' => 1);
 			}
-			$selectedNewProduct = implode(",",$selectedNewProduct);
-			if(isset($newsliderStatus)){
-			    $slider_status = '1';
-			}else{
-			    $slider_status = '0';
-			}
-			$productSliderCollection = Mage::getModel('mobiadmin/appwidget')->getCollection();
-			$productSliderCollection = $productSliderCollection->addFieldToFilter('app_code',$appCode)
-				                                               ->addFieldToFilter('slider_code','new-arrivals');
-			foreach($productSliderCollection as $productSlider) {
-			   $productSlider->setData('slider_label',$newsliderName)
-				             ->setData('slider_position',$newsliderPosition)
-				             ->setData('slider_productIds',$selectedNewProduct)
-				             ->setData('slider_status',$slider_status)
-				             ->save();
-			}
-
-			/*
-			* Save Best Seller Product Slider Data
-			*/		    
-            $bestSellers = $postData['best-sellers'];
-            $bestSliderName = $postData['best-sellers-slider-name'];
-            $bestSliderPosition = $postData['best-sellers-slider-position'];
-            $bestSliderStatus = $postData['best-sellers-slider-status'];
-            $selectedBestProduct = array();	
-
-			foreach($bestSellers as $index=>$best_seller){			     
-				 foreach($bestSellers[$index] as $selectedbest){
-				      $selectedBestProduct[] = $selectedbest;
-				 }			     
-			}
-			$selectedBestProduct = implode(",",$selectedBestProduct);
-			if(isset($bestSliderStatus)){
-			    $slider_status = '1';
-			}else{
-			    $slider_status = '0';
-			}
-			$productSliderCollection = Mage::getModel('mobiadmin/appwidget')->getCollection();
-			$productSliderCollection = $productSliderCollection->addFieldToFilter('app_code',$appCode)
-				                                               ->addFieldToFilter('slider_code','best-sellers');
-			foreach($productSliderCollection as $productSlider) {
-			   $productSlider->setData('slider_label',$bestSliderName)
-				             ->setData('slider_position',$bestSliderPosition)
-				             ->setData('slider_productIds',$selectedBestProduct)
-				             ->setData('slider_status',$slider_status)
-				             ->save();
-			}		
-
-			/*
-			* Save Push Notification Setting
-			*/
-			$pushnotification= $postData['pushnotifications'];
-			
-            $applicationSettingCollection = Mage::getModel('mobiadmin/appsetting')->getCollection();
+			$category_icons = serialize($category_icons);
+			$applicationSettingCollection = Mage::getModel('mobiadmin/appsetting')->getCollection();
 			$applicationSettingCollection = $applicationSettingCollection
 				->addFieldToFilter('app_code',$appCode)
-			    ->addFieldToFilter('setting_code','pushnotifications_settings');    
-            foreach($applicationSettingCollection as $appinfo){
-			    $appinfo->setData('value',$pushnotification)->save();
-			}
-            
-			/*
-			* Save Category Icons
-			*/
-			if(isset($postData['category-icon'])){
-				$category_icons = $postData['category-icon'];
-				
-				$cate_index = 0;
-				$category_iconarray = array();
-				foreach($category_icons as $cat_id => $category_icon){
-					$category_iconarray[$cate_index]['category_id'] = $cat_id;				
-					$category_iconarray[$cate_index]['mobiicon'] = $category_icon;
-					$cate_index++;
-				}			
-				//echo $appCode;
-
-				$category_iconarray = serialize($category_iconarray);	
-				
-				$applicationSettingCollection = Mage::getModel('mobiadmin/appsetting')->getCollection();
-				$applicationSettingCollection = $applicationSettingCollection
-					->addFieldToFilter('app_code',$appCode)
-					->addFieldToFilter('setting_code','category_icons');
-				$category_iconsValue = $applicationSettingCollection->getColumnValues('category_icons');
-				if(empty($category_iconsValue)){
-					$inserData = array('app_code'=>$appCode,'setting_code'=>'category_icons','value'=>$category_iconarray);
-					$model = Mage::getModel('mobiadmin/appsetting')->setData($inserData);
-					try {
-						$insertId = $model->save()->getId();
-					} catch (Exception $e){
-						echo $e->getMessage();   
-					}
-				} else {
-					foreach($applicationSettingCollection as $categoryIcon){
-					   $categoryIcon->setData('value',$category_iconarray)->save();
-					}
+				->addFieldToFilter('setting_code','category_icons');
+			if($applicationSettingCollection->count() == 0){
+				$insertData = array(
+					'app_code'     => $appCode,
+					'setting_code' => 'category_icons',
+					'value'        => $category_icons
+					);
+				$model = Mage::getModel('mobiadmin/appsetting')->setData($insertData);
+				try{$insertId = $model->save()->getId();}
+				catch (Exception $e){echo $e->getMessage();}
+			}else{
+				foreach($applicationSettingCollection as $categoryIcon){
+				   	$categoryIcon->setData('value', $category_icons)->save();
 				}
 			}
             
@@ -436,25 +319,21 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
             $cmscontentarray = array();
 			$cmscontentarray['en_US']['contact_information'] = $postData['contact_information'];
             $cmscontentarray['en_US']['social_media'] = $postData['social_media'];
-            $cmscontentarray['en_US']['cms_pages'] = $postData['cms_pages'];
-                                   
+            $cmscontentarray['en_US']['cms_pages'] = $postData['cms_pages'];          
 			$cmscontentarray = serialize($cmscontentarray);
 			$applicationSettingCollection = Mage::getModel('mobiadmin/appsetting')->getCollection();
 			$applicationSettingCollection = $applicationSettingCollection
-				->addFieldToFilter('app_code',$appCode)
-			    ->addFieldToFilter('setting_code','cms_settings');
+				->addFieldToFilter('app_code', $appCode)
+			    ->addFieldToFilter('setting_code', 'cms_settings');
 			foreach($applicationSettingCollection as $cmssetting){
 			   $cmssetting->setData('value',$cmscontentarray)->save();
-			}			
+			}
 			
-
 			/*
 			* Save Banners Url in Database
 			*/
-			//echo '<pre>';print_r($_FILES);print_r($postData);exit;
 			$bannerImages = array();
             $previousBanners = Mage::helper('mobiadmin')->getBannerImagesByAppCode($appCode);
-            //echo '<pre>';print_r($previousBanners);exit;
             if(isset($_FILES['banner']['name']) && !empty($_FILES['banner']['name'])){
             	foreach($_FILES['banner']['name'] as $banner_key => $banner){
             		if($_FILES['banner']['name'][$banner_key] == ''){
@@ -478,15 +357,8 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
             		}
             		else{
             			try{
-            				/*
-							$uploader = new Varien_File_Uploader('banner4');
-		                    $uploader->setAllowRenameFiles(false);
-		                    $uploader->setFilesDispersion(false);
-		                    $uploader->setAllowCreateFolders(true);
-		                    */
 							$media_path = Mage::getBaseDir('media') .DS. 'mobi_commerce'.DS.$appCode.DS.'home_banners'.DS ;
 							$filename = rand() . '.' . PATHINFO($_FILES['banner']['name'][$banner_key], PATHINFO_EXTENSION);
-							//$uploader->save($media_path, $_FILES['banner']['name'][$banner_key]);
 							if (move_uploaded_file($_FILES['banner']['tmp_name'][$banner_key], $media_path . $filename)) {
 								$bannerImages[] = array(
 									'url'       => $appgalleryimageurl.$filename,
@@ -507,86 +379,20 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
             		}
             	}
             }
-            //echo '<pre>';print_r($bannerImages);exit;
 			$bannerValue = serialize($bannerImages);
-			
             $applicationSettingCollection = Mage::getModel('mobiadmin/appsetting')->getCollection();
 			$applicationSettingCollection = $applicationSettingCollection
 				->addFieldToFilter('app_code',$appCode)
 			    ->addFieldToFilter('setting_code','banner_settings');
 			foreach($applicationSettingCollection as $bannersColl){
 			   $bannersColl->setData('value',$bannerValue)->save();
-			}		
+			}       
 			
-            /*
-			* Save Best Sellers Automated Data
-			*/
-			$BestSellerCollection = Mage::helper('mobiadmin')->getBestSellerProduct($setStore);
-			$BestSellerProducts = $BestSellerCollection;
-			$BestSellerProductIds = array();
-            foreach($BestSellerProducts as $BestSellerProduct){
-			     $BestSellerProductIds[] = $BestSellerProduct->getEntityId();
-			}
-            $BestSellerProductIds = implode(',',$BestSellerProductIds);
-			$sliderStatus = $postData['best-sellers-automated-slider-status'];
-			$bestSellerSliderName = $postData['best-sellers-automated-slider-name'];
-			$bestSellerSliderPosition = $postData['best-sellers-automated-slider-position'];
-			
-            $slider_settings = $postData['best-sellers-automated'];
-			$slider_settings = json_encode($slider_settings);
-			if(!empty($sliderStatus)){
-			    $slider_status = '1';
-			}else{
-			    $slider_status = '0';
-			}			
-			$productSliderCollection = Mage::getModel('mobiadmin/appwidget')->getCollection();
-			$productSliderCollection = $productSliderCollection->addFieldToFilter('app_code',$appCode)
-				                                               ->addFieldToFilter('slider_code','best-sellers-automated');
-			foreach($productSliderCollection as $productSlider) {
-			   $productSlider->setData('slider_label',$bestSellerSliderName)
-				             ->setData('slider_position',$bestSellerSliderPosition)
-				             ->setData('slider_productIds',$BestSellerProductIds)
-				             ->setData('slider_status',$slider_status)
-				             ->setData('slider_settings',$slider_settings)
-				             ->save();
-			}
-            
-			/*
-			* Save New Products Automated Data in Database
-			*/
-			$NewProductCollection = Mage::helper('mobiadmin')->getNewProductCollection($setStore);
-            $NewProducts = $NewProductCollection;
-			$NewProductsIds = array();
-            foreach($NewProducts as $NewProduct){
-			     $NewProductsIds[] = $NewProduct->getEntityId();
-			}
-            $NewProductsIds = implode(',',$NewProductsIds);
-			$sliderStatus = $postData['new-arrivals-automated-slider-status'];
-			$newArrivalsSliderName = $postData['new-arrivals-automated-slider-name'];
-			$newArivalsSliderPosition = $postData['new-arrivals-automated-slider-position'];            
-			if(!empty($sliderStatus)){
-			    $slider_status = '1';
-			}else{
-			    $slider_status = '0';
-			}				
-			$productSliderCollection = Mage::getModel('mobiadmin/appwidget')->getCollection();
-			$productSliderCollection = $productSliderCollection->addFieldToFilter('app_code',$appCode)
-				                                               ->addFieldToFilter('slider_code','new-arrivals-automated');
-			foreach($productSliderCollection as $productSlider) {
-			   $productSlider->setData('slider_label',$newArrivalsSliderName)
-				             ->setData('slider_position',$newArivalsSliderPosition)
-				             ->setData('slider_productIds',$NewProductsIds)
-				             ->setData('slider_status',$slider_status)
-				             ->save();
-			}          
-			
-			if(isset($_FILES['popupimage']['name']) && !empty($_FILES['popupimage']['name']))
-			{
-				try {
+			if(isset($_FILES['popupimage']['name']) && !empty($_FILES['popupimage']['name'])){
+				try{
 					$uploader = new Varien_File_Uploader('popupimage');
 					$uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'));
 					$uploader->setAllowRenameFiles(false);
-					$uploader->setFilesDispersion(false);
 					$media_path = Mage::getBaseDir('media') .DS. 'mobi_commerce'.DS.$appCode.DS.'appinfo'.DS ;
 					$imgFilename = time() . $_FILES['popupimage']['name'];
 					$uploader->save($media_path, $imgFilename);
@@ -604,17 +410,15 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			$PopUpData['enable'] = $postData['popup']['enable'];
 			$PopUpData['cookietime'] = $postData['popup']['cookietime'];
             if(isset($data['popupimage'])){
-                 $PopUpData['popupimage'] = $data['popupimage'];
+                $PopUpData['popupimage'] = $data['popupimage'];
 			}else{
-				 $PopUpData['popupimage'] = $postData['popupimage_hidden'];
+				$PopUpData['popupimage'] = $postData['popupimage_hidden'];
 			}	
-			if(isset($postData['popupimage']['delete']) && $postData['popupimage']['delete'] == 1)
-			{
+			if(isset($postData['popupimage']['delete']) && $postData['popupimage']['delete'] == 1){
 			    $PopUpData['popupimage'] = '';
 			}
             $PopUpData = serialize($PopUpData);
             $appPopUpCollection = Mage::getModel('mobiadmin/appsetting')->getCollection();
-
 			$appPopUpCollection = $appPopUpCollection
 				->addFieldToFilter('app_code',$appCode)
 			    ->addFieldToFilter('setting_code','popup_setting');
@@ -626,62 +430,74 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 					'value'        => $PopUpData
 				);
 
-				try {
+				try{
 					Mage::getModel('mobiadmin/appsetting')->setData($appinfoData)->save();
 				}catch(Exception $e){
 					$errors[] = $e->getMessage();   
 				}
-			    
 			}else{
 			    foreach($appPopUpCollection as $appPopUp){
 					$appPopUp->setData('value',$PopUpData)->save();
 				}
 			}
 			
-
 			/*
-			* Sending Android and IOS Push Notification			
-			* $pushNotificationData push notification Data From Application Setting Tabs
-			* $pushnotification pushnotification setting From PushNotification Tabs
-            * 
+			* Sending Android and IOS Push Notification
             */
-			$this->androidpushnotification($pushnotification, $pushNotificationData, $appCode);
-			$this->iospushnotification($appCode);
+            $pushmessage = $postData['pushnotifications'];
+            if(!empty($pushmessage)){
+            	$deviceCollection = Mage::getModel('mobiadmin/devicetokens')->getCollection()
+					->addFieldToFilter('md_appcode',$appCode)
+					->addFieldToFilter('md_devicetype',array('in' => array('android','ios')));
 
-			if(isset($postData['udid']) && !empty($postData['udid']))
-			{
+				$androidDevices = array();
+				$iosDevices = array();
+				if(!empty($deviceCollection)){
+					foreach($deviceCollection as $_device){
+						if($_device['md_devicetype'] == 'android'){
+							$androidDevices[] = $_device['md_devicetoken'];
+						}
+						else{
+							$iosDevices[] = $_device['md_devicetoken'];
+						}
+					}
+				}
+
+				if(!empty($androidDevices))
+            		$this->androidpushnotification($pushmessage, $pushNotificationData, $androidDevices);
+            	if(!empty($iosDevices))
+					$this->iospushnotification($pushmessage, $pushNotificationData, $iosDevices);
+            }
+
+			if(isset($postData['udid']) && !empty($postData['udid'])){
                 $udids = $postData['udid'];
 				$datatosend = array('udid' => $udids);
 				
 				$ch = curl_init();
-				$url = Mage::helper('mobiadmin')->curlBuildUrl().'/build/submitudid/'.$appKey.'/'.$appCode; 
-				//echo $url;
+				$url = Mage::helper('mobiadmin')->curlBuildUrl().'/build/submitudid/'.$appKey.'/'.$appCode;
 				curl_setopt($ch, CURLOPT_HEADER, FALSE);
-				curl_setopt($ch, CURLOPT_NOBODY, TRUE); // remove body 
+				curl_setopt($ch, CURLOPT_NOBODY, TRUE);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 				curl_setopt($ch,CURLOPT_URL, $url);
 				curl_setopt($ch,CURLOPT_POST, count($datatosend));
 				curl_setopt($ch,CURLOPT_POSTFIELDS, http_build_query($datatosend));
 				$result = curl_exec($ch);		
 				curl_close($ch);
-				
 				$result = json_decode($result, true);
-				
 				if(isset($result)) {
-					if($result['status'] == 'success')
-					{
+					if($result['status'] == 'success'){
 						foreach($applicationsCollection as $application){
-						   $application
+						   	$application
 							   ->setData('udid', $udids)
 							   ->setData('ios_url', $result['data']['ios_url'])
 							   ->setData('ios_status', $result['data']['ios_status'])
 							   ->save();
 						}
 					
-					} else {
+					}else{
 						Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__($result['message']));
 						$this->_redirect('*/*/edit', array(
-							'id'    => $AppId,
+							'id'    => $appid,
 							'_current'=>true
 						));
 					}
@@ -694,99 +510,23 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
                 Mage::getSingleton('core/session')->addSuccess($message);
 			}
 
-            $AppId = Mage::app()->getRequest()->getPost('appid');
 			$this->_redirect('*/*/edit', array(
-                'id'    => $AppId,
+                'id'    => $appid,
+                '_current'=>true
+            ));
+		}
+		else{
+			$this->_redirect('mobicommerce', array(
+                'id'    => $appid,
                 '_current'=>true
             )); 
-		}		
-	}
-
-  	public function deleteAction() 
-	{
-		$appId = Mage::app()->getRequest()->getParam('id');
-		if( $appId ) {
-            try {
-                $applicationCollection = Mage::getModel('mobiadmin/applications')->getCollection();
-				$applicationCollection = $applicationCollection->addFieldToFilter('id',$appId);
-				$appData = $applicationCollection->getData();
-				$appData = $appData['0'];
-                $appCode = $appData['app_code'];
-
-				/*
-				* Delete Interies From Widget Table
-				* `mobi_app_widgets`
-				*/
-                $appwidgetModel = Mage::getModel('mobiadmin/appwidget')->getCollection()->addFieldToFilter('app_code',$appCode);
-				foreach ($appwidgetModel as $appwidgetModel) {
-					$appwidgetModel->delete();
-				}
-                /*
-				* Delete Interies From Application Setting Table 
-				* `mobicommerce_applications_settings` 
-				*/
-
-                $applicationSetting = Mage::getModel('mobiadmin/appsetting')->getCollection()->addFieldToFilter('app_code',$appCode);
-				foreach ($applicationSetting as $application) {
-					$application->delete();
-				}
-
-				/**
-				* Delete Interies from Deveice Token table 
-				* `mobicommerce_devicetokens` 
-				*/
-                
-				$deviceTokenCollection = Mage::getModel('mobiadmin/devicetokens')->getCollection()->addFieldToFilter('md_appcode',$appCode);
-				foreach ($deviceTokenCollection as $deviceToken) {
-					$deviceToken->delete();
-				}
-
-                /**
-				* Delete Interies From Main Table Of Application 
-				* `mobicommerce_applications` 
-				*/
-				$appCollection = Mage::getModel('mobiadmin/applications')->getCollection()->addFieldToFilter('id',$this->getRequest()->getParam('id'));
-                foreach($appCollection as $appDelete){
-				    $appDelete->delete();
-				}                  
-                Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Application was successfully deleted'));
-                $this->_redirect('*/*/');
-            } catch (Exception $e) {
-                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
-                $this->_redirect('*/*/edit', array('id' => $this->getRequest()->getParam('id')));
-            }
-        }
-        $this->_redirect('*/*/');
-	}
-
-	public function iconsAction()
-    {	
-		$id = $this->getRequest()->getParam('id', null);
-		$model = Mage::getModel('mobiadmin/applications')->load($id);
-		if($id){
-		    Mage::register('application_data', $model);
-		    $this->loadLayout();
-            $myBlock = $this->getLayout()->createBlock('mobiadmin/adminhtml_applications_edit_tab_icon');
-            $myBlock->setTemplate('mobiadmin/application/edit/tab/icon.phtml');
-            $myHtml =  $myBlock->toHtml();      
-            $this->getResponse()->setHeader('Content-Type', 'text/html')
-                                ->setBody($myHtml);
-            return;	        
 		}
 	}
 	
-	public function androidpushnotification($pushsetting,$pushnotificationData,$appCode)
-	{	
-		$devicetokens = array(); 
-		$android_key = $pushnotificationData['android_key'];
-		$message = $pushsetting;
-		$deviceCollection = Mage::getModel('mobiadmin/devicetokens')->getCollection()
-			->addFieldToFilter('md_appcode',$appCode)
-			->addFieldToFilter('md_devicetype','android');
-		foreach($deviceCollection as $device) {
-		    $devicetokens[] = $device->getData('md_devicetoken');
-		}
-		if(!empty($android_key) && !empty($devicetokens) && !empty($message)){
+	function androidpushnotification($message, $pushdata, $devices = array())
+	{
+		$android_key = $pushdata['android_key'];
+		if(!empty($android_key) && !empty($devices) && !empty($message)){
 			$msg = array(
 				'message' => $message,
 				'title'   => $message,
@@ -794,7 +534,7 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 				'sound'   => 1
 			);
 			$fields = array(
-				'registration_ids' => $devicetokens,
+				'registration_ids' => $devices,
 				'data'             => $msg
 			);
 
@@ -804,59 +544,26 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			);
 			$ch = curl_init();
 			curl_setopt( $ch,CURLOPT_URL, 'https://android.googleapis.com/gcm/send' );
-			curl_setopt( $ch,CURLOPT_POST, true );
-			curl_setopt( $ch,CURLOPT_HTTPHEADER, $headers );
-			curl_setopt( $ch,CURLOPT_RETURNTRANSFER, true );
-			curl_setopt( $ch,CURLOPT_SSL_VERIFYPEER, false );
-			curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $fields ) );
-			$result = curl_exec($ch );
-			curl_close( $ch );
+			curl_setopt( $ch,CURLOPT_POST, true);
+			curl_setopt( $ch,CURLOPT_HTTPHEADER, $headers);
+			curl_setopt( $ch,CURLOPT_RETURNTRANSFER, true);
+			curl_setopt( $ch,CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode($fields));
+			$result = curl_exec($ch);
+			curl_close($ch);
 		}
 	}
 
-	function iospushnotification($appCode)
-	{	
-		$deviceToken = array();
-		$pemFile     = "";
-		$passphrase  = "";
-		$message     = "";
-		$sandboxmode    = false;
+	function iospushnotification($message, $pushdata, $devices = array())
+	{
+		$sandboxmode = false;
+        $passphrase = $pushdata['pem_password'];
+		$pemFile = $pushdata['upload_iospem_file_url'];
 
-        $deviceCollection = Mage::getModel('mobiadmin/devicetokens')->getCollection()
-			->addFieldToFilter('md_appcode',$appCode)
-			->addFieldToFilter('md_devicetype','android');
-		foreach($deviceCollection as $device) {
-		    $deviceToken[] = $device->getData('md_devicetoken');
+		if(isset($pushdata['sandboxmode']) && $pushdata['sandboxmode'] == '1'){
+			$sandboxmode = true;
 		}
 		
-        $pushCollection = Mage::getModel('mobiadmin/appsetting')->getCollection()
-			->addFieldToFilter('app_code',$appCode)
-			->addFieldToFilter('setting_code','push_notification');
-		 
-		if($pushCollection->count() != '0') {
-            $pushUnSerData = $pushCollection->getData();
-            $a = unserialize($pushUnSerData['value']);
-			
-			$passphrase = $a['pem_password'];
-			if(!empty($a['upload_iospem_file_url'])):
-				$pemFile = pathinfo($a['upload_iospem_file_url'], PATHINFO_BASENAME);
-				$pemFile = Mage::getBaseDir('media').'/mobi_commerce/'.$data['app_code'].'/certificates/'.$pemFile;
-			endif;
-
-			if(isset($a['sandboxmode']) && $a['sandboxmode'] == '1'):
-				$sandboxmode = true;
-			endif;
-		}
-        $pushMessageCollection = Mage::getModel('mobiadmin/appsetting')->getCollection()
-			->addFieldToFilter('app_code',$appCode)
-			->addFieldToFilter('setting_code','pushnotifications_settings');
-
-        if($pushMessageCollection->count() != '0') {
-			$pushMessage = $pushMessageCollection->getData();
-            $message = $pushMessage['value'];
-		}
-		
-
 		if(!empty($pemFile) && !empty($message)){
 			$ctx = stream_context_create();
 			stream_context_set_option($ctx, 'ssl', 'local_cert', $pemFile);
@@ -872,29 +579,20 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 				$push_url, $err,
 				$errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
 
-			if (!$fp)
+			if(!$fp)
 				return "Failed to connect: $err $errstr" . PHP_EOL;
 
 			//echo 'Connected to APNS' . PHP_EOL;
-
-			// Create the payload body
 			$body['aps'] = array(
 				'alert' => $message,
 				'sound' => 'default'
 				);
-
-			// Encode the payload as JSON
 			$payload = json_encode($body);
-
-			if(!empty($deviceToken))
-			{
-				foreach ($deviceToken as $key => $value) {
+			if(!empty($devices)){
+				foreach ($devices as $key => $value) {
 					$msg = chr(0) . pack('n', 32) . pack('H*', $value) . pack('n', strlen($payload)) . $payload;
-
-					// Send it to the server
 					$result = fwrite($fp, $msg, strlen($msg));
-
-					if (!$result){
+					if(!$result){
 						//echo 'Message not delivered' . PHP_EOL;
 					}
 					else{
@@ -902,8 +600,6 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 					}
 				}
 			}
-
-			// Close the connection to the server
 			fclose($fp);
 			return true;
 		}
@@ -928,34 +624,25 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 
 	public function massReadAction()
 	{
-		$ids = Mage::app()->getRequest()->getParam('ids'); 
-		
+		$ids = Mage::app()->getRequest()->getParam('ids');
 		if(is_array($ids)){		   		
-			foreach($ids as $id)
-			{
+			foreach($ids as $id){
 			   $model = Mage::getModel('mobiadmin/notification');
-                  
-               $model->setId($id)->setReadStatus('1')
-                    ->save();
+               $model->setId($id)->setReadStatus('1')->save();
 			}
 			Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('The message has been marked as read.'));
 			$this->_redirect('mobicommerce/index/notification');
 		}
 		$this->_redirect('mobicommerce/index/notification');
-	   
 	}
 
 	public function massDeleteAction()
 	{
-	    $ids = Mage::app()->getRequest()->getParam('ids'); 
-		
+	    $ids = Mage::app()->getRequest()->getParam('ids');
 		if(is_array($ids)){		   		
-			foreach($ids as $id)
-			{
-			   $model = Mage::getModel('mobiadmin/notification');
-                  
-               $model->setId($id)
-                    ->delete();
+			foreach($ids as $id){
+			   	$model = Mage::getModel('mobiadmin/notification');
+               	$model->setId($id)->delete();
 			}
 			Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Message was successfully deleted'));
 			$this->_redirect('mobicommerce/index/notification');
@@ -965,16 +652,15 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
     
 	public function deletenotificationAction()
 	{
-		if( $this->getRequest()->getParam('id') > 0 ) {
-            try {
+		if($this->getRequest()->getParam('id') > 0){
+            try{
                 $model = Mage::getModel('mobiadmin/notification');
-                  
                 $model->setId($this->getRequest()->getParam('id'))
                     ->delete();
                       
                 Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Message was successfully deleted'));
                 $this->_redirect('mobicommerce/index/notification');
-            } catch (Exception $e) {
+            }catch(Exception $e){
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
                 $this->_redirect('*/*/', array('id' => $this->getRequest()->getParam('id')));
             }
@@ -984,16 +670,15 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 
 	public function readnotificationAction()
 	{
-		if( $this->getRequest()->getParam('id') > 0 ) {
-            try {
+		if($this->getRequest()->getParam('id') > 0){
+            try{
                 $model = Mage::getModel('mobiadmin/notification');
-                  
                 $model->setId($this->getRequest()->getParam('id'))
                     ->setReadStatus('1')->save();
                       
                 Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('The message has been marked as read.'));
                 $this->_redirect('mobicommerce/index/notification');
-            } catch (Exception $e) {
+            }catch(Exception $e){
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
                 $this->_redirect('*/*/', array('id' => $this->getRequest()->getParam('id')));
             }
@@ -1002,11 +687,26 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 	}
 
 	public function createAppAction()
-	{	
-		
+	{
+		$max_execution_time = ini_get('max_execution_time');
+		if($max_execution_time != -1 && $max_execution_time < 300){
+			ini_set('max_execution_time', 300);
+		}
+		$max_input_time = ini_get('max_input_time');
+		if($max_input_time != -1 && $max_input_time < 300){
+			ini_set('max_input_time', 300);
+		}
+
+		$configurations = array(
+			'connectorVersionCode' => 'fd1ecc4eab5a737f70cfb9939064a24368a1efec',
+			'max_execution_time'   => ini_get('max_execution_time'),
+			'max_input_time'       => ini_get('max_input_time'),
+			'ipaddress'			   => isset($_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:'',
+			);
+
 		$refererUrl = $this->_getRefererUrl();
 		$validation = true;
-		if(!empty($_FILES)) {
+		if(!empty($_FILES)){
 			if($_FILES['appsplash']['name'] != '' && strtolower(PATHINFO($_FILES['appsplash']['name'], PATHINFO_EXTENSION)) != 'png'){
 				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('Splash must be png'));
 				Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
@@ -1025,48 +725,29 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 				$validation = false;
 			}
 
-			if(!$validation)
-			{
-				$url = $refererUrl;
-				Mage::app()->getFrontController()->getResponse()->setRedirect($url);
+			if(!$validation){
+				Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
 				return;
 			}
 		}
 		
 		$postData = Mage::app()->getRequest()->getPost();
 		if(!isset($postData)){
-		    $url = $refererUrl;
-			Mage::app()->getFrontController()->getResponse()->setRedirect($url);
+			Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
 			return;
 		}
 		$this->_sendEmailBeforeCreateApp($postData);
-		$resource = Mage::getSingleton('core/resource');
-		$connection = $resource->getConnection('core_read');
-		$app_table_name = $resource->getTableName('mobiadmin/applications');
-		$tableStatus = $connection->showTableStatus($app_table_name);
-		$next_app_id = $tableStatus['Auto_increment'];		
-		$stores = Mage::app()->getStores();
-		$storeIds = array();
-		foreach($stores as $store){
-		    $storeIds[] = $store->getData('store_id');
-		}
-		
-		$curlData = array();
 		
 		$curlData = $postData;
+		$media_path = Mage::getBaseDir('media') .DS. 'mobi_commerce';
 		$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'mobi_commerce/';
 		$mediaMobiAssetUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'mobi_assets/defaults/';
 		
-		
-		//Upload AppSplash
-		if(isset($_FILES['appsplash']['name']) && !empty($_FILES['appsplash']['name']))
-		{			
-			try {
+		if(isset($_FILES['appsplash']['name']) && !empty($_FILES['appsplash']['name'])){			
+			try{
 				$uploader = new Varien_File_Uploader('appsplash');
 				$uploader->setAllowRenameFiles(false);
 				$uploader->setAllowCreateFolders(true);
-				$uploader->setFilesDispersion(false);
-				$media_path = Mage::getBaseDir('media') .DS. 'mobi_commerce';
 				$imgFilename =  time() .$_FILES['appsplash']['name'];				
 				$uploader->save($media_path, $imgFilename);
 				$curlData['appsplash'] = $mediaUrl.$imgFilename; 
@@ -1076,31 +757,23 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			}
 		}
 
-		//Upload applogo
-		if(isset($_FILES['applogo']['name']) && !empty($_FILES['applogo']['name']))
-		{
-			try {
+		if(isset($_FILES['applogo']['name']) && !empty($_FILES['applogo']['name'])){
+			try{
 				$uploader = new Varien_File_Uploader('applogo');
 				$uploader->setAllowRenameFiles(false);
-				$uploader->setFilesDispersion(false);
-				$media_path = Mage::getBaseDir('media') .DS. 'mobi_commerce';
 				$imgFilename =  time() .$_FILES['applogo']['name'];
 				$uploader->save($media_path, $imgFilename);
 				$curlData['applogo'] = $mediaUrl.$imgFilename; 
-			} catch(Exception $e) {
+			} catch(Exception $e){
 				Mage::log($e);
 				$this->_redirectError(502);
 			}
 		}
 
-		//Upload appicon
-		if(isset($_FILES['appicon']['name']) && !empty($_FILES['appicon']['name']))
-		{
-			try {
+		if(isset($_FILES['appicon']['name']) && !empty($_FILES['appicon']['name'])){
+			try{
 				$uploader = new Varien_File_Uploader('appicon');
 				$uploader->setAllowRenameFiles(false);
-				$uploader->setFilesDispersion(false);
-				$media_path = Mage::getBaseDir('media') .DS. 'mobi_commerce';
 				$imgFilename =  time() .$_FILES['appicon']['name'];
 				$uploader->save($media_path, $imgFilename);
 				$curlData['appicon'] = $mediaUrl.$imgFilename; 
@@ -1121,13 +794,11 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			$size = getimagesize($curlData['appsplash']);
 			$maxWidth = 1536;
             $maxHeight = 2048;
-			if ($size[0] != $maxWidth || $size[1] != $maxHeight)
-            {
+			if($size[0] != $maxWidth || $size[1] != $maxHeight){
 				@unlink($curlData['appsplash']);
 				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('Appsplash Icon dimenssion must be 1536X2048'));
 				Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
-				$url = $refererUrl;
-			    Mage::app()->getFrontController()->getResponse()->setRedirect($url);			
+			    Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);			
 			    return;
 			}
 		}
@@ -1135,58 +806,50 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			$size = getimagesize($curlData['appicon']);
 			$maxWidth = 1024;
             $maxHeight = 1024;
-			if ($size[0] != $maxWidth || $size[1] != $maxHeight)
-            {
+			if ($size[0] != $maxWidth || $size[1] != $maxHeight){
 				@unlink($curlData['appicon']);
 				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('App Icon dimenssion must be 1024X1024'));
 				Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
-				$url = $refererUrl;
-			    Mage::app()->getFrontController()->getResponse()->setRedirect($url);
+			    Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
 			    return;
 			}
 		}
-		if(!isset($curlData['appsplash']))
-		{
+		if(!isset($curlData['appsplash'])){
 			$curlData['appsplash'] = $mediaMobiAssetUrl.'splash.png'; 
 		}
-		if(!isset($curlData['applogo'])) {
+		if(!isset($curlData['applogo'])){
 			$curlData['applogo'] = $mediaMobiAssetUrl.'logo.png'; 
 		}
-		if(!isset($curlData['appicon'])) {
+		if(!isset($curlData['appicon'])){
 			$curlData['appicon'] = $mediaMobiAssetUrl.'icon.png'; 
 		}
+
         $storeId = $curlData['store'];
         $curlData['approoturl'] = Mage::app()->getStore($storeId)->getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK);
 		$curlData['media_url'] = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 		/* code for licence key */
 		$LicenceModel = Mage::getModel('mobiadmin/licence')->getCollection();
 		$licencekey = "";
-		if($LicenceModel->getLastItem())
-		{
+		if($LicenceModel->getLastItem()){
 			$licencekey = $LicenceModel->getLastItem()->getMlLicenceKey();
 		}
 		$curlData['applicencekey'] = $licencekey;
 		/* code for licence key - upto here */
 		
-		$fields_string = '';
-        foreach($curlData as $key=>$value) { 
-			$fields_string .= $key.'='.$value.'&'; 
-		}
-        rtrim($fields_string, '&');
-        
+		$curlData['configurations'] = $configurations;
+        $fields_string = http_build_query($curlData);
 		$ch = curl_init();
 
 		$url = Mage::helper('mobiadmin')->curlBuildUrl().'build/add'; 
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
-		curl_setopt($ch, CURLOPT_NOBODY, TRUE); // remove body 
+		curl_setopt($ch, CURLOPT_NOBODY, TRUE);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($ch,CURLOPT_URL, $url);
 		curl_setopt($ch,CURLOPT_POST, count($curlData));
 		curl_setopt($ch,CURLOPT_POSTFIELDS, http_build_query($curlData));
 		$result = curl_exec($ch);	
-		curl_close($ch);	
-		
-		$result = json_decode($result, true);		
+		curl_close($ch);
+		$result = json_decode($result, true);
 		
 		$db = Mage::getSingleton('core/resource')->getConnection('core_read');
 		$db->closeConnection();
@@ -1195,16 +858,14 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 		$db->closeConnection();
 		$db->getConnection();
 		
-		if(isset($result)) {
-		    if($result['status'] == 'success')
-		    {
+		if(isset($result)){
+		    if($result['status'] == 'success'){
 				$saveData = array();
 				$saveData['app_name'] = $curlData['appname'];
 				$saveData['app_code'] = $result['data']['appcode'];
 				$saveData['app_preview_code'] = $result['data']['appkey'];
 				$saveData['app_logo'] = $curlData['applogo'];
 				$saveData['app_theme_folder_name'] = $curlData['apptheme'];
-				$saveData['app_licence_key'] = '';
 				$android_url = $result['data']['android_url'];
 				$ios_url = $result['data']['ios_url'];
 				$android_status = $result['data']['android_status'];
@@ -1212,8 +873,7 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 				$webapp_url = $result['data']['webapp_url'];
 				$saveData['webapp_url'] = $webapp_url;
 				$udids = $curlData['udid'];
-				if(!empty($udids))
-				{
+				if(!empty($udids)){
                     $saveData['udid'] = $udids;
 				}
 				$saveData['android_url'] = $android_url;
@@ -1223,28 +883,28 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 				if(!empty($licencekey)) {
                     $saveData['app_license_key'] = $licencekey;
 				}
-				if($saveData['app_code']) {
-				    Mage::getModel('mobiadmin/applications')->saveApplicationData($saveData ,$storeId);
+				$appid = null;
+				if($saveData['app_code']){
+				    $appobject = Mage::getModel('mobiadmin/applications')->saveApplicationData($saveData ,$storeId);
+				    $appid = $appobject['appid'];
 				}else{
 				    Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__($result['message']));
 					Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
 				}
-				Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Your mobile app has been succesfully created, you can now personalize it through app setting given below.'));
+				Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__($result['message']));
 				$this->_redirect('mobicommerce/index/edit', 
 					array(
-                    'id'    => $next_app_id,
-                    '_current'=>true
+					'id'       => $appid,
+					'_current' => true
                 ));
 		    }else {
 				Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__($result['message']));
 				Mage::getSingleton('core/session')->setData( 'createapp', Mage::app()->getRequest()->getPost());
-			    $url = $refererUrl;
-			    Mage::app()->getFrontController()->getResponse()->setRedirect($url);
+			    Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
 				return;
 			}
 		}else{
-		   $url = $refererUrl;
-		   Mage::app()->getFrontController()->getResponse()->setRedirect($url);
+		   Mage::app()->getFrontController()->getResponse()->setRedirect($refererUrl);
 	       return;
 		}
 	}
@@ -1257,17 +917,14 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			$user = Mage::getSingleton('admin/session');
 			$userEmail = $user->getUser()->getEmail();
 			$userFirstname = $user->getUser()->getFirstname();
-		    
 		    $fromEmail = $userEmail;
 			$fromName = $userFirstname; 
 			$toEmail = $postData['emailid'];
 			if($postData['templatetype'] == 'android'){
 				$body = "<b>Hello</b>, <br><br> ".$fromName." has sent you a MobiCommerce Android Demo App to review, by clicking the URL you can download and install the Mobile app in your Mobile Device.<br><br> MobiCommerce Android  App URL: ".$postData['appurl']." <br><br><i>'".$this->__('Note: If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app')."'</i> <br><br> Regards";
-			}elseif($postData['templatetype'] == 'ios')
-			{
+			}elseif($postData['templatetype'] == 'ios'){
 				$body = "<b>Hello</b>, <br><br> ".$fromName." has sent you a MobiCommerce iOS Demo App to review, by clicking the URL you can download and install the Mobile app in your Mobile Device.<br><br> MobiCommerce iOS  App URL: ".$postData['appurl']." <br><br><i>'".$this->__('Note: If you have any mobicommerce demo app installed in your mobile device please uninstall that before installing a new mobicommerce demo app')."'</i> <br><br> Regards";
-			}elseif($postData['templatetype'] == 'website')
-			{
+			}elseif($postData['templatetype'] == 'website'){
 				$body = "<b>Hello</b>, <br><br> ".$fromName." has sent you a MobiCommerce provided Mobile Website to review, by clicking the URL you can review mobile website in your Mobile Devices.<br><br> MobiCommerce Mobile Website URL: ".$postData['appurl']."  <br><br> Regards";
 			}
 			$subject = "Mobicommerce App URL";
@@ -1277,13 +934,12 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			$mail->setFrom($fromEmail, $fromName);
 			$mail->addTo($toEmail);
 			$mail->setSubject($subject);
-			//$this->getResponse()->clearHeaders()->setHeader('Content-type','application/json',true);
-			try {
+			try{
 			    $mail->send();
 				$response['status'] = "success";
 				$response['success'] = 'Successfully sent Email.';
 				$this->getResponse()->setBody(json_encode($response));	
-			} catch(Exception $ex) {
+			}catch(Exception $ex) {
 				$response['status'] = "fail";
 			    $response['error'] = 'Unable to send email.';
 				$this->getResponse()->setBody(json_encode($response));
@@ -1293,15 +949,13 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 
 	public function _sendEmailBeforeCreateApp($postdata)
 	{
-		if(!empty($postdata))
-		{
+		if(!empty($postdata)){
 			$appName = $postdata['appname'];
 			$storeId = $postdata['store'];
             $storeUrl = Mage::app()->getStore($storeId)->getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK);
 			$emailId = $postdata['primaryemail'];
 			$phone = $postdata['phone'];
-			if(!empty($postdata['udid']))
-			{
+			if(!empty($postdata['udid'])){
 				$udid = $postdata['udid'];
 			}
 			$body = "App Name:- ".$appName." <br>  Store Url:-  ".$storeUrl." <br> Email Id :- ".$emailId." <br> Phone Number:- ".$phone."";
@@ -1310,7 +964,6 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			$user = Mage::getSingleton('admin/session');
 			$userEmail = $user->getUser()->getEmail();
 			$userFirstname = $user->getUser()->getFirstname();
-		    
 		    $fromEmail = $userEmail;
 			$fromName = $userFirstname; 
 			$mail = new Zend_Mail();
@@ -1319,12 +972,8 @@ class Mobicommerce_Mobiadmin_IndexController extends Mage_Adminhtml_Controller_A
 			$mail->setFrom($fromEmail, $appName);
 			$mail->addTo($toEmail, 'Mobicommerce');
 			$mail->setSubject($subject);
-			try {
-                $mail->send();
-			}catch (Exception $e)
-			{
-				 
-			}
+			try {$mail->send();}
+			catch (Exception $e){}
 		}
 	}
 }

@@ -271,6 +271,8 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
             if($getHasError)
                 $errorDescription = $this->_remove_cart_duplicate_error($item->getErrorInfos());
 
+            $inventory = Mage::getModel('cataloginventory/stock_item')->loadByProduct($product);
+
             $list[] = array(
                 'item_id'               => $item->getId(),
                 'product_id'            => $product->getId(),
@@ -280,7 +282,8 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
                 'row_total'             => $item->getRowTotal(),
                 'product_thumbnail_url' => Mage::helper('catalog/image')->init($product, 'thumbnail')->resize(200)->__toString(),
                 'qty'                   => $item->getQty(),
-                'product_max_qty'       => Mage::getModel('cataloginventory/stock_item')->loadByProduct($product)->getQty(),
+                'max_qty'               => (int) $inventory->getQty(),
+                'qty_increments'        => (int) $inventory->getQtyIncrements(),
                 'options'               => $options,
                 'hasError'              => $getHasError,
                 'errorDescription'      => $errorDescription,
@@ -353,6 +356,7 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
                 'country_id'           => $address->getCountryId(),
                 'telephone'            => $address->getTelephone(),
                 'fax'                  => $address->getFax(),
+                'shipping_method'      => $address->getShippingMethod(),
                 'shipping_description' => $address->getShippingDescription(),
                 'shipping_amount'      => $address->getShippingAmount(),
                 );
@@ -380,6 +384,7 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
         if(!empty($cartdata) && $cartdata['items_qty'] > 0){
             try{
                 $return['paymentinfo'] = array(
+                    'code'  => strtoupper($this->_getCart()->getQuote()->getPayment()->getMethodInstance()->getCode()),
                     'title' => $this->_getCart()->getQuote()->getPayment()->getMethodInstance()->getTitle(),
                     'fee'   => isset($cartdata['cod_fee'])?$cartdata['cod_fee']:0,
                     );
@@ -434,6 +439,7 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
 
         $this->_getCheckoutSession()->setCartWasUpdated(true);
         $information['data']['cart_details']= $this->getCartInfo();
+        $information['data']['shipping_methods'] = $this->_getShippingMethods();
         return $information;
     }
 
@@ -516,7 +522,7 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
         $this->_getCheckoutSession()->getQuote()->getShippingAddress()->collectShippingRates()->save();
         $info =  $this->successStatus();     
         $info['data']['cart_details']     = $this->getCartInfo(); 
-        $info['data']['shipping_methods'] = $this->_getShippingMethods();        
+        $info['data']['shipping_methods'] = $this->_getShippingMethods();
         $info['data']['payment_methods']  = $this->_getPaymentMethos();
      
         return $info;    
@@ -626,7 +632,7 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
             $detail['bncode']     = "Magestore_SI_MagentoCE";
             $detail['show_type']  = 2;
         } elseif($type == 9) {
-            $detail['show_type']    = 9;
+            $detail['show_type'] = 9;
             $detail['urls'] = array(
                 'redirect_url' => $method->getOrderPlaceRedirectUrl(),
                 'success_url'  => $method->getPaidSuccessUrl(),
@@ -720,6 +726,20 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
                 }
                 $detail['installment_options'] = $installment_options;
             }
+            else if(in_array($method->getCode(), array(
+                'paypal_standard',
+                ))){
+                $detail['urls']['success_url'] = Mage::getUrl('paypal/standard/success');
+                $detail['urls']['cancel_url'] = Mage::getUrl('paypal/standard/cancel');
+            }
+            else if(in_array($method->getCode(), array(
+                'paypal_express',
+                ))){
+                $detail['urls']['redirect_url'] = Mage::getUrl('paypal/express/start');
+                $detail['urls']['success_url'] = Mage::getUrl('paypal/express/review');
+                $detail['urls']['update_order_url'] = Mage::getUrl('paypal/express/updateOrder');
+                $detail['urls']['cancel_url'] = Mage::getUrl('checkout/cart');
+            }
 
             if(empty($detail['urls']['success_url']))
                 $detail['urls']['success_url'] = Mage::getUrl("checkout/onepage/success", array("_secure" => true));
@@ -732,15 +752,19 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
     protected function _getRestrictedMethods(){
         return array(
             'authorizenet_directpost',
-            'paypal_direct'
             );
     }
 
     protected function _getAllowedMethods(){
         return array(
+            'paypal_standard',
+            'paypal_express',
+            'paypal_direct',
+            'ccavenue',
             'zooz',
             'transfer_mobile',
             'cashondelivery',
+            'phoenix_cashondelivery',
             'cashondeliverypayment',
             'checkmo',
             'banktransfer',
@@ -748,6 +772,7 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
             'paymill_creditcard',
             'payfast',
             'payuapi',
+            'payucheckout_shared',
             'mobipaypaloffline',
             'msp_ideal',
             'msp_deal',
@@ -755,30 +780,42 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
             'msp_visa',
             'msp_mastercard',
             'msp_maestro',
-            'msp_babygiftcard'
+            'msp_babygiftcard',
+            'atos_standard',
+            'atos_euro',
+            'atos_cofidis3x',
         );
     }
 
     protected function _getPaymentMethodTypes(){
         return array(
-            'zooz'                  => 2,
-            'transfer_mobile'       => 0,
-            'cashondelivery'        => 0,
-            'cashondeliverypayment' => 0,
-            'checkmo'               => 0,
-            'banktransfer'          => 0,
-            'bankpayment'           => 0,
-            'paymill_creditcard'    => 1,
-            'mobipaypaloffline'     => 0,
-            'payfast'               => 9,
-            'msp_ideal'             => 9,
-            'msp_deal'              => 9,
-            'msp_banktransfer'      => 9,
-            'msp_visa'              => 9,
-            'msp_mastercard'        => 9,
-            'msp_maestro'           => 9,
-            'msp_babygiftcard'      => 9,
-            'payuapi'               => 9,
+            'paypal_standard'        => 9,
+            'paypal_express'         => 9,
+            'paypal_direct'          => 1,
+            'ccavenue'               => 9,
+            'zooz'                   => 2,
+            'transfer_mobile'        => 0,
+            'cashondelivery'         => 0,
+            'phoenix_cashondelivery' => 0,
+            'cashondeliverypayment'  => 0,
+            'checkmo'                => 0,
+            'banktransfer'           => 0,
+            'bankpayment'            => 0,
+            'paymill_creditcard'     => 1,
+            'mobipaypaloffline'      => 0,
+            'payfast'                => 9,
+            'payucheckout_shared'    => 9,
+            'msp_ideal'              => 9,
+            'msp_deal'               => 9,
+            'msp_banktransfer'       => 9,
+            'msp_visa'               => 9,
+            'msp_mastercard'         => 9,
+            'msp_maestro'            => 9,
+            'msp_babygiftcard'       => 9,
+            'payuapi'                => 9,
+            'atos_standard'          => 9,
+            'atos_euro'              => 9,
+            'atos_cofidis3x'         => 9,
         );        
     }    
 
@@ -871,6 +908,46 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
         return $list;    
     }
 
+    public function _getShippingMethodsBabyLife(){
+        $shipping = $this->_getCheckoutSession()->getQuote()->getShippingAddress();
+        $methods = $shipping->getGroupedAllShippingRates();
+        $list = array();
+        $groups = array();
+        foreach ($methods as $_ccode => $_carrier) {
+            foreach ($_carrier as $rate) {
+                if($rate->isDeleted()) continue;
+                if($rate->getCarrier() == 'vendor_multirate') continue;
+                $tmp = explode(VES_VendorsShipping_Model_Shipping::DELEMITER, $rate->getCode());
+                if(sizeof($tmp) != 2) continue;
+                $vendorId = $tmp[1];
+                $vendor = Mage::getModel('vendors/vendor')->load($vendorId);
+                if(!$vendor->getId()) continue;
+                if(!isset($groups[$vendorId])) $groups[$vendorId] = array();
+                $groups[$vendorId]['title'] = $vendor->getTitle();
+                if(!isset($groups[$vendorId]['rates'])) $groups[$vendorId]['rates'] = array();
+                $groups[$vendorId]['rates'][] = $rate->getData();
+            }
+        }
+        //return $groups;
+        $list = array();
+        $method_group = array();
+        if(!empty($groups)){
+            foreach($groups as $key => $value){
+                $career_index=1;
+                foreach($value['rates'] as $_rate){
+                    $_rate['carrier_index'] = $career_index;
+                    $_rate['carrier_title'] = $value['title'];
+                    $methodGroup = explode('||', $_rate['method']);
+                    $_rate['methodGroup'] = 'vendor_shipping_method__'. $methodGroup[1];
+                    $list[] = $_rate;
+                    $career_index++;
+                }
+            }
+        }
+
+        return $list;    
+    }
+
     public function getShippingMethods(){
         $info = $this->successStatus();
         $info['data']['shipping_methods'] = $this->_getShippingMethods();
@@ -902,9 +979,9 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
                 $this->_getOnepage()->getQuote()->collectTotals();
                 $this->_getOnepage()->getQuote()->collectTotals()->save();            
                 $info = $this->successStatus();
-                $info['data']['payment_methods'] = $this->_getPaymentMethos();
-                $info['data']['cart_details'] = $this->getCartInfo(); 
-                return $info;          
+                //$info['data']['payment_methods'] = $this->_getPaymentMethos();
+                $info['data']['cart_details'] = $this->getCartInfo();
+                return $info;
             }  else {
                 if(isset($result['message']))
                     return $this->errorStatus($result['message']);
@@ -965,7 +1042,6 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
             {
                 $error = $this->errorStatus('Not_All_Products_Are_Available_In_The_Requested_Quantity');
                 $error['data']['cart_details'] = $this->getCartInfo();
-
                 return $error;
             }
         }
@@ -1074,5 +1150,40 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Shoppingcart_Cart extends Mobicommer
         // dispatchEvent to change data
         $this->eventChangeData($event_name, $event_value);
         return $this->getCacheData();
+    }
+
+    public function setEstimateShipping($data)
+    {
+        $country    = (string) isset($data['country_id'])?$data['country_id']:null;
+        $postcode   = (string) isset($data['estimate_postcode'])?$data['estimate_postcode']:null;
+        $city       = (string) isset($data['estimate_city'])?$data['estimate_city']:null;
+        $regionId   = (string) isset($data['region_id'])?$data['region_id']:null;
+        $region     = (string) isset($data['region'])?$data['region']:null;
+
+        $this->_getQuote()->getShippingAddress()
+            ->setCountryId($country)
+            ->setCity($city)
+            ->setPostcode($postcode)
+            ->setRegionId($regionId)
+            ->setRegion($region)
+            ->setCollectShippingRates(true);
+        $this->_getQuote()->save();
+
+        $info = $this->successStatus();
+        $info['data']['cart_details'] = $this->getCartInfo();
+        $info['data']['shipping_methods'] = $this->_getShippingMethods();
+        return $info;
+    }
+
+    public function updateEstimateShipping($data)
+    {
+        $code = (string) isset($data['estimate_method'])?$data['estimate_method']:null;
+        if (!empty($code)) {
+            $this->_getQuote()->getShippingAddress()->setShippingMethod($code)/*->collectTotals()*/->save();
+        }
+        $info = $this->successStatus();
+        $info['data']['cart_details'] = $this->getCartInfo();
+        $info['data']['shipping_methods'] = $this->_getShippingMethods();
+        return $info;
     }
 }

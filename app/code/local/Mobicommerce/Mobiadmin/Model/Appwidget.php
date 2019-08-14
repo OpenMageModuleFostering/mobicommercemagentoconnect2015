@@ -8,15 +8,14 @@ class Mobicommerce_Mobiadmin_Model_Appwidget extends Mage_Core_Model_Abstract
 
 	public function getProductSliderData($data)
 	{
-		$appcode = isset($data['appcode'])?$data['appcode']:'12345678';
+		$appcode = isset($data['appcode'])?$data['appcode']:NULL;
 		$productsliderCollection =Mage::getModel('mobiadmin/appwidget')->getCollection()
-			->addFieldToFilter('app_code',$data['appcode'])
+			->addFieldToFilter('app_code', $data['appcode'])
 			->addFieldToFilter('slider_status', '1')
 			->setOrder('slider_position', 'ASC');
 		$sliderArray = array();
 		$key = 0;
-        if($productsliderCollection->count()>0) 
-		{
+        if($productsliderCollection->count()>0) {
 			foreach($productsliderCollection as $productslider){
 				$productslider = $productslider->getData();
 				if($productslider['slider_code'] == 'new-arrivals-automated'){
@@ -80,7 +79,6 @@ class Mobicommerce_Mobiadmin_Model_Appwidget extends Mage_Core_Model_Abstract
 					Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($bestseller_products);
 					Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($bestseller_products);
 					
-					//echo $bestseller_products->getSelect();exit;
 					if(!empty($bestseller_products)){
 						$k = 0;
 						$products = array();
@@ -99,7 +97,6 @@ class Mobicommerce_Mobiadmin_Model_Appwidget extends Mage_Core_Model_Abstract
 								$products[$k]['is_salable']            = $_bestseller_products->getIsSalable();
 								$products[$k]['status']                = $_bestseller_products->getStatus();
 								$products[$k]['product_thumbnail_url'] = Mage::helper('catalog/image')->init($_bestseller_products, 'thumbnail')->resize(200)->__toString();
-								
 								$prices = $this->_productPrices($_bestseller_products);
 								if ($prices) 
 									$products[$k] = array_merge($products[$k], $prices);
@@ -111,8 +108,42 @@ class Mobicommerce_Mobiadmin_Model_Appwidget extends Mage_Core_Model_Abstract
 						$sliderArray[$key]['slider_productIds'] = $products;
 					}				
 				}
-				else{ 
-					$productids = array();
+				else if($productslider['slider_code'] == 'recently-viewed-automated'){
+					$limit = 10;
+					$recentlyViewedProducts = Mage::getSingleton('Mage_Reports_Block_Product_Viewed')->setPageSize($limit)->getItemsCollection();
+			        $recentlyViewedProductsArray = array();
+			        if($recentlyViewedProducts){
+			        	foreach($recentlyViewedProducts as $_product){
+			        		if($this->_checkProductAvailabilityParam($_product)){
+			        			$p = array(
+									'entity_id'             => $_product->getId(),
+									'entity_type_id'        => $_product->getEntityTypeId(),
+									'attribute_set_id'      => $_product->getAttributeSetId(),
+									'type_id'               => $_product->getTypeId(),
+									'sku'                   => $_product->getSku(),
+									'name'                  => $_product->getName(),
+									'price'                 => $_product->getPrice(),
+									'final_price'           => $_product->getFinalPrice(),
+									'special_price'         => $_product->getSpecialPrice(),
+									'is_salable'            => $_product->getIsSalable(),
+									'status'                => $_product->getStatus(),
+									'product_thumbnail_url' => Mage::helper('catalog/image')->init($_product, 'thumbnail')->resize(200)->__toString(),
+			        				);
+
+								$prices = $this->_productPrices($_product);
+								if ($prices) 
+									$p = array_merge($p, $prices);
+
+								$recentlyViewedProductsArray[] = $p;
+							}
+			        	}
+			        	if(!empty($recentlyViewedProductsArray)){
+			        		$sliderArray[$key] = $productslider;
+							$sliderArray[$key]['slider_productIds'] = $recentlyViewedProductsArray;
+			        	}
+			        }
+				}
+				else{
 					$productids = explode(",",$productslider['slider_productIds']);
 					if(!empty($productids)){
 						$products = array();
@@ -153,19 +184,16 @@ class Mobicommerce_Mobiadmin_Model_Appwidget extends Mage_Core_Model_Abstract
 	}
 
 	protected function _productPrices($product){
+		$prices = array();
 		// ----- Get Price for bundle and ground products 
 		$type = $product->getTypeId();
 		switch ($type) {          
 			case Mage_Catalog_Model_Product_Type::TYPE_BUNDLE :
-				/*
-					----- Bundle price
-				*/
-				$prices = array();
 				$productPrice = $product->getPriceModel();
 				if (version_compare(Mage::getVersion(), '1.4.2.0', '>=') === true) {
-					 list($_minimalPriceTax, $_maximalPriceTax) = $productPrice->getTotalPrices($product, null, null, false);      
+					list($_minimalPriceTax, $_maximalPriceTax) = $productPrice->getTotalPrices($product, null, null, false);      
 				}else{
-					 list($_minimalPriceTax, $_maximalPriceTax) = $productPrice->getPrices($product, null, null, false);      
+					list($_minimalPriceTax, $_maximalPriceTax) = $productPrice->getPrices($product, null, null, false);      
 				}
 			   
 				if ($product->getPriceType() == 1) {
@@ -188,19 +216,12 @@ class Mobicommerce_Mobiadmin_Model_Appwidget extends Mage_Core_Model_Abstract
 					'min_price' => $_minimalPriceTax,
 					'max_price' => $_maximalPriceTax,
 					);
-
-				// --- ENd Budle price 
 				break;            
 			case Mage_Catalog_Model_Product_Type::TYPE_GROUPED :
-				/*
-					----- Grouped price
-				*/
-				$prices = array();
 				$_taxHelper = Mage::helper('tax');
 				$_minimalPriceValue = $product->getMinimalPrice();
 				//$_exclTax = $_taxHelper->getPrice($product, $_minimalPriceValue);
-				//$_inclTax = $_taxHelper->getPrice($product, $_minimalPriceValue, true);  
-				//print_r($product->getData());exit; 
+				//$_inclTax = $_taxHelper->getPrice($product, $_minimalPriceValue, true);
 				
 				/* custom code added for getting minimum and maximum price for grouped product */
 				$groupedProduct = $product;
@@ -221,10 +242,8 @@ class Mobicommerce_Mobiadmin_Model_Appwidget extends Mage_Core_Model_Abstract
 						);
 				}
 
-				break;   
-				// -----END -- Grouped Price         
+				break;
 		}
-		// ----- end Price  
 		return $prices;
 	}
 

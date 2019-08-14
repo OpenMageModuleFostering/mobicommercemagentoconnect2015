@@ -150,7 +150,7 @@ class Mobicommerce_Mobiservices_Model_1x0x3_Catalog_Catalog extends Mobicommerce
         return $product_total;
     }
 
-	public function getCatrgories()
+	public function getCategories()
 	{
 	    $categoriesTree = $this->successStatus();
 	    $categoriesTree['data']['categories'] = $this->_categoryTreeList();
@@ -435,87 +435,6 @@ class Mobicommerce_Mobiservices_Model_1x0x3_Catalog_Catalog extends Mobicommerce
 		$information['data']['product_count'] = $product_total;
 		
 		return $information;
-    }
-
-    public function getRandomProducts($randomCount = 10)
-    {
-    	$storeId = $this->_getStoreId();
-    	$pCollection = Mage::getModel('catalog/product')->getCollection()
-			->addAttributeToSelect('*')					
-			->addAttributeToFilter('status', '1')
-			->addAttributeToFilter('visibility', '4')					
-			->setStoreId($storeId)
-			->addFinalPrice();
-		Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($pCollection);
-		$pCollection->getSelect()->order('RAND()');
-		$pCollection->getSelect()->limit($randomCount);
-
-		$products = array();
-		if(!empty($pCollection)){
-            foreach ($pCollection as $key => $_product) {
-            	$row = array();
-                $row['entity_id']             = $_product->getId();
-				$row['entity_type_id']        = $_product->getEntityTypeId();
-				$row['attribute_set_id']      = $_product->getAttributeSetId();
-				$row['type_id']               = $_product->getTypeId();
-				$row['sku']                   = $_product->getSku();
-				$row['name']                  = $_product->getName();
-				$row['price']                 = $_product->getPrice();
-				$row['final_price']           = $_product->getFinalPrice();
-				$row['special_price']         = $_product->getSpecialPrice();
-				$row['is_salable']            = $_product->getIsSalable();
-				$row['status']                = $_product->getStatus();
-				$row['product_thumbnail_url'] = Mage::helper('catalog/image')->init($_product, 'thumbnail')->resize(200)->__toString();
-				$products[] = $row;
-            }
-        }
-
-		return $products;
-    }
-
-    function getProductRatingStar($productId)
-    {
-        $reviews = Mage::getModel('review/review')
-            ->getResourceCollection()
-            ->addStoreFilter(Mage::app()->getStore()->getId())
-            ->addEntityFilter('product', $productId)
-            ->addStatusFilter(Mage_Review_Model_Review::STATUS_APPROVED)
-            ->setDateOrder()
-            ->addRateVotes();
-
-        $starReview = array();
-        $starReview[0] = 0;
-        $starReview[1] = 0;
-        $starReview[2] = 0;
-        $starReview[3] = 0;
-        $starReview[4] = 0;
-        $starReview[5] = 0;
-        if (count($reviews) > 0) {
-            foreach ($reviews->getItems() as $review) {
-                $starReview[5]++;
-                $tmp2 = 0;
-                foreach ($review->getRatingVotes() as $vote) {
-                    $tmp2 += ($vote->getPercent() / 20);
-                }
-                $tmp1 = (int) ($tmp2 / count($review->getRatingVotes()));
-                $tmp3 = $tmp2 % 3;
-                $tmp1 = $tmp3 < 5 ? $tmp1 : $tmp1 + 1;
-                if ($tmp1 == 1) {
-                    $starReview[0]++;
-                } elseif ($tmp1 == 2) {
-                    $starReview[1]++;
-                } elseif ($tmp1 == 3) {
-                    $starReview[2]++;
-                } elseif ($tmp1 == 4) {
-                    $starReview[3]++;
-                } elseif ($tmp1 == 5) {
-                    $starReview[4]++;
-                } elseif ($tmp1 == 0) {
-                    $starReview[5]--;
-                }
-            }
-        }
-        return $starReview;
     }
 
     /**

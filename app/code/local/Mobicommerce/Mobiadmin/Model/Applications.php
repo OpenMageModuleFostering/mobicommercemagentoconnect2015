@@ -6,14 +6,15 @@ class Mobicommerce_Mobiadmin_Model_Applications extends Mage_Core_Model_Abstract
         $this->_init('mobiadmin/applications');
     }
 
-	public function saveApplicationData(array $saveData ,$store_id)
+	public function saveApplicationData($saveData, $store_id=null)
 	{
+		$appid = null;
 		$errors = array();
 		if(empty($store_id)){
-		$store_id = Mage::app()
-			->getWebsite()
-			->getDefaultGroup()
-			->getDefaultStoreId();
+			$store_id = Mage::app()
+				->getWebsite()
+				->getDefaultGroup()
+				->getDefaultStoreId();
 		}
 
 		$app_name        = $saveData['app_name'];
@@ -22,16 +23,16 @@ class Mobicommerce_Mobiadmin_Model_Applications extends Mage_Core_Model_Abstract
 		$app_logo        = $saveData['app_logo'];
 		$app_licence_key = $saveData['app_license_key'];
 		$android_url     = $saveData['android_url'];
-		$ios_url     = $saveData['ios_url'];
-		$android_status     = $saveData['android_status'];
-		$ios_status     = $saveData['ios_status'];
+		$ios_url         = $saveData['ios_url'];
+		$android_status  = $saveData['android_status'];
+		$ios_status      = $saveData['ios_status'];
 		$app_storeid     = $store_id;
 		$webapp_url      = $saveData['webapp_url'];
-        
 		$udid            = $saveData['udid'];
+
 		$appExist = Mage::getModel('mobiadmin/applications')->getCollection()
-			->addFieldToFilter('app_code',$app_code)
-			->addFieldToFilter('app_key',$app_key)->count();
+			->addFieldToFilter('app_code', $app_code)
+			->addFieldToFilter('app_key', $app_key)->count();
 		if(!$appExist){
 			$this->_create_mobi_media_dir($saveData['app_code'], $saveData['app_theme_folder_name']);
 			$applicationData = array(
@@ -47,21 +48,21 @@ class Mobicommerce_Mobiadmin_Model_Applications extends Mage_Core_Model_Abstract
 				'android_status'  => $android_status,
 				'webapp_url'      => $webapp_url,
 				'udid'            => $udid,
-				'ios_url'            => $ios_url,
-				'ios_status'           => $ios_status,
+				'ios_url'         => $ios_url,
+				'ios_status'      => $ios_status,
 				);
 				//save in application info
 			try {
-				Mage::getModel('mobiadmin/applications')->setData($applicationData)->save();
+				$appid = Mage::getModel('mobiadmin/applications')->setData($applicationData)->save()->getId();
 			}catch(Exception $e){
 				$errors[] = $e->getMessage();   
 			}
 
 			$appinfo = serialize(array(
-				'android_appname'      => '',
+				'android_appname'      => $app_name,
 				'android_appweburl'    => '',
 				'android_appmobileurl' => '',
-				'ios_appname'          => '',
+				'ios_appname'          => $app_name,
 				'ios_appweburl'        => '',
 				'ios_appmobileurl'     => '',
 				'app_description'      => '',
@@ -74,17 +75,30 @@ class Mobicommerce_Mobiadmin_Model_Applications extends Mage_Core_Model_Abstract
 				'value'        => $appinfo
 			);
 
-			try {
+			try{
 				Mage::getModel('mobiadmin/appsetting')->setData($appinfoData)->save();
 			}catch(Exception $e){
 				$errors[] = $e->getMessage();   
 			}
+
+			$categoryIconSetting = array("MAGENTO_CATEGORY_THUMBNAIL" => 0);
+			if(in_array($saveData['app_theme_folder_name'], array("fashion_and_style")))
+				$categoryIconSetting = array("MAGENTO_CATEGORY_THUMBNAIL" => 1);
+			$categoryIconData = array(
+				'app_code'     => $app_code,
+				'setting_code' => 'category_icons',
+				'value'        => serialize($categoryIconSetting)
+				);
+			try{
+				Mage::getModel('mobiadmin/appsetting')->setData($categoryIconData)->save();
+			}catch(Exception $e){
+				$errors[] = $e->getMessage();   
+			}
 	
-			/***/
 			$pushValue = array(
-				'active_push_notification' => 0,
-				'android_key'              => null,
-				'android_sender_id'        => null,
+				'active_push_notification' => 1,
+				'android_key'              => 'AIzaSyC5tw0jTUeFfcm2kvYMDk4AudnnF5DmJuM',
+				'android_sender_id'        => '881306584774',
 				'upload_iospem_file'       => null,
 				'upload_iospem_file_url'   => null,
 				'pem_password'             => null,
@@ -136,16 +150,16 @@ class Mobicommerce_Mobiadmin_Model_Applications extends Mage_Core_Model_Abstract
 			$app_home_banners = array();
 			$dir = Mage::getBaseDir('media').DS.'mobi_assets'.DS.'theme_files'.DS.$saveData['app_theme_folder_name'].DS.'home_banners';
 			$cdir = scandir($dir);
-			foreach ($cdir as $key => $value) 
-			{ 
-				if (!in_array($value,array(".","..")) && !is_dir($dir . DIRECTORY_SEPARATOR . $value)) 
-				{
+			$bannerCount = 0;
+			foreach($cdir as $key => $value){
+				if(!in_array($value,array(".","..")) && !is_dir($dir . DIRECTORY_SEPARATOR . $value)){
 					$img = $this->file_get_contents_curl($dir . DIRECTORY_SEPARATOR . $value);
 					file_put_contents(Mage::getBaseDir('media').'/mobi_commerce/'.$app_code.'/home_banners/'.$value, $img);
 					$app_home_banners[] = array(
-						'url' => Mage::getBaseUrl('media').'mobi_commerce/'.$app_code.'/home_banners/'.$value,
-						'is_active' => '1'
+						'url'       => Mage::getBaseUrl('media').'mobi_commerce/'.$app_code.'/home_banners/'.$value,
+						'is_active' => (($bannerCount > 1)?'0':'1'),
 						);
+					$bannerCount++;
 				} 
 			}
 
@@ -169,24 +183,12 @@ class Mobicommerce_Mobiadmin_Model_Applications extends Mage_Core_Model_Abstract
 			}catch(Exception $e){
 				$errors[] = $e->getMessage();   
 			}
-
-			$pushnotifications_settings = array(
-				'app_code'     => $app_code,
-				'setting_code' => 'pushnotifications_settings',
-				'value'        => ''
-				 );
-
-			try {
-				Mage::getModel('mobiadmin/appsetting')->setData($pushnotifications_settings)->save();
-			}catch(Exception $e){
-				$errors[] = $e->getMessage();   
-			}
 			
 			$now = date("Y-m-d H:i:s", Mage::getModel('core/date')->timestamp(time()));
 			$setting = json_encode(array('no_of_days' => 90));
 
 			/* code to get 10 random featured products */
-			$featuredProducts = Mage::getModel('mobiservices/catalog_catalog')->getRandomProducts(10);
+			$featuredProducts = Mage::getModel('mobiservices/catalog_catalog')->getRandomProducts($store_id, 10);
 			$featuredProductsIds = array();
 			if(!empty($featuredProducts)){
 				foreach ($featuredProducts as $key => $value) {
@@ -265,6 +267,18 @@ class Mobicommerce_Mobiadmin_Model_Applications extends Mage_Core_Model_Abstract
 					'slider_status'     => '0',
 					'slider_position'   => '6',
 					'slider_settings'   => $setting,
+					'slider_productIds' => '',
+					'created_time'      => $now,
+					'update_time'       => $now,
+					),
+				array(
+					'app_code'          => $app_code,
+					'app_type'          => 'product-slider',
+					'slider_code'       => 'recently-viewed-automated',
+					'slider_label'      => 'Recently Viewed',
+					'slider_status'     => '1',
+					'slider_position'   => '7',
+					'slider_settings'   => '',
 					'slider_productIds' => '',
 					'created_time'      => $now,
 					'update_time'       => $now,
@@ -369,7 +383,10 @@ class Mobicommerce_Mobiadmin_Model_Applications extends Mage_Core_Model_Abstract
 				$errors[] = $e->getMessage();
 			}
         }
-		return $errors;
+		return array(
+			'appid' => $appid,
+			'errors' => $errors
+			);
 	}
 
 	protected function file_get_contents_curl($url) {
@@ -468,7 +485,6 @@ class Mobicommerce_Mobiadmin_Model_Applications extends Mage_Core_Model_Abstract
                     $cssArray[] = str_replace("--COLOR--", $currentValue, $css);
 
                     if(!empty($svgFilenames)){
-                        //echo ($element->svg_filenames);exit;
                         $svgFilenames = explode('|', $svgFilenames);
                         if(!empty($svgFilenames)){
                             foreach($svgFilenames as $svg_filename){

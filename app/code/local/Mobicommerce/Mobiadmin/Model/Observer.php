@@ -16,7 +16,6 @@ class Mobicommerce_Mobiadmin_Model_Observer
 
 	public function sendLicenceData()
 	{
-		//curl Data Send to mobi build
 		$website_url = Mage::getBaseUrl();
 		$sales_email = Mage::getStoreConfig('trans_email/ident_sales/email');
 		$countryCode = Mage::getStoreConfig('general/country/default');
@@ -38,12 +37,10 @@ class Mobicommerce_Mobiadmin_Model_Observer
 		}
 		rtrim($fields_string, '&');
 
-		//echo '<pre>';print_r($curlData);exit;
 		$ch = curl_init();
-
 		$url = Mage::helper('mobiadmin')->curlBuildUrl().'install'; 
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
-		curl_setopt($ch, CURLOPT_NOBODY, TRUE); // remove body 
+		curl_setopt($ch, CURLOPT_NOBODY, TRUE);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($ch,CURLOPT_URL, $url);
 		curl_setopt($ch,CURLOPT_POST, count($curlData));
@@ -61,8 +58,29 @@ class Mobicommerce_Mobiadmin_Model_Observer
 			try {
 				Mage::getModel('mobiadmin/licence')->setData($data)->save();
 			}catch(Exception $e){
-				echo $e->getMessage();   exit;
+				echo $e->getMessage();
 			}	
+		}
+	}
+
+	public function saveCustomData($event)
+    {
+        $quote = $event->getSession()->getQuote();
+        $quote->setData('order_platform', $event->getRequestModel()->getPost('order_platform'));
+        return $this;
+    }
+
+	public function sales_convert_quote_to_order(Varien_Event_Observer $observer)
+	{
+		$platform = Mage::app()->getRequest()->getParam('platform');
+		$orderCollection = Mage::getModel('sales/order')->getCollection();
+		$firstOrderCollection = $orderCollection->getFirstItem()->getData();
+		if (array_key_exists('orderfromplatform', $firstOrderCollection)) {
+			if($platform){
+				$observer->getEvent()->getOrder()->setOrderfromplatform($platform);
+			}else{
+				$observer->getEvent()->getOrder()->setOrderfromplatform('');
+			}
 		}
 	}
 }

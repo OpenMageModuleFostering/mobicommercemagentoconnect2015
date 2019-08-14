@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Mobicommerce_Mobiadmin>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Mobicommerce_Mobiadmin>
     </modules>
     <global>
@@ -19,7 +19,21 @@
                 <rewrite>
                     <page_menu>Mobicommerce_Mobiadmin_Block_Adminhtml_Menu</page_menu>
                 </rewrite>
+				<rewrite>
+				    <sales_order_grid>Mobicommerce_Mobiadmin_Block_Adminhtml_Order_Grid</sales_order_grid>
+				</rewrite>
+				<rewrite>
+				    <dashboard_sales>Mobicommerce_Mobiadmin_Block_Adminhtml_Dashboard_Sales</dashboard_sales>
+				</rewrite>
+				<rewrite>
+				    <report_sales_sales_grid>Mobicommerce_Mobiadmin_Block_Adminhtml_Report_Sales_Sales_Grid</report_sales_sales_grid>					
+				</rewrite>	
             </adminhtml>
+			<sales>
+			    <rewrite>
+				    <adminhtml_report_filter_form_order>Mobicommerce_Mobiadmin_Block_Adminhtml_Report_Filter_Form_Order</adminhtml_report_filter_form_order>
+			    </rewrite>
+			</sales>
         </blocks>
 		<models>
 			<mobiadmin>
@@ -85,6 +99,14 @@
 					</controller_action_before>
 				</observers>
 	       </controller_action_predispatch>
+		   <sales_convert_quote_to_order>
+                <observers>
+                    <saveplatform>
+                        <class>mobiadmin/observer</class>
+                        <method>sales_convert_quote_to_order</method> 
+                    </saveplatform>
+                </observers>
+            </sales_convert_quote_to_order>
 	   </events>
     </global>
 	<admin>

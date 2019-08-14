@@ -4,7 +4,6 @@ class Mobicommerce_Mobiadmin_Block_Adminhtml_Applications_Grid_Renderer_AndroidS
     public function render(Varien_Object $row)
     {
         $androidStatus = $row->getAndroidStatus();
-		
         return $androidStatus;
     }
 }

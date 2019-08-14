@@ -88,6 +88,20 @@ class Mobicommerce_Mobiservices_Block_Connector extends Mage_Core_Block_Template
                     'modelpath' => ''
                     ),
                 ),
+            '1.3.3' => array(
+                'mobiadmin' => array(
+                    'version'   => '1.0.0',
+                    'modelpath' => ''
+                    ),
+                'mobiservices' => array(
+                    'version'   => '1.3.3',
+                    'modelpath' => '1x3x3'
+                    ),
+                'mobipaypaloffline' => array(
+                    'version'   => '1.0.0',
+                    'modelpath' => ''
+                    )
+                ),
             );
         if(isset($connector[$connectorVersion][$module]['modelpath']) && !empty($connector[$connectorVersion][$module]['modelpath']))
             return $connector[$connectorVersion][$module]['modelpath'];

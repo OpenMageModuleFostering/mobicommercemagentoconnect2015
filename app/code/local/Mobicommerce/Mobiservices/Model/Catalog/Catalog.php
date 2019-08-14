@@ -2,7 +2,8 @@
 
 class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobiservices_Model_Abstract {
 
-	public function _categoryTreeList($storeId = null, $appcode = null){
+	public function _categoryTreeList($storeId = null, $appcode = null)
+	{
 		if(!empty($storeId))
 			$parentId = Mage::app()->getStore($storeId)->getRootCategoryId();
 		else
@@ -52,17 +53,16 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
 
 				if ($query->getRedirect()) {
 				    $query->save();
-				    //break
 				    $check = true;
 				} else {
 				    $query->prepare();
 				}
 		    }
-		    if ($check == FALSE) {
-			Mage::helper('catalogsearch')->checkNotes();
-			if (!Mage::helper('catalogsearch')->isMinQueryLength()) {
-			    $query->save();
-			}
+		    if ($check == FALSE){
+				Mage::helper('catalogsearch')->checkNotes();
+				if (!Mage::helper('catalogsearch')->isMinQueryLength()) {
+				    $query->save();
+				}
 		    }		    
 		} else {
 		    return $this->statusError();
@@ -84,16 +84,15 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
     
 	function _nodeToArray(Varien_Data_Tree_Node $node) 
 	{ 
-		$result = array(); 		
-		$result['category_id'] = $node->getId(); 
-		$result['parent_id']   = $node->getParentId(); 
-		$result['name']        = $node->getName(); 
-		$result['is_active']   = $node->getIsActive(); 
-		$result['position']    = $node->getPosition(); 
-		$result['level']       = $node->getLevel(); 		
-		$result['children']    = array();
+		$result = array();
 		$category = Mage::getModel('catalog/category')->load($node->getId());
-		//$result['imageurl']       = $this->getResizedImage($category->getImageUrl(),300,300);
+		$result['category_id']    = $node->getId(); 
+		$result['parent_id']      = $node->getParentId(); 
+		$result['name']           = $node->getName(); 
+		$result['is_active']      = $node->getIsActive(); 
+		$result['position']       = $node->getPosition(); 
+		$result['level']          = $node->getLevel(); 		
+		$result['children']       = array();
 		$result['imageurl']       = $this->getResizedImage(Mage::getBaseUrl('media').'catalog/category/'.$category->getThumbnail(),300,300);
 		$result['products_count'] = $this->_getProductCountForCategory($category);    
 
@@ -106,10 +105,8 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
 
     public function _remove_category_children($categories = array())
     {
-        if(!empty($categories))
-        {
-            foreach($categories as $key => $category)
-            {
+        if(!empty($categories)){
+            foreach($categories as $key => $category){
                 $categories[$key]['children'] = count($category['children']);
             }
         }
@@ -118,13 +115,10 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
 
     public function _make_tree_to_list($categories = null, $category_result = array())
     {
-        if(!empty($categories))
-        {
-            foreach($categories as $category)
-            {
+        if(!empty($categories)){
+            foreach($categories as $category){
                 $category_result[] = $category;
-                if(count($category['children']) > 0)
-                {
+                if(count($category['children']) > 0){
                     $category_result = $this->_make_tree_to_list($category['children'], $category_result);
                 }
             }
@@ -132,7 +126,8 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
         return $category_result;
     }
 
-    public function _getProductCountForCategory($category){
+    public function _getProductCountForCategory($category)
+    {
         $product_total=0;
         $storeId = $this->_getStoreId();
         $pCollection = $category->getProductCollection()
@@ -148,7 +143,8 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
         return $product_total;
     }
 
-	public function getCatrgories(){
+	public function getCategories()
+	{
 	    $categoriesTree = $this->successStatus();
 	    $categoriesTree['data']['categories'] = $this->_categoryTreeList();
 	    return $categoriesTree;
@@ -434,8 +430,7 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
 		return $information;
     }
 
-    public function getRandomProducts($randomCount = 10){
-    	$storeId = $this->_getStoreId();
+    public function getRandomProducts($storeId, $randomCount=10){
     	$pCollection = Mage::getModel('catalog/product')->getCollection()
 			->addAttributeToSelect('*')					
 			->addAttributeToFilter('status', '1')
@@ -461,7 +456,12 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
 				$row['special_price']         = $_product->getSpecialPrice();
 				$row['is_salable']            = $_product->getIsSalable();
 				$row['status']                = $_product->getStatus();
-				$row['product_thumbnail_url'] = Mage::helper('catalog/image')->init($_product, 'thumbnail')->resize(200)->__toString();
+				try{
+					$row['product_thumbnail_url'] = Mage::helper('catalog/image')->init($_product, 'thumbnail')->resize(200)->__toString();
+				}
+				catch(Exception $e){
+					$row['product_thumbnail_url'] = null;
+				}
 				$products[] = $row;
             }
         }
@@ -469,55 +469,12 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
 		return $products;
     }
 
-    function getProductRatingStar($productId) {
-        $reviews = Mage::getModel('review/review')
-            ->getResourceCollection()
-            ->addStoreFilter(Mage::app()->getStore()->getId())
-            ->addEntityFilter('product', $productId)
-            ->addStatusFilter(Mage_Review_Model_Review::STATUS_APPROVED)
-            ->setDateOrder()
-            ->addRateVotes();
-
-        $starReview = array();
-        $starReview[0] = 0;
-        $starReview[1] = 0;
-        $starReview[2] = 0;
-        $starReview[3] = 0;
-        $starReview[4] = 0;
-        $starReview[5] = 0;
-        if (count($reviews) > 0) {
-            foreach ($reviews->getItems() as $review) {
-                $starReview[5]++;
-                $tmp2 = 0;
-                foreach ($review->getRatingVotes() as $vote) {
-                    $tmp2 += ($vote->getPercent() / 20);
-                }
-                $tmp1 = (int) ($tmp2 / count($review->getRatingVotes()));
-                $tmp3 = $tmp2 % 3;
-                $tmp1 = $tmp3 < 5 ? $tmp1 : $tmp1 + 1;
-                if ($tmp1 == 1) {
-                    $starReview[0]++;
-                } elseif ($tmp1 == 2) {
-                    $starReview[1]++;
-                } elseif ($tmp1 == 3) {
-                    $starReview[2]++;
-                } elseif ($tmp1 == 4) {
-                    $starReview[3]++;
-                } elseif ($tmp1 == 5) {
-                    $starReview[4]++;
-                } elseif ($tmp1 == 0) {
-                    $starReview[5]--;
-                }
-            }
-        }
-        return $starReview;
-    }
-
     /**
      * added by yash
      * for getting product reviews
      */ 
-    function _getProductReviews($productId) {
+    function _getProductReviews($productId)
+    {
         $reviews = Mage::getModel('review/review')
             ->getResourceCollection()
             ->addStoreFilter(Mage::app()->getStore()->getId())
@@ -564,7 +521,8 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
         return $result_array;
     }
 
-    public function productInfo($data){
+    public function productInfo($data)
+    {
     	$product_id = $data['product_id'];
 
     	$product = Mage::getModel('catalog/product')->load($product_id);
@@ -620,7 +578,7 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
 			'product_reviews'       => $this->_getProductReviews($product_id)
         );	
 
-        if ($prices) {
+        if ($prices){
             $productInfo = array_merge($productInfo, $prices);
         }
         
@@ -660,8 +618,8 @@ class Mobicommerce_Mobiservices_Model_Catalog_Catalog extends Mobicommerce_Mobis
         return $information;
     }
 
-    public function _productPrices($product){
-
+    public function _productPrices($product)
+    {
         // ----- Get Price for bundle and ground products 
         $type = $product->getTypeId();
         switch ($type) {          

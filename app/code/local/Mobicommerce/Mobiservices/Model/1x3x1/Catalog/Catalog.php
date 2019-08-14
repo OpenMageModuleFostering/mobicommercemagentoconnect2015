@@ -78,7 +78,7 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 		} else {
 		    $isLayeredNavigationAllowed = true;
 		}
-		$layer = Mage::getSingleton('catalogsearch/layer');		
+		$layer = Mage::getSingleton('catalogsearch/layer');
 		$collection = $layer->getProductCollection();
 		return $collection;
 	}
@@ -96,7 +96,8 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 		$category = Mage::getModel('catalog/category')->load($node->getId());
 		//$result['imageurl']       = $this->getResizedImage($category->getImageUrl(),300,300);
 		$result['imageurl']       = $this->getResizedImage(Mage::getBaseUrl('media').'catalog/category/'.$category->getThumbnail(),300,300);
-		$result['products_count'] = $this->_getProductCountForCategory($category);    
+		//$result['products_count'] = $this->_getProductCountForCategory($category);
+		$result['products_count'] = $category->getProductCount();
 
 		foreach ($node->getChildren() as $child) {
 			$result['children'][] = $this->_nodeToArray($child); 
@@ -133,24 +134,7 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
         return $category_result;
     }
 
-    public function _getProductCountForCategory($category)
-    {
-        $product_total=0;
-        $storeId = $this->_getStoreId();
-        $pCollection = $category->getProductCollection()
-            ->addAttributeToSelect('*')
-            ->setStoreId($storeId)
-            ->addFinalPrice();
-
-        Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($pCollection);
-        Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($pCollection);
-        $pCollection->addUrlRewrite(0);
-
-        $product_total = $pCollection->getSize();
-        return $product_total;
-    }
-
-	public function getCatrgories()
+	public function getCategories()
 	{
 	    $categoriesTree = $this->successStatus();
 	    $categoriesTree['data']['categories'] = $this->_categoryTreeList();
@@ -160,7 +144,6 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 	public function productList($data)
 	{
 		$storeId = $this->_getStoreId();
-		
 		$pCollection = Mage::getModel('catalog/product')->getCollection()
 			->addAttributeToSelect('*')					
 			->addAttributeToFilter('status', '1')
@@ -170,22 +153,19 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 
 		if($data['category_id'] != '')
 		{
-			$pCollection->joinField('category_id',
-				'catalog/category_product_index',
-				'category_id',
-				'product_id=entity_id',
-				"{{table}}.store_id='".$storeId."' AND {{table}}.visibility IN (4) AND {{table}}.category_id = '".$data['category_id']."'",
-				'INNER');
-				//->addAttributeToFilter('category_id', array('in' => $data['category_id']));
+			$pCollection = Mage::getModel('catalog/category')->load($data['category_id'])->getProductCollection()
+				->addAttributeToSelect('*')					
+				->addAttributeToFilter('status', '1')
+				->addAttributeToFilter('visibility', '4')
+				->setStoreId($storeId)
+				->addFinalPrice();
 		}
 		
-		if($data['q'] != '')
-		{
+		if($data['q'] != ''){
 			$pCollection = $this->getCatalogSearch($data);
 		}
-		//echo '<pre>';print_r($data);exit;
-		if(!empty($data['filter']))
-		{
+
+		if(!empty($data['filter'])){
 			$filterData = array();
 			$filter = (string)$data['filter'];
 			if(!empty($filter)):
@@ -211,18 +191,11 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 				endforeach;
 			endif;
 			$data['filter'] = $filterData;
-			//print_r($filterData);exit;
 			if(!empty($data['filter'])):
-				//$pCollection->addAttributeToSelect('*');
-				foreach($data['filter'] as $key => $value)
-				{ 
-					if(is_array($value))
-					{ 
-						//print_r($key);exit;
-						if($key == "price")
-						{
-							foreach($value as $option)
-							{
+				foreach($data['filter'] as $key => $value){
+					if(is_array($value)){
+						if($key == "price"){
+							foreach($value as $option){
 								$option = explode("-",$option);
 								$option = explode("-",$value);
 								if($option[0] == '') $option[0] = 0;
@@ -230,61 +203,39 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 								$pCollection->addAttributeToFilter($key,array('from'=>$option[0],'to'=>$option[1]));
 							}
 						}
-						else
-						{
+						else{
 							$optionArray = array();
-							foreach($value as $option)
-							{
-								//$pCollection->addAttributeToFilter($key,$option);
+							foreach($value as $option){
 								$optionArray[] = array('attribute'=> $key, 'finset'=> $option);
-								//echo $key . ":" . $option;exit;
 							}
 							$pCollection->addAttributeToFilter($optionArray);
 						}
 					}
-					else
-					{
-						if($key == "price")
-						{
-							//foreach($value as $option)
-							{
-								//$option = explode("-",$option);
+					else{
+						if($key == "price"){
 								$option = explode("-",$value);
 								if($option[0] == '') $option[0] = 0;
 								if($option[1] == '') $option[1] = 100000000;
 								$pCollection->addAttributeToFilter($key,array('from'=>$option[0],'to'=>$option[1]));
-							}
 						}
 						else{
-							//print_r(array($key, $value));exit;
 							$value = (int)$value;
-							//$pCollection->addAttributeToFilter($key,array("finset"=>$value));
 							$pCollection->joinField($key.'_idx',
 								'catalog_product_index_eav',
 								null,
 								'entity_id=entity_id',
 								"{{table}}.store_id='".$storeId."' AND {{table}}.value = '".$value."'",
 								'INNER');
-							//$pCollection->addAttributeToFilter('color', 27);
-							/*
-							$pCollection->addAttributeToFilter(
-								array(
-						            array('attribute' => 'color', 'null' => true),
-						            array('attribute' => 'color', 'in' => array(27)),
-						        ),
-						        '',
-        						'INNER'
-						        );
-						    */
-							//$pCollection->addFieldToFilter($key,array('eq' => $option));
 						}
 					}
 				}
 			endif;
 		}
-		//echo $pCollection->getSelect()->__toString();exit;
-		switch ($data['order']) 
-		{
+
+		switch ($data['order']) {
+			case "position":
+			    $pCollection->setOrder('position', 'ASC');
+			    break;
 		  	case "price-l-h": 
 			    $pCollection->setOrder('price', 'asc');
 			    break;
@@ -311,7 +262,7 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 			    $pCollection->setOrder('entity_id', 'desc');
 			    break;
 		  	default: 
-			    $pCollection->setOrder('ordered_qty', 'asc');   //most_popular
+			    $pCollection->setOrder('ordered_qty', 'asc');
 		}
 		
 		if(isset($data['category_id']) && !empty($data['category_id'])):
@@ -402,8 +353,6 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 				'reviews'                 => $ratings[5],
 				'product_small_image_url' => Mage::helper('catalog/image')->init($product, 'small_image')->resize(300)->__toString(),
 				'product_image_url'       => Mage::helper('catalog/image')->init($product, 'small_image')->resize(300)->__toString(),
-				//'product_image'         => $this->getImageProduct($product, null, $width, $height),
-				//'manufacturer_name'     => $product->getAttributeText('manufacturer') == false ? '' : $product->getAttributeText('manufacturer'),
 				'product_reviews'         => $this->_getProductReviews($product->getId())
 			    );
 
@@ -412,6 +361,18 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 		    if ($prices) {
 				$info_product = array_merge($info_product, $prices);
 		    }
+
+		    /* customization for pacificpeche
+		    if($product->getTypeId() == 'grouped'){
+		        $info_product['price'] = $product->getPriceGrouped();
+		        $specialFromDate = strtotime($product->getSpecialFromDateGrouped());
+		        $specialToDate = strtotime($product->getSpecialToDateGrouped());
+		        $currTime = time();
+		        $info_product['special_price'] = $info_product['price'];
+		        if($currTime >= $specialFromDate && $currTime <= $specialToDate)
+		        	$info_product['special_price'] = $product->getSpecialPriceGrouped();
+		    }
+	        /* customization for pacificpeche - upto here */
 
 		    $requestObj = Mage::app()->getFrontController()->getRequest();
 				$event_name = $requestObj->getRequestedRouteName() . '_' .
@@ -435,87 +396,6 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 		$information['data']['product_count'] = $product_total;
 		
 		return $information;
-    }
-
-    public function getRandomProducts($randomCount = 10)
-    {
-    	$storeId = $this->_getStoreId();
-    	$pCollection = Mage::getModel('catalog/product')->getCollection()
-			->addAttributeToSelect('*')					
-			->addAttributeToFilter('status', '1')
-			->addAttributeToFilter('visibility', '4')					
-			->setStoreId($storeId)
-			->addFinalPrice();
-		Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($pCollection);
-		$pCollection->getSelect()->order('RAND()');
-		$pCollection->getSelect()->limit($randomCount);
-
-		$products = array();
-		if(!empty($pCollection)){
-            foreach ($pCollection as $key => $_product) {
-            	$row = array();
-                $row['entity_id']             = $_product->getId();
-				$row['entity_type_id']        = $_product->getEntityTypeId();
-				$row['attribute_set_id']      = $_product->getAttributeSetId();
-				$row['type_id']               = $_product->getTypeId();
-				$row['sku']                   = $_product->getSku();
-				$row['name']                  = $_product->getName();
-				$row['price']                 = $_product->getPrice();
-				$row['final_price']           = $_product->getFinalPrice();
-				$row['special_price']         = $_product->getSpecialPrice();
-				$row['is_salable']            = $_product->getIsSalable();
-				$row['status']                = $_product->getStatus();
-				$row['product_thumbnail_url'] = Mage::helper('catalog/image')->init($_product, 'thumbnail')->resize(200)->__toString();
-				$products[] = $row;
-            }
-        }
-
-		return $products;
-    }
-
-    function getProductRatingStar($productId)
-    {
-        $reviews = Mage::getModel('review/review')
-            ->getResourceCollection()
-            ->addStoreFilter(Mage::app()->getStore()->getId())
-            ->addEntityFilter('product', $productId)
-            ->addStatusFilter(Mage_Review_Model_Review::STATUS_APPROVED)
-            ->setDateOrder()
-            ->addRateVotes();
-
-        $starReview = array();
-        $starReview[0] = 0;
-        $starReview[1] = 0;
-        $starReview[2] = 0;
-        $starReview[3] = 0;
-        $starReview[4] = 0;
-        $starReview[5] = 0;
-        if (count($reviews) > 0) {
-            foreach ($reviews->getItems() as $review) {
-                $starReview[5]++;
-                $tmp2 = 0;
-                foreach ($review->getRatingVotes() as $vote) {
-                    $tmp2 += ($vote->getPercent() / 20);
-                }
-                $tmp1 = (int) ($tmp2 / count($review->getRatingVotes()));
-                $tmp3 = $tmp2 % 3;
-                $tmp1 = $tmp3 < 5 ? $tmp1 : $tmp1 + 1;
-                if ($tmp1 == 1) {
-                    $starReview[0]++;
-                } elseif ($tmp1 == 2) {
-                    $starReview[1]++;
-                } elseif ($tmp1 == 3) {
-                    $starReview[2]++;
-                } elseif ($tmp1 == 4) {
-                    $starReview[3]++;
-                } elseif ($tmp1 == 5) {
-                    $starReview[4]++;
-                } elseif ($tmp1 == 0) {
-                    $starReview[5]--;
-                }
-            }
-        }
-        return $starReview;
     }
 
     /**
@@ -555,8 +435,6 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 				endif;
 			    $reviewData['votes'] = $votesData;
 			    $reviewData['averageUserVoting'] = $averageUserVoting;
-			    
-                //$reviews_array[] = $review->getData();
                 $reviews_array[] = $reviewData;
             }
         }
@@ -608,6 +486,8 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 			if (!$product->isSaleable()) $stock = false;
         }
         
+        $inventory = Mage::getModel('cataloginventory/stock_item')->loadByProduct($product);
+
         $productInfo = array(
 			'product_id'            => $product_id,
 			'name'                  => $product->getName(),
@@ -618,7 +498,8 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 			'special_price'         => $product->getFinalPrice(),
 			'description'           => Mage::helper('catalog/output')->productAttribute($product, $product->getDescription(), 'description'),
 			'short_description'     => Mage::helper('catalog/output')->productAttribute($product, $product->getShortDescription(), 'short_description'),
-			'max_qty'               => (int) Mage::getModel('cataloginventory/stock_item')->loadByProduct($product)->getQty(),
+			'max_qty'               => (int) $inventory->getQty(),
+			'qty_increments'        => (int) $inventory->getQtyIncrements(),
 			'product_images'        => $images,
 			'product_thumbnail_url' => Mage::helper('catalog/image')->init($product, 'thumbnail')->resize(200)->__toString(),
 			'stock_status'          => $stock,
@@ -1196,11 +1077,11 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 			}
 		}
 		return $allProducts;
-		//return $products->getData();
 	}
 
 	protected function _attachCategoryIcon($categories, $appcode)
 	{
+		$magentoCategoryThumbnail = false;
 		$iconCategories = array();
 		$iconCollection = Mage::getModel('mobiadmin/appsetting')->getCollection()
 			->addFieldToFilter('app_code', $appcode)
@@ -1209,10 +1090,8 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 			foreach($iconCollection as $iconrow){
 				$row = $iconrow->getData();
 				$row = Mage::helper('mobiadmin')->_jsonUnserialize($row['value']);
-				if(!empty($row)){
-					foreach($row as $cat){
-						$iconCategories[$cat['category_id']] = $cat['mobiicon'];
-					}
+				if(isset($row['MAGENTO_CATEGORY_THUMBNAIL']) && $row['MAGENTO_CATEGORY_THUMBNAIL'] == '1'){
+					$magentoCategoryThumbnail = true;
 				}
 			}
 		}
@@ -1220,19 +1099,13 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Catalog_Catalog extends Mobicommerce
 		if(!empty($categories)){
 			$baseurl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'mobi_category_icons/';
 			foreach($categories as $key => $cat){
-				if(array_key_exists($cat['category_id'], $iconCategories)){
-					if(!empty($iconCategories[$cat['category_id']])){
-						$categories[$key]['mobiicon'] = $iconCategories[$cat['category_id']];
-						$categories[$key]['mobiiconurl'] = Mage::getStoreConfig(Mage_Core_Model_Url::XML_PATH_SECURE_URL) . 'MobiSettings/category_svg.php';
-					}
-					else{
-						$categories[$key]['mobiicon'] = null;
-						$categories[$key]['mobiiconurl'] = null;
-					}
+				if($magentoCategoryThumbnail){
+					$categories[$key]['mobiicon'] = true;
+					$categories[$key]['mobiiconurl'] = $cat['imageurl'];
 				}
 				else{
-					$categories[$key]['mobiicon'] = null;
-					$categories[$key]['mobiiconurl'] = null;
+					$categories[$key]['mobiicon'] = false;
+					$categories[$key]['mobiiconurl'] = false;
 				}
 			}
 		}

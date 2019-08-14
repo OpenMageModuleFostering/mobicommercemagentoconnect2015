@@ -9,24 +9,10 @@ class Mobicommerce_Mobiservices_PushserviceController extends Mobicommerce_Mobis
 		$this->printResult($information);
 	}
 
-	public function iosbuildAction()
+	public function updatebuildAction()
 	{
 		$data = $this->getData();
-		$information = Mage::getModel('mobiservices/pushservice')->saveIosBuild($data);
-		$this->printResult($information);
-	}
-
-	public function androidbuildAction()
-	{
-		$data = $this->getData();
-		$information = Mage::getModel('mobiservices/pushservice')->saveAndroidBuild($data);
-		$this->printResult($information);
-	}
-
-	public function updateDeliveryStatusAction()
-	{
-		$data = $this->getData();
-		$information = Mage::getModel('mobiservices/pushservice')->updateDeliveryStatus($data);
+		$information = Mage::getModel('mobiservices/pushservice')->updateBuild($data);
 		$this->printResult($information);
 	}
 

@@ -95,4 +95,18 @@ class Mobicommerce_Mobiservices_CartController extends Mobicommerce_Mobiservices
         $cartInfo = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/shoppingcart_cart'))->setDiscountCode($data);
         $this->printResult($cartInfo);
     }
+
+    public function estimateAction()
+    {
+        $data = $this->getData();
+        $result = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/shoppingcart_cart'))->setEstimateShipping($data);
+        $this->printResult($result);
+    }
+
+    public function estimateUpdateAction()
+    {
+        $data = $this->getData();
+        $result = Mage::getModel(Mage::getBlockSingleton('mobiservices/connector')->_getConnectorModel('mobiservices/shoppingcart_cart'))->updateEstimateShipping($data);
+        $this->printResult($result);   
+    }
 }

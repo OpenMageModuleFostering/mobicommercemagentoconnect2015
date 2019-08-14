@@ -193,7 +193,6 @@ class Mobicommerce_Mobiservices_Helper_Shoppingcart extends Mage_Core_Helper_Abs
                 'option_value' => implode(", ", $option),
                 );
         }
-        //return $options;
         return array_merge(
             $options,
             $this->formatOptionsCart(Mage::helper('catalog/product_configuration')->getCustomOptions($item))

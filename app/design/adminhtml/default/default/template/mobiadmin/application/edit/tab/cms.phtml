@@ -3,7 +3,6 @@ $configSettings = Mage::getSingleton('cms/wysiwyg_config')->getConfig();
   $configSettings['files_browser_window_url'] = $this->getBaseUrl().'admin/cms_wysiwyg_images/index/';
   Mage::getSingleton('cms/wysiwyg_config')->setConfig($configSettings);
 $cmsSettings = Mage::helper('mobiadmin')->getAppCmsPage();
-//print_r($cmsSettings);
 $cmsPages = $cmsSettings['cms_pages'];?>
 <div class="entry-edit">
     <div class="entry-edit-head">

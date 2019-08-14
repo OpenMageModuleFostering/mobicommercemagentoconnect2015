@@ -59,49 +59,6 @@ class Mobicommerce_Mobiservices_Model_Custom extends Mobicommerce_Mobiservices_M
         return $customFields;
     }
 
-    public function updateLanguageLength(){
-        $langCode = array('fr_FR');
-        $labelCode = array(
-                'Home'            => 8, 
-                'Add_To_Wishlist' => 18, 
-                'Logout'          => 11,
-                );
-        $langCode = null;
-        if(!empty($langCode)){
-            $resource = Mage::getSingleton('core/resource');
-            $conn = $resource->getConnection('core_read');
-            $update_array = array();
-            foreach ($langCode as $lang) {
-                foreach($labelCode as $key => $value) {
-                    $query = "UPDATE `mobicommerce_multilanguage` SET mm_maxlength = '$value' WHERE mm_language_code = '$lang' AND mm_label_code = '$key'";
-                    $conn->query($query);
-                    echo $query.'<br>';
-                }
-            }
-        }
-    }
-
-    public function updateLangLabelEnglish(){
-        $resource = Mage::getSingleton('core/resource');
-        $conn = $resource->getConnection('core_read');
-        $errors = array();
-        $en_US = $conn->query("SELECT * FROM `mobicommerce_multilanguage` WHERE mm_language_code = 'en_US'")->fetchAll();
-        //echo '<pre>';print_r($en_US);exit;
-        $en_US = null;
-        if(!empty($en_US)){
-            foreach($en_US as $en => $us){
-                try{
-                    $us['mm_label'] = encodeLanguageLabels($us['mm_label']);
-                    $conn->query("UPDATE `mobicommerce_multilanguage` SET mm_label = '".$us['mm_label']."' WHERE mm_label_code = '".$us['mm_label_code']."' AND mm_language_code != 'en_US'");
-                }
-                catch(Exception $e){
-                    $errors[] = $e->getMessage();
-                }
-            }
-        }
-        print_r($errors);
-    }
-
     public function getCustomProductDetailFields($_product, $productInfo){
         $fields = array(
             array(

@@ -87,10 +87,17 @@ class Mobicommerce_Mobiservices_Model_1x3x1_Config extends Mobicommerce_Mobiserv
                 'store_id'          => $this->_getStoreId(),
                 'store_name'        => $this->_getStoreName(),
             ),
-            'checkout_config' => array(
-                'enable_guest_checkout' => Mage::getStoreConfig('checkout/options/guest_checkout'),
-                'enable_agreements'     => is_null(Mage::getStoreConfig('checkout/options/enable_agreements')) ? 0 : Mage::getStoreConfig('checkout/options/enable_agreements'),
-            ),
+            'storeConfig' => array(
+                'checkout_config' => array(
+                    'enable_guest_checkout' => Mage::getStoreConfig('checkout/options/guest_checkout'),
+                    'enable_agreements'     => is_null(Mage::getStoreConfig('checkout/options/enable_agreements')) ? 0 : Mage::getStoreConfig('checkout/options/enable_agreements'),
+                ),
+                'catalog' => array(
+                    'frontend' => array(
+                        'default_sort_by' => Mage::getStoreConfig('catalog/frontend/default_sort_by')
+                        ),
+                    ),
+                ),
         );
 		
 		return $info;

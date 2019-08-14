@@ -44,7 +44,6 @@ class Mobicommerce_Mobiadmin_Block_Adminhtml_Menu extends Mage_Adminhtml_Block_P
             $html .= '</li>' . PHP_EOL;
         }
         $html .= '</ul>' . PHP_EOL;
-
         return $html;
     }
 }

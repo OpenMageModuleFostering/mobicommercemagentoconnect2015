@@ -3,10 +3,9 @@
 $installer = $this;
 
 $installer->startSetup();
-
-
 //Install Notification table mobicommerce_notification 
 $sql=<<<SQLTEXT
+DROP TABLE IF EXISTS {$installer->getTable('mobiadmin/notification')};
 CREATE TABLE IF NOT EXISTS {$installer->getTable('mobiadmin/notification')} (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(20) NOT NULL,
