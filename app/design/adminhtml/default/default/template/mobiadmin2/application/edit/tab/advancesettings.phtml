@@ -155,6 +155,19 @@ $categories = $this->getFirstLevelCategories();
 						<input <?php if(isset($advancesettings['miscellaneous']['enable_sociallogin']) && $advancesettings['miscellaneous']['enable_sociallogin'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_sociallogin]" />&nbsp;<?php echo $this->__('No'); ?>
 					</td>
 				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Image Resize : ')?></td>
+					<td class="value">
+						<input <?php if(isset($advancesettings['miscellaneous']['enable_image_resize']) && $advancesettings['miscellaneous']['enable_image_resize'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][enable_image_resize]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if(isset($advancesettings['miscellaneous']['enable_image_resize']) && $advancesettings['miscellaneous']['enable_image_resize'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_image_resize]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"></td>
+					<td class="value">
+						<?php echo $this->__('Enable Image Resize: This feature will let you enable/disable image resize on your app. By default, our app will resize images to display properly on various sizes of mobiles and tablets screens. Sometimes, due to insufficient permission from server it won\'t allow our extension to resize image and will throw an error or it will not display images. In such case, you can disable Image Resize to display images on app. It will help you in making your mobile app look clear with images with same dimensions.'); ?>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>

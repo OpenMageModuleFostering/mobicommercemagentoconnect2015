@@ -20,12 +20,12 @@ $themes       = array(
         <tr>
             <td><h3><?=$this->__('Create New Mobile App')?></h3></td>
             <td class="a-right">
-                <button onclick="editForm.submit(); aftersuccess();" class="scalable save" type="button"><span><?php echo $this->__('Submit'); ?></span></button>
+                <button onclick="createappSubmit(); aftersuccess();" class="scalable save" type="button"><span><?php echo $this->__('Submit'); ?></span></button>
             </td>
         </tr>
     </table>
 </div>
-<div class="entry-edit" style="position:relative;">    
+<div class="entry-edit" style="position:relative;">
     <form  id="edit_form" enctype="multipart/form-data" name="edit_form" method="post" action="<?php echo $this->getUrl('*/*/createApp')?>">
 		<div class="create-app-form">
 	        <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
@@ -73,22 +73,23 @@ $themes       = array(
 							<br>
 							<small class="advice-content"><?php echo $this->__('Select the store from the dropdown for which you want to create the mobile app.')?></small>
 						</td>
-	                </tr>				
+	                </tr>
+
 					<tr>
-					    <td class="label"><?php echo $this->__('Splash Screen:')?>
-						<br><small ><?php echo $this->__('(Height:2048, Width: 1536)')?></small>
+					    <td class="label"><?php echo $this->__('Splash Screen:'); ?>
+						<br><small ><?php echo $this->__('(Height:2048, Width: 1536)'); ?></small>
 						</td>
 	                    <td class="value">
 						<input type="file" id="validate-must-be-proper-size-splash" class="validate-must-be-png validate-must-be-proper-size-splash" name="appsplash" accept="image/png" /><br>
 						<img style="margin-top:10px; border:1px solid #dfdfdf;" src="<?php echo $defaultSplashUrl; ?>" width="150" />
-						<br><small class="advice-content"><?php echo $this->__('Don\'t have splash screen ready? Don\'t worry you can preview the mobile app with a default mobilecommerce splash screen. At the time of publishing the app for users we will take the splash screen from you and add it into your mobile app.')?></small>
+						<br><small class="advice-content"><?php echo $this->__('Don\'t have splash screen ready? Don\'t worry you can preview the mobile app with a default mobilecommerce splash screen. At the time of publishing the app for users we will take the splash screen from you and add it into your mobile app.'); ?></small>
 						</td>
 					</tr>
 					<tr>
-					    <td class="label"><?php echo $this->__('Logo:')?></td>
+					    <td class="label"><?php echo $this->__('Logo:'); ?></td>
 	                    <td class="value"><input type="file" class="validate-must-be-png" name="applogo" accept="image/png" /><br>
 						<img style="margin-top:10px; border:1px solid #dfdfdf;" src="<?php echo $defaultLogoUrl; ?>" width="150" />
-						<br><small class="advice-content"><?php echo $this->__('Don\'t have logo ready? Don\'t worry you can preview the mobile app with a default  mobilecommerce logo. At the time of publishing the app for users we will take the logo from you and add it into your mobile app.')?></small>
+						<br><small class="advice-content"><?php echo $this->__('Don\'t have logo ready? Don\'t worry you can preview the mobile app with a default  mobilecommerce logo. At the time of publishing the app for users we will take the logo from you and add it into your mobile app.'); ?></small>
 						</td>
 					</tr>
 					<tr>
@@ -96,7 +97,7 @@ $themes       = array(
 						<br><small><?php echo $this->__('(Height:1024, Width: 1024)'); ?></small></td>
 	                    <td class="value"><input id="validate-must-be-proper-size-icon" type="file" class="validate-must-be-png validate-must-be-proper-size-icon" name="appicon" accept="image/png" /><br>
 						<img style="margin-top:10px; border:1px solid #dfdfdf;" src="<?php echo $defaultIconUrl; ?>" width="150"/>
-						<br><small class="advice-content"><?php echo $this->__('Don\'t have an App icon ready? Don\'t worry you can preview the mobile app with mobilecommerce icon. At the time of publishing the app for users we will take the App icon from you and add it into your mobile app.')?></small>
+						<br><small class="advice-content"><?php echo $this->__('Don\'t have an App icon ready? Don\'t worry you can preview the mobile app with mobilecommerce icon. At the time of publishing the app for users we will take the App icon from you and add it into your mobile app.'); ?></small>
 						</td>
 					</tr>
 					<!--
@@ -195,7 +196,7 @@ $themes       = array(
 <div class="custom-overlay" style="display:none"></div>
 <div class="custom-overlay-content" id="loading-mask" style="display:none">
     <p id="loading_mask_loader" class="loader">
-	<img alt="Loading..." src="<?php echo $this->getSkinUrl('images/ajax-loader-tr.gif')?>"><br><?php echo $this->__('Please do not refresh the page, wait while we create your mobile app it will take just 2-3 minutes')?></p>
+	<img alt="Loading..." src="<?php echo $this->getSkinUrl('images/ajax-loader-tr.gif')?>"><br><?php echo $this->__('Please do not refresh the page, wait while we create your mobile app it will take just 2-3 minutes'); ?></p>
 </div>
 
 <script type="text/javascript">
@@ -242,7 +243,7 @@ $themes       = array(
 	   	{
 		  	jQuery('.custom-overlay').show();
 		  	jQuery('#loading-mask.custom-overlay-content').show();
-	   }
+	   	}
    	}
 
    	function checkudid(udids)
@@ -303,4 +304,16 @@ $themes       = array(
 	        el.click();
 	    }
 	});
+
+	function createappSubmit()
+	{
+		if(editForm.validator && editForm.validator.validate())   
+	   	{
+		    jQuery('#edit_form').find('input[type=file]').each(function(){
+		        var file = jQuery(this);
+		        if (file.val() == "") file.remove();
+		    });
+		  	editForm.submit();
+	   	}
+	}
 </script>

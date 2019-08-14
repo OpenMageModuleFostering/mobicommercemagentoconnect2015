@@ -380,8 +380,20 @@ $addonParams              = @unserialize($applicationData->getAddonParameters())
 		jQuery('.custom-overlay-close').show();
 		jQuery('.custom-overlay-close').addClass('close-wrapper').show();
 	}
+
 	function IsEmail(email) {
 	  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	  return regex.test(email);
+	}
+
+	function editappSubmit(){
+		if(editForm.validator && editForm.validator.validate())   
+	   	{
+		    jQuery('#edit_form').find('input[type=file]').each(function(){
+		        var file = jQuery(this);
+		        if (file.val() == "") file.remove();
+		    });
+		  	editForm.submit();
+	   	}
 	}
 </script>

@@ -15,7 +15,9 @@
 .support-column li img{vertical-align:top; padding:0 5px 0 0;}
 .c-app{position:absolute; right:15px; top:15px;}
 
-.mobiadmin2-index-edit #application_data_overview_content td.value {
+.mobiadmin2-index-edit #application_data_overview_content td.value,
+.mobiadmin2-index-edit #application_data_advance_settings_content td.value
+ {
     padding-right: 5px !important;
     text-align: left;
     width: 80%;
