@@ -1,0 +1,243 @@
+<?php 
+$configSettings = Mage::getSingleton('cms/wysiwyg_config')->getConfig();
+$configSettings['files_browser_window_url'] = $this->getBaseUrl().'admin/cms_wysiwyg_images/index/';
+Mage::getSingleton('cms/wysiwyg_config')->setConfig($configSettings);
+$cmsSettings = Mage::helper('mobiadmin3')->getAppCmsPage();
+$cmsPages = $cmsSettings['cms_pages'];
+
+$cmsCollection = Mage::getModel('cms/page')->getCollection()
+	->addFieldToFilter('is_active', 1);
+$allcms = array();
+if($cmsCollection->getSize()){
+	foreach($cmsCollection as $_collection){
+		$allcms[$_collection->getPageId()] = $_collection->getData();
+	}
+}
+?>
+
+<div class="entry-edit">
+    <div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Store Information [STORE VIEW]')?></h4>
+	</div>
+	<div id="store_information" class="fieldset">
+        <p class="guideline-text"><?php echo $this->__('All fixed pages of your website like About Us, Contact Us, Social Media Links, Store Location and Address you can manage with few clicks from this page.'); ?></p>
+	    <div class="hor-scroll">
+            <table cellspacing="0" class="form-list">
+                <tbody>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Company Name')?></label></td>
+                        <td class="value"><input id="company_name" class="input-text" type="text" value="<?php echo $cmsSettings['contact_information']['company_name'] ?>" name="contact_information[company_name]"/></td>
+					</tr>
+					<tr>
+                        <td class="label"><label><?php echo $this->__('Address')?></label></td>
+                        <td class="value"><textarea id="company_address" class="textarea" name="contact_information[company_address]"><?php echo $cmsSettings['contact_information']['company_address'] ?></textarea></td>
+					</tr>
+					<tr>
+                        <td class="label"><label><?php echo $this->__('Phone Number')?></label></td>
+                        <td class="value"><input id="phone_number" class="input-text" type="text" value="<?php echo $cmsSettings['contact_information']['phone_number'] ?>" name="contact_information[phone_number]"/></td>
+					</tr>
+					<tr>
+                        <td class="label"><label><?php echo $this->__('Email Address')?></label></td>
+                        <td class="value"><input id="email_address" class="validate-email input-text" type="email" value="<?php echo $cmsSettings['contact_information']['email_address'] ?>" name="contact_information[email_address]"/></td>
+					</tr>
+                    <tr>
+                        <td class="label" colspan="2">
+                            <?php echo $this->__('Set your store "Latitude" and "Longitude" if you wish to show your store on google map'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Latitude')?></label></td>
+                        <td class="value"><input id="store_latitude" class="input-text" type="text" value="<?php echo $cmsSettings['contact_information']['latitude']; ?>" name="contact_information[latitude]" onchange="map_initialize()" /></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Longitude')?></label></td>
+                        <td class="value">
+                            <input id="store_longitude" class="input-text" type="text" value="<?php echo $cmsSettings['contact_information']['longitude']; ?>" name="contact_information[longitude]" onchange="map_initialize()" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Map Zoom Level')?></label></td>
+                        <td class="value"><input id="zoom_level" class="input-text" type="text" value="<?php echo $cmsSettings['contact_information']['zoom_level']; ?>" name="contact_information[zoom_level]" onchange="map_initialize()" /></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Map Pin Color')?></label></td>
+                        <td class="value"><input id="pin_color" class="input-text" type="color" value="<?php echo $cmsSettings['contact_information']['pin_color']; ?>" name="contact_information[pin_color]" onchange="map_initialize()" readonly style="background-color:#<?php echo $cmsSettings['contact_information']['pin_color']; ?>" /></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="10" width="470">
+                            <script src="http://maps.google.com/maps/api/js"></script>
+
+                            <div class="mobicommerce-map" id="mobicommerce-map">
+                                <a href="javascript:void(0)" onclick="showmap()" id="click-show-map"><?php echo $this->__('Click here to preview on map'); ?></a>
+                                <div id="notice-map"></div>
+                                <div id="googleMap" style="display: none; height: 400px;width: 700px;margin-top: 20px;border: 1px solid;"></div>
+                            </div>     
+
+                            <script>
+                                var map = null;
+                                var marker = null;
+
+                                function map_initialize() {
+                                    var latitude = jQuery.trim(jQuery('#store_latitude').val());
+                                    var longtitude = jQuery.trim(jQuery('#store_longitude').val());
+                                    var zoom_value = jQuery.trim(jQuery('#zoom_level').val());
+                                    var pin_color = jQuery.trim(jQuery('#pin_color').val());
+                                    pin_color = pin_color.replace('#', '');
+
+                                    if(latitude == '') latitude = '40.7128';
+                                    if(longtitude == '') longtitude = '74.0059';
+                                    if(zoom_value == '') zoom_value = '8';
+                                    if(pin_color == '') pin_color = '009900';
+
+                                    latitude = parseFloat(latitude);
+                                    longtitude = parseFloat(longtitude);
+                                    zoom_value = parseFloat(zoom_value);
+
+                                    try{
+                                        var mapCenter = {lat: latitude, lng: longtitude};
+                                        if(map == null) {
+                                            map = new google.maps.Map(document.getElementById('googleMap'), {
+                                                zoom: zoom_value,
+                                                center: mapCenter
+                                            });
+
+                                            marker = new google.maps.Marker({
+                                                map: map,
+                                                draggable: true,
+                                                animation: google.maps.Animation.DROP,
+                                                position: mapCenter,
+                                                icon: new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/"+pin_color+"/")
+                                            });
+
+                                            map.addListener('zoom_changed', function() {
+                                                jQuery('#zoom_level').val(map.getZoom())
+                                            });
+
+                                            google.maps.event.addListener(marker, 'dragend', function (event) {
+                                                jQuery('#store_latitude').val(event.latLng.lat());
+                                                jQuery('#store_longitude').val(event.latLng.lng());
+                                            });
+                                        }
+                                        else {
+                                            map.setCenter(mapCenter);
+                                            marker.setPosition(mapCenter);
+                                            map.setZoom(zoom_value);
+
+                                            var _icon = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/"+pin_color+"/");
+                                            marker.setIcon(_icon);
+                                        }
+                                    }
+                                    catch(e) {}
+                                }
+
+                                function showmap(){
+                                    jQuery('#googleMap').css('display','block');
+                                    map_initialize();
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+	</div>
+
+	<div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Social Media URLs <span class="app-scope">[STORE VIEW]</span>')?></h4>
+	</div>
+
+	<div id="store_information" class="fieldset social-url">
+	    <div class="hor-scroll">
+            <table cellspacing="0" class="form-list">
+                <tbody>
+				    <tr><div><?php echo $this->__('If you have your social media accounts/pages, than activate respective social media plate form and Supply their URL. Activated plate form icons will be displayed on Info section page.')?></div></tr>
+				    <?php
+				    $social_icons = array(
+                        "facebook"   => array("img" => "soci-facebook.gif"),
+                        "twitter"    => array("img" => "soci-twitter.gif"),
+                        "linkedin"   => array("img" => "soci-linkedin.gif"),
+                        "pinterest"  => array("img" => "soci-pinterest.gif"),
+                        "youtube"    => array("img" => "soci-youtube.gif"),
+                        "blog"       => array("img" => "soci-blog.gif"),
+                        "googleplus" => array("img" => "soci-googleplus.gif"),
+                        "instagram"  => array("img" => "soci-instagram.gif"),
+                        "telegram"   => array("img" => "soci-telegram.png"),
+				    	);
+
+				    foreach($social_icons as $_icon => $_property){
+				    	?>
+				    	<tr>
+	                        <td class="label">
+							    <label for="<?php echo $_icon; ?>_url">
+							        <input type="checkbox" value="1" <?php if(isset($cmsSettings['social_media'][$_icon]['checked']) && $cmsSettings['social_media'][$_icon]['checked'] == '1'){ echo 'checked';}?>  name="social_media[<?php echo $_icon; ?>][checked]"/>
+							        <img alt="<?php echo $_icon; ?>" src="<?php echo $this->getSkinUrl('mobiadmin3/images/'.$_property['img']); ?>">
+							     </label>						
+							</td>
+	                        <td class="value"><input id="<?php echo $_icon; ?>_url" class="validate-url input-text" type="url" value="<?php echo $cmsSettings['social_media'][$_icon]['url']; ?>" name="social_media[<?php echo $_icon; ?>][url]" placeholder="<?php echo $_icon; ?> URL"/></td>
+						</tr>
+				    	<?php
+				    }
+				    ?>
+                </tbody>
+             </table>
+         </div>
+	</div>
+
+	<div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('CMS Pages <span class="app-scope">[STORE VIEW]</span>')?></h4>
+	</div>
+	<div id="store_information" class="_fieldset grid">
+	    <div class="hor-scroll">
+            <table cellspacing="0" class="">
+                <tbody>
+                    <tr><td colspan="3"><div><?php echo $this->__('Select all pages which you want to show activate or show in Mobile app and set their sequence/order number.'); ?></div></td></tr>
+                	<?php
+                	$cmspageIds = array();
+                	$tabindex = 101;
+                	if($cmsPages){
+                		foreach($cmsPages as $_page){
+                			if(array_key_exists($_page['id'], $allcms)){
+                				$cmspageIds[] = $_page['id'];
+                				?>
+                				<tr>
+                					<td class="a-center">
+                						<input id="cms_pages_<?php echo $_page['id']; ?>" checked type="checkbox" name="cms_pages[status][<?php echo $_page['id']; ?>]" class="checkbox">
+                					</td>
+                					<td>
+                						<?php echo $allcms[$_page['id']]['title']; ?>
+                					</td>
+                					<td>
+                						<input tabindex="<?php echo $tabindex; ?>" style="width: 50px" id="cms_pages_index_<?php echo $_page['id']; ?>" type="text" name="cms_pages[index][<?php echo $_page['id']; ?>]" value="<?php echo $_page['index']; ?>">
+                					</td>
+                				</tr>
+                				<?php
+                				$tabindex++;
+                			}
+                		}
+                	}
+                	?>
+
+                	<?php if($cmsCollection->getSize() > 0): ?>
+                		<?php foreach($cmsCollection as $_collection): ?>
+                			<?php if(!in_array($_collection->getPageId(), $cmspageIds)): ?>
+                				<tr>
+                					<td class="a-center">
+                						<input tabindex="<?php echo $tabindex; ?>" id="cms_pages_<?php echo $_collection->getPageId(); ?>" type="checkbox" name="cms_pages[status][<?php echo $_collection->getPageId(); ?>]">
+                					</td>
+                					<td>
+                						<?php echo $_collection->getTitle(); ?>
+                					</td>
+                					<td>
+                						<input style="width: 50px" id="cms_pages_index_<?php echo $_collection->getPageId(); ?>" type="text" name="cms_pages[index][<?php echo $_collection->getPageId(); ?>]">
+                					</td>
+                				</tr>
+								<?php $tabindex++; ?>
+							<?php endif; ?>
+						<?php endforeach; ?>
+                	<?php endif; ?>
+				</tbody>
+			</table>
+		</div>
+    </div>
+</div>

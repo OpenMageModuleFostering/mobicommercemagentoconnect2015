@@ -1,0 +1,68 @@
+<?php
+$bannerData = Mage::registry('widgetdata');
+$widget_status  = $bannerData['widget_status'];
+$slider_widget_data = unserialize($bannerData['widget_data']);
+$banners = $slider_widget_data['banners'];
+
+?>
+<?php if($bannerData['widget_id']):?>
+	<input type="hidden" name="widget_id" value="<?php echo $bannerData['widget_id']; ?>"/>
+<?php endif;?>
+<div class="entry-edit">
+	<div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Image Slider Widget')?></h4>
+	</div>
+</div>
+<div class="fieldset">
+	<table class="imageslider-widget-content form-list" cellspacing="0">
+		<tbody>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Name'); ?><span class="required">*</span></label></td>
+				<td class="value">
+					<input type="text" class="input-text required-entry" value="<?php if($bannerData['widget_label']) echo $bannerData['widget_label']; ?>" name="widget[name]"/>
+				</td>
+			</tr>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Title')?></label></td>
+				<td class="value">
+					<input type="text" class="input-text" value="<?php if(!empty($slider_widget_data['title'])) echo $slider_widget_data['title'];?>" name="widget[widget_data][title]"/>
+				</td>
+			</tr>
+			<?php $widget_title_align = $slider_widget_data['title_align'];?>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Align Title'); ?></label></td>
+				<td class="value">
+					<select name="widget[widget_data][title_align]">
+						<option value="center" <?php if($widget_title_align == 'center') echo "selected"?>>Center</option>
+						<option value="left" <?php if($widget_title_align == 'left') echo "selected"?>>Left</option>
+						<option value="right" <?php if($widget_title_align == 'right') echo "selected"?>>Right</option>
+					</select>
+				</td>
+			</tr> 
+			
+			<?php echo $this->getLayout()->createBlock('mobiadmin3/adminhtml_applications_grid_renderer_button')->toHtml(); ?>
+
+			<?php $widget_slider_type = $slider_widget_data['slider_type'];?>
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Slider Type')?></label></td>
+				<td class="value">
+					<select name="widget[widget_data][slider_type]">
+						<option value="sideview" <?php if($widget_slider_type == 'sideview') echo "selected"?>>Side View</option>
+						<option value="dottedview" <?php if($widget_slider_type == 'dottedview') echo "selected"?>>Dotted View</option>
+						<option value="swiperview" <?php if($widget_slider_type == 'swiperview') echo "selected"?>>Swiper View</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="label"><label for=""><?php echo $this->__('Status')?></label></td>
+				<td class="value">
+					 <select name="widget[enable]">
+						 <option <?php if($widget_status == 0) echo "selected"?> value="0"><?php echo $this->__('No'); ?></option>
+						 <option <?php if($widget_status == 1) echo "selected"?> value="1"><?php echo $this->__('Yes'); ?></option>				     
+					 </select>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

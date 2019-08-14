@@ -37,7 +37,8 @@ if(! defined('FILE_CACHE_TIME_BETWEEN_CLEANS'))	define ('FILE_CACHE_TIME_BETWEEN
 if(! defined('FILE_CACHE_MAX_FILE_AGE') ) 	define ('FILE_CACHE_MAX_FILE_AGE', 86400);				// How old does a file have to be to be deleted from the cache
 if(! defined('FILE_CACHE_SUFFIX') ) 		define ('FILE_CACHE_SUFFIX', '.timthumb.txt');			// What to put at the end of all files in the cache directory so we can identify them
 if(! defined('FILE_CACHE_PREFIX') ) 		define ('FILE_CACHE_PREFIX', 'timthumb');				// What to put at the beg of all files in the cache directory so we can identify them
-if(! defined('FILE_CACHE_DIRECTORY') ) 		define ('FILE_CACHE_DIRECTORY', './media/timcache');				// Directory where images are cached. Left blank it will use the system temporary directory (which is better for security)
+//if(! defined('FILE_CACHE_DIRECTORY') ) 		define ('FILE_CACHE_DIRECTORY', './media/timcache');	
+if(! defined('FILE_CACHE_DIRECTORY') ) 		define ('FILE_CACHE_DIRECTORY', '');					// Directory where images are cached. Left blank it will use the system temporary directory (which is better for security)
 if(! defined('MAX_FILE_SIZE') )				define ('MAX_FILE_SIZE', 10485760);						// 10 Megs is 10485760. This is the max internal or external file size that we'll process.  
 if(! defined('CURL_TIMEOUT') )				define ('CURL_TIMEOUT', 20);							// Timeout duration for Curl. This only applies if you have Curl installed and aren't using PHP's default URL fetching mechanism.
 if(! defined('WAIT_BETWEEN_FETCH_ERRORS') )	define ('WAIT_BETWEEN_FETCH_ERRORS', 3600);				// Time to wait between errors fetching remote file
@@ -272,6 +273,7 @@ class timthumb {
 			$this->cachefile = $this->cacheDirectory . '/' . FILE_CACHE_PREFIX . $cachePrefix . md5($this->salt . implode('', $arr) . $this->fileCacheVersion) . FILE_CACHE_SUFFIX;
 		} else {
 			$this->localImage = $this->getLocalImagePath($this->src);
+			$this->localImage = str_replace('http:/i', 'http://i', $this->localImage);
 			if(! $this->localImage){
 				$this->debug(1, "Could not find the local image: {$this->localImage}");
 				$this->error("Could not find the internal image you specified.");
@@ -538,243 +540,6 @@ class timthumb {
 		$canvas_color = $this->param('cc', DEFAULT_CC);
 		$canvas_trans = (bool) $this->param('ct', '1');
 
-
-		$mobitype = $this->param('mt', false);
-		$screenWidth = $this->param('sw', false);
-		$deviceOs = $this->param('do', false);
-		$mobisize = array(
-			//widget image slider
-			'w_is'    => array(
-				'android' => array(
-					'240'     => array(480,null),
-					'320'     => array(640,null),
-					'360'     => array(720,null),
-					'384'     => array(768,null),
-					'412'     => array(824,null),
-					'480'     => array(960,null),
-					'720'     => array(1440,null),
-					'768'     => array(1536,null),
-					'960'     => array(1920,null),
-					'1024'    => array(2048,null),
-					'1200'    => array(244,null),
-					'1280'    => array(2360,null),
-					'2560'    => array(5120,null),
-					),
-				'ios'     => array(
-					'320'     => array(800,null),
-					'375'     => array(937,null),
-					'414'     => array(1035,null),
-					'768'     => array(1920,null),
-					)
-				),
-			//widget category
-			'w_c'     => array(
-				'android' => array(
-					'240'     => array(240,150),
-					'320'     => array(320,200),
-					'360'     => array(360,224),
-					'384'     => array(384,240),
-					'412'     => array(412,260),
-					'480'     => array(480,300),
-					'720'     => array(720,450),
-					'768'     => array(768,480),
-					'960'     => array(960,600),
-					'1024'    => array(1024,640),
-					'1200'    => array(1200,750),
-					'1280'    => array(1280,800),
-					'2560'    => array(2560,1000),
-					),
-				'ios'     => array(
-					'320'     => array(400,200),
-					'375'     => array(475,240),
-					'414'     => array(525,260),
-					'768'     => array(1275,640),
-					)
-				),
-			//widget product slider
-			'w_ps'    => array(
-				'android' => array(
-					'240'     => array(160,80),
-					'320'     => array(160,80),
-					'360'     => array(160,80),
-					'384'     => array(160,80),
-					'412'     => array(160,80),
-					'480'     => array(160,80),
-					'720'     => array(160,80),
-					'768'     => array(160,80),
-					'960'     => array(160,80),
-					'1024'    => array(160,80),
-					'1200'    => array(160,80),
-					'1280'    => array(160,80),
-					'2560'    => array(160,80),
-					),
-				'ios'     => array(
-					'320'     => array(200,80),
-					'375'     => array(200,80),
-					'414'     => array(200,80),
-					'768'     => array(200,80),
-					)
-				),
-			//widget product slider
-			'w_pl'    => array(
-				'android' => array(
-					'240'     => array(160,100),
-					'320'     => array(160,100),
-					'360'     => array(160,100),
-					'384'     => array(160,100),
-					'412'     => array(160,100),
-					'480'     => array(160,100),
-					'720'     => array(160,100),
-					'768'     => array(160,100),
-					'960'     => array(160,100),
-					'1024'    => array(160,100),
-					'1200'    => array(160,100),
-					'1280'    => array(160,100),
-					'2560'    => array(160,100),
-					),
-				'ios'     => array(
-					'320'     => array(200,100),
-					'375'     => array(200,100),
-					'414'     => array(200,100),
-					'768'     => array(200,100),
-					)
-				),
-			//widget product grid
-			'w_pg'    => array(
-				'android' => array(
-					'240'     => array(480,null),
-					'320'     => array(640,null),
-					'360'     => array(720,null),
-					'384'     => array(768,null),
-					'412'     => array(824,null),
-					'480'     => array(960,null),
-					'720'     => array(1440,null),
-					'768'     => array(1536,null),
-					'960'     => array(1920,null),
-					'1024'    => array(2048,null),
-					'1200'    => array(244,null),
-					'1280'    => array(2360,null),
-					'2560'    => array(5120,null),
-					),
-				'ios'     => array(
-					'320'     => array(400,200),
-					'375'     => array(475,240),
-					'414'     => array(525,260),
-					'768'     => array(1275,640),
-					)
-				),
-			//widget product image
-			'w_pi'    => array(
-				'android' => array(
-					'240'     => array(480,null),
-					'320'     => array(640,null),
-					'360'     => array(720,null),
-					'384'     => array(768,null),
-					'412'     => array(824,null),
-					'480'     => array(960,null),
-					'720'     => array(1440,null),
-					'768'     => array(1536,null),
-					'960'     => array(1920,null),
-					'1024'    => array(2048,null),
-					'1200'    => array(244,null),
-					'1280'    => array(2360,null),
-					'2560'    => array(5120,null),
-					),
-				'ios'     => array(
-					'320'     => array(800,null),
-					'375'     => array(937,null),
-					'414'     => array(1035,null),
-					'768'     => array(1920,null),
-					)
-				),
-			//product detail
-			'pd_y'    => array(
-				'android' => array(
-					'240'     => array(224,112),
-					'320'     => array(224,112),
-					'360'     => array(224,112),
-					'384'     => array(224,112),
-					'412'     => array(224,112),
-					'480'     => array(224,112),
-					'720'     => array(224,112),
-					'768'     => array(224,112),
-					'960'     => array(224,112),
-					'1024'    => array(224,112),
-					'1200'    => array(224,112),
-					'1280'    => array(224,112),
-					'2560'    => array(224,112),
-					),
-				'ios'     => array(
-					'320'     => array(280,112),
-					'375'     => array(280,112),
-					'414'     => array(280,112),
-					'768'     => array(280,112),
-					)
-				),
-			//cart list
-			'c_l'     => array(
-				'android' => array(
-					'240'  => array(160,80),
-					'320'  => array(160,80),
-					'360'  => array(160,80),
-					'384'  => array(160,80),
-					'412'  => array(160,80),
-					'480'  => array(160,80),
-					'720'  => array(160,80),
-					'768'  => array(160,80),
-					'960'  => array(160,80),
-					'1024' => array(160,80),
-					'1200' => array(160,80),
-					'1280' => array(160,80),
-					'2560' => array(160,80),
-					),
-				'ios' => array(
-					'320' => array(200,80),
-					'375' => array(200,80),
-					'414' => array(200,80),
-					'768' => array(200,80),
-					)
-				),
-			);
-		//product list list
-		$mobisize['pl_l'] = $mobisize['w_pl'];
-		//product list grid
-		$mobisize['pl_g'] = $mobisize['w_pg'];
-		//product list image
-		$mobisize['pl_i'] = $mobisize['w_pi'];
-		//product detail main
-		$mobisize['pd_m'] = $mobisize['w_is'];
-		//order review
-		$mobisize['o_r']  = $mobisize['c_l'];
-		//order detail
-		$mobisize['o_d']  = $mobisize['c_l'];
-
-		if($deviceOs !== false && $screenWidth !== false && $mobitype !== false){
-			$deviceOs = strtolower($deviceOs);
-			/*
-			if(isset($mobisize[$mobitype][$deviceOs][$screenWidth][0])){
-				$new_width = $mobisize[$mobitype][$deviceOs][$screenWidth][0];
-				$new_height = null;//$mobisize[$mobitype][$deviceOs][$screenWidth][1];
-			}
-			*/
-			if(isset($mobisize[$mobitype][$deviceOs])){
-				$new_height = null;
-				$new_width = null;
-				foreach($mobisize[$mobitype][$deviceOs] as $key => $val){
-					if($screenWidth <= $key){
-						$new_width = $val[0];
-						break;
-					}
-				}
-				if(empty($new_width)){
-					$temp = array_values($mobisize[$mobitype][$deviceOs]);
-					$new_width = $temp[count($temp) - 1][0];
-				}
-			}
-
-		}
-		//echo '<pre>';print_r($new_width);exit;
-
 		// set default width and height if neither are set already
 		if ($new_width == 0 && $new_height == 0) {
 		    $new_width = (int) DEFAULT_WIDTH;
@@ -797,6 +562,10 @@ class timthumb {
 		// Get original width and height
 		$width = imagesx ($image);
 		$height = imagesy ($image);
+
+		$new_width = min ($new_width, $width);
+		$new_height = min ($new_height, $height);
+
 		$origin_x = 0;
 		$origin_y = 0;
 

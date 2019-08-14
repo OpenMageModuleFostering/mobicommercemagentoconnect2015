@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+	    <mobiadmin3 translate="title" module="mobiadmin3">
+		    <title>MobiCommerce 3.0</title>
+			<sort_order>31</sort_order>
+			<children>			    
+				<mobicommerce_mobiadmin_createapp>
+				    <title>Create New Mobile App</title>
+                    <sort_order>10</sort_order>
+					<action>adminhtml/mobiadmin3_index/new</action>
+				</mobicommerce_mobiadmin_createapp>
+				<mobicommerce_mobiadmin_manageapps>
+				    <title>Manage Mobile Apps</title>
+                    <sort_order>20</sort_order>
+					<action>adminhtml/mobiadmin3_index/index</action>
+			    </mobicommerce_mobiadmin_manageapps>
+			    <mobicommerce_mobiadmin_sociallogin>
+					<title>Social Login</title>
+					<sort_order>30</sort_order>
+					<action>adminhtml/system_config/edit/section/mobisociallogin3</action>
+				</mobicommerce_mobiadmin_sociallogin>
+			    <mobicommerce_mobiadmin_categorywigets>
+				    <title>Category Widgets</title>
+                    <sort_order>40</sort_order>
+					<action>adminhtml/mobiadmin3_category/widget</action>
+			    </mobicommerce_mobiadmin_categorywigets>
+			    <mobicommerce_mobiadmin_labelsmessages>
+				    <title>Labels and Messages</title>
+                    <sort_order>50</sort_order>
+					<action>adminhtml/mobiadmin3_index/labelsmessages</action>
+			    </mobicommerce_mobiadmin_labelsmessages>
+			    <mobicommerce_mobiadmin_cachemanagement>
+					<title>App Cache Management</title>
+					<sort_order>60</sort_order>
+					<action>adminhtml/mobiadmin3_cache/index</action>
+				</mobicommerce_mobiadmin_cachemanagement>
+				<!--
+				<mobicommerce_mobiadmin_notifications>
+				    <title>MobiCommerce Notifications</title>
+                    <sort_order>70</sort_order>
+					<action>adminhtml/mobiadmin3_index/notification</action>
+			    </mobicommerce_mobiadmin_notifications>
+				-->
+			    <mobicommerce_mobiadmin_pushhistory>
+                    <title>Push Notifications History</title>
+                    <sort_order>80</sort_order>
+                    <action>adminhtml/mobiadmin3_pushhistory/index</action>
+                </mobicommerce_mobiadmin_pushhistory>
+                <!--
+				<mobicommerce_mobiadmin_support>
+				    <title>MobiCommerce Support</title>
+                    <sort_order>90</sort_order>
+			    </mobicommerce_mobiadmin_support>
+				-->
+			</children>
+	    </mobiadmin3>
+    </menu>
+	<acl>
+	    <resources>
+		   	<admin>
+		       	<children>
+			       	<mobiadmin3 translate="title" module="mobiadmin3">
+				       	<title>Mobi Commerce</title>
+					   	<sort_order>1</sort_order>
+					   	<children>			    
+							<mobicommerce_mobiadmin_createapp>
+								<title>Create New Mobile App</title>
+							</mobicommerce_mobiadmin_createapp>
+							<mobicommerce_mobiadmin_manageapps>
+								<title>Manage Mobile Apps</title>
+							</mobicommerce_mobiadmin_manageapps>
+							<mobicommerce_mobiadmin_labelsmessages>
+								<title>Labels and Messages</title>
+							</mobicommerce_mobiadmin_labelsmessages>
+							<mobicommerce_mobiadmin_cachemanagement>
+								<title>Cache Management</title>
+							</mobicommerce_mobiadmin_cachemanagement>
+							<mobicommerce_mobiadmin_notifications>
+								<title>MobiCommerce Notifications</title>
+							</mobicommerce_mobiadmin_notifications>
+							<mobicommerce_mobiadmin_categorywigets>
+								<title>Category Widgets</title>
+							</mobicommerce_mobiadmin_categorywigets>
+							<mobicommerce_mobiadmin_sociallogin>
+								<title>Social Login</title>
+							</mobicommerce_mobiadmin_sociallogin>
+							<mobicommerce_mobiadmin_pushhistory>
+								<title>Push Notifications History</title>
+							</mobicommerce_mobiadmin_pushhistory>
+						</children>
+			       	</mobiadmin3>
+		       	</children>
+		   	</admin>
+	    </resources>
+	</acl>
+</config>

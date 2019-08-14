@@ -1,0 +1,79 @@
+<?php
+$id = $this->getRequest()->getParam('id', null);
+$collection = Mage::getModel('mobiadmin3/pushhistory')->getCollection()
+    ->addFieldToFilter('id', $id)
+    ->getFirstItem();
+?>
+<div class="overview entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Push Notification Detail :') ?></h4>
+    </div>
+    <div class="fieldset">
+        <table cellspacing="0" class="form-list">
+            <tbody>
+                <tr>
+                    <td class="label"><?php echo$this->__('Id :') ?></td>
+                    <td class="value"><?php echo $collection->getId(); ?></td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Send Date and Time:') ?></td>
+                    <td class="value"><?php echo $collection->getDate_submitted(); ?></td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Push Notification Title :') ?></td>
+                    <td class="value"><?php echo $collection->getHeading(); ?></td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Message :') ?></td>
+                    <td class="value"><?php echo $collection->getMessage(); ?></td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Send To :') ?></td>
+                    <td class="value"><?php
+                        $send_to_type = $collection->getSend_to_type();
+                        $send_to_type = ucfirst($send_to_type);
+                        echo str_replace("_", " ", $send_to_type);
+                        ?></td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Device Type :') ?></td>
+                    <td class="value"><?php
+                        $devicetype = $collection->getDevice_type();
+                        echo ($devicetype == 'ios') ? 'iOS' : ucfirst($devicetype);
+                        ?></td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Deep Link :') ?></td>
+                    <td class="value"><?php echo $collection->getDeeplink(); ?></td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Send To :') ?></td>
+                    <td class="value customer-div"><?php 
+                        if ($collection->getSendToType() == 'specific_customer') {
+                            echo $widget_spacificcustomer_grid = $this->getLayout()->createBlock('mobiadmin3/adminhtml_pushdetail_customer_grid')->toHtml();
+                        } else if ($collection->getSend_to_type() == 'customer_group') {
+                            echo $widget_spacificcustomer_grid = $this->getLayout()->createBlock('mobiadmin3/adminhtml_pushdetail_customergroup_grid')->toHtml();
+                        } else {
+                            echo $this->__('All');
+                        }
+                        ?></td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Image :') ?></td>
+                    <td class="value"><?php
+                        $src = $collection->getImage();
+                        if (empty($src)) {
+                            $src = $this->getSkinUrl('mobiadmin3/images/no-image.jpg');
+                        }
+                        echo $output = '<img src="' . $src . '" class="image-list-view"  alt="" />';
+                        ?></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>  
+</div>

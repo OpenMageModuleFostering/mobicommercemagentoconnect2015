@@ -1,0 +1,314 @@
+<div class="entry-edit">
+    <div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Push Notifications [Website]')?></h4>
+	</div>
+	<div class="fieldset">
+	    <div class="hor-scroll">
+            <table cellspacing="0" class="form-list">
+                <tbody>
+				    <tr><p class="guideline-text"><?php echo $this->__('Send push notifications to all app users. Enter the message and send to all customers using your app. Configure test message before sending to all customers on test devices and ensure that it is working fine and delivering correctly.'); ?></p></tr>
+
+                    <tr>
+                        <td class="label"><?php echo $this->__('Select Device Type : ')?></td>
+                        <td class="value">
+                            <select name="push_device_type">
+                                <option value="both"><?php echo $this->__('Both'); ?></option>
+                                <option value="android"><?php echo $this->__('Android'); ?></option>
+                                <option value="ios"><?php echo $this->__('iOS'); ?></option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><?php echo $this->__('Select Store : ')?></td>
+                        <td class="value">
+                            <select name="push_store">
+                                <option value="">All Stores</option>
+                                <?php
+                                foreach(Mage::app()->getWebsites() as $website) {
+                                    foreach ($website->getGroups() as $group) {
+                                        ?>
+                                        <optgroup label="<?php echo $group->getName(); ?>">
+                                            <?php
+                                            foreach($group->getStores() as $store) {
+                                                ?>
+                                                <option value="<?php echo $store->getId(); ?>"><?php echo $store->getName(); ?></option>
+                                                <?php
+                                            }
+                                            ?>
+                                        </optgroup>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Heading'); ?> <span class="required">*</span></label></td>
+                        <td class="value"><input id="pushheading" class="input-text" type="text" name="pushheading"/></td>
+					</tr>
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Message'); ?> <span class="required">*</span></label></td>
+                        <td class="value">
+                            <textarea cols="30" id="pushnotifications" class="input-text" name="pushnotifications" maxlength="255"></textarea>
+                            <br><small><?php echo $this->__('Notification Maximum Text Length is 255 Characters'); ?></small>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Deeplink'); ?></label></td>
+                        <td class="value"><input id="banner_row_link_pushdeeplink" class="input-text" type="text" name="pushdeeplink" readonly="" onclick="showPushPopup()" /></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Image')?></label></td>
+                        <td class="value">
+                            <input type="file" name="pushfile" accept="image/*" />
+                            <br><small>
+                                <?php echo $this->__('Recommended size: 512px(w) x 256px(h)'); ?><br />
+                                <?php echo $this->__('Image support for Android only'); ?>
+                            </small>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><label><?php echo $this->__('Send To')?></label></td>
+                        <td class="value">
+                            <select name="whom" id="send_to" onchange="changeWhom(this.value);">
+                                <option value="all"><?php echo $this->__('All'); ?></option>
+                                <option value="customer_group"><?php echo $this->__('Customer Group'); ?></option>
+                                <option value="specific_customer"><?php echo $this->__('Specific Customer'); ?></option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr id="customer_group" style="display:none;">
+                        <td></td>
+                        <td><div class="customer-grid" style="width: 800px;"></div></td>
+                    </tr>
+                    <tr id="specific_customer" style="display:none;">
+                       <td></td>
+                        <td><div class="specificcustomer-grid" style="width: 800px;"></div></td>
+                    </tr>
+                    <tr id="send_to_customer">
+                       <td></td>
+                        <td>
+                            <div class="send_to_customer-grid" style="width: 800px;">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+	</div>
+</div>
+
+<script>
+    function showPushPopup(){
+        var bannerid = 'pushdeeplink';
+        var linkval = '';
+        sUrl ="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/mobiadmin3_widget/deeplink')?>bannerid/"+bannerid+'/link/'+linkval;
+        oPopup = new Window({
+            id:'popup_window1',
+            className: 'magento',
+            url: sUrl,
+            width: 820,
+            height: 600,
+            minimizable: false,
+            maximizable: false,
+            showEffectOptions: {
+                duration: 0.4
+            },
+            hideEffectOptions:{
+                duration: 0.4
+            },
+            destroyOnClose: true
+        });
+        oPopup.setZIndex(100);
+        oPopup.showCenter(true);
+    }
+
+    function changeWhom(type){
+        if(type == 'customer_group'){
+            new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/mobiadmin3_widget/customergrid'); ?>", {
+                method: 'Post',
+                parameters: {isAjax : 1},
+                onSuccess: function(response){
+                    var json = response.responseText.evalJSON(true);
+                    if(json.status == 'success'){
+                        jQuery('#specific_customer').hide();
+                        jQuery('#customer_group').show();
+                        jQuery('.customer-grid').html(json.widget_customer_grid);
+                    }
+                    else{
+                        alert(json.error);
+                    }
+                },
+                onFailure: function(response){
+                    var json = response.responseText.evalJSON(true);
+                    alert(json.error);
+                }
+            });
+        }else if(type == "specific_customer"){
+            new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/mobiadmin3_widget/specificcustomergrid'); ?>", {
+                method: 'Post',
+                parameters: {isAjax : 1},
+                onSuccess: function(response){
+                    var json = response.responseText.evalJSON(true);
+                    if(json.status == 'success'){
+                        jQuery('#customer_group').hide();
+                        jQuery('#specific_customer').show();
+                        jQuery('.specificcustomer-grid').html(json.widget_spacificcustomer_grid);
+                    }
+                    else{
+                        alert(json.error);
+                    }
+                },
+                onFailure: function(response){
+                    var json = response.responseText.evalJSON(true);
+                    alert(json.error);
+                }
+            });
+        }else{
+            jQuery('#specific_customer').hide();
+            jQuery('#customer_group').hide();
+            jQuery('.customer-grid').html('');
+        }
+        jQuery(".send_to_customer-grid").empty();
+    }
+
+    function saveSpecificcustomer(e){
+        if(jQuery(e).is(":checked")) {   
+            var specifcustomerid = jQuery(e).val();
+            var custpos = jQuery(e).parent('td').parent('tr').find('.cust_position').val();
+            var checked = '1';
+        } else { 
+            var specifcustomerid = jQuery(e).val();
+            var custpos = jQuery(e).parent('td').parent('tr').find('.cust_position').val();
+            var checked = '0';
+        }
+        
+        new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/mobiadmin3_widget/checkspecificcustomer')?>", {
+            method: 'Post',
+            
+            parameters: {customerid:specifcustomerid, custpos:custpos, checked : checked},
+            onLoading : function(data) {    
+                //jQuery('#loading-mask').hide();
+            },      
+            onSuccess: function(response){
+                customer = response.responseText;
+                var a = jQuery.parseJSON(customer);
+                a = a['user-info'];
+                var customers = '';
+                jQuery(a).each(function( index, value ) {
+                    customers += '<span class="popOver">'+ value.name +'<b onclick="removeUser('+value.id+')">X</b></span>';
+                });
+                jQuery('.send_to_customer-grid').html(customers); 
+                jQuery('.selectedcustomer').val(response.responseText);
+                jQuery('#loading-mask').hide();
+                     
+            },
+            onFailure: function(response){              
+                alert(json.error);
+            }
+        });
+    }
+
+    function saveCustomer(e){
+        if(jQuery(e).is(":checked")) {   
+            var customerid = jQuery(e).val();
+            var customerpos = jQuery(e).parent('td').parent('tr').find('.cust_position').val();
+            var checked = '1';
+        } else { 
+            var customerid = jQuery(e).val();
+            var customerpos = jQuery(e).parent('td').parent('tr').find('.cust_position').val();
+            var checked = '0';
+        }
+        //jQuery('#loading-mask').hide();
+        
+        new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/mobiadmin3_widget/checkcustomer')?>", {
+            method: 'Post',
+            
+            parameters: {custId:customerid, customerpos:customerpos, checked : checked},   onLoading : function(data) {    
+                    //jQuery('#loading-mask').hide();
+                },      
+            onSuccess: function(response){
+                customer = response.responseText;
+                var group = jQuery.parseJSON(customer);
+                group = group['user-info'];
+                var grcustomers = '';
+                jQuery(group).each(function( index, value ) {
+                    grcustomers += '<span class="popOver">'+ value.name +'<b onclick="removeGrUser('+value.id+')">X</b></span>';
+                });
+                jQuery('.send_to_customer-grid').html(grcustomers);           
+                jQuery('.selectedcustomersId').val(response.responseText);
+                jQuery('#loading-mask').hide();          
+            },
+            onFailure: function(response){              
+                alert(json.error);
+            }
+        });
+    }
+
+    function removeUser(id){
+        var checked = '0';
+        var custpos = null;
+        
+        new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/mobiadmin3_widget/checkspecificcustomer')?>", {
+            method: 'Post',
+            
+            parameters: {customerid:id, custpos:custpos, checked : checked},   onLoading : function(data) {   
+                    //jQuery('#loading-mask').hide();
+                },      
+            onSuccess: function(response){
+                customer = response.responseText;
+                var a = jQuery.parseJSON(customer);
+                a = a['user-info'];
+                var customers = '';
+                jQuery(a).each(function( index, value ) {
+                    customers += '<span class="popOver">'+ value.name +'<b onclick="removeUser('+value.id+')">X</b></span>';
+                });
+                jQuery('input:checkbox[value="' + id + '"]').attr('checked', false);
+                jQuery('.send_to_customer-grid').html(customers); 
+                jQuery('.selectedcustomer').val(response.responseText);
+                jQuery('#loading-mask').hide();
+            },
+            onFailure: function(response){              
+                alert(json.error);
+            }
+        });
+    }
+
+    function removeGrUser(id){
+        var customerid = id;
+        var customerpos = null;
+        var checked = '0';
+        //jQuery('#loading-mask').hide();
+        
+        new Ajax.Request("<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/mobiadmin3_widget/checkcustomer')?>", {
+            method: 'Post',
+            
+            parameters: {custId:customerid, customerpos:customerpos, checked : checked},   onLoading : function(data) {    
+                    //jQuery('#loading-mask').hide();
+                },      
+            onSuccess: function(response){
+                customer = response.responseText;
+                var group = jQuery.parseJSON(customer);
+                group = group['user-info'];
+                var grcustomers = '';
+                jQuery(group).each(function( index, value ) {
+                    grcustomers += '<span class="popOver">'+ value.name +'<b onclick="removeGrUser('+value.id+')">X</b></span>';
+                });
+                jQuery('.send_to_customer-grid').html(grcustomers);
+                jQuery('input:checkbox[value="' + id + '"]').attr('checked', false);          
+                jQuery('.selectedcustomersId').val(response.responseText);
+                jQuery('#loading-mask').hide();           
+            },
+            onFailure: function(response){              
+                alert(json.error);
+            }
+        });
+    }
+</script>

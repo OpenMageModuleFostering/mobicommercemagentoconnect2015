@@ -1,0 +1,1872 @@
+<?xml version="1.0"?>
+<mobicommerce_multilanguage>
+  <no_internet_connection>
+    <mm_type>label</mm_type>
+    <mm_label>Keine Internetverbindung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Keine Internetverbindung</mm_text>
+    <mm_help>Keine Internetverbindung</mm_help>
+  </no_internet_connection>
+  <oops>
+    <mm_type>label</mm_type>
+    <mm_label>Hoppla! etwas ist schief gelaufen.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Hoppla! etwas ist schief gelaufen.</mm_text>
+    <mm_help>Hoppla! etwas ist schief gelaufen.</mm_help>
+  </oops>
+  <saved_addresses>
+    <mm_type>label</mm_type>
+    <mm_label>GESPEICHERTE ADRESSEN</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>GESPEICHERTE ADRESSEN</mm_text>
+    <mm_help>GESPEICHERTE ADRESSEN</mm_help>
+  </saved_addresses>
+  <add_new>
+    <mm_type>label</mm_type>
+    <mm_label>Adresse hinzuf&#xFC;gen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adresse hinzuf&amp;uuml;gen</mm_text>
+    <mm_help>Adresse hinzuf&amp;uuml;gen</mm_help>
+  </add_new>
+  <edit_address>
+    <mm_type>label</mm_type>
+    <mm_label>Adresse bearbeiten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adresse bearbeiten</mm_text>
+    <mm_help>Adresse bearbeiten</mm_help>
+  </edit_address>
+  <cancel>
+    <mm_type>label</mm_type>
+    <mm_label>Stornieren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Stornieren</mm_text>
+    <mm_help>Stornieren</mm_help>
+  </cancel>
+  <firstname>
+    <mm_type>label</mm_type>
+    <mm_label>Vorname</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Vorname</mm_text>
+    <mm_help>Vorname</mm_help>
+  </firstname>
+  <lastname>
+    <mm_type>label</mm_type>
+    <mm_label>Familienname, Nachname</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Familienname, Nachname</mm_text>
+    <mm_help>Familienname, Nachname</mm_help>
+  </lastname>
+  <address>
+    <mm_type>label</mm_type>
+    <mm_label>Adresse</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adresse</mm_text>
+    <mm_help>Adresse</mm_help>
+  </address>
+  <landmark>
+    <mm_type>label</mm_type>
+    <mm_label>Wahrzeichen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Wahrzeichen</mm_text>
+    <mm_help>Wahrzeichen</mm_help>
+  </landmark>
+  <city>
+    <mm_type>label</mm_type>
+    <mm_label>Stadt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Stadt</mm_text>
+    <mm_help>Stadt</mm_help>
+  </city>
+  <state>
+    <mm_type>label</mm_type>
+    <mm_label>Bundesland</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bundesland</mm_text>
+    <mm_help>Bundesland</mm_help>
+  </state>
+  <country>
+    <mm_type>label</mm_type>
+    <mm_label>Land</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Land</mm_text>
+    <mm_help>Land</mm_help>
+  </country>
+  <pincode>
+    <mm_type>label</mm_type>
+    <mm_label>Pincode</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Pincode</mm_text>
+    <mm_help>Pincode</mm_help>
+  </pincode>
+  <telephone>
+    <mm_type>label</mm_type>
+    <mm_label>Telefon</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Telefon</mm_text>
+    <mm_help>Telefon</mm_help>
+  </telephone>
+  <mark_as_default_billing>
+    <mm_type>label</mm_type>
+    <mm_label>Als Standard-Fakturierung markieren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Als Standard-Fakturierung markieren</mm_text>
+    <mm_help>Als Standard-Fakturierung markieren</mm_help>
+  </mark_as_default_billing>
+  <mark_as_default_shipping>
+    <mm_type>label</mm_type>
+    <mm_label>Als Standardversand markieren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Als Standardversand markieren</mm_text>
+    <mm_help>Als Standardversand markieren</mm_help>
+  </mark_as_default_shipping>
+  <agreements>
+    <mm_type>label</mm_type>
+    <mm_label>Vereinbarungen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Vereinbarungen</mm_text>
+    <mm_help>Vereinbarungen</mm_help>
+  </agreements>
+  <continue>
+    <mm_type>label</mm_type>
+    <mm_label>Fortsetzen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Fortsetzen</mm_text>
+    <mm_help>Fortsetzen</mm_help>
+  </continue>
+  <billing_address>
+    <mm_type>label</mm_type>
+    <mm_label>Rechnungsadresse</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Rechnungsadresse</mm_text>
+    <mm_help>Rechnungsadresse</mm_help>
+  </billing_address>
+  <change>
+    <mm_type>label</mm_type>
+    <mm_label>Ver&#xE4;nderung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ver&amp;auml;nderung</mm_text>
+    <mm_help>Ver&amp;auml;nderung</mm_help>
+  </change>
+  <shipping_address>
+    <mm_type>label</mm_type>
+    <mm_label>Lieferanschrift</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Lieferanschrift</mm_text>
+    <mm_help>Lieferanschrift</mm_help>
+  </shipping_address>
+  <email>
+    <mm_type>label</mm_type>
+    <mm_label>E-Mail-Addresse</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>E-Mail-Addresse</mm_text>
+    <mm_help>E-Mail-Addresse</mm_help>
+  </email>
+  <date_of_birth>
+    <mm_type>label</mm_type>
+    <mm_label>Geburtsdatum</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geburtsdatum</mm_text>
+    <mm_help>Geburtsdatum</mm_help>
+  </date_of_birth>
+  <gender>
+    <mm_type>label</mm_type>
+    <mm_label>Geschlecht</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geschlecht</mm_text>
+    <mm_help>Geschlecht</mm_help>
+  </gender>
+  <taxvat_number>
+    <mm_type>label</mm_type>
+    <mm_label>Steuernummer</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Steuernummer</mm_text>
+    <mm_help>Steuernummer</mm_help>
+  </taxvat_number>
+  <same_as_billing>
+    <mm_type>label</mm_type>
+    <mm_label>das Gleiche wie Zahlung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>das Gleiche wie Zahlung</mm_text>
+    <mm_help>das Gleiche wie Zahlung</mm_help>
+  </same_as_billing>
+  <choose>
+    <mm_type>label</mm_type>
+    <mm_label>W&#xE4;hlen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>W&amp;auml;hlen</mm_text>
+    <mm_help>W&amp;auml;hlen</mm_help>
+  </choose>
+  <choose_an_option>
+    <mm_type>label</mm_type>
+    <mm_label>W&#xE4;hle eine Option</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>W&amp;auml;hle eine Option</mm_text>
+    <mm_help>W&amp;auml;hle eine Option</mm_help>
+  </choose_an_option>
+  <choose_address>
+    <mm_type>label</mm_type>
+    <mm_label>W&#xE4;hlen Sie Adresse</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>W&amp;auml;hlen Sie Adresse</mm_text>
+    <mm_help>W&amp;auml;hlen Sie Adresse</mm_help>
+  </choose_address>
+  <checkout>
+    <mm_type>label</mm_type>
+    <mm_label>Auschecken</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Auschecken</mm_text>
+    <mm_help>Auschecken</mm_help>
+  </checkout>
+  <move_to_wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>Zur Wunschliste verschieben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Zur Wunschliste verschieben</mm_text>
+    <mm_help>Zur Wunschliste verschieben</mm_help>
+  </move_to_wishlist>
+  <remove>
+    <mm_type>label</mm_type>
+    <mm_label>Entfernen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Entfernen</mm_text>
+    <mm_help>Entfernen</mm_help>
+  </remove>
+  <offers>
+    <mm_type>label</mm_type>
+    <mm_label>Dicount Coupon und Angebote</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Dicount Coupon und Angebote</mm_text>
+    <mm_help>Dicount Coupon und Angebote</mm_help>
+  </offers>
+  <applied_promo_code>
+    <mm_type>label</mm_type>
+    <mm_label>Promo-Code anwenden</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Promo-Code anwenden</mm_text>
+    <mm_help>Promo-Code anwenden</mm_help>
+  </applied_promo_code>
+  <promo_code>
+    <mm_type>label</mm_type>
+    <mm_label>Gutscheincode</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Gutscheincode</mm_text>
+    <mm_help>Gutscheincode</mm_help>
+  </promo_code>
+  <apply>
+    <mm_type>label</mm_type>
+    <mm_label>Sich bewerben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sich bewerben</mm_text>
+    <mm_help>Sich bewerben</mm_help>
+  </apply>
+  <get_a_quote>
+    <mm_type>label</mm_type>
+    <mm_label>Ein Angebot bekommen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ein Angebot bekommen</mm_text>
+    <mm_help>Ein Angebot bekommen</mm_help>
+  </get_a_quote>
+  <update_total>
+    <mm_type>label</mm_type>
+    <mm_label>Aktualisierung Gesamt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Aktualisierung Gesamt</mm_text>
+    <mm_help>Aktualisierung Gesamt</mm_help>
+  </update_total>
+  <price_details>
+    <mm_type>label</mm_type>
+    <mm_label>Preisdetails</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Preisdetails</mm_text>
+    <mm_help>Preisdetails</mm_help>
+  </price_details>
+  <subtotal>
+    <mm_type>label</mm_type>
+    <mm_label>Zwischensumme</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Zwischensumme</mm_text>
+    <mm_help>Zwischensumme</mm_help>
+  </subtotal>
+  <shipping_and_handling>
+    <mm_type>label</mm_type>
+    <mm_label>Versandart</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Versandart</mm_text>
+    <mm_help>Versandart</mm_help>
+  </shipping_and_handling>
+  <tax>
+    <mm_type>label</mm_type>
+    <mm_label>Steuer</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Steuer</mm_text>
+    <mm_help>Steuer</mm_help>
+  </tax>
+  <discount>
+    <mm_type>label</mm_type>
+    <mm_label>Rabatt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Rabatt</mm_text>
+    <mm_help>Rabatt</mm_help>
+  </discount>
+  <amount_payable>
+    <mm_type>label</mm_type>
+    <mm_label>Bezahlbarer Betrag</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bezahlbarer Betrag</mm_text>
+    <mm_help>Bezahlbarer Betrag</mm_help>
+  </amount_payable>
+  <safe_secure_payment>
+    <mm_type>label</mm_type>
+    <mm_label>100% sicher und sicher bezahlen. Einfache R&#xFC;ckgabe. 100% authentische Produkte.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>100% sicher und sicher bezahlen. Einfache R&amp;uuml;ckgabe. 100% authentische Produkte.</mm_text>
+    <mm_help>100% sicher und sicher bezahlen. Einfache R&amp;uuml;ckgabe. 100% authentische Produkte.</mm_help>
+  </safe_secure_payment>
+  <view_all>
+    <mm_type>label</mm_type>
+    <mm_label>Alle anzeigen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Alle anzeigen</mm_text>
+    <mm_help>Alle anzeigen</mm_help>
+  </view_all>
+  <all_products>
+    <mm_type>label</mm_type>
+    <mm_label>Alle Produkte</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Alle Produkte</mm_text>
+    <mm_help>Alle Produkte</mm_help>
+  </all_products>
+  <add_new_address>
+    <mm_type>label</mm_type>
+    <mm_label>Neue Adresse hinzuf&#xFC;gen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Neue Adresse hinzuf&amp;uuml;gen</mm_text>
+    <mm_help>Neue Adresse hinzuf&amp;uuml;gen</mm_help>
+  </add_new_address>
+  <place_order>
+    <mm_type>label</mm_type>
+    <mm_label>Bestellung aufgeben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestellung aufgeben</mm_text>
+    <mm_help>Bestellung aufgeben</mm_help>
+  </place_order>
+  <review_your_order>
+    <mm_type>label</mm_type>
+    <mm_label>&#xDC;berpr&#xFC;fen Sie Ihre Bestellung und legen Sie Ihre Bestellung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Uuml;berpr&amp;uuml;fen Sie Ihre Bestellung und legen Sie Ihre Bestellung</mm_text>
+    <mm_help>&amp;Uuml;berpr&amp;uuml;fen Sie Ihre Bestellung und legen Sie Ihre Bestellung</mm_help>
+  </review_your_order>
+  <payment_method>
+    <mm_type>label</mm_type>
+    <mm_label>Bezahlverfahren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bezahlverfahren</mm_text>
+    <mm_help>Bezahlverfahren</mm_help>
+  </payment_method>
+  <items>
+    <mm_type>label</mm_type>
+    <mm_label>Artikel bestellen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Artikel bestellen</mm_text>
+    <mm_help>Artikel bestellen</mm_help>
+  </items>
+  <qty>
+    <mm_type>label</mm_type>
+    <mm_label>Anz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Anz</mm_text>
+    <mm_help>Anz</mm_help>
+  </qty>
+  <price>
+    <mm_type>label</mm_type>
+    <mm_label>Preis</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Preis</mm_text>
+    <mm_help>Preis</mm_help>
+  </price>
+  <continue_shopping>
+    <mm_type>label</mm_type>
+    <mm_label>Mit dem Einkaufen fortfahren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mit dem Einkaufen fortfahren</mm_text>
+    <mm_help>Mit dem Einkaufen fortfahren</mm_help>
+  </continue_shopping>
+  <order_placed_label>
+    <mm_type>label</mm_type>
+    <mm_label>Sie erhalten eine Bestellbest&#xE4;tigungs-E-Mail mit Angaben zu Ihrer Bestellung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sie erhalten eine Bestellbest&amp;auml;tigungs-E-Mail mit Angaben zu Ihrer Bestellung</mm_text>
+    <mm_help>Sie erhalten eine Bestellbest&amp;auml;tigungs-E-Mail mit Angaben zu Ihrer Bestellung</mm_help>
+  </order_placed_label>
+  <thank_you>
+    <mm_type>label</mm_type>
+    <mm_label>Bestellung aufgegeben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestellung aufgegeben</mm_text>
+    <mm_help>Bestellung aufgegeben</mm_help>
+  </thank_you>
+  <order_summary>
+    <mm_type>label</mm_type>
+    <mm_label>Bestell&#xFC;bersicht</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestell&amp;uuml;bersicht</mm_text>
+    <mm_help>Bestell&amp;uuml;bersicht</mm_help>
+  </order_summary>
+  <order_ref_no>
+    <mm_type>label</mm_type>
+    <mm_label>Best.-Nr.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Best.-Nr.</mm_text>
+    <mm_help>Best.-Nr.</mm_help>
+  </order_ref_no>
+  <grand_total>
+    <mm_type>label</mm_type>
+    <mm_label>Gesamtsumme</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Gesamtsumme</mm_text>
+    <mm_help>Gesamtsumme</mm_help>
+  </grand_total>
+  <delivery_address>
+    <mm_type>label</mm_type>
+    <mm_label>Lieferanschrift</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Lieferanschrift</mm_text>
+    <mm_help>Lieferanschrift</mm_help>
+  </delivery_address>
+  <order_confirmation_label>
+    <mm_type>label</mm_type>
+    <mm_label>Ihre Bestellung wird bearbeitet.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ihre Bestellung wird bearbeitet.</mm_text>
+    <mm_help>Ihre Bestellung wird bearbeitet.</mm_help>
+  </order_confirmation_label>
+  <proceed_to_pay>
+    <mm_type>label</mm_type>
+    <mm_label>Fortsetzen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Fortsetzen</mm_text>
+    <mm_help>Fortsetzen</mm_help>
+  </proceed_to_pay>
+  <sample_links>
+    <mm_type>label</mm_type>
+    <mm_label>Beispiel Links</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Beispiel Links</mm_text>
+    <mm_help>Beispiel Links</mm_help>
+  </sample_links>
+  <downloadable_link>
+    <mm_type>label</mm_type>
+    <mm_label>Herunterladbarer Link</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Herunterladbarer Link</mm_text>
+    <mm_help>Herunterladbarer Link</mm_help>
+  </downloadable_link>
+  <oh_dear_its_empty_here>
+    <mm_type>label</mm_type>
+    <mm_label>Keine gespeicherte Adresse</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Keine gespeicherte Adresse</mm_text>
+    <mm_help>Keine gespeicherte Adresse</mm_help>
+  </oh_dear_its_empty_here>
+  <to_add_address_tap_plus_button>
+    <mm_type>label</mm_type>
+    <mm_label>Speichern Sie Ihre Lieferorte, um Ihre Bestellungen schneller zu platzieren!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Speichern Sie Ihre Lieferorte, um Ihre Bestellungen schneller zu platzieren!</mm_text>
+    <mm_help>Speichern Sie Ihre Lieferorte, um Ihre Bestellungen schneller zu platzieren!</mm_help>
+  </to_add_address_tap_plus_button>
+  <add_address>
+    <mm_type>label</mm_type>
+    <mm_label>F&#xFC;ge eine Adresse hinzu</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>F&amp;uuml;ge eine Adresse hinzu</mm_text>
+    <mm_help>F&amp;uuml;ge eine Adresse hinzu</mm_help>
+  </add_address>
+  <your_cart_is_empty>
+    <mm_type>label</mm_type>
+    <mm_label>Dein Wagen ist leer!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Dein Wagen ist leer!</mm_text>
+    <mm_help>Dein Wagen ist leer!</mm_help>
+  </your_cart_is_empty>
+  <you_dont_have_items_in_your_cart>
+    <mm_type>label</mm_type>
+    <mm_label>Hinzuf&#xFC;gen von Elementen, um es jetzt.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Hinzuf&amp;uuml;gen von Elementen, um es jetzt.</mm_text>
+    <mm_help>Hinzuf&amp;uuml;gen von Elementen, um es jetzt.</mm_help>
+  </you_dont_have_items_in_your_cart>
+  <shop_now>
+    <mm_type>label</mm_type>
+    <mm_label>Jetzt kaufen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Jetzt kaufen</mm_text>
+    <mm_help>Jetzt kaufen</mm_help>
+  </shop_now>
+  <nothing_here>
+    <mm_type>label</mm_type>
+    <mm_label>Keine neue Benachrichtigung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Keine neue Benachrichtigung</mm_text>
+    <mm_help>Keine neue Benachrichtigung</mm_help>
+  </nothing_here>
+  <we_will_let_you_know>
+    <mm_type>label</mm_type>
+    <mm_label>Wir informieren Sie, wenn wir etwas f&#xFC;r Sie haben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Wir informieren Sie, wenn wir etwas f&amp;uuml;r Sie haben</mm_text>
+    <mm_help>Wir informieren Sie, wenn wir etwas f&amp;uuml;r Sie haben</mm_help>
+  </we_will_let_you_know>
+  <notification_settings>
+    <mm_type>label</mm_type>
+    <mm_label>Benachrichtigungseinstellungen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Benachrichtigungseinstellungen</mm_text>
+    <mm_help>Benachrichtigungseinstellungen</mm_help>
+  </notification_settings>
+  <go_to_home>
+    <mm_type>label</mm_type>
+    <mm_label>Zur Startseite</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Zur Startseite</mm_text>
+    <mm_help>Zur Startseite</mm_help>
+  </go_to_home>
+  <you_can_keep_track_of_orders>
+    <mm_type>label</mm_type>
+    <mm_label>Sie k&#xF6;nnen den &#xDC;berblick behalten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sie k&amp;ouml;nnen den &amp;Uuml;berblick behalten</mm_text>
+    <mm_help>Sie k&amp;ouml;nnen den &amp;Uuml;berblick behalten</mm_help>
+  </you_can_keep_track_of_orders>
+  <no_products_found>
+    <mm_type>label</mm_type>
+    <mm_label>Keine Produkte gefunden!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Keine Produkte gefunden!</mm_text>
+    <mm_help>Keine Produkte gefunden!</mm_help>
+  </no_products_found>
+  <we_could_not_find_product>
+    <mm_type>label</mm_type>
+    <mm_label>Wir sind nicht in der Lage, ein Produkt f&#xFC;r Ihre Anfrage zu finden. Sie m&#xFC;ssen Ihre Suchanfrage / Ihr Keyword anpassen.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Wir sind nicht in der Lage, ein Produkt f&amp;uuml;r Ihre Anfrage zu finden. Sie m&amp;uuml;ssen Ihre Suchanfrage / Ihr Keyword anpassen.</mm_text>
+    <mm_help>Wir sind nicht in der Lage, ein Produkt f&amp;uuml;r Ihre Anfrage zu finden. Sie m&amp;uuml;ssen Ihre Suchanfrage / Ihr Keyword anpassen.</mm_help>
+  </we_could_not_find_product>
+  <your_wishlist_is_empty>
+    <mm_type>label</mm_type>
+    <mm_label>Deine Wunschliste ist leer!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Deine Wunschliste ist leer!</mm_text>
+    <mm_help>Deine Wunschliste ist leer!</mm_help>
+  </your_wishlist_is_empty>
+  <explore_more>
+    <mm_type>label</mm_type>
+    <mm_label>Entdecken Sie mehr und f&#xFC;gen Sie einige Artikel hinzu</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Entdecken Sie mehr und f&amp;uuml;gen Sie einige Artikel hinzu</mm_text>
+    <mm_help>Entdecken Sie mehr und f&amp;uuml;gen Sie einige Artikel hinzu</mm_help>
+  </explore_more>
+  <start_exploring>
+    <mm_type>label</mm_type>
+    <mm_label>Beginnen Sie zu erforschen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Beginnen Sie zu erforschen</mm_text>
+    <mm_help>Beginnen Sie zu erforschen</mm_help>
+  </start_exploring>
+  <sort>
+    <mm_type>label</mm_type>
+    <mm_label>Sortieren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sortieren</mm_text>
+    <mm_help>Sortieren</mm_help>
+  </sort>
+  <filters>
+    <mm_type>label</mm_type>
+    <mm_label>Filter</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Filter</mm_text>
+    <mm_help>Filter</mm_help>
+  </filters>
+  <masonry_view>
+    <mm_type>label</mm_type>
+    <mm_label>Rasteransicht</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Rasteransicht</mm_text>
+    <mm_help>Rasteransicht</mm_help>
+  </masonry_view>
+  <grid_view>
+    <mm_type>label</mm_type>
+    <mm_label>Rasteransicht</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Rasteransicht</mm_text>
+    <mm_help>Rasteransicht</mm_help>
+  </grid_view>
+  <list_view>
+    <mm_type>label</mm_type>
+    <mm_label>Listenansicht</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Listenansicht</mm_text>
+    <mm_help>Listenansicht</mm_help>
+  </list_view>
+  <full_view>
+    <mm_type>label</mm_type>
+    <mm_label>Vollst&#xE4;ndige Ansicht</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Vollst&amp;auml;ndige Ansicht</mm_text>
+    <mm_help>Vollst&amp;auml;ndige Ansicht</mm_help>
+  </full_view>
+  <search_placeholder>
+    <mm_type>label</mm_type>
+    <mm_label>Geben Sie Ihr Keyword ein</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geben Sie Ihr Keyword ein</mm_text>
+    <mm_help>Geben Sie Ihr Keyword ein</mm_help>
+  </search_placeholder>
+  <search_product>
+    <mm_type>label</mm_type>
+    <mm_label>Produkt suchen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Produkt suchen</mm_text>
+    <mm_help>Produkt suchen</mm_help>
+  </search_product>
+  <welcome>
+    <mm_type>label</mm_type>
+    <mm_label>Herzlich willkommen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Herzlich willkommen</mm_text>
+    <mm_help>Herzlich willkommen</mm_help>
+  </welcome>
+  <login_signup>
+    <mm_type>label</mm_type>
+    <mm_label>Einloggen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Einloggen</mm_text>
+    <mm_help>Einloggen</mm_help>
+  </login_signup>
+  <view_more>
+    <mm_type>label</mm_type>
+    <mm_label>Mehr sehen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mehr sehen</mm_text>
+    <mm_help>Mehr sehen</mm_help>
+  </view_more>
+  <info>
+    <mm_type>label</mm_type>
+    <mm_label>&#xDC;ber uns</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Uuml;ber uns</mm_text>
+    <mm_help>&amp;Uuml;ber uns</mm_help>
+  </info>
+  <call_us>
+    <mm_type>label</mm_type>
+    <mm_label>Rufen Sie uns an</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Rufen Sie uns an</mm_text>
+    <mm_help>Rufen Sie uns an</mm_help>
+  </call_us>
+  <write_to_us>
+    <mm_type>label</mm_type>
+    <mm_label>Schreiben Sie uns eine E-Mail</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Schreiben Sie uns eine E-Mail</mm_text>
+    <mm_help>Schreiben Sie uns eine E-Mail</mm_help>
+  </write_to_us>
+  <rate_app>
+    <mm_type>label</mm_type>
+    <mm_label>Bewertungs App</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bewertungs App</mm_text>
+    <mm_help>Bewertungs App</mm_help>
+  </rate_app>
+  <send_app_feedback>
+    <mm_type>label</mm_type>
+    <mm_label>App Feedback senden</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>App Feedback senden</mm_text>
+    <mm_help>App Feedback senden</mm_help>
+  </send_app_feedback>
+  <share_app>
+    <mm_type>label</mm_type>
+    <mm_label>App teilen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>App teilen</mm_text>
+    <mm_help>App teilen</mm_help>
+  </share_app>
+  <follow_us>
+    <mm_type>label</mm_type>
+    <mm_label>Folge uns</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Folge uns</mm_text>
+    <mm_help>Folge uns</mm_help>
+  </follow_us>
+  <password>
+    <mm_type>label</mm_type>
+    <mm_label>Passwort</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Passwort</mm_text>
+    <mm_help>Passwort</mm_help>
+  </password>
+  <login>
+    <mm_type>label</mm_type>
+    <mm_label>Einloggen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Einloggen</mm_text>
+    <mm_help>Einloggen</mm_help>
+  </login>
+  <register_now>
+    <mm_type>label</mm_type>
+    <mm_label>Jetzt registrieren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Jetzt registrieren</mm_text>
+    <mm_help>Jetzt registrieren</mm_help>
+  </register_now>
+  <forgot_password>
+    <mm_type>label</mm_type>
+    <mm_label>Passwort vergessen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Passwort vergessen</mm_text>
+    <mm_help>Passwort vergessen</mm_help>
+  </forgot_password>
+  <male>
+    <mm_type>label</mm_type>
+    <mm_label>M&#xE4;nnlich</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>M&amp;auml;nnlich</mm_text>
+    <mm_help>M&amp;auml;nnlich</mm_help>
+  </male>
+  <female>
+    <mm_type>label</mm_type>
+    <mm_label>Weiblich</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Weiblich</mm_text>
+    <mm_help>Weiblich</mm_help>
+  </female>
+  <already_have_account>
+    <mm_type>label</mm_type>
+    <mm_label>Existierender Benutzer?</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Existierender Benutzer?</mm_text>
+    <mm_help>Existierender Benutzer?</mm_help>
+  </already_have_account>
+  <submit>
+    <mm_type>label</mm_type>
+    <mm_label>einreichen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>einreichen</mm_text>
+    <mm_help>einreichen</mm_help>
+  </submit>
+  <or_login_with>
+    <mm_type>label</mm_type>
+    <mm_label>Oder Einloggen mit</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Oder Einloggen mit</mm_text>
+    <mm_help>Oder Einloggen mit</mm_help>
+  </or_login_with>
+  <checkout_as_guest>
+    <mm_type>label</mm_type>
+    <mm_label>Kasse als Gast</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kasse als Gast</mm_text>
+    <mm_help>Kasse als Gast</mm_help>
+  </checkout_as_guest>
+  <order_history>
+    <mm_type>label</mm_type>
+    <mm_label>Meine Befehle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Meine Befehle</mm_text>
+    <mm_help>Meine Befehle</mm_help>
+  </order_history>
+  <wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>Wunschliste</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Wunschliste</mm_text>
+    <mm_help>Wunschliste</mm_help>
+  </wishlist>
+  <address_book>
+    <mm_type>label</mm_type>
+    <mm_label>Adressbuch</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adressbuch</mm_text>
+    <mm_help>Adressbuch</mm_help>
+  </address_book>
+  <change_password>
+    <mm_type>label</mm_type>
+    <mm_label>Passwort &#xE4;ndern</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Passwort &amp;auml;ndern</mm_text>
+    <mm_help>Passwort &amp;auml;ndern</mm_help>
+  </change_password>
+  <preferences>
+    <mm_type>label</mm_type>
+    <mm_label>Einstellungen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Einstellungen</mm_text>
+    <mm_help>Einstellungen</mm_help>
+  </preferences>
+  <logout>
+    <mm_type>label</mm_type>
+    <mm_label>Ausloggen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ausloggen</mm_text>
+    <mm_help>Ausloggen</mm_help>
+  </logout>
+  <check_internet_connection_label>
+    <mm_type>label</mm_type>
+    <mm_label>&#xDC;berpr&#xFC;fen Sie, ob Ihr Ger&#xE4;t mit einer Internetverbindung (einem Mobilfunknetz oder einem WiFi)</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Uuml;berpr&amp;uuml;fen Sie, ob Ihr Ger&amp;auml;t mit einer Internetverbindung (einem Mobilfunknetz oder einem WiFi)</mm_text>
+    <mm_help>&amp;Uuml;berpr&amp;uuml;fen Sie, ob Ihr Ger&amp;auml;t mit einer Internetverbindung (einem Mobilfunknetz oder einem WiFi)</mm_help>
+  </check_internet_connection_label>
+  <try_again>
+    <mm_type>label</mm_type>
+    <mm_label>Versuch es noch einmal</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Versuch es noch einmal</mm_text>
+    <mm_help>Versuch es noch einmal</mm_help>
+  </try_again>
+  <reorder>
+    <mm_type>label</mm_type>
+    <mm_label>Nachbestellen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Nachbestellen</mm_text>
+    <mm_help>Nachbestellen</mm_help>
+  </reorder>
+  <order_date>
+    <mm_type>label</mm_type>
+    <mm_label>Bestellt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestellt</mm_text>
+    <mm_help>Bestellt</mm_help>
+  </order_date>
+  <shipping_method>
+    <mm_type>label</mm_type>
+    <mm_label>Versandart</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Versandart</mm_text>
+    <mm_help>Versandart</mm_help>
+  </shipping_method>
+  <write_review>
+    <mm_type>label</mm_type>
+    <mm_label>Produkt bewerten und bewerten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Produkt bewerten und bewerten</mm_text>
+    <mm_help>Produkt bewerten und bewerten</mm_help>
+  </write_review>
+  <delivery>
+    <mm_type>label</mm_type>
+    <mm_label>Versandkosten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Versandkosten</mm_text>
+    <mm_help>Versandkosten</mm_help>
+  </delivery>
+  <ordered_items>
+    <mm_type>label</mm_type>
+    <mm_label>Bestellte Artikel</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestellte Artikel</mm_text>
+    <mm_help>Bestellte Artikel</mm_help>
+  </ordered_items>
+  <total>
+    <mm_type>label</mm_type>
+    <mm_label>Gesamt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Gesamt</mm_text>
+    <mm_help>Gesamt</mm_help>
+  </total>
+  <total_qty>
+    <mm_type>label</mm_type>
+    <mm_label>Artikel</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Artikel</mm_text>
+    <mm_help>Artikel</mm_help>
+  </total_qty>
+  <credit_card_type>
+    <mm_type>label</mm_type>
+    <mm_label>Kreditkartentyp</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kreditkartentyp</mm_text>
+    <mm_help>Kreditkartentyp</mm_help>
+  </credit_card_type>
+  <name_on_card>
+    <mm_type>label</mm_type>
+    <mm_label>Name auf der Karte</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Name auf der Karte</mm_text>
+    <mm_help>Name auf der Karte</mm_help>
+  </name_on_card>
+  <credit_card_number>
+    <mm_type>label</mm_type>
+    <mm_label>Kreditkartennummer</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kreditkartennummer</mm_text>
+    <mm_help>Kreditkartennummer</mm_help>
+  </credit_card_number>
+  <month>
+    <mm_type>label</mm_type>
+    <mm_label>Monat</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Monat</mm_text>
+    <mm_help>Monat</mm_help>
+  </month>
+  <year>
+    <mm_type>label</mm_type>
+    <mm_label>Jahr</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Jahr</mm_text>
+    <mm_help>Jahr</mm_help>
+  </year>
+  <cvv>
+    <mm_type>label</mm_type>
+    <mm_label>CVV</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>CVV</mm_text>
+    <mm_help>CVV</mm_help>
+  </cvv>
+  <edit>
+    <mm_type>label</mm_type>
+    <mm_label>Bearbeiten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bearbeiten</mm_text>
+    <mm_help>Bearbeiten</mm_help>
+  </edit>
+  <account>
+    <mm_type>label</mm_type>
+    <mm_label>Mein Konto</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mein Konto</mm_text>
+    <mm_help>Mein Konto</mm_help>
+  </account>
+  <notifications>
+    <mm_type>label</mm_type>
+    <mm_label>Benachrichtigungen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Benachrichtigungen</mm_text>
+    <mm_help>Benachrichtigungen</mm_help>
+  </notifications>
+  <description>
+    <mm_type>label</mm_type>
+    <mm_label>Beschreibung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Beschreibung</mm_text>
+    <mm_help>Beschreibung</mm_help>
+  </description>
+  <additional_information>
+    <mm_type>label</mm_type>
+    <mm_label>Zus&#xE4;tzliche Information</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Zus&amp;auml;tzliche Information</mm_text>
+    <mm_help>Zus&amp;auml;tzliche Information</mm_help>
+  </additional_information>
+  <push_notifications>
+    <mm_type>label</mm_type>
+    <mm_label>Push-Benachrichtigung aktivieren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Push-Benachrichtigung aktivieren</mm_text>
+    <mm_help>Push-Benachrichtigung aktivieren</mm_help>
+  </push_notifications>
+  <store>
+    <mm_type>label</mm_type>
+    <mm_label>Gesch&#xE4;ft</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Gesch&amp;auml;ft</mm_text>
+    <mm_help>Gesch&amp;auml;ft</mm_help>
+  </store>
+  <currency>
+    <mm_type>label</mm_type>
+    <mm_label>W&#xE4;hrung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>W&amp;auml;hrung</mm_text>
+    <mm_help>W&amp;auml;hrung</mm_help>
+  </currency>
+  <add_to_cart>
+    <mm_type>label</mm_type>
+    <mm_label>in den Warenkorb legen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>in den Warenkorb legen</mm_text>
+    <mm_help>in den Warenkorb legen</mm_help>
+  </add_to_cart>
+  <buy_now>
+    <mm_type>label</mm_type>
+    <mm_label>Kaufe jetzt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kaufe jetzt</mm_text>
+    <mm_help>Kaufe jetzt</mm_help>
+  </buy_now>
+  <out_of_stock>
+    <mm_type>label</mm_type>
+    <mm_label>Ausverkauft</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ausverkauft</mm_text>
+    <mm_help>Ausverkauft</mm_help>
+  </out_of_stock>
+  <off>
+    <mm_type>label</mm_type>
+    <mm_label>AUS</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>AUS</mm_text>
+    <mm_help>AUS</mm_help>
+  </off>
+  <share>
+    <mm_type>label</mm_type>
+    <mm_label>Aktie</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Aktie</mm_text>
+    <mm_help>Aktie</mm_help>
+  </share>
+  <item_details>
+    <mm_type>label</mm_type>
+    <mm_label>Artikeldetails</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Artikeldetails</mm_text>
+    <mm_help>Artikeldetails</mm_help>
+  </item_details>
+  <know_more>
+    <mm_type>label</mm_type>
+    <mm_label>Mehr wissen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mehr wissen</mm_text>
+    <mm_help>Mehr wissen</mm_help>
+  </know_more>
+  <customer_rating_and_reviews>
+    <mm_type>label</mm_type>
+    <mm_label>Kundenbewertungen und Bewertungen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kundenbewertungen und Bewertungen</mm_text>
+    <mm_help>Kundenbewertungen und Bewertungen</mm_help>
+  </customer_rating_and_reviews>
+  <be_the_first_one_to_review>
+    <mm_type>label</mm_type>
+    <mm_label>Geben Sie die erste Bewertung ab</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geben Sie die erste Bewertung ab</mm_text>
+    <mm_help>Geben Sie die erste Bewertung ab</mm_help>
+  </be_the_first_one_to_review>
+  <reviews>
+    <mm_type>label</mm_type>
+    <mm_label>Kundenbewertungen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kundenbewertungen</mm_text>
+    <mm_help>Kundenbewertungen</mm_help>
+  </reviews>
+  <all_reviews>
+    <mm_type>label</mm_type>
+    <mm_label>Alle anzeigen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Alle anzeigen</mm_text>
+    <mm_help>Alle anzeigen</mm_help>
+  </all_reviews>
+  <similar_products>
+    <mm_type>label</mm_type>
+    <mm_label>&#xC4;hnliche Produkte</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Auml;hnliche Produkte</mm_text>
+    <mm_help>&amp;Auml;hnliche Produkte</mm_help>
+  </similar_products>
+  <clear>
+    <mm_type>label</mm_type>
+    <mm_label>Klar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Klar</mm_text>
+    <mm_help>Klar</mm_help>
+  </clear>
+  <min_price>
+    <mm_type>label</mm_type>
+    <mm_label>Mindestpreis</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mindestpreis</mm_text>
+    <mm_help>Mindestpreis</mm_help>
+  </min_price>
+  <max_price>
+    <mm_type>label</mm_type>
+    <mm_label>Max. Preis</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Max. Preis</mm_text>
+    <mm_help>Max. Preis</mm_help>
+  </max_price>
+  <search>
+    <mm_type>label</mm_type>
+    <mm_label>Suche</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Suche</mm_text>
+    <mm_help>Suche</mm_help>
+  </search>
+  <all>
+    <mm_type>label</mm_type>
+    <mm_label>Alle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Alle</mm_text>
+    <mm_help>Alle</mm_help>
+  </all>
+  <current_password>
+    <mm_type>label</mm_type>
+    <mm_label>Aktuelles Passwort</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Aktuelles Passwort</mm_text>
+    <mm_help>Aktuelles Passwort</mm_help>
+  </current_password>
+  <new_password>
+    <mm_type>label</mm_type>
+    <mm_label>Neues Kennwort</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Neues Kennwort</mm_text>
+    <mm_help>Neues Kennwort</mm_help>
+  </new_password>
+  <confirm_new_password>
+    <mm_type>label</mm_type>
+    <mm_label>Best&#xE4;tige neues Passwort</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Best&amp;auml;tige neues Passwort</mm_text>
+    <mm_help>Best&amp;auml;tige neues Passwort</mm_help>
+  </confirm_new_password>
+  <choose_gender>
+    <mm_type>label</mm_type>
+    <mm_label>W&#xE4;hlen Sie Geschlecht</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>W&amp;auml;hlen Sie Geschlecht</mm_text>
+    <mm_help>W&amp;auml;hlen Sie Geschlecht</mm_help>
+  </choose_gender>
+  <nickname>
+    <mm_type>label</mm_type>
+    <mm_label>Spitzname</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Spitzname</mm_text>
+    <mm_help>Spitzname</mm_help>
+  </nickname>
+  <summary_of_review>
+    <mm_type>label</mm_type>
+    <mm_label>Zusammenfassung Ihrer Bewertung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Zusammenfassung Ihrer Bewertung</mm_text>
+    <mm_help>Zusammenfassung Ihrer Bewertung</mm_help>
+  </summary_of_review>
+  <comments>
+    <mm_type>label</mm_type>
+    <mm_label>Bemerkungen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bemerkungen</mm_text>
+    <mm_help>Bemerkungen</mm_help>
+  </comments>
+  <submit_review>
+    <mm_type>label</mm_type>
+    <mm_label>Bewertung abschicken</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bewertung abschicken</mm_text>
+    <mm_help>Bewertung abschicken</mm_help>
+  </submit_review>
+  <maximum_number_of_characters>
+    <mm_type>label</mm_type>
+    <mm_label>Maximale Anzahl Zeichen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Maximale Anzahl Zeichen</mm_text>
+    <mm_help>Maximale Anzahl Zeichen</mm_help>
+  </maximum_number_of_characters>
+  <please_wait>
+    <mm_type>label</mm_type>
+    <mm_label>Bitte warten, die letzte Aktion ist noch in Bearbeitung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bitte warten, die letzte Aktion ist noch in Bearbeitung</mm_text>
+    <mm_help>Bitte warten, die letzte Aktion ist noch in Bearbeitung</mm_help>
+  </please_wait>
+  <clear_all>
+    <mm_type>label</mm_type>
+    <mm_label>Liste leeren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Liste leeren</mm_text>
+    <mm_help>Liste leeren</mm_help>
+  </clear_all>
+  <confirm>
+    <mm_type>label</mm_type>
+    <mm_label>Adresse entfernen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adresse entfernen</mm_text>
+    <mm_help>Adresse entfernen</mm_help>
+  </confirm>
+  <done>
+    <mm_type>label</mm_type>
+    <mm_label>Erledigt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Erledigt</mm_text>
+    <mm_help>Erledigt</mm_help>
+  </done>
+  <delete>
+    <mm_type>label</mm_type>
+    <mm_label>L&#xF6;schen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>L&amp;ouml;schen</mm_text>
+    <mm_help>L&amp;ouml;schen</mm_help>
+  </delete>
+  <delete_this_address>
+    <mm_type>label</mm_type>
+    <mm_label>M&#xF6;chten Sie diese Adresse wirklich l&#xF6;schen?</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>M&amp;ouml;chten Sie diese Adresse wirklich l&amp;ouml;schen?</mm_text>
+    <mm_help>M&amp;ouml;chten Sie diese Adresse wirklich l&amp;ouml;schen?</mm_help>
+  </delete_this_address>
+  <cancelled>
+    <mm_type>label</mm_type>
+    <mm_label>Abgebrochen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Abgebrochen</mm_text>
+    <mm_help>Abgebrochen</mm_help>
+  </cancelled>
+  <select>
+    <mm_type>label</mm_type>
+    <mm_label>W&#xE4;hlen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>W&amp;auml;hlen</mm_text>
+    <mm_help>W&amp;auml;hlen</mm_help>
+  </select>
+  <recently_viewed>
+    <mm_type>label</mm_type>
+    <mm_label>K&#xFC;rzlich angesehene Artikel</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>K&amp;uuml;rzlich angesehene Artikel</mm_text>
+    <mm_help>K&amp;uuml;rzlich angesehene Artikel</mm_help>
+  </recently_viewed>
+  <january>
+    <mm_type>label</mm_type>
+    <mm_label>Januar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Januar</mm_text>
+    <mm_help>Januar</mm_help>
+  </january>
+  <february>
+    <mm_type>label</mm_type>
+    <mm_label>Februar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Februar</mm_text>
+    <mm_help>Februar</mm_help>
+  </february>
+  <march>
+    <mm_type>label</mm_type>
+    <mm_label>M&#xE4;rz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>M&amp;auml;rz</mm_text>
+    <mm_help>M&amp;auml;rz</mm_help>
+  </march>
+  <april>
+    <mm_type>label</mm_type>
+    <mm_label>April</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>April</mm_text>
+    <mm_help>April</mm_help>
+  </april>
+  <may>
+    <mm_type>label</mm_type>
+    <mm_label>Kann</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kann</mm_text>
+    <mm_help>Kann</mm_help>
+  </may>
+  <june>
+    <mm_type>label</mm_type>
+    <mm_label>Juni</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Juni</mm_text>
+    <mm_help>Juni</mm_help>
+  </june>
+  <july>
+    <mm_type>label</mm_type>
+    <mm_label>Juli</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Juli</mm_text>
+    <mm_help>Juli</mm_help>
+  </july>
+  <august>
+    <mm_type>label</mm_type>
+    <mm_label>August</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>August</mm_text>
+    <mm_help>August</mm_help>
+  </august>
+  <september>
+    <mm_type>label</mm_type>
+    <mm_label>September</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>September</mm_text>
+    <mm_help>September</mm_help>
+  </september>
+  <october>
+    <mm_type>label</mm_type>
+    <mm_label>Oktober</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Oktober</mm_text>
+    <mm_help>Oktober</mm_help>
+  </october>
+  <november>
+    <mm_type>label</mm_type>
+    <mm_label>November</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>November</mm_text>
+    <mm_help>November</mm_help>
+  </november>
+  <december>
+    <mm_type>label</mm_type>
+    <mm_label>Dezember</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Dezember</mm_text>
+    <mm_help>Dezember</mm_help>
+  </december>
+  <estimate_shipping_tax>
+    <mm_type>label</mm_type>
+    <mm_label>Versand und Steuern</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Versand und Steuern</mm_text>
+    <mm_help>Versand und Steuern</mm_help>
+  </estimate_shipping_tax>
+  <products>
+    <mm_type>label</mm_type>
+    <mm_label>Sicherheit</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sicherheit</mm_text>
+    <mm_help>Sicherheit</mm_help>
+  </products>
+  <edit_profile>
+    <mm_type>label</mm_type>
+    <mm_label>Profil bearbeiten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Profil bearbeiten</mm_text>
+    <mm_help>Profil bearbeiten</mm_help>
+  </edit_profile>
+  <addresses>
+    <mm_type>label</mm_type>
+    <mm_label>Adressbuch</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adressbuch</mm_text>
+    <mm_help>Adressbuch</mm_help>
+  </addresses>
+  <add_review>
+    <mm_type>label</mm_type>
+    <mm_label>Bewertung hinzuf&#xFC;gen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bewertung hinzuf&amp;uuml;gen</mm_text>
+    <mm_help>Bewertung hinzuf&amp;uuml;gen</mm_help>
+  </add_review>
+  <cart>
+    <mm_type>label</mm_type>
+    <mm_label>Karte</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Karte</mm_text>
+    <mm_help>Karte</mm_help>
+  </cart>
+  <contact>
+    <mm_type>label</mm_type>
+    <mm_label>Kontakt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kontakt</mm_text>
+    <mm_help>Kontakt</mm_help>
+  </contact>
+  <credit_card>
+    <mm_type>label</mm_type>
+    <mm_label>Kreditkarte</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kreditkarte</mm_text>
+    <mm_help>Kreditkarte</mm_help>
+  </credit_card>
+  <error>
+    <mm_type>label</mm_type>
+    <mm_label>Fehler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Fehler</mm_text>
+    <mm_help>Fehler</mm_help>
+  </error>
+  <my_profile>
+    <mm_type>label</mm_type>
+    <mm_label>Mein Profil</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mein Profil</mm_text>
+    <mm_help>Mein Profil</mm_help>
+  </my_profile>
+  <my_orders>
+    <mm_type>label</mm_type>
+    <mm_label>Meine Befehle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Meine Befehle</mm_text>
+    <mm_help>Meine Befehle</mm_help>
+  </my_orders>
+  <order_review>
+    <mm_type>label</mm_type>
+    <mm_label>Bestellung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestellung</mm_text>
+    <mm_help>Bestellung</mm_help>
+  </order_review>
+  <order_success>
+    <mm_type>label</mm_type>
+    <mm_label>Bestellung aufgegeben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestellung aufgegeben</mm_text>
+    <mm_help>Bestellung aufgegeben</mm_help>
+  </order_success>
+  <order_detail>
+    <mm_type>label</mm_type>
+    <mm_label>Bestelldetails</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestelldetails</mm_text>
+    <mm_help>Bestelldetails</mm_help>
+  </order_detail>
+  <shipping>
+    <mm_type>label</mm_type>
+    <mm_label>Versand &amp; Rechnungsadresse</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Versand &amp;amp;amp; Rechnungsadresse</mm_text>
+    <mm_help>Versand &amp;amp;amp; Rechnungsadresse</mm_help>
+  </shipping>
+  <no_more_records>
+    <mm_type>label</mm_type>
+    <mm_label>Keine Datens&#xE4;tze mehr</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Keine Datens&amp;auml;tze mehr</mm_text>
+    <mm_help>Keine Datens&amp;auml;tze mehr</mm_help>
+  </no_more_records>
+  <popularity>
+    <mm_type>label</mm_type>
+    <mm_label>Popularit&#xE4;t</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Popularit&amp;auml;t</mm_text>
+    <mm_help>Popularit&amp;auml;t</mm_help>
+  </popularity>
+  <position>
+    <mm_type>label</mm_type>
+    <mm_label>Position</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Position</mm_text>
+    <mm_help>Position</mm_help>
+  </position>
+  <price_high_to_low>
+    <mm_type>label</mm_type>
+    <mm_label>Preis - hoch bis niedrig</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Preis - hoch bis niedrig</mm_text>
+    <mm_help>Preis - hoch bis niedrig</mm_help>
+  </price_high_to_low>
+  <price_low_to_high>
+    <mm_type>label</mm_type>
+    <mm_label>Preis niedrig bis hoch</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Preis niedrig bis hoch</mm_text>
+    <mm_help>Preis niedrig bis hoch</mm_help>
+  </price_low_to_high>
+  <rating>
+    <mm_type>label</mm_type>
+    <mm_label>Bewertung</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bewertung</mm_text>
+    <mm_help>Bewertung</mm_help>
+  </rating>
+  <a_to_z>
+    <mm_type>label</mm_type>
+    <mm_label>A - Z</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>A - Z</mm_text>
+    <mm_help>A - Z</mm_help>
+  </a_to_z>
+  <z_to_a>
+    <mm_type>label</mm_type>
+    <mm_label>Z - A</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Z - A</mm_text>
+    <mm_help>Z - A</mm_help>
+  </z_to_a>
+  <newest>
+    <mm_type>label</mm_type>
+    <mm_label>Neueste</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Neueste</mm_text>
+    <mm_help>Neueste</mm_help>
+  </newest>
+  <f_home>
+    <mm_type>label</mm_type>
+    <mm_label>Zuhause</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Zuhause</mm_text>
+    <mm_help>Zuhause</mm_help>
+  </f_home>
+  <f_search>
+    <mm_type>label</mm_type>
+    <mm_label>Suche</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Suche</mm_text>
+    <mm_help>Suche</mm_help>
+  </f_search>
+  <f_wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>WIshlist</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>WIshlist</mm_text>
+    <mm_help>WIshlist</mm_help>
+  </f_wishlist>
+  <f_cart>
+    <mm_type>label</mm_type>
+    <mm_label>Karte</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Karte</mm_text>
+    <mm_help>Karte</mm_help>
+  </f_cart>
+  <f_account>
+    <mm_type>label</mm_type>
+    <mm_label>Konto</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Konto</mm_text>
+    <mm_help>Konto</mm_help>
+  </f_account>
+  <press_again_to_close_app>
+    <mm_type>message</mm_type>
+    <mm_label>Dr&#xFC;cken Sie die Taste erneut, um die App zu schlie&#xDF;en</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Dr&amp;uuml;cken Sie die Taste erneut, um die App zu schlie&amp;szlig;en</mm_text>
+    <mm_help>Dr&amp;uuml;cken Sie die Taste erneut, um die App zu schlie&amp;szlig;en</mm_help>
+  </press_again_to_close_app>
+  <invalid_format>
+    <mm_type>message</mm_type>
+    <mm_label>Ung&#xFC;ltiges Format</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ung&amp;uuml;ltiges Format</mm_text>
+    <mm_help>Ung&amp;uuml;ltiges Format</mm_help>
+  </invalid_format>
+  <plugin_not_supported>
+    <mm_type>message</mm_type>
+    <mm_label>Ah! Diese Aktion kann auf diesem Ger&#xE4;t nicht ausgef&#xFC;hrt werden. Erforderliche Unterst&#xFC;tzung ist auf diesem Ger&#xE4;t nicht verf&#xFC;gbar.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ah! Diese Aktion kann auf diesem Ger&amp;auml;t nicht ausgef&amp;uuml;hrt werden. Erforderliche Unterst&amp;uuml;tzung ist auf diesem Ger&amp;auml;t nicht verf&amp;uuml;gbar.</mm_text>
+    <mm_help>Ah! Diese Aktion kann auf diesem Ger&amp;auml;t nicht ausgef&amp;uuml;hrt werden. Erforderliche Unterst&amp;uuml;tzung ist auf diesem Ger&amp;auml;t nicht verf&amp;uuml;gbar.</mm_help>
+  </plugin_not_supported>
+  <please_select>
+    <mm_type>message</mm_type>
+    <mm_label>Bitte ausw&#xE4;hlen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bitte ausw&amp;auml;hlen</mm_text>
+    <mm_help>Bitte ausw&amp;auml;hlen</mm_help>
+  </please_select>
+  <please_enter_coupon_code>
+    <mm_type>message</mm_type>
+    <mm_label>G&#xFC;ltigen Gutscheincode eingeben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>G&amp;uuml;ltigen Gutscheincode eingeben</mm_text>
+    <mm_help>G&amp;uuml;ltigen Gutscheincode eingeben</mm_help>
+  </please_enter_coupon_code>
+  <enter_shipping_country>
+    <mm_type>message</mm_type>
+    <mm_label>Geben Sie das Versandland ein</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geben Sie das Versandland ein</mm_text>
+    <mm_help>Geben Sie das Versandland ein</mm_help>
+  </enter_shipping_country>
+  <enter_shipping_state>
+    <mm_type>message</mm_type>
+    <mm_label>Geben Sie den Lieferzustand ein</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geben Sie den Lieferzustand ein</mm_text>
+    <mm_help>Geben Sie den Lieferzustand ein</mm_help>
+  </enter_shipping_state>
+  <enter_shipping_pincode>
+    <mm_type>message</mm_type>
+    <mm_label>Geben Sie den Versandpincode ein</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geben Sie den Versandpincode ein</mm_text>
+    <mm_help>Geben Sie den Versandpincode ein</mm_help>
+  </enter_shipping_pincode>
+  <choose_shipping_method_error>
+    <mm_type>message</mm_type>
+    <mm_label>Versandmethode ausw&#xE4;hlen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Versandmethode ausw&amp;auml;hlen</mm_text>
+    <mm_help>Versandmethode ausw&amp;auml;hlen</mm_help>
+  </choose_shipping_method_error>
+  <moved_to_wishlist>
+    <mm_type>message</mm_type>
+    <mm_label>Artikel zur Wunschliste verschoben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Artikel zur Wunschliste verschoben</mm_text>
+    <mm_help>Artikel zur Wunschliste verschoben</mm_help>
+  </moved_to_wishlist>
+  <payment_cancelled>
+    <mm_type>message</mm_type>
+    <mm_label>Bezahlung fehlgeschlagen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bezahlung fehlgeschlagen</mm_text>
+    <mm_help>Bezahlung fehlgeschlagen</mm_help>
+  </payment_cancelled>
+  <please_select_all_agreements>
+    <mm_type>message</mm_type>
+    <mm_label>Sie m&#xFC;ssen alle Vereinbarungen akzeptieren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sie m&amp;uuml;ssen alle Vereinbarungen akzeptieren</mm_text>
+    <mm_help>Sie m&amp;uuml;ssen alle Vereinbarungen akzeptieren</mm_help>
+  </please_select_all_agreements>
+  <invalid_deeplink_url>
+    <mm_type>message</mm_type>
+    <mm_label>ung&#xFC;ltige URL</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>ung&amp;uuml;ltige URL</mm_text>
+    <mm_help>ung&amp;uuml;ltige URL</mm_help>
+  </invalid_deeplink_url>
+  <cart_is_empty>
+    <mm_type>message</mm_type>
+    <mm_label>Einkaufswagen ist leer</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Einkaufswagen ist leer</mm_text>
+    <mm_help>Einkaufswagen ist leer</mm_help>
+  </cart_is_empty>
+  <cart_item_error>
+    <mm_type>message</mm_type>
+    <mm_label>Eines deines Einkaufswagens ist fehlerhaft</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Eines deines Einkaufswagens ist fehlerhaft</mm_text>
+    <mm_help>Eines deines Einkaufswagens ist fehlerhaft</mm_help>
+  </cart_item_error>
+  <cc_name_error>
+    <mm_type>message</mm_type>
+    <mm_label>Geben Sie den Namen auf der Karte ein</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geben Sie den Namen auf der Karte ein</mm_text>
+    <mm_help>Geben Sie den Namen auf der Karte ein</mm_help>
+  </cc_name_error>
+  <cc_number_error>
+    <mm_type>message</mm_type>
+    <mm_label>Kartennummer eingeben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kartennummer eingeben</mm_text>
+    <mm_help>Kartennummer eingeben</mm_help>
+  </cc_number_error>
+  <cc_month_error>
+    <mm_type>message</mm_type>
+    <mm_label>W&#xE4;hlen Sie den Ablaufmonat</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>W&amp;auml;hlen Sie den Ablaufmonat</mm_text>
+    <mm_help>W&amp;auml;hlen Sie den Ablaufmonat</mm_help>
+  </cc_month_error>
+  <cc_year_error>
+    <mm_type>message</mm_type>
+    <mm_label>W&#xE4;hlen Sie das Ablaufjahr</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>W&amp;auml;hlen Sie das Ablaufjahr</mm_text>
+    <mm_help>W&amp;auml;hlen Sie das Ablaufjahr</mm_help>
+  </cc_year_error>
+  <cc_cvv_error>
+    <mm_type>message</mm_type>
+    <mm_label>Geben Sie die CVV-Nummer ein</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geben Sie die CVV-Nummer ein</mm_text>
+    <mm_help>Geben Sie die CVV-Nummer ein</mm_help>
+  </cc_cvv_error>
+  <cc_type_error>
+    <mm_type>message</mm_type>
+    <mm_label>W&#xE4;hlen Sie Kartentyp</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>W&amp;auml;hlen Sie Kartentyp</mm_text>
+    <mm_help>W&amp;auml;hlen Sie Kartentyp</mm_help>
+  </cc_type_error>
+  <choose_rating_option_error>
+    <mm_type>message</mm_type>
+    <mm_label>W&#xE4;hlen Sie f&#xFC;r jeden Ratingparameter eine Bewertung aus</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>W&amp;auml;hlen Sie f&amp;uuml;r jeden Ratingparameter eine Bewertung aus</mm_text>
+    <mm_help>W&amp;auml;hlen Sie f&amp;uuml;r jeden Ratingparameter eine Bewertung aus</mm_help>
+  </choose_rating_option_error>
+  <rating_nickname_error>
+    <mm_type>message</mm_type>
+    <mm_label>Spitznamen eingeben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Spitznamen eingeben</mm_text>
+    <mm_help>Spitznamen eingeben</mm_help>
+  </rating_nickname_error>
+  <rating_summary_error>
+    <mm_type>message</mm_type>
+    <mm_label>Geben Sie eine Zusammenfassung Ihrer Bewertung ein</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geben Sie eine Zusammenfassung Ihrer Bewertung ein</mm_text>
+    <mm_help>Geben Sie eine Zusammenfassung Ihrer Bewertung ein</mm_help>
+  </rating_summary_error>
+  <rating_comment_error>
+    <mm_type>message</mm_type>
+    <mm_label>Geben Sie Kommentare ein</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geben Sie Kommentare ein</mm_text>
+    <mm_help>Geben Sie Kommentare ein</mm_help>
+  </rating_comment_error>
+  <email_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>E-Mail Adresse eingeben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>E-Mail Adresse eingeben</mm_text>
+    <mm_help>E-Mail Adresse eingeben</mm_help>
+  </email_required_error>
+  <password_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>Passwort eingeben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Passwort eingeben</mm_text>
+    <mm_help>Passwort eingeben</mm_help>
+  </password_required_error>
+  <firstname_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>Bitte Vornamen eingeben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bitte Vornamen eingeben</mm_text>
+    <mm_help>Bitte Vornamen eingeben</mm_help>
+  </firstname_required_error>
+  <lastname_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>Nachnamen eingeben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Nachnamen eingeben</mm_text>
+    <mm_help>Nachnamen eingeben</mm_help>
+  </lastname_required_error>
+  <email_valid_error>
+    <mm_type>message</mm_type>
+    <mm_label>G&#xFC;ltige E-Mail-Adresse eingeben</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>G&amp;uuml;ltige E-Mail-Adresse eingeben</mm_text>
+    <mm_help>G&amp;uuml;ltige E-Mail-Adresse eingeben</mm_help>
+  </email_valid_error>
+  <invalid_login_message>
+    <mm_type>message</mm_type>
+    <mm_label>ung&#xFC;ltiger Benutzername oder Passwort</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>ung&amp;uuml;ltiger Benutzername oder Passwort</mm_text>
+    <mm_help>ung&amp;uuml;ltiger Benutzername oder Passwort</mm_help>
+  </invalid_login_message>
+  <registration_success_message>
+    <mm_type>message</mm_type>
+    <mm_label>Gl&#xFC;ckwunsch! Sie sind erfolgreich registriert</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Gl&amp;uuml;ckwunsch! Sie sind erfolgreich registriert</mm_text>
+    <mm_help>Gl&amp;uuml;ckwunsch! Sie sind erfolgreich registriert</mm_help>
+  </registration_success_message>
+  <please_check_email>
+    <mm_type>message</mm_type>
+    <mm_label>Bitte &#xFC;berpr&#xFC;fen Sie die E-Mail</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bitte &amp;uuml;berpr&amp;uuml;fen Sie die E-Mail</mm_text>
+    <mm_help>Bitte &amp;uuml;berpr&amp;uuml;fen Sie die E-Mail</mm_help>
+  </please_check_email>
+  <wishlist_added_message>
+    <mm_type>message</mm_type>
+    <mm_label>Artikel zur Merkliste hinzugef&#xFC;gt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Artikel zur Merkliste hinzugef&amp;uuml;gt</mm_text>
+    <mm_help>Artikel zur Merkliste hinzugef&amp;uuml;gt</mm_help>
+  </wishlist_added_message>
+  <item_removed_message>
+    <mm_type>message</mm_type>
+    <mm_label>Artikel aus der Wunschliste gel&#xF6;scht</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Artikel aus der Wunschliste gel&amp;ouml;scht</mm_text>
+    <mm_help>Artikel aus der Wunschliste gel&amp;ouml;scht</mm_help>
+  </item_removed_message>
+  <cart_updated_message>
+    <mm_type>message</mm_type>
+    <mm_label>Ihr Warenkorb wurde aktualisiert</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ihr Warenkorb wurde aktualisiert</mm_text>
+    <mm_help>Ihr Warenkorb wurde aktualisiert</mm_help>
+  </cart_updated_message>
+  <item_added_message>
+    <mm_type>message</mm_type>
+    <mm_label>Artikel wurde in den Warenkorb gelegt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Artikel wurde in den Warenkorb gelegt</mm_text>
+    <mm_help>Artikel wurde in den Warenkorb gelegt</mm_help>
+  </item_added_message>
+  <couponcode_applied_message>
+    <mm_type>message</mm_type>
+    <mm_label>Gutscheincode angewendet</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Gutscheincode angewendet</mm_text>
+    <mm_help>Gutscheincode angewendet</mm_help>
+  </couponcode_applied_message>
+  <couponcode_removed_message>
+    <mm_type>message</mm_type>
+    <mm_label>Gutscheincode entfernt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Gutscheincode entfernt</mm_text>
+    <mm_help>Gutscheincode entfernt</mm_help>
+  </couponcode_removed_message>
+  <choose_payment_method_error>
+    <mm_type>message</mm_type>
+    <mm_label>Zahlungsart ausw&#xE4;hlen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Zahlungsart ausw&amp;auml;hlen</mm_text>
+    <mm_help>Zahlungsart ausw&amp;auml;hlen</mm_help>
+  </choose_payment_method_error>
+  <account_already_exists>
+    <mm_type>message</mm_type>
+    <mm_label>Konto existiert bereits</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Konto existiert bereits</mm_text>
+    <mm_help>Konto existiert bereits</mm_help>
+  </account_already_exists>
+  <please_login_to_continue>
+    <mm_type>message</mm_type>
+    <mm_label>Bitte einloggen zum Fortfahren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bitte einloggen zum Fortfahren</mm_text>
+    <mm_help>Bitte einloggen zum Fortfahren</mm_help>
+  </please_login_to_continue>
+  <cannot_reorder_this_order>
+    <mm_type>message</mm_type>
+    <mm_label>Diese Bestellung kann nicht mehr nachbestellt werden</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Diese Bestellung kann nicht mehr nachbestellt werden</mm_text>
+    <mm_help>Diese Bestellung kann nicht mehr nachbestellt werden</mm_help>
+  </cannot_reorder_this_order>
+  <invalid_qrcode>
+    <mm_type>message</mm_type>
+    <mm_label>Ung&#xFC;ltiger QR-Code</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ung&amp;uuml;ltiger QR-Code</mm_text>
+    <mm_help>Ung&amp;uuml;ltiger QR-Code</mm_help>
+  </invalid_qrcode>
+  <product_not_available>
+    <mm_type>message</mm_type>
+    <mm_label>Produkt ist nicht verf&#xFC;gbar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Produkt ist nicht verf&amp;uuml;gbar</mm_text>
+    <mm_help>Produkt ist nicht verf&amp;uuml;gbar</mm_help>
+  </product_not_available>
+  <message_agree_terms>
+    <mm_type>message</mm_type>
+    <mm_label>Bitte stimmen Sie allen Bedingungen zu</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bitte stimmen Sie allen Bedingungen zu</mm_text>
+    <mm_help>Bitte stimmen Sie allen Bedingungen zu</mm_help>
+  </message_agree_terms>
+  <invalid_data>
+    <mm_type>message</mm_type>
+    <mm_label>Ung&#xFC;ltige Daten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ung&amp;uuml;ltige Daten</mm_text>
+    <mm_help>Ung&amp;uuml;ltige Daten</mm_help>
+  </invalid_data>
+  <address_save_error>
+    <mm_type>message</mm_type>
+    <mm_label>Adresse kann nicht gespeichert werden</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adresse kann nicht gespeichert werden</mm_text>
+    <mm_help>Adresse kann nicht gespeichert werden</mm_help>
+  </address_save_error>
+  <account_not_found_error>
+    <mm_type>message</mm_type>
+    <mm_label>Es existiert kein Konto mit der angegebenen E-Mail-Adresse</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Es existiert kein Konto mit der angegebenen E-Mail-Adresse</mm_text>
+    <mm_help>Es existiert kein Konto mit der angegebenen E-Mail-Adresse</mm_help>
+  </account_not_found_error>
+  <wishlist_not_found_error>
+    <mm_type>message</mm_type>
+    <mm_label>Keine Wunschliste gefunden</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Keine Wunschliste gefunden</mm_text>
+    <mm_help>Keine Wunschliste gefunden</mm_help>
+  </wishlist_not_found_error>
+  <products_found>
+    <mm_type>message</mm_type>
+    <mm_label>Produkte gefunden</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Produkte gefunden</mm_text>
+    <mm_help>Produkte gefunden</mm_help>
+  </products_found>
+</mobicommerce_multilanguage>

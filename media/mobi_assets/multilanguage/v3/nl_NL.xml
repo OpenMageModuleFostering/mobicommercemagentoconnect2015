@@ -1,0 +1,1872 @@
+<?xml version="1.0"?>
+<mobicommerce_multilanguage>
+  <no_internet_connection>
+    <mm_type>label</mm_type>
+    <mm_label>Geen internet verbinding</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geen internet verbinding</mm_text>
+    <mm_help>Geen internet verbinding</mm_help>
+  </no_internet_connection>
+  <oops>
+    <mm_type>label</mm_type>
+    <mm_label>Oeps! er is iets fout gegaan.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Oeps! er is iets fout gegaan.</mm_text>
+    <mm_help>Oeps! er is iets fout gegaan.</mm_help>
+  </oops>
+  <saved_addresses>
+    <mm_type>label</mm_type>
+    <mm_label>GERED ADRESSEN</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>GERED ADRESSEN</mm_text>
+    <mm_help>GERED ADRESSEN</mm_help>
+  </saved_addresses>
+  <add_new>
+    <mm_type>label</mm_type>
+    <mm_label>Voeg adres toe</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voeg adres toe</mm_text>
+    <mm_help>Voeg adres toe</mm_help>
+  </add_new>
+  <edit_address>
+    <mm_type>label</mm_type>
+    <mm_label>verander adres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>verander adres</mm_text>
+    <mm_help>verander adres</mm_help>
+  </edit_address>
+  <cancel>
+    <mm_type>label</mm_type>
+    <mm_label>Annuleer</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Annuleer</mm_text>
+    <mm_help>Annuleer</mm_help>
+  </cancel>
+  <firstname>
+    <mm_type>label</mm_type>
+    <mm_label>Voornaam</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voornaam</mm_text>
+    <mm_help>Voornaam</mm_help>
+  </firstname>
+  <lastname>
+    <mm_type>label</mm_type>
+    <mm_label>Achternaam</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Achternaam</mm_text>
+    <mm_help>Achternaam</mm_help>
+  </lastname>
+  <address>
+    <mm_type>label</mm_type>
+    <mm_label>Adres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adres</mm_text>
+    <mm_help>Adres</mm_help>
+  </address>
+  <landmark>
+    <mm_type>label</mm_type>
+    <mm_label>mijlpaal</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>mijlpaal</mm_text>
+    <mm_help>mijlpaal</mm_help>
+  </landmark>
+  <city>
+    <mm_type>label</mm_type>
+    <mm_label>stad</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>stad</mm_text>
+    <mm_help>stad</mm_help>
+  </city>
+  <state>
+    <mm_type>label</mm_type>
+    <mm_label>Staat</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Staat</mm_text>
+    <mm_help>Staat</mm_help>
+  </state>
+  <country>
+    <mm_type>label</mm_type>
+    <mm_label>land</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>land</mm_text>
+    <mm_help>land</mm_help>
+  </country>
+  <pincode>
+    <mm_type>label</mm_type>
+    <mm_label>Pincode</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Pincode</mm_text>
+    <mm_help>Pincode</mm_help>
+  </pincode>
+  <telephone>
+    <mm_type>label</mm_type>
+    <mm_label>Telefoon</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Telefoon</mm_text>
+    <mm_help>Telefoon</mm_help>
+  </telephone>
+  <mark_as_default_billing>
+    <mm_type>label</mm_type>
+    <mm_label>Mark as Default Billing</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mark as Default Billing</mm_text>
+    <mm_help>Mark as Default Billing</mm_help>
+  </mark_as_default_billing>
+  <mark_as_default_shipping>
+    <mm_type>label</mm_type>
+    <mm_label>Mark als standaard Verzending</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mark als standaard Verzending</mm_text>
+    <mm_help>Mark als standaard Verzending</mm_help>
+  </mark_as_default_shipping>
+  <agreements>
+    <mm_type>label</mm_type>
+    <mm_label>Overeenkomsten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Overeenkomsten</mm_text>
+    <mm_help>Overeenkomsten</mm_help>
+  </agreements>
+  <continue>
+    <mm_type>label</mm_type>
+    <mm_label>voortzetten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>voortzetten</mm_text>
+    <mm_help>voortzetten</mm_help>
+  </continue>
+  <billing_address>
+    <mm_type>label</mm_type>
+    <mm_label>Facturatie adres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Facturatie adres</mm_text>
+    <mm_help>Facturatie adres</mm_help>
+  </billing_address>
+  <change>
+    <mm_type>label</mm_type>
+    <mm_label>Verandering</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verandering</mm_text>
+    <mm_help>Verandering</mm_help>
+  </change>
+  <shipping_address>
+    <mm_type>label</mm_type>
+    <mm_label>Verzendingsadres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verzendingsadres</mm_text>
+    <mm_help>Verzendingsadres</mm_help>
+  </shipping_address>
+  <email>
+    <mm_type>label</mm_type>
+    <mm_label>E-mailadres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>E-mailadres</mm_text>
+    <mm_help>E-mailadres</mm_help>
+  </email>
+  <date_of_birth>
+    <mm_type>label</mm_type>
+    <mm_label>Geboortedatum</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geboortedatum</mm_text>
+    <mm_help>Geboortedatum</mm_help>
+  </date_of_birth>
+  <gender>
+    <mm_type>label</mm_type>
+    <mm_label>Geslacht</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geslacht</mm_text>
+    <mm_help>Geslacht</mm_help>
+  </gender>
+  <taxvat_number>
+    <mm_type>label</mm_type>
+    <mm_label>Taxvat Number</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Taxvat Number</mm_text>
+    <mm_help>Taxvat Number</mm_help>
+  </taxvat_number>
+  <same_as_billing>
+    <mm_type>label</mm_type>
+    <mm_label>Zelfde als Billing</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Zelfde als Billing</mm_text>
+    <mm_help>Zelfde als Billing</mm_help>
+  </same_as_billing>
+  <choose>
+    <mm_type>label</mm_type>
+    <mm_label>Kiezen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kiezen</mm_text>
+    <mm_help>Kiezen</mm_help>
+  </choose>
+  <choose_an_option>
+    <mm_type>label</mm_type>
+    <mm_label>Kies een optie</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kies een optie</mm_text>
+    <mm_help>Kies een optie</mm_help>
+  </choose_an_option>
+  <choose_address>
+    <mm_type>label</mm_type>
+    <mm_label>Kies Adres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kies Adres</mm_text>
+    <mm_help>Kies Adres</mm_help>
+  </choose_address>
+  <checkout>
+    <mm_type>label</mm_type>
+    <mm_label>Uitchecken</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Uitchecken</mm_text>
+    <mm_help>Uitchecken</mm_help>
+  </checkout>
+  <move_to_wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>Verplaats naar wens lijst</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verplaats naar wens lijst</mm_text>
+    <mm_help>Verplaats naar wens lijst</mm_help>
+  </move_to_wishlist>
+  <remove>
+    <mm_type>label</mm_type>
+    <mm_label>Verwijderen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verwijderen</mm_text>
+    <mm_help>Verwijderen</mm_help>
+  </remove>
+  <offers>
+    <mm_type>label</mm_type>
+    <mm_label>Dicount Coupon en aanbiedingen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Dicount Coupon en aanbiedingen</mm_text>
+    <mm_help>Dicount Coupon en aanbiedingen</mm_help>
+  </offers>
+  <applied_promo_code>
+    <mm_type>label</mm_type>
+    <mm_label>Solliciteer Promo Code</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Solliciteer Promo Code</mm_text>
+    <mm_help>Solliciteer Promo Code</mm_help>
+  </applied_promo_code>
+  <promo_code>
+    <mm_type>label</mm_type>
+    <mm_label>Promotiecode</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Promotiecode</mm_text>
+    <mm_help>Promotiecode</mm_help>
+  </promo_code>
+  <apply>
+    <mm_type>label</mm_type>
+    <mm_label>Van toepassing zijn</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Van toepassing zijn</mm_text>
+    <mm_help>Van toepassing zijn</mm_help>
+  </apply>
+  <get_a_quote>
+    <mm_type>label</mm_type>
+    <mm_label>Vraag een offerte</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Vraag een offerte</mm_text>
+    <mm_help>Vraag een offerte</mm_help>
+  </get_a_quote>
+  <update_total>
+    <mm_type>label</mm_type>
+    <mm_label>bijwerken Total</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>bijwerken Total</mm_text>
+    <mm_help>bijwerken Total</mm_help>
+  </update_total>
+  <price_details>
+    <mm_type>label</mm_type>
+    <mm_label>Prijs op aanvraag</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Prijs op aanvraag</mm_text>
+    <mm_help>Prijs op aanvraag</mm_help>
+  </price_details>
+  <subtotal>
+    <mm_type>label</mm_type>
+    <mm_label>Subtotaal</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Subtotaal</mm_text>
+    <mm_help>Subtotaal</mm_help>
+  </subtotal>
+  <shipping_and_handling>
+    <mm_type>label</mm_type>
+    <mm_label>Verzendmethode</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verzendmethode</mm_text>
+    <mm_help>Verzendmethode</mm_help>
+  </shipping_and_handling>
+  <tax>
+    <mm_type>label</mm_type>
+    <mm_label>belasting</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>belasting</mm_text>
+    <mm_help>belasting</mm_help>
+  </tax>
+  <discount>
+    <mm_type>label</mm_type>
+    <mm_label>Korting</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Korting</mm_text>
+    <mm_help>Korting</mm_help>
+  </discount>
+  <amount_payable>
+    <mm_type>label</mm_type>
+    <mm_label>Schulden</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Schulden</mm_text>
+    <mm_help>Schulden</mm_help>
+  </amount_payable>
+  <safe_secure_payment>
+    <mm_type>label</mm_type>
+    <mm_label>100% veilig Payments. Eenvoudig retourneren. 100% authentieke producten.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>100% veilig Payments. Eenvoudig retourneren. 100% authentieke producten.</mm_text>
+    <mm_help>100% veilig Payments. Eenvoudig retourneren. 100% authentieke producten.</mm_help>
+  </safe_secure_payment>
+  <view_all>
+    <mm_type>label</mm_type>
+    <mm_label>Bekijk alles</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bekijk alles</mm_text>
+    <mm_help>Bekijk alles</mm_help>
+  </view_all>
+  <all_products>
+    <mm_type>label</mm_type>
+    <mm_label>Alle producten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Alle producten</mm_text>
+    <mm_help>Alle producten</mm_help>
+  </all_products>
+  <add_new_address>
+    <mm_type>label</mm_type>
+    <mm_label>Nieuw adres toevoegen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Nieuw adres toevoegen</mm_text>
+    <mm_help>Nieuw adres toevoegen</mm_help>
+  </add_new_address>
+  <place_order>
+    <mm_type>label</mm_type>
+    <mm_label>Plaats bestelling</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Plaats bestelling</mm_text>
+    <mm_help>Plaats bestelling</mm_help>
+  </place_order>
+  <review_your_order>
+    <mm_type>label</mm_type>
+    <mm_label>Controleer uw bestelling en plaats uw bestelling</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Controleer uw bestelling en plaats uw bestelling</mm_text>
+    <mm_help>Controleer uw bestelling en plaats uw bestelling</mm_help>
+  </review_your_order>
+  <payment_method>
+    <mm_type>label</mm_type>
+    <mm_label>Betalingsmiddel</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Betalingsmiddel</mm_text>
+    <mm_help>Betalingsmiddel</mm_help>
+  </payment_method>
+  <items>
+    <mm_type>label</mm_type>
+    <mm_label>Bestel items</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestel items</mm_text>
+    <mm_help>Bestel items</mm_help>
+  </items>
+  <qty>
+    <mm_type>label</mm_type>
+    <mm_label>Aantal</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Aantal</mm_text>
+    <mm_help>Aantal</mm_help>
+  </qty>
+  <price>
+    <mm_type>label</mm_type>
+    <mm_label>Prijs</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Prijs</mm_text>
+    <mm_help>Prijs</mm_help>
+  </price>
+  <continue_shopping>
+    <mm_type>label</mm_type>
+    <mm_label>Doorgaan met winkelen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Doorgaan met winkelen</mm_text>
+    <mm_help>Doorgaan met winkelen</mm_help>
+  </continue_shopping>
+  <order_placed_label>
+    <mm_type>label</mm_type>
+    <mm_label>U ontvangt een bevestiging e-mail met de details van uw bestelling</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>U ontvangt een bevestiging e-mail met de details van uw bestelling</mm_text>
+    <mm_help>U ontvangt een bevestiging e-mail met de details van uw bestelling</mm_help>
+  </order_placed_label>
+  <thank_you>
+    <mm_type>label</mm_type>
+    <mm_label>Bestelling geplaatst</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestelling geplaatst</mm_text>
+    <mm_help>Bestelling geplaatst</mm_help>
+  </thank_you>
+  <order_summary>
+    <mm_type>label</mm_type>
+    <mm_label>Bestel Samenvatting</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestel Samenvatting</mm_text>
+    <mm_help>Bestel Samenvatting</mm_help>
+  </order_summary>
+  <order_ref_no>
+    <mm_type>label</mm_type>
+    <mm_label>Bestel Ref No</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestel Ref No</mm_text>
+    <mm_help>Bestel Ref No</mm_help>
+  </order_ref_no>
+  <grand_total>
+    <mm_type>label</mm_type>
+    <mm_label>Eindtotaal</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Eindtotaal</mm_text>
+    <mm_help>Eindtotaal</mm_help>
+  </grand_total>
+  <delivery_address>
+    <mm_type>label</mm_type>
+    <mm_label>Verzendingsadres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verzendingsadres</mm_text>
+    <mm_help>Verzendingsadres</mm_help>
+  </delivery_address>
+  <order_confirmation_label>
+    <mm_type>label</mm_type>
+    <mm_label>Je bestelling wordt verwerkt.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Je bestelling wordt verwerkt.</mm_text>
+    <mm_help>Je bestelling wordt verwerkt.</mm_help>
+  </order_confirmation_label>
+  <proceed_to_pay>
+    <mm_type>label</mm_type>
+    <mm_label>voortzetten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>voortzetten</mm_text>
+    <mm_help>voortzetten</mm_help>
+  </proceed_to_pay>
+  <sample_links>
+    <mm_type>label</mm_type>
+    <mm_label>sample Links</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>sample Links</mm_text>
+    <mm_help>sample Links</mm_help>
+  </sample_links>
+  <downloadable_link>
+    <mm_type>label</mm_type>
+    <mm_label>downloadbare Link</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>downloadbare Link</mm_text>
+    <mm_help>downloadbare Link</mm_help>
+  </downloadable_link>
+  <oh_dear_its_empty_here>
+    <mm_type>label</mm_type>
+    <mm_label>Geen opgeslagen Adres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geen opgeslagen Adres</mm_text>
+    <mm_help>Geen opgeslagen Adres</mm_help>
+  </oh_dear_its_empty_here>
+  <to_add_address_tap_plus_button>
+    <mm_type>label</mm_type>
+    <mm_label>Sla uw levering locaties om uw bestellingen sneller te plaatsen!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sla uw levering locaties om uw bestellingen sneller te plaatsen!</mm_text>
+    <mm_help>Sla uw levering locaties om uw bestellingen sneller te plaatsen!</mm_help>
+  </to_add_address_tap_plus_button>
+  <add_address>
+    <mm_type>label</mm_type>
+    <mm_label>Voeg een adres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voeg een adres</mm_text>
+    <mm_help>Voeg een adres</mm_help>
+  </add_address>
+  <your_cart_is_empty>
+    <mm_type>label</mm_type>
+    <mm_label>Uw winkelwagen is leeg!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Uw winkelwagen is leeg!</mm_text>
+    <mm_help>Uw winkelwagen is leeg!</mm_help>
+  </your_cart_is_empty>
+  <you_dont_have_items_in_your_cart>
+    <mm_type>label</mm_type>
+    <mm_label>Artikelen toevoegen aan het nu.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Artikelen toevoegen aan het nu.</mm_text>
+    <mm_help>Artikelen toevoegen aan het nu.</mm_help>
+  </you_dont_have_items_in_your_cart>
+  <shop_now>
+    <mm_type>label</mm_type>
+    <mm_label>Winkel nu</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Winkel nu</mm_text>
+    <mm_help>Winkel nu</mm_help>
+  </shop_now>
+  <nothing_here>
+    <mm_type>label</mm_type>
+    <mm_label>Geen nieuwe kennisgeving</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geen nieuwe kennisgeving</mm_text>
+    <mm_help>Geen nieuwe kennisgeving</mm_help>
+  </nothing_here>
+  <we_will_let_you_know>
+    <mm_type>label</mm_type>
+    <mm_label>Wij zullen u laten weten wanneer we iets hebben gekregen voor u</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Wij zullen u laten weten wanneer we iets hebben gekregen voor u</mm_text>
+    <mm_help>Wij zullen u laten weten wanneer we iets hebben gekregen voor u</mm_help>
+  </we_will_let_you_know>
+  <notification_settings>
+    <mm_type>label</mm_type>
+    <mm_label>Notificatie instellingen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Notificatie instellingen</mm_text>
+    <mm_help>Notificatie instellingen</mm_help>
+  </notification_settings>
+  <go_to_home>
+    <mm_type>label</mm_type>
+    <mm_label>Ga naar huis</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ga naar huis</mm_text>
+    <mm_help>Ga naar huis</mm_help>
+  </go_to_home>
+  <you_can_keep_track_of_orders>
+    <mm_type>label</mm_type>
+    <mm_label>U kunt bijhouden van orders te houden</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>U kunt bijhouden van orders te houden</mm_text>
+    <mm_help>U kunt bijhouden van orders te houden</mm_help>
+  </you_can_keep_track_of_orders>
+  <no_products_found>
+    <mm_type>label</mm_type>
+    <mm_label>Geen producten gevonden!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geen producten gevonden!</mm_text>
+    <mm_help>Geen producten gevonden!</mm_help>
+  </no_products_found>
+  <we_could_not_find_product>
+    <mm_type>label</mm_type>
+    <mm_label>We zijn niet in staat om een &#x200B;&#x200B;product te vinden voor uw zoekopdracht. U moet uw zoekopdracht / trefwoord aan te passen.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>We zijn niet in staat om een &#x200B;&#x200B;product te vinden voor uw zoekopdracht. U moet uw zoekopdracht / trefwoord aan te passen.</mm_text>
+    <mm_help>We zijn niet in staat om een &#x200B;&#x200B;product te vinden voor uw zoekopdracht. U moet uw zoekopdracht / trefwoord aan te passen.</mm_help>
+  </we_could_not_find_product>
+  <your_wishlist_is_empty>
+    <mm_type>label</mm_type>
+    <mm_label>Jouw wens lijst is leeg!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Jouw wens lijst is leeg!</mm_text>
+    <mm_help>Jouw wens lijst is leeg!</mm_help>
+  </your_wishlist_is_empty>
+  <explore_more>
+    <mm_type>label</mm_type>
+    <mm_label>Ontdek meer en shortlist een aantal items</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ontdek meer en shortlist een aantal items</mm_text>
+    <mm_help>Ontdek meer en shortlist een aantal items</mm_help>
+  </explore_more>
+  <start_exploring>
+    <mm_type>label</mm_type>
+    <mm_label>beginnen met het verkennen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>beginnen met het verkennen</mm_text>
+    <mm_help>beginnen met het verkennen</mm_help>
+  </start_exploring>
+  <sort>
+    <mm_type>label</mm_type>
+    <mm_label>Soort</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Soort</mm_text>
+    <mm_help>Soort</mm_help>
+  </sort>
+  <filters>
+    <mm_type>label</mm_type>
+    <mm_label>filters</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>filters</mm_text>
+    <mm_help>filters</mm_help>
+  </filters>
+  <masonry_view>
+    <mm_type>label</mm_type>
+    <mm_label>Rasterweergave</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Rasterweergave</mm_text>
+    <mm_help>Rasterweergave</mm_help>
+  </masonry_view>
+  <grid_view>
+    <mm_type>label</mm_type>
+    <mm_label>Rasterweergave</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Rasterweergave</mm_text>
+    <mm_help>Rasterweergave</mm_help>
+  </grid_view>
+  <list_view>
+    <mm_type>label</mm_type>
+    <mm_label>Lijstweergave</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Lijstweergave</mm_text>
+    <mm_help>Lijstweergave</mm_help>
+  </list_view>
+  <full_view>
+    <mm_type>label</mm_type>
+    <mm_label>Volledig zicht</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Volledig zicht</mm_text>
+    <mm_help>Volledig zicht</mm_help>
+  </full_view>
+  <search_placeholder>
+    <mm_type>label</mm_type>
+    <mm_label>Voer uw zoekwoord</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer uw zoekwoord</mm_text>
+    <mm_help>Voer uw zoekwoord</mm_help>
+  </search_placeholder>
+  <search_product>
+    <mm_type>label</mm_type>
+    <mm_label>zoeken naar producten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>zoeken naar producten</mm_text>
+    <mm_help>zoeken naar producten</mm_help>
+  </search_product>
+  <welcome>
+    <mm_type>label</mm_type>
+    <mm_label>Welkom</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Welkom</mm_text>
+    <mm_help>Welkom</mm_help>
+  </welcome>
+  <login_signup>
+    <mm_type>label</mm_type>
+    <mm_label>Log in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Log in</mm_text>
+    <mm_help>Log in</mm_help>
+  </login_signup>
+  <view_more>
+    <mm_type>label</mm_type>
+    <mm_label>Bekijk meer</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bekijk meer</mm_text>
+    <mm_help>Bekijk meer</mm_help>
+  </view_more>
+  <info>
+    <mm_type>label</mm_type>
+    <mm_label>Over ons</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Over ons</mm_text>
+    <mm_help>Over ons</mm_help>
+  </info>
+  <call_us>
+    <mm_type>label</mm_type>
+    <mm_label>Bel ons</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bel ons</mm_text>
+    <mm_help>Bel ons</mm_help>
+  </call_us>
+  <write_to_us>
+    <mm_type>label</mm_type>
+    <mm_label>Email ons</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Email ons</mm_text>
+    <mm_help>Email ons</mm_help>
+  </write_to_us>
+  <rate_app>
+    <mm_type>label</mm_type>
+    <mm_label>Beoordeel app</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Beoordeel app</mm_text>
+    <mm_help>Beoordeel app</mm_help>
+  </rate_app>
+  <send_app_feedback>
+    <mm_type>label</mm_type>
+    <mm_label>Stuur App feedback</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Stuur App feedback</mm_text>
+    <mm_help>Stuur App feedback</mm_help>
+  </send_app_feedback>
+  <share_app>
+    <mm_type>label</mm_type>
+    <mm_label>Deel app</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Deel app</mm_text>
+    <mm_help>Deel app</mm_help>
+  </share_app>
+  <follow_us>
+    <mm_type>label</mm_type>
+    <mm_label>Volg ons</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Volg ons</mm_text>
+    <mm_help>Volg ons</mm_help>
+  </follow_us>
+  <password>
+    <mm_type>label</mm_type>
+    <mm_label>Wachtwoord</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Wachtwoord</mm_text>
+    <mm_help>Wachtwoord</mm_help>
+  </password>
+  <login>
+    <mm_type>label</mm_type>
+    <mm_label>Log in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Log in</mm_text>
+    <mm_help>Log in</mm_help>
+  </login>
+  <register_now>
+    <mm_type>label</mm_type>
+    <mm_label>Registreer nu</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Registreer nu</mm_text>
+    <mm_help>Registreer nu</mm_help>
+  </register_now>
+  <forgot_password>
+    <mm_type>label</mm_type>
+    <mm_label>Wachtwoord vergeten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Wachtwoord vergeten</mm_text>
+    <mm_help>Wachtwoord vergeten</mm_help>
+  </forgot_password>
+  <male>
+    <mm_type>label</mm_type>
+    <mm_label>Mannetje</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mannetje</mm_text>
+    <mm_help>Mannetje</mm_help>
+  </male>
+  <female>
+    <mm_type>label</mm_type>
+    <mm_label>Vrouw</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Vrouw</mm_text>
+    <mm_help>Vrouw</mm_help>
+  </female>
+  <already_have_account>
+    <mm_type>label</mm_type>
+    <mm_label>Bestaande gebruiker?</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestaande gebruiker?</mm_text>
+    <mm_help>Bestaande gebruiker?</mm_help>
+  </already_have_account>
+  <submit>
+    <mm_type>label</mm_type>
+    <mm_label>voorleggen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>voorleggen</mm_text>
+    <mm_help>voorleggen</mm_help>
+  </submit>
+  <or_login_with>
+    <mm_type>label</mm_type>
+    <mm_label>Of meld je aan met</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Of meld je aan met</mm_text>
+    <mm_help>Of meld je aan met</mm_help>
+  </or_login_with>
+  <checkout_as_guest>
+    <mm_type>label</mm_type>
+    <mm_label>Check uit als gast</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Check uit als gast</mm_text>
+    <mm_help>Check uit als gast</mm_help>
+  </checkout_as_guest>
+  <order_history>
+    <mm_type>label</mm_type>
+    <mm_label>mijn bestellingen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>mijn bestellingen</mm_text>
+    <mm_help>mijn bestellingen</mm_help>
+  </order_history>
+  <wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>verlanglijst</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>verlanglijst</mm_text>
+    <mm_help>verlanglijst</mm_help>
+  </wishlist>
+  <address_book>
+    <mm_type>label</mm_type>
+    <mm_label>Adresboek</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adresboek</mm_text>
+    <mm_help>Adresboek</mm_help>
+  </address_book>
+  <change_password>
+    <mm_type>label</mm_type>
+    <mm_label>Verander wachtwoord</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verander wachtwoord</mm_text>
+    <mm_help>Verander wachtwoord</mm_help>
+  </change_password>
+  <preferences>
+    <mm_type>label</mm_type>
+    <mm_label>voorkeuren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>voorkeuren</mm_text>
+    <mm_help>voorkeuren</mm_help>
+  </preferences>
+  <logout>
+    <mm_type>label</mm_type>
+    <mm_label>Uitloggen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Uitloggen</mm_text>
+    <mm_help>Uitloggen</mm_help>
+  </logout>
+  <check_internet_connection_label>
+    <mm_type>label</mm_type>
+    <mm_label>Controleer of uw apparaat is verbonden met internet verbinding (een mobiel netwerk of WiFi)</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Controleer of uw apparaat is verbonden met internet verbinding (een mobiel netwerk of WiFi)</mm_text>
+    <mm_help>Controleer of uw apparaat is verbonden met internet verbinding (een mobiel netwerk of WiFi)</mm_help>
+  </check_internet_connection_label>
+  <try_again>
+    <mm_type>label</mm_type>
+    <mm_label>Probeer het nog eens</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Probeer het nog eens</mm_text>
+    <mm_help>Probeer het nog eens</mm_help>
+  </try_again>
+  <reorder>
+    <mm_type>label</mm_type>
+    <mm_label>herschikken</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>herschikken</mm_text>
+    <mm_help>herschikken</mm_help>
+  </reorder>
+  <order_date>
+    <mm_type>label</mm_type>
+    <mm_label>bestelde On</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>bestelde On</mm_text>
+    <mm_help>bestelde On</mm_help>
+  </order_date>
+  <shipping_method>
+    <mm_type>label</mm_type>
+    <mm_label>Verzendmethode</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verzendmethode</mm_text>
+    <mm_help>Verzendmethode</mm_help>
+  </shipping_method>
+  <write_review>
+    <mm_type>label</mm_type>
+    <mm_label>Waardeer en Beoordeling Product</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Waardeer en Beoordeling Product</mm_text>
+    <mm_help>Waardeer en Beoordeling Product</mm_help>
+  </write_review>
+  <delivery>
+    <mm_type>label</mm_type>
+    <mm_label>Verzendkosten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verzendkosten</mm_text>
+    <mm_help>Verzendkosten</mm_help>
+  </delivery>
+  <ordered_items>
+    <mm_type>label</mm_type>
+    <mm_label>bestelde artikelen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>bestelde artikelen</mm_text>
+    <mm_help>bestelde artikelen</mm_help>
+  </ordered_items>
+  <total>
+    <mm_type>label</mm_type>
+    <mm_label>Totaal</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Totaal</mm_text>
+    <mm_help>Totaal</mm_help>
+  </total>
+  <total_qty>
+    <mm_type>label</mm_type>
+    <mm_label>items</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>items</mm_text>
+    <mm_help>items</mm_help>
+  </total_qty>
+  <credit_card_type>
+    <mm_type>label</mm_type>
+    <mm_label>Credit card type</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Credit card type</mm_text>
+    <mm_help>Credit card type</mm_help>
+  </credit_card_type>
+  <name_on_card>
+    <mm_type>label</mm_type>
+    <mm_label>Naam op kaart</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Naam op kaart</mm_text>
+    <mm_help>Naam op kaart</mm_help>
+  </name_on_card>
+  <credit_card_number>
+    <mm_type>label</mm_type>
+    <mm_label>creditcardnummer</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>creditcardnummer</mm_text>
+    <mm_help>creditcardnummer</mm_help>
+  </credit_card_number>
+  <month>
+    <mm_type>label</mm_type>
+    <mm_label>Maand</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Maand</mm_text>
+    <mm_help>Maand</mm_help>
+  </month>
+  <year>
+    <mm_type>label</mm_type>
+    <mm_label>Jaar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Jaar</mm_text>
+    <mm_help>Jaar</mm_help>
+  </year>
+  <cvv>
+    <mm_type>label</mm_type>
+    <mm_label>CVV</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>CVV</mm_text>
+    <mm_help>CVV</mm_help>
+  </cvv>
+  <edit>
+    <mm_type>label</mm_type>
+    <mm_label>Bewerk</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bewerk</mm_text>
+    <mm_help>Bewerk</mm_help>
+  </edit>
+  <account>
+    <mm_type>label</mm_type>
+    <mm_label>Mijn rekening</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mijn rekening</mm_text>
+    <mm_help>Mijn rekening</mm_help>
+  </account>
+  <notifications>
+    <mm_type>label</mm_type>
+    <mm_label>meldingen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>meldingen</mm_text>
+    <mm_help>meldingen</mm_help>
+  </notifications>
+  <description>
+    <mm_type>label</mm_type>
+    <mm_label>Beschrijving</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Beschrijving</mm_text>
+    <mm_help>Beschrijving</mm_help>
+  </description>
+  <additional_information>
+    <mm_type>label</mm_type>
+    <mm_label>Extra informatie</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Extra informatie</mm_text>
+    <mm_help>Extra informatie</mm_help>
+  </additional_information>
+  <push_notifications>
+    <mm_type>label</mm_type>
+    <mm_label>Enable Push Notification</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Enable Push Notification</mm_text>
+    <mm_help>Enable Push Notification</mm_help>
+  </push_notifications>
+  <store>
+    <mm_type>label</mm_type>
+    <mm_label>Op te slaan</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Op te slaan</mm_text>
+    <mm_help>Op te slaan</mm_help>
+  </store>
+  <currency>
+    <mm_type>label</mm_type>
+    <mm_label>Valuta</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Valuta</mm_text>
+    <mm_help>Valuta</mm_help>
+  </currency>
+  <add_to_cart>
+    <mm_type>label</mm_type>
+    <mm_label>Voeg toe aan winkelmandje</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voeg toe aan winkelmandje</mm_text>
+    <mm_help>Voeg toe aan winkelmandje</mm_help>
+  </add_to_cart>
+  <buy_now>
+    <mm_type>label</mm_type>
+    <mm_label>Koop nu</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Koop nu</mm_text>
+    <mm_help>Koop nu</mm_help>
+  </buy_now>
+  <out_of_stock>
+    <mm_type>label</mm_type>
+    <mm_label>Niet op voorraad</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Niet op voorraad</mm_text>
+    <mm_help>Niet op voorraad</mm_help>
+  </out_of_stock>
+  <off>
+    <mm_type>label</mm_type>
+    <mm_label>UIT</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>UIT</mm_text>
+    <mm_help>UIT</mm_help>
+  </off>
+  <share>
+    <mm_type>label</mm_type>
+    <mm_label>Delen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Delen</mm_text>
+    <mm_help>Delen</mm_help>
+  </share>
+  <item_details>
+    <mm_type>label</mm_type>
+    <mm_label>Item Details</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Item Details</mm_text>
+    <mm_help>Item Details</mm_help>
+  </item_details>
+  <know_more>
+    <mm_type>label</mm_type>
+    <mm_label>Meer weten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Meer weten</mm_text>
+    <mm_help>Meer weten</mm_help>
+  </know_more>
+  <customer_rating_and_reviews>
+    <mm_type>label</mm_type>
+    <mm_label>Klantenwaardering en recensies</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Klantenwaardering en recensies</mm_text>
+    <mm_help>Klantenwaardering en recensies</mm_help>
+  </customer_rating_and_reviews>
+  <be_the_first_one_to_review>
+    <mm_type>label</mm_type>
+    <mm_label>Ben jij de eerste om te beoordelen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ben jij de eerste om te beoordelen</mm_text>
+    <mm_help>Ben jij de eerste om te beoordelen</mm_help>
+  </be_the_first_one_to_review>
+  <reviews>
+    <mm_type>label</mm_type>
+    <mm_label>klanten-reviews</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>klanten-reviews</mm_text>
+    <mm_help>klanten-reviews</mm_help>
+  </reviews>
+  <all_reviews>
+    <mm_type>label</mm_type>
+    <mm_label>Bekijk alle overzichten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bekijk alle overzichten</mm_text>
+    <mm_help>Bekijk alle overzichten</mm_help>
+  </all_reviews>
+  <similar_products>
+    <mm_type>label</mm_type>
+    <mm_label>vergelijkbare producten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>vergelijkbare producten</mm_text>
+    <mm_help>vergelijkbare producten</mm_help>
+  </similar_products>
+  <clear>
+    <mm_type>label</mm_type>
+    <mm_label>Duidelijk</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Duidelijk</mm_text>
+    <mm_help>Duidelijk</mm_help>
+  </clear>
+  <min_price>
+    <mm_type>label</mm_type>
+    <mm_label>min Prijs</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>min Prijs</mm_text>
+    <mm_help>min Prijs</mm_help>
+  </min_price>
+  <max_price>
+    <mm_type>label</mm_type>
+    <mm_label>Max Prijs</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Max Prijs</mm_text>
+    <mm_help>Max Prijs</mm_help>
+  </max_price>
+  <search>
+    <mm_type>label</mm_type>
+    <mm_label>Zoeken</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Zoeken</mm_text>
+    <mm_help>Zoeken</mm_help>
+  </search>
+  <all>
+    <mm_type>label</mm_type>
+    <mm_label>Alle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Alle</mm_text>
+    <mm_help>Alle</mm_help>
+  </all>
+  <current_password>
+    <mm_type>label</mm_type>
+    <mm_label>huidig &#x200B;&#x200B;wachtwoord</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>huidig &#x200B;&#x200B;wachtwoord</mm_text>
+    <mm_help>huidig &#x200B;&#x200B;wachtwoord</mm_help>
+  </current_password>
+  <new_password>
+    <mm_type>label</mm_type>
+    <mm_label>nieuw paswoord</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>nieuw paswoord</mm_text>
+    <mm_help>nieuw paswoord</mm_help>
+  </new_password>
+  <confirm_new_password>
+    <mm_type>label</mm_type>
+    <mm_label>Bevestig nieuw wachtwoord</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bevestig nieuw wachtwoord</mm_text>
+    <mm_help>Bevestig nieuw wachtwoord</mm_help>
+  </confirm_new_password>
+  <choose_gender>
+    <mm_type>label</mm_type>
+    <mm_label>Kies Geslacht</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kies Geslacht</mm_text>
+    <mm_help>Kies Geslacht</mm_help>
+  </choose_gender>
+  <nickname>
+    <mm_type>label</mm_type>
+    <mm_label>Bijnaam</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bijnaam</mm_text>
+    <mm_help>Bijnaam</mm_help>
+  </nickname>
+  <summary_of_review>
+    <mm_type>label</mm_type>
+    <mm_label>Samenvatting van je recensie</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Samenvatting van je recensie</mm_text>
+    <mm_help>Samenvatting van je recensie</mm_help>
+  </summary_of_review>
+  <comments>
+    <mm_type>label</mm_type>
+    <mm_label>Comments</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Comments</mm_text>
+    <mm_help>Comments</mm_help>
+  </comments>
+  <submit_review>
+    <mm_type>label</mm_type>
+    <mm_label>Review versturen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Review versturen</mm_text>
+    <mm_help>Review versturen</mm_help>
+  </submit_review>
+  <maximum_number_of_characters>
+    <mm_type>label</mm_type>
+    <mm_label>Maximaal aantal tekens</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Maximaal aantal tekens</mm_text>
+    <mm_help>Maximaal aantal tekens</mm_help>
+  </maximum_number_of_characters>
+  <please_wait>
+    <mm_type>label</mm_type>
+    <mm_label>Even geduld, de laatste actie is nog steeds in proces</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Even geduld, de laatste actie is nog steeds in proces</mm_text>
+    <mm_help>Even geduld, de laatste actie is nog steeds in proces</mm_help>
+  </please_wait>
+  <clear_all>
+    <mm_type>label</mm_type>
+    <mm_label>Duidelijke lijst</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Duidelijke lijst</mm_text>
+    <mm_help>Duidelijke lijst</mm_help>
+  </clear_all>
+  <confirm>
+    <mm_type>label</mm_type>
+    <mm_label>Verwijder Adres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verwijder Adres</mm_text>
+    <mm_help>Verwijder Adres</mm_help>
+  </confirm>
+  <done>
+    <mm_type>label</mm_type>
+    <mm_label>Gedaan</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Gedaan</mm_text>
+    <mm_help>Gedaan</mm_help>
+  </done>
+  <delete>
+    <mm_type>label</mm_type>
+    <mm_label>Verwijder</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verwijder</mm_text>
+    <mm_help>Verwijder</mm_help>
+  </delete>
+  <delete_this_address>
+    <mm_type>label</mm_type>
+    <mm_label>Weet je zeker dat dit adres wilt verwijderen?</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Weet je zeker dat dit adres wilt verwijderen?</mm_text>
+    <mm_help>Weet je zeker dat dit adres wilt verwijderen?</mm_help>
+  </delete_this_address>
+  <cancelled>
+    <mm_type>label</mm_type>
+    <mm_label>Geannuleerd</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geannuleerd</mm_text>
+    <mm_help>Geannuleerd</mm_help>
+  </cancelled>
+  <select>
+    <mm_type>label</mm_type>
+    <mm_label>kiezen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>kiezen</mm_text>
+    <mm_help>kiezen</mm_help>
+  </select>
+  <recently_viewed>
+    <mm_type>label</mm_type>
+    <mm_label>Recent bekeken Items</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Recent bekeken Items</mm_text>
+    <mm_help>Recent bekeken Items</mm_help>
+  </recently_viewed>
+  <january>
+    <mm_type>label</mm_type>
+    <mm_label>januari-</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>januari-</mm_text>
+    <mm_help>januari-</mm_help>
+  </january>
+  <february>
+    <mm_type>label</mm_type>
+    <mm_label>februari</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>februari</mm_text>
+    <mm_help>februari</mm_help>
+  </february>
+  <march>
+    <mm_type>label</mm_type>
+    <mm_label>maart</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>maart</mm_text>
+    <mm_help>maart</mm_help>
+  </march>
+  <april>
+    <mm_type>label</mm_type>
+    <mm_label>april</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>april</mm_text>
+    <mm_help>april</mm_help>
+  </april>
+  <may>
+    <mm_type>label</mm_type>
+    <mm_label>mei</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>mei</mm_text>
+    <mm_help>mei</mm_help>
+  </may>
+  <june>
+    <mm_type>label</mm_type>
+    <mm_label>juni-</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>juni-</mm_text>
+    <mm_help>juni-</mm_help>
+  </june>
+  <july>
+    <mm_type>label</mm_type>
+    <mm_label>juli-</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>juli-</mm_text>
+    <mm_help>juli-</mm_help>
+  </july>
+  <august>
+    <mm_type>label</mm_type>
+    <mm_label>augustus</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>augustus</mm_text>
+    <mm_help>augustus</mm_help>
+  </august>
+  <september>
+    <mm_type>label</mm_type>
+    <mm_label>september</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>september</mm_text>
+    <mm_help>september</mm_help>
+  </september>
+  <october>
+    <mm_type>label</mm_type>
+    <mm_label>oktober</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>oktober</mm_text>
+    <mm_help>oktober</mm_help>
+  </october>
+  <november>
+    <mm_type>label</mm_type>
+    <mm_label>november</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>november</mm_text>
+    <mm_help>november</mm_help>
+  </november>
+  <december>
+    <mm_type>label</mm_type>
+    <mm_label>december</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>december</mm_text>
+    <mm_help>december</mm_help>
+  </december>
+  <estimate_shipping_tax>
+    <mm_type>label</mm_type>
+    <mm_label>Geschatte verzendkosten en BTW</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geschatte verzendkosten en BTW</mm_text>
+    <mm_help>Geschatte verzendkosten en BTW</mm_help>
+  </estimate_shipping_tax>
+  <products>
+    <mm_type>label</mm_type>
+    <mm_label>producten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>producten</mm_text>
+    <mm_help>producten</mm_help>
+  </products>
+  <edit_profile>
+    <mm_type>label</mm_type>
+    <mm_label>Bewerk profiel</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bewerk profiel</mm_text>
+    <mm_help>Bewerk profiel</mm_help>
+  </edit_profile>
+  <addresses>
+    <mm_type>label</mm_type>
+    <mm_label>Adresboek</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adresboek</mm_text>
+    <mm_help>Adresboek</mm_help>
+  </addresses>
+  <add_review>
+    <mm_type>label</mm_type>
+    <mm_label>beoordeling toevoegen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>beoordeling toevoegen</mm_text>
+    <mm_help>beoordeling toevoegen</mm_help>
+  </add_review>
+  <cart>
+    <mm_type>label</mm_type>
+    <mm_label>kar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>kar</mm_text>
+    <mm_help>kar</mm_help>
+  </cart>
+  <contact>
+    <mm_type>label</mm_type>
+    <mm_label>Contact</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Contact</mm_text>
+    <mm_help>Contact</mm_help>
+  </contact>
+  <credit_card>
+    <mm_type>label</mm_type>
+    <mm_label>Kredietkaart</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kredietkaart</mm_text>
+    <mm_help>Kredietkaart</mm_help>
+  </credit_card>
+  <error>
+    <mm_type>label</mm_type>
+    <mm_label>Fout</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Fout</mm_text>
+    <mm_help>Fout</mm_help>
+  </error>
+  <my_profile>
+    <mm_type>label</mm_type>
+    <mm_label>Mijn profiel</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mijn profiel</mm_text>
+    <mm_help>Mijn profiel</mm_help>
+  </my_profile>
+  <my_orders>
+    <mm_type>label</mm_type>
+    <mm_label>mijn bestellingen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>mijn bestellingen</mm_text>
+    <mm_help>mijn bestellingen</mm_help>
+  </my_orders>
+  <order_review>
+    <mm_type>label</mm_type>
+    <mm_label>Bestel beoordeling</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestel beoordeling</mm_text>
+    <mm_help>Bestel beoordeling</mm_help>
+  </order_review>
+  <order_success>
+    <mm_type>label</mm_type>
+    <mm_label>Bestelling geplaatst</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestelling geplaatst</mm_text>
+    <mm_help>Bestelling geplaatst</mm_help>
+  </order_success>
+  <order_detail>
+    <mm_type>label</mm_type>
+    <mm_label>Bestel Detail</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bestel Detail</mm_text>
+    <mm_help>Bestel Detail</mm_help>
+  </order_detail>
+  <shipping>
+    <mm_type>label</mm_type>
+    <mm_label>Shipping &amp; Billing Adres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Shipping &amp;amp;amp; Billing Adres</mm_text>
+    <mm_help>Shipping &amp;amp;amp; Billing Adres</mm_help>
+  </shipping>
+  <no_more_records>
+    <mm_type>label</mm_type>
+    <mm_label>Geen gegevens</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geen gegevens</mm_text>
+    <mm_help>Geen gegevens</mm_help>
+  </no_more_records>
+  <popularity>
+    <mm_type>label</mm_type>
+    <mm_label>populariteit</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>populariteit</mm_text>
+    <mm_help>populariteit</mm_help>
+  </popularity>
+  <position>
+    <mm_type>label</mm_type>
+    <mm_label>Positie</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Positie</mm_text>
+    <mm_help>Positie</mm_help>
+  </position>
+  <price_high_to_low>
+    <mm_type>label</mm_type>
+    <mm_label>Prijs - hoog naar laag</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Prijs - hoog naar laag</mm_text>
+    <mm_help>Prijs - hoog naar laag</mm_help>
+  </price_high_to_low>
+  <price_low_to_high>
+    <mm_type>label</mm_type>
+    <mm_label>Prijs - laag naar hoog</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Prijs - laag naar hoog</mm_text>
+    <mm_help>Prijs - laag naar hoog</mm_help>
+  </price_low_to_high>
+  <rating>
+    <mm_type>label</mm_type>
+    <mm_label>Beoordeling</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Beoordeling</mm_text>
+    <mm_help>Beoordeling</mm_help>
+  </rating>
+  <a_to_z>
+    <mm_type>label</mm_type>
+    <mm_label>A - Z</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>A - Z</mm_text>
+    <mm_help>A - Z</mm_help>
+  </a_to_z>
+  <z_to_a>
+    <mm_type>label</mm_type>
+    <mm_label>Z - A</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Z - A</mm_text>
+    <mm_help>Z - A</mm_help>
+  </z_to_a>
+  <newest>
+    <mm_type>label</mm_type>
+    <mm_label>Nieuwste</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Nieuwste</mm_text>
+    <mm_help>Nieuwste</mm_help>
+  </newest>
+  <f_home>
+    <mm_type>label</mm_type>
+    <mm_label>Huis</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Huis</mm_text>
+    <mm_help>Huis</mm_help>
+  </f_home>
+  <f_search>
+    <mm_type>label</mm_type>
+    <mm_label>Zoeken</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Zoeken</mm_text>
+    <mm_help>Zoeken</mm_help>
+  </f_search>
+  <f_wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>verlanglijst</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>verlanglijst</mm_text>
+    <mm_help>verlanglijst</mm_help>
+  </f_wishlist>
+  <f_cart>
+    <mm_type>label</mm_type>
+    <mm_label>kar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>kar</mm_text>
+    <mm_help>kar</mm_help>
+  </f_cart>
+  <f_account>
+    <mm_type>label</mm_type>
+    <mm_label>Account</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Account</mm_text>
+    <mm_help>Account</mm_help>
+  </f_account>
+  <press_again_to_close_app>
+    <mm_type>message</mm_type>
+    <mm_label>Druk nogmaals op om app te sluiten</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Druk nogmaals op om app te sluiten</mm_text>
+    <mm_help>Druk nogmaals op om app te sluiten</mm_help>
+  </press_again_to_close_app>
+  <invalid_format>
+    <mm_type>message</mm_type>
+    <mm_label>ongeldige Format</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>ongeldige Format</mm_text>
+    <mm_help>ongeldige Format</mm_help>
+  </invalid_format>
+  <plugin_not_supported>
+    <mm_type>message</mm_type>
+    <mm_label>Ah! Deze actie kan niet worden uitgevoerd op dit apparaat. Vereiste ondersteuning is niet beschikbaar op dit apparaat.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ah! Deze actie kan niet worden uitgevoerd op dit apparaat. Vereiste ondersteuning is niet beschikbaar op dit apparaat.</mm_text>
+    <mm_help>Ah! Deze actie kan niet worden uitgevoerd op dit apparaat. Vereiste ondersteuning is niet beschikbaar op dit apparaat.</mm_help>
+  </plugin_not_supported>
+  <please_select>
+    <mm_type>message</mm_type>
+    <mm_label>Selecteer alstublieft</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Selecteer alstublieft</mm_text>
+    <mm_help>Selecteer alstublieft</mm_help>
+  </please_select>
+  <please_enter_coupon_code>
+    <mm_type>message</mm_type>
+    <mm_label>Voer geldige couponcode</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer geldige couponcode</mm_text>
+    <mm_help>Voer geldige couponcode</mm_help>
+  </please_enter_coupon_code>
+  <enter_shipping_country>
+    <mm_type>message</mm_type>
+    <mm_label>Voer Land van levering</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer Land van levering</mm_text>
+    <mm_help>Voer Land van levering</mm_help>
+  </enter_shipping_country>
+  <enter_shipping_state>
+    <mm_type>message</mm_type>
+    <mm_label>Voer de scheepvaart staat</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer de scheepvaart staat</mm_text>
+    <mm_help>Voer de scheepvaart staat</mm_help>
+  </enter_shipping_state>
+  <enter_shipping_pincode>
+    <mm_type>message</mm_type>
+    <mm_label>Voer de scheepvaart pincode</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer de scheepvaart pincode</mm_text>
+    <mm_help>Voer de scheepvaart pincode</mm_help>
+  </enter_shipping_pincode>
+  <choose_shipping_method_error>
+    <mm_type>message</mm_type>
+    <mm_label>Kies verzendmethode</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kies verzendmethode</mm_text>
+    <mm_help>Kies verzendmethode</mm_help>
+  </choose_shipping_method_error>
+  <moved_to_wishlist>
+    <mm_type>message</mm_type>
+    <mm_label>Item verplaatst naar wishlist</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Item verplaatst naar wishlist</mm_text>
+    <mm_help>Item verplaatst naar wishlist</mm_help>
+  </moved_to_wishlist>
+  <payment_cancelled>
+    <mm_type>message</mm_type>
+    <mm_label>Betaling mislukt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Betaling mislukt</mm_text>
+    <mm_help>Betaling mislukt</mm_help>
+  </payment_cancelled>
+  <please_select_all_agreements>
+    <mm_type>message</mm_type>
+    <mm_label>Je moet alle overeenkomsten accepteren</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Je moet alle overeenkomsten accepteren</mm_text>
+    <mm_help>Je moet alle overeenkomsten accepteren</mm_help>
+  </please_select_all_agreements>
+  <invalid_deeplink_url>
+    <mm_type>message</mm_type>
+    <mm_label>Ongeldige URL</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ongeldige URL</mm_text>
+    <mm_help>Ongeldige URL</mm_help>
+  </invalid_deeplink_url>
+  <cart_is_empty>
+    <mm_type>message</mm_type>
+    <mm_label>Winkelwagen is leeg</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Winkelwagen is leeg</mm_text>
+    <mm_help>Winkelwagen is leeg</mm_help>
+  </cart_is_empty>
+  <cart_item_error>
+    <mm_type>message</mm_type>
+    <mm_label>Een van uw winkelwagentje item is dat fout</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Een van uw winkelwagentje item is dat fout</mm_text>
+    <mm_help>Een van uw winkelwagentje item is dat fout</mm_help>
+  </cart_item_error>
+  <cc_name_error>
+    <mm_type>message</mm_type>
+    <mm_label>Voer de naam op de kaart</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer de naam op de kaart</mm_text>
+    <mm_help>Voer de naam op de kaart</mm_help>
+  </cc_name_error>
+  <cc_number_error>
+    <mm_type>message</mm_type>
+    <mm_label>Voer kaartnummer</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer kaartnummer</mm_text>
+    <mm_help>Voer kaartnummer</mm_help>
+  </cc_number_error>
+  <cc_month_error>
+    <mm_type>message</mm_type>
+    <mm_label>Kies vervalmaand</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kies vervalmaand</mm_text>
+    <mm_help>Kies vervalmaand</mm_help>
+  </cc_month_error>
+  <cc_year_error>
+    <mm_type>message</mm_type>
+    <mm_label>Kies verstrijken jaar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kies verstrijken jaar</mm_text>
+    <mm_help>Kies verstrijken jaar</mm_help>
+  </cc_year_error>
+  <cc_cvv_error>
+    <mm_type>message</mm_type>
+    <mm_label>Voer CVV-nummer</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer CVV-nummer</mm_text>
+    <mm_help>Voer CVV-nummer</mm_help>
+  </cc_cvv_error>
+  <cc_type_error>
+    <mm_type>message</mm_type>
+    <mm_label>Kies het type kaart</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kies het type kaart</mm_text>
+    <mm_help>Kies het type kaart</mm_help>
+  </cc_type_error>
+  <choose_rating_option_error>
+    <mm_type>message</mm_type>
+    <mm_label>Selecteer een rating voor elk cijfer parameter</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Selecteer een rating voor elk cijfer parameter</mm_text>
+    <mm_help>Selecteer een rating voor elk cijfer parameter</mm_help>
+  </choose_rating_option_error>
+  <rating_nickname_error>
+    <mm_type>message</mm_type>
+    <mm_label>Voer bijnaam</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer bijnaam</mm_text>
+    <mm_help>Voer bijnaam</mm_help>
+  </rating_nickname_error>
+  <rating_summary_error>
+    <mm_type>message</mm_type>
+    <mm_label>Voer Samenvatting van uw review</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer Samenvatting van uw review</mm_text>
+    <mm_help>Voer Samenvatting van uw review</mm_help>
+  </rating_summary_error>
+  <rating_comment_error>
+    <mm_type>message</mm_type>
+    <mm_label>Voer revisieopmerkingen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer revisieopmerkingen</mm_text>
+    <mm_help>Voer revisieopmerkingen</mm_help>
+  </rating_comment_error>
+  <email_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>Vul email adres in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Vul email adres in</mm_text>
+    <mm_help>Vul email adres in</mm_help>
+  </email_required_error>
+  <password_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>Voer wachtwoord in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer wachtwoord in</mm_text>
+    <mm_help>Voer wachtwoord in</mm_help>
+  </password_required_error>
+  <firstname_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>Vul voornaam in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Vul voornaam in</mm_text>
+    <mm_help>Vul voornaam in</mm_help>
+  </firstname_required_error>
+  <lastname_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>Voer achternaam</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer achternaam</mm_text>
+    <mm_help>Voer achternaam</mm_help>
+  </lastname_required_error>
+  <email_valid_error>
+    <mm_type>message</mm_type>
+    <mm_label>Voer geldig e-mailadres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Voer geldig e-mailadres</mm_text>
+    <mm_help>Voer geldig e-mailadres</mm_help>
+  </email_valid_error>
+  <invalid_login_message>
+    <mm_type>message</mm_type>
+    <mm_label>ongeldige gebruikersnaam of wachtwoord</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>ongeldige gebruikersnaam of wachtwoord</mm_text>
+    <mm_help>ongeldige gebruikersnaam of wachtwoord</mm_help>
+  </invalid_login_message>
+  <registration_success_message>
+    <mm_type>message</mm_type>
+    <mm_label>Felicitatie! U bent succesvol geregistreerd</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Felicitatie! U bent succesvol geregistreerd</mm_text>
+    <mm_help>Felicitatie! U bent succesvol geregistreerd</mm_help>
+  </registration_success_message>
+  <please_check_email>
+    <mm_type>message</mm_type>
+    <mm_label>Controleer e-mail</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Controleer e-mail</mm_text>
+    <mm_help>Controleer e-mail</mm_help>
+  </please_check_email>
+  <wishlist_added_message>
+    <mm_type>message</mm_type>
+    <mm_label>Item toegevoegd aan wishlist</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Item toegevoegd aan wishlist</mm_text>
+    <mm_help>Item toegevoegd aan wishlist</mm_help>
+  </wishlist_added_message>
+  <item_removed_message>
+    <mm_type>message</mm_type>
+    <mm_label>Item verwijderd uit wishlist</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Item verwijderd uit wishlist</mm_text>
+    <mm_help>Item verwijderd uit wishlist</mm_help>
+  </item_removed_message>
+  <cart_updated_message>
+    <mm_type>message</mm_type>
+    <mm_label>Uw winkelwagentje bijgewerkt</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Uw winkelwagentje bijgewerkt</mm_text>
+    <mm_help>Uw winkelwagentje bijgewerkt</mm_help>
+  </cart_updated_message>
+  <item_added_message>
+    <mm_type>message</mm_type>
+    <mm_label>Item toegevoegd aan de winkelwagen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Item toegevoegd aan de winkelwagen</mm_text>
+    <mm_help>Item toegevoegd aan de winkelwagen</mm_help>
+  </item_added_message>
+  <couponcode_applied_message>
+    <mm_type>message</mm_type>
+    <mm_label>Coupon code toegepast</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Coupon code toegepast</mm_text>
+    <mm_help>Coupon code toegepast</mm_help>
+  </couponcode_applied_message>
+  <couponcode_removed_message>
+    <mm_type>message</mm_type>
+    <mm_label>Coupon code verwijderd</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Coupon code verwijderd</mm_text>
+    <mm_help>Coupon code verwijderd</mm_help>
+  </couponcode_removed_message>
+  <choose_payment_method_error>
+    <mm_type>message</mm_type>
+    <mm_label>Kies betalingsmethode</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kies betalingsmethode</mm_text>
+    <mm_help>Kies betalingsmethode</mm_help>
+  </choose_payment_method_error>
+  <account_already_exists>
+    <mm_type>message</mm_type>
+    <mm_label>Account bestaat al</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Account bestaat al</mm_text>
+    <mm_help>Account bestaat al</mm_help>
+  </account_already_exists>
+  <please_login_to_continue>
+    <mm_type>message</mm_type>
+    <mm_label>Gelieve in te loggen om verder te gaan</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Gelieve in te loggen om verder te gaan</mm_text>
+    <mm_help>Gelieve in te loggen om verder te gaan</mm_help>
+  </please_login_to_continue>
+  <cannot_reorder_this_order>
+    <mm_type>message</mm_type>
+    <mm_label>Kan deze volgorde niet opnieuw ordenen</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kan deze volgorde niet opnieuw ordenen</mm_text>
+    <mm_help>Kan deze volgorde niet opnieuw ordenen</mm_help>
+  </cannot_reorder_this_order>
+  <invalid_qrcode>
+    <mm_type>message</mm_type>
+    <mm_label>Ongeldige QR code</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ongeldige QR code</mm_text>
+    <mm_help>Ongeldige QR code</mm_help>
+  </invalid_qrcode>
+  <product_not_available>
+    <mm_type>message</mm_type>
+    <mm_label>Product niet beschikbaar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Product niet beschikbaar</mm_text>
+    <mm_help>Product niet beschikbaar</mm_help>
+  </product_not_available>
+  <message_agree_terms>
+    <mm_type>message</mm_type>
+    <mm_label>Ga akkoord met alle voorwaarden en condities</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ga akkoord met alle voorwaarden en condities</mm_text>
+    <mm_help>Ga akkoord met alle voorwaarden en condities</mm_help>
+  </message_agree_terms>
+  <invalid_data>
+    <mm_type>message</mm_type>
+    <mm_label>Onjuiste data</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Onjuiste data</mm_text>
+    <mm_help>Onjuiste data</mm_help>
+  </invalid_data>
+  <address_save_error>
+    <mm_type>message</mm_type>
+    <mm_label>Kan niet adres opslaan</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kan niet adres opslaan</mm_text>
+    <mm_help>Kan niet adres opslaan</mm_help>
+  </address_save_error>
+  <account_not_found_error>
+    <mm_type>message</mm_type>
+    <mm_label>Geen account bestaat met een opgegeven e-mailadres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geen account bestaat met een opgegeven e-mailadres</mm_text>
+    <mm_help>Geen account bestaat met een opgegeven e-mailadres</mm_help>
+  </account_not_found_error>
+  <wishlist_not_found_error>
+    <mm_type>message</mm_type>
+    <mm_label>Geen wishlist gevonden</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Geen wishlist gevonden</mm_text>
+    <mm_help>Geen wishlist gevonden</mm_help>
+  </wishlist_not_found_error>
+  <products_found>
+    <mm_type>message</mm_type>
+    <mm_label>producten gevonden</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>producten gevonden</mm_text>
+    <mm_help>producten gevonden</mm_help>
+  </products_found>
+</mobicommerce_multilanguage>

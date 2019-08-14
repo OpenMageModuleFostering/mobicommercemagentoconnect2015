@@ -1,0 +1,88 @@
+<?php
+	$applicationData = Mage::registry('application_data');
+	$applicationCode = $applicationData->getAppCode();
+	$themeName = Mage::helper('mobiadmin3')->getThemeName($applicationCode);
+	$file_personalizer_parent = Mage::getBaseDir(Mage_Core_Model_Store::URL_TYPE_MEDIA).'/mobi_assets/v/'.Mage::helper('mobiadmin3')->getMobiBaseVersion().'/theme_files/'.$themeName.'/personalizer'.'/'.'personalizer.xml';
+	$file_personalizer_child = Mage::getBaseDir('media').DS.'mobi_commerce'.DS.$applicationCode.DS.'personalizer/'.'personalizer.xml';
+	
+	if(file_exists($file_personalizer_parent)):
+	   	$code_personalizer_parent = simplexml_load_file($file_personalizer_parent) or die("Error: Cannot create object");
+	   	$code_personalizer_child = simplexml_load_file($file_personalizer_child);
+		?>
+		<div class="entry-edit">
+		    <div class="entry-edit-head">
+			    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Android <span class="app-scope">[Website]</span>')?></h4>
+			</div>
+			<div class="fieldset">
+			    <div class="hor-scroll">
+			    	<p class="guideline-text"><?php echo $this->__('Personalize color scheme of the mobile app. You have to restart the app to get reflection of the new color scheme in the app.'); ?></p>
+		            <table cellspacing="0" class="form-list">
+		                <tbody>
+		                	<input type="hidden" value="" name="change_personalizer" id="change_personalizer" />
+						    <input type="hidden" value="<?php echo $themeName;?>" name="themename" />
+						    <?php foreach($code_personalizer_parent as $option => $value): ?>
+						    	<?php if($value->group == 'android'): ?>
+								    <tr>
+									    <td class="label"><?php echo $value->title; ?></td>
+									    <td class="value">	
+										    <select name="personalizer[<?php echo $option; ?>]" onchange="changePersonalizer();">
+											    <?php
+											    foreach ($value->options->option as $value_options) {
+											    	$current_value = (string) isset($code_personalizer_child->$option->current_value) ? $code_personalizer_child->$option->current_value : '';
+											    	?>
+											    	<option value="<?php echo $value_options->value; ?>" style="background-color: <?php echo (string)$value_options->color; ?>; color: <?php echo (string)$value_options->textcolor; ?>" <?php if((string)$value_options->value == $current_value) echo "selected"; ?>><?php echo (string)$value_options->label; ?></option>
+											    	<?php
+											    }
+											    ?>
+										    </select>
+										</td>
+									</tr>
+								<?php endif; ?>
+							<?php endforeach;?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="entry-edit-head">
+			    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('iOS <span class="app-scope">[Website]</span>')?></h4>
+			</div>
+			<div class="fieldset">
+			    <div class="hor-scroll">
+		            <table cellspacing="0" class="form-list">
+		                <tbody>
+						    <?php foreach($code_personalizer_parent as $option => $value): ?>
+						    	<?php if($value->group == 'ios'): ?>
+								    <tr>
+									    <td class="label"><?php echo $value->title; ?></td>
+									    <td class="value">	
+										    <select name="personalizer[<?php echo $option; ?>]" onchange="changePersonalizer();">
+											    <?php
+											    foreach ($value->options->option as $value_options) {
+											    	$current_value = (string) isset($code_personalizer_child->$option->current_value) ? $code_personalizer_child->$option->current_value : '';
+											    	?>
+											    	<option value="<?php echo $value_options->value; ?>" style="background-color: <?php echo (string)$value_options->color; ?>; color: <?php echo (string)$value_options->textcolor; ?>" <?php if((string)$value_options->value == $current_value) echo "selected"; ?>><?php echo (string)$value_options->label; ?></option>
+											    	<?php
+											    }
+											    ?>
+										    </select>
+										</td>
+									</tr>
+								<?php endif; ?>
+							<?php endforeach;?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	<?php
+	else:
+		echo "Missing persoanlizer file";
+	endif;
+?>
+
+<script type="text/javascript">
+	function changePersonalizer() {
+		jQuery('#change_personalizer').val('1');
+	}
+</script>

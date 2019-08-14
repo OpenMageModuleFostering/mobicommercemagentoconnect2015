@@ -1,0 +1,222 @@
+<?php
+$mediaUrl         = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+$defaultSplashUrl = $mediaUrl.'mobi_assets/v/'.Mage::helper('mobiadmin3')->getMobiBaseVersion().'/defaults/splash.png';
+$defaultLogoUrl   = $mediaUrl.'mobi_assets/v/'.Mage::helper('mobiadmin3')->getMobiBaseVersion().'/defaults/logo.png';
+$defaultIconUrl   = $mediaUrl.'mobi_assets/v/'.Mage::helper('mobiadmin3')->getMobiBaseVersion().'/defaults/icon.png';
+$theme_file       = $mediaUrl.'mobi_assets/v/'.Mage::helper('mobiadmin3')->getMobiBaseVersion().'/theme_files/';
+$adminSession = Mage::getSingleton('admin/session');
+$userEmail    = $adminSession->getUser()->getEmail();
+
+?>
+<div class="content-header">
+    <table cellspacing="0" class="grid-header">
+        <tr>
+            <td><h3><?=$this->__('Create New Mobile App')?></h3></td>
+            <td class="a-right">
+                <button onclick="createappSubmit(); aftersuccess();" class="scalable save" type="button"><span><?php echo $this->__('Submit'); ?></span></button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="entry-edit" style="position:relative;">
+    <form  id="edit_form" enctype="multipart/form-data" name="edit_form" method="post" action="<?php echo $this->getUrl('*/*/createApp')?>">
+		<div class="create-app-form">
+	        <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey(); ?>" />
+			<input type="hidden" name="email" value="<?php echo $userEmail; ?>"/>
+			<input type="hidden" name="apptheme" value="shopper" />
+        	<input type="hidden" name="theme_android" value="shopper" />
+        	<input type="hidden" name="theme_ios" value="shopper" />
+			
+	        <fieldset id="my-fieldset">
+	            <table cellspacing="0" class="form-list">
+	            	<tr>
+	                    <td class="label"><?php echo $this->__('MobiCommerce Version:')?> <span class="required">*</span></td>
+	                    <td class="value">
+	                    	<select class="select" name="version_type">
+	                    		<option value="001"><?php echo $this->__('Professional'); ?></option>
+	                    		<option value="002" selected=""><?php echo $this->__('Enterprise'); ?></option>
+	                    	</select>
+	                    	<br>
+	                    	<small class="advice-content">
+	                    		<?php echo $this->__('Select MobiCommerce version which you want to use for your app. For more info check')?>&nbsp;<a style="text-transform:capitalize;" target="_blank" href="http://www.mobicommerce.net/pricing"><?php echo $this->__('MobiCommerce Packages')?></a>
+	                    	</small>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td class="label"><?php echo $this->__('App Name:')?> <span class="required">*</span></td>
+	                    <td class="value"><input class="input-text required-entry" name="appname" /></td>
+	                </tr>
+					<tr>
+	                    <td class="label"><?php echo $this->__('Default Mobile Store:')?> <span class="required">*</span></td>
+	                    <td class="value">
+							<select class="select" name="store">
+								<?php
+								foreach (Mage::app()->getWebsites() as $website) {
+									?>
+									<optgroup label="<?php echo $website->getName(); ?>">
+										<?php
+									    foreach ($website->getGroups() as $group) {
+									        ?>
+									        <option value="<?php echo $group->getGroupId(); ?>"><?php echo $group->getName(); ?></option>
+									        <?php
+									    }
+									    ?>
+								    </optgroup>
+								    <?php
+								}
+								?>
+							</select>
+							<br>
+							<small class="advice-content"><?php echo $this->__('Select the store from the dropdown for which you want to create the mobile app.')?></small>
+						</td>
+	                </tr>
+
+					<tr>
+					    <td class="label"><?php echo $this->__('Splash Screen:'); ?>
+						<br><small ><?php echo $this->__('(Height:2048, Width: 1536)'); ?></small>
+						</td>
+	                    <td class="value">
+						<input type="file" id="validate-must-be-proper-size-splash" class="validate-must-be-png validate-must-be-proper-size-splash" name="appsplash" accept="image/png" /><br>
+						<img style="margin-top:10px; border:1px solid #dfdfdf;" src="<?php echo $defaultSplashUrl; ?>" width="150" />
+						<br><small class="advice-content"><?php echo $this->__('Don\'t have splash screen ready? Don\'t worry you can preview the mobile app with a default mobilecommerce splash screen. At the time of publishing the app for users we will take the splash screen from you and add it into your mobile app.'); ?></small>
+						</td>
+					</tr>
+					<tr>
+					    <td class="label"><?php echo $this->__('Logo:'); ?></td>
+	                    <td class="value">
+						<small class="advice-content"><?php echo $this->__('Based on your app name, the logo will be generated by mobiCommerce cloud server. At the time of publishing the app, we will take the suitable logo from you and add it into your mobile app.'); ?></small>
+						</td>
+					</tr>
+					<tr>
+					    <td class="label"><?php echo $this->__('App Icon:'); ?>
+						<br><small><?php echo $this->__('(Height:1024, Width: 1024)'); ?></small></td>
+	                    <td class="value"><input id="validate-must-be-proper-size-icon" type="file" class="validate-must-be-png validate-must-be-proper-size-icon" name="appicon" accept="image/png" /><br>
+						<img style="margin-top:10px; border:1px solid #dfdfdf;" src="<?php echo $defaultIconUrl; ?>" width="150"/>
+						<br><small class="advice-content"><?php echo $this->__('Don\'t have an App icon ready? Don\'t worry you can preview the mobile app with mobilecommerce icon. At the time of publishing the app for users we will take the App icon from you and add it into your mobile app.'); ?></small>
+						</td>
+					</tr>
+					<tr>
+					    <td class="label"><?php echo $this->__('Email Address:'); ?> <span class="required">*</span></td>
+	                    <td class="value"><input class="validate-email input-text" name="primaryemail" value="<?php echo $userEmail; ?>"/>
+						<br><small><?php echo $this->__('Don\'t worry we do not spam or publish your email address, it will be solely used to create your MobiCommerce support account'); ?></small>
+						</td>
+					</tr>
+					<tr>
+					    <td class="label"><?php echo $this->__('Phone Number:'); ?> <span class="required">*</span></td>
+	                    <td class="value">
+	                    	<input class="input-text required-entry" name="phone_country_code" style="width:40px" maxlength="3" /> - 
+	                    	<input class="input-text required-entry" name="phone" style="width: 230px" />
+							<br><small><?php echo $this->__('Don\'t worry we do not share your contact number with any third party, it will be solely used to create your MobiCommerce support account'); ?></small>
+						</td>
+					</tr>
+	            </table>
+	        </fieldset>
+		</div>
+    </form>	
+	<div class="c-app"><?php echo $this->getLayout()->createBlock('core/template')->setTemplate('mobiadmin3/application/edit/tab/support.phtml')->toHtml(); ?></div>
+</div>
+<div class="custom-overlay" style="display:none"></div>
+<div class="custom-overlay-content" id="loading-mask" style="display:none">
+    <p id="loading_mask_loader" class="loader">
+	<img alt="Loading..." src="<?php echo $this->getSkinUrl('images/ajax-loader-tr.gif')?>"><br><?php echo $this->__('Please do not refresh the page, wait while we create your mobile app it will take just 2-3 minutes'); ?></p>
+</div>
+
+<script type="text/javascript">
+    var editForm = new varienForm('edit_form');	
+	Validation.add('validate-must-be-png','Please Upload Valid PNG FILE!',function(the_field_value){
+		if(checkfiletype(the_field_value) == 'png' || the_field_value =='' || checkfiletype(the_field_value) == 'PNG')
+		{
+			return true;
+		}
+		return false;
+    });
+
+	Validation.add('validate-must-be-proper-size-splash','Please Upload Splash Dimenssion Height:2048, Width: 1536 !',function(the_field_value){
+		if(the_field_value !=''){
+		if(!mobiValidationSplash)
+			return false;
+		}
+		return true;
+    });
+
+	Validation.add('validate-must-be-proper-size-icon','Please Upload Icon Dimenssion Height:1024, Width: 1024 !',function(the_field_value){
+		if(the_field_value != ''){
+		if(!mobiValidationIcon)
+			return false;
+		}
+		return true;
+    });
+
+   	function checkfiletype(filename)
+   	{
+	   	return (/[.]/.exec(filename)) ? /[^.]+$/.exec(filename) : undefined;
+   	}
+
+   	function aftersuccess()
+   	{
+	   	if (editForm.validator && editForm.validator.validate())   
+	   	{
+		  	jQuery('.custom-overlay').show();
+		  	jQuery('#loading-mask.custom-overlay-content').show();
+	   	}
+   	}
+
+	var mobiValidationSplash = true;
+	var mobiValidationIcon = true;
+	jQuery(function() {
+		jQuery(".theme-gallery").fancybox({
+			openEffect	: 'none',
+			closeEffect	: 'none'
+		});
+
+		var _URL = window.URL || window.webkitURL;
+		jQuery("#validate-must-be-proper-size-splash").change(function (e) {
+			var file, img;
+			if ((file = this.files[0])) {
+				img = new Image();
+				img.onload = function () {
+					if(this.width != 1536 || this.height != 2048)
+						mobiValidationSplash = false;
+					else
+						mobiValidationSplash = true;
+				};
+				img.src = _URL.createObjectURL(file);
+			}
+		});
+
+		jQuery("#validate-must-be-proper-size-icon").change(function (e) {
+			var file, img;
+			if ((file = this.files[0])) {
+				img = new Image();
+				img.onload = function () {
+					if(this.width != 1024 || this.height != 1024)
+						mobiValidationIcon = false;
+					else
+						mobiValidationIcon = true;
+				};
+				img.src = _URL.createObjectURL(file);
+			}
+		});
+	});
+
+	jQuery('.theme-preview').click(function(e) {
+	    var el, id = jQuery(this).data('open-id');
+	    if(id){
+	        el = jQuery('.theme-gallery[rel=' + id + ']:eq(0)');
+	        e.preventDefault();
+	        el.click();
+	    }
+	});
+
+	function createappSubmit()
+	{
+		if(editForm.validator && editForm.validator.validate())   
+	   	{
+		    jQuery('#edit_form').find('input[type=file]').each(function(){
+		        var file = jQuery(this);
+		        if (file.val() == "") file.remove();
+		    });
+		  	editForm.submit();
+	   	}
+	}
+</script>

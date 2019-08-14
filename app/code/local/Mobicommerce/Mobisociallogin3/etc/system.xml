@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <mobicommerce3 translate="label">
+            <label>MobiCommerce 3.0 Extension</label>
+            <sort_order>400</sort_order>
+        </mobicommerce3>
+    </tabs>
+	<sections>
+        <mobisociallogin3 translate="label" module="mobiadmin3">
+            <class>separator-top</class>
+            <label>Social Login</label>
+            <tab>mobicommerce3</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>300</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <fblogin translate="label">
+                    <label>Facebook Login Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <is_active translate="label">
+                            <label>Active</label>
+                            <frontend_type>select</frontend_type>              
+                            <source_model>adminhtml/system_config_source_yesno</source_model>              
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_active>
+                        <title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <app_id translate="label">
+                            <label>App ID</label>
+                            <frontend_type>text</frontend_type>              
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[<a href="http://developers.facebook.com/setup/" target="_bank">Register</a>]]></comment>
+                        </app_id>
+                        <app_name translate="label">
+                            <label>App name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>App name on facebook</comment>
+                        </app_name>
+                        <sort_order translate="label">
+                            <label>Sort Order</label>
+                            <frontend_type>text</frontend_type>                      
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sort_order>
+                    </fields>
+                </fblogin>
+				<gologin translate="label">
+                    <label>Google Login Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<is_active translate="label">
+                            <label>Active</label>
+                            <frontend_type>select</frontend_type>              
+                            <source_model>adminhtml/system_config_source_yesno</source_model>              
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_active>
+                        <title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <sha1key translate="label">
+                            <label>SHA1 Key</label>
+                            <frontend_type>text</frontend_type>              
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </sha1key>
+						<consumer_key translate="label">
+                            <label>Client ID</label>
+                            <frontend_type>text</frontend_type>              
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment><![CDATA[<a href="https://developers.google.com/identity/sign-in/android/start" target="_bank">Register</a>]]></comment>
+                        </consumer_key>
+						<sort_order translate="label">
+							<label>Sort Order</label>
+                            <frontend_type>text</frontend_type>                      
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</sort_order>
+					</fields>
+				</gologin>
+            </groups>
+        </mobisociallogin3>  
+    </sections>
+</config>

@@ -1,0 +1,1872 @@
+<?xml version="1.0"?>
+<mobicommerce_multilanguage>
+  <no_internet_connection>
+    <mm_type>label</mm_type>
+    <mm_label>&#x130;nternet ba&#x11F;lant&#x131;s&#x131; yok</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;nternet ba&#x11F;lant&#x131;s&#x131; yok</mm_text>
+    <mm_help>&#x130;nternet ba&#x11F;lant&#x131;s&#x131; yok</mm_help>
+  </no_internet_connection>
+  <oops>
+    <mm_type>label</mm_type>
+    <mm_label>Hata! bir &#x15F;eyler yanl&#x131;&#x15F; gitti.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Hata! bir &#x15F;eyler yanl&#x131;&#x15F; gitti.</mm_text>
+    <mm_help>Hata! bir &#x15F;eyler yanl&#x131;&#x15F; gitti.</mm_help>
+  </oops>
+  <saved_addresses>
+    <mm_type>label</mm_type>
+    <mm_label>KAYDED&#x130;LEN ADRESLER</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>KAYDED&#x130;LEN ADRESLER</mm_text>
+    <mm_help>KAYDED&#x130;LEN ADRESLER</mm_help>
+  </saved_addresses>
+  <add_new>
+    <mm_type>label</mm_type>
+    <mm_label>Adres Ekle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adres Ekle</mm_text>
+    <mm_help>Adres Ekle</mm_help>
+  </add_new>
+  <edit_address>
+    <mm_type>label</mm_type>
+    <mm_label>Adres D&#xFC;zenle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adres D&amp;uuml;zenle</mm_text>
+    <mm_help>Adres D&amp;uuml;zenle</mm_help>
+  </edit_address>
+  <cancel>
+    <mm_type>label</mm_type>
+    <mm_label>&#x130;ptal etmek</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;ptal etmek</mm_text>
+    <mm_help>&#x130;ptal etmek</mm_help>
+  </cancel>
+  <firstname>
+    <mm_type>label</mm_type>
+    <mm_label>&#x130;sim</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;sim</mm_text>
+    <mm_help>&#x130;sim</mm_help>
+  </firstname>
+  <lastname>
+    <mm_type>label</mm_type>
+    <mm_label>Soyad&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Soyad&#x131;</mm_text>
+    <mm_help>Soyad&#x131;</mm_help>
+  </lastname>
+  <address>
+    <mm_type>label</mm_type>
+    <mm_label>Adres</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adres</mm_text>
+    <mm_help>Adres</mm_help>
+  </address>
+  <landmark>
+    <mm_type>label</mm_type>
+    <mm_label>Simgesel Yap&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Simgesel Yap&#x131;</mm_text>
+    <mm_help>Simgesel Yap&#x131;</mm_help>
+  </landmark>
+  <city>
+    <mm_type>label</mm_type>
+    <mm_label>&#x15E;ehir</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x15E;ehir</mm_text>
+    <mm_help>&#x15E;ehir</mm_help>
+  </city>
+  <state>
+    <mm_type>label</mm_type>
+    <mm_label>Belirtmek, bildirmek</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Belirtmek, bildirmek</mm_text>
+    <mm_help>Belirtmek, bildirmek</mm_help>
+  </state>
+  <country>
+    <mm_type>label</mm_type>
+    <mm_label>&#xDC;lke</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Uuml;lke</mm_text>
+    <mm_help>&amp;Uuml;lke</mm_help>
+  </country>
+  <pincode>
+    <mm_type>label</mm_type>
+    <mm_label>Pin kod</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Pin kod</mm_text>
+    <mm_help>Pin kod</mm_help>
+  </pincode>
+  <telephone>
+    <mm_type>label</mm_type>
+    <mm_label>Telefon</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Telefon</mm_text>
+    <mm_help>Telefon</mm_help>
+  </telephone>
+  <mark_as_default_billing>
+    <mm_type>label</mm_type>
+    <mm_label>Varsay&#x131;lan Faturaland&#x131;rma Olarak &#x130;&#x15F;aretle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Varsay&#x131;lan Faturaland&#x131;rma Olarak &#x130;&#x15F;aretle</mm_text>
+    <mm_help>Varsay&#x131;lan Faturaland&#x131;rma Olarak &#x130;&#x15F;aretle</mm_help>
+  </mark_as_default_billing>
+  <mark_as_default_shipping>
+    <mm_type>label</mm_type>
+    <mm_label>Varsay&#x131;lan Nakliye olarak i&#x15F;aretle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Varsay&#x131;lan Nakliye olarak i&#x15F;aretle</mm_text>
+    <mm_help>Varsay&#x131;lan Nakliye olarak i&#x15F;aretle</mm_help>
+  </mark_as_default_shipping>
+  <agreements>
+    <mm_type>label</mm_type>
+    <mm_label>Anla&#x15F;malar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Anla&#x15F;malar</mm_text>
+    <mm_help>Anla&#x15F;malar</mm_help>
+  </agreements>
+  <continue>
+    <mm_type>label</mm_type>
+    <mm_label>Devam et</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Devam et</mm_text>
+    <mm_help>Devam et</mm_help>
+  </continue>
+  <billing_address>
+    <mm_type>label</mm_type>
+    <mm_label>Fatura Adresi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Fatura Adresi</mm_text>
+    <mm_help>Fatura Adresi</mm_help>
+  </billing_address>
+  <change>
+    <mm_type>label</mm_type>
+    <mm_label>De&#x11F;i&#x15F;iklik</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>De&#x11F;i&#x15F;iklik</mm_text>
+    <mm_help>De&#x11F;i&#x15F;iklik</mm_help>
+  </change>
+  <shipping_address>
+    <mm_type>label</mm_type>
+    <mm_label>teslimat adresi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>teslimat adresi</mm_text>
+    <mm_help>teslimat adresi</mm_help>
+  </shipping_address>
+  <email>
+    <mm_type>label</mm_type>
+    <mm_label>E</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>E</mm_text>
+    <mm_help>E</mm_help>
+  </email>
+  <date_of_birth>
+    <mm_type>label</mm_type>
+    <mm_label>Do&#x11F;um tarihi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Do&#x11F;um tarihi</mm_text>
+    <mm_help>Do&#x11F;um tarihi</mm_help>
+  </date_of_birth>
+  <gender>
+    <mm_type>label</mm_type>
+    <mm_label>Cinsiyet</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Cinsiyet</mm_text>
+    <mm_help>Cinsiyet</mm_help>
+  </gender>
+  <taxvat_number>
+    <mm_type>label</mm_type>
+    <mm_label>Vergi Numaras&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Vergi Numaras&#x131;</mm_text>
+    <mm_help>Vergi Numaras&#x131;</mm_help>
+  </taxvat_number>
+  <same_as_billing>
+    <mm_type>label</mm_type>
+    <mm_label>Faturaland&#x131;rma ile Ayn&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Faturaland&#x131;rma ile Ayn&#x131;</mm_text>
+    <mm_help>Faturaland&#x131;rma ile Ayn&#x131;</mm_help>
+  </same_as_billing>
+  <choose>
+    <mm_type>label</mm_type>
+    <mm_label>Se&#xE7;mek</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Se&amp;ccedil;mek</mm_text>
+    <mm_help>Se&amp;ccedil;mek</mm_help>
+  </choose>
+  <choose_an_option>
+    <mm_type>label</mm_type>
+    <mm_label>Bir Se&#xE7;enek Se&#xE7;iniz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bir Se&amp;ccedil;enek Se&amp;ccedil;iniz</mm_text>
+    <mm_help>Bir Se&amp;ccedil;enek Se&amp;ccedil;iniz</mm_help>
+  </choose_an_option>
+  <choose_address>
+    <mm_type>label</mm_type>
+    <mm_label>Adres Se&#xE7;iniz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adres Se&amp;ccedil;iniz</mm_text>
+    <mm_help>Adres Se&amp;ccedil;iniz</mm_help>
+  </choose_address>
+  <checkout>
+    <mm_type>label</mm_type>
+    <mm_label>&#xC7;&#x131;k&#x131;&#x15F; yapmak</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ccedil;&#x131;k&#x131;&#x15F; yapmak</mm_text>
+    <mm_help>&amp;Ccedil;&#x131;k&#x131;&#x15F; yapmak</mm_help>
+  </checkout>
+  <move_to_wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>Dilek listesine ta&#x15F;&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Dilek listesine ta&#x15F;&#x131;</mm_text>
+    <mm_help>Dilek listesine ta&#x15F;&#x131;</mm_help>
+  </move_to_wishlist>
+  <remove>
+    <mm_type>label</mm_type>
+    <mm_label>Kald&#x131;r</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kald&#x131;r</mm_text>
+    <mm_help>Kald&#x131;r</mm_help>
+  </remove>
+  <offers>
+    <mm_type>label</mm_type>
+    <mm_label>&#x130;kramiye kuponu ve teklifler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;kramiye kuponu ve teklifler</mm_text>
+    <mm_help>&#x130;kramiye kuponu ve teklifler</mm_help>
+  </offers>
+  <applied_promo_code>
+    <mm_type>label</mm_type>
+    <mm_label>Promosyon Kodunu Uygula</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Promosyon Kodunu Uygula</mm_text>
+    <mm_help>Promosyon Kodunu Uygula</mm_help>
+  </applied_promo_code>
+  <promo_code>
+    <mm_type>label</mm_type>
+    <mm_label>Promosyon kodu</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Promosyon kodu</mm_text>
+    <mm_help>Promosyon kodu</mm_help>
+  </promo_code>
+  <apply>
+    <mm_type>label</mm_type>
+    <mm_label>Uygulamak</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Uygulamak</mm_text>
+    <mm_help>Uygulamak</mm_help>
+  </apply>
+  <get_a_quote>
+    <mm_type>label</mm_type>
+    <mm_label>Al&#x131;nt&#x131; Yap</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Al&#x131;nt&#x131; Yap</mm_text>
+    <mm_help>Al&#x131;nt&#x131; Yap</mm_help>
+  </get_a_quote>
+  <update_total>
+    <mm_type>label</mm_type>
+    <mm_label>Toplam&#x131; G&#xFC;ncelle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Toplam&#x131; G&amp;uuml;ncelle</mm_text>
+    <mm_help>Toplam&#x131; G&amp;uuml;ncelle</mm_help>
+  </update_total>
+  <price_details>
+    <mm_type>label</mm_type>
+    <mm_label>Fiyat Detaylar&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Fiyat Detaylar&#x131;</mm_text>
+    <mm_help>Fiyat Detaylar&#x131;</mm_help>
+  </price_details>
+  <subtotal>
+    <mm_type>label</mm_type>
+    <mm_label>Ara toplam</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ara toplam</mm_text>
+    <mm_help>Ara toplam</mm_help>
+  </subtotal>
+  <shipping_and_handling>
+    <mm_type>label</mm_type>
+    <mm_label>Nakliye Y&#xF6;ntemi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Nakliye Y&amp;ouml;ntemi</mm_text>
+    <mm_help>Nakliye Y&amp;ouml;ntemi</mm_help>
+  </shipping_and_handling>
+  <tax>
+    <mm_type>label</mm_type>
+    <mm_label>Vergi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Vergi</mm_text>
+    <mm_help>Vergi</mm_help>
+  </tax>
+  <discount>
+    <mm_type>label</mm_type>
+    <mm_label>&#x130;ndirim</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;ndirim</mm_text>
+    <mm_help>&#x130;ndirim</mm_help>
+  </discount>
+  <amount_payable>
+    <mm_type>label</mm_type>
+    <mm_label>&#xD6;denecek tutar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ouml;denecek tutar</mm_text>
+    <mm_help>&amp;Ouml;denecek tutar</mm_help>
+  </amount_payable>
+  <safe_secure_payment>
+    <mm_type>label</mm_type>
+    <mm_label>% 100 G&#xFC;venli ve G&#xFC;venli &#xD6;demeler. Kolay d&#xF6;n&#xFC;&#x15F;ler. % 100 orijinal &#xFC;r&#xFC;nler.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>% 100 G&amp;uuml;venli ve G&amp;uuml;venli &amp;Ouml;demeler. Kolay d&amp;ouml;n&amp;uuml;&#x15F;ler. % 100 orijinal &amp;uuml;r&amp;uuml;nler.</mm_text>
+    <mm_help>% 100 G&amp;uuml;venli ve G&amp;uuml;venli &amp;Ouml;demeler. Kolay d&amp;ouml;n&amp;uuml;&#x15F;ler. % 100 orijinal &amp;uuml;r&amp;uuml;nler.</mm_help>
+  </safe_secure_payment>
+  <view_all>
+    <mm_type>label</mm_type>
+    <mm_label>Hepsini g&#xF6;r</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Hepsini g&amp;ouml;r</mm_text>
+    <mm_help>Hepsini g&amp;ouml;r</mm_help>
+  </view_all>
+  <all_products>
+    <mm_type>label</mm_type>
+    <mm_label>T&#xFC;m &#xFC;r&#xFC;nler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>T&amp;uuml;m &amp;uuml;r&amp;uuml;nler</mm_text>
+    <mm_help>T&amp;uuml;m &amp;uuml;r&amp;uuml;nler</mm_help>
+  </all_products>
+  <add_new_address>
+    <mm_type>label</mm_type>
+    <mm_label>Yeni adres ekleyin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Yeni adres ekleyin</mm_text>
+    <mm_help>Yeni adres ekleyin</mm_help>
+  </add_new_address>
+  <place_order>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F; Vermek</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F; Vermek</mm_text>
+    <mm_help>Sipari&#x15F; Vermek</mm_help>
+  </place_order>
+  <review_your_order>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F;inizi &#x130;nceleme ve Sipari&#x15F;inizi Verme</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F;inizi &#x130;nceleme ve Sipari&#x15F;inizi Verme</mm_text>
+    <mm_help>Sipari&#x15F;inizi &#x130;nceleme ve Sipari&#x15F;inizi Verme</mm_help>
+  </review_your_order>
+  <payment_method>
+    <mm_type>label</mm_type>
+    <mm_label>&#xD6;deme &#x15F;ekli</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ouml;deme &#x15F;ekli</mm_text>
+    <mm_help>&amp;Ouml;deme &#x15F;ekli</mm_help>
+  </payment_method>
+  <items>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F; &#xDC;r&#xFC;nleri</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F; &amp;Uuml;r&amp;uuml;nleri</mm_text>
+    <mm_help>Sipari&#x15F; &amp;Uuml;r&amp;uuml;nleri</mm_help>
+  </items>
+  <qty>
+    <mm_type>label</mm_type>
+    <mm_label>Miktar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Miktar</mm_text>
+    <mm_help>Miktar</mm_help>
+  </qty>
+  <price>
+    <mm_type>label</mm_type>
+    <mm_label>Fiyat</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Fiyat</mm_text>
+    <mm_help>Fiyat</mm_help>
+  </price>
+  <continue_shopping>
+    <mm_type>label</mm_type>
+    <mm_label>Al&#x131;&#x15F;veri&#x15F;e devam</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Al&#x131;&#x15F;veri&#x15F;e devam</mm_text>
+    <mm_help>Al&#x131;&#x15F;veri&#x15F;e devam</mm_help>
+  </continue_shopping>
+  <order_placed_label>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F;inizin ayr&#x131;nt&#x131;lar&#x131;n&#x131; i&#xE7;eren bir sipari&#x15F; onay e-postas&#x131; alacaks&#x131;n&#x131;z</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F;inizin ayr&#x131;nt&#x131;lar&#x131;n&#x131; i&amp;ccedil;eren bir sipari&#x15F; onay e-postas&#x131; alacaks&#x131;n&#x131;z</mm_text>
+    <mm_help>Sipari&#x15F;inizin ayr&#x131;nt&#x131;lar&#x131;n&#x131; i&amp;ccedil;eren bir sipari&#x15F; onay e-postas&#x131; alacaks&#x131;n&#x131;z</mm_help>
+  </order_placed_label>
+  <thank_you>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F; Yerle&#x15F;tirildi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F; Yerle&#x15F;tirildi</mm_text>
+    <mm_help>Sipari&#x15F; Yerle&#x15F;tirildi</mm_help>
+  </thank_you>
+  <order_summary>
+    <mm_type>label</mm_type>
+    <mm_label>sipari&#x15F; &#xF6;zeti</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>sipari&#x15F; &amp;ouml;zeti</mm_text>
+    <mm_help>sipari&#x15F; &amp;ouml;zeti</mm_help>
+  </order_summary>
+  <order_ref_no>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F; Ref No</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F; Ref No</mm_text>
+    <mm_help>Sipari&#x15F; Ref No</mm_help>
+  </order_ref_no>
+  <grand_total>
+    <mm_type>label</mm_type>
+    <mm_label>Genel Toplam</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Genel Toplam</mm_text>
+    <mm_help>Genel Toplam</mm_help>
+  </grand_total>
+  <delivery_address>
+    <mm_type>label</mm_type>
+    <mm_label>teslimat adresi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>teslimat adresi</mm_text>
+    <mm_help>teslimat adresi</mm_help>
+  </delivery_address>
+  <order_confirmation_label>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F; i&#x15F;leniyor.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F; i&#x15F;leniyor.</mm_text>
+    <mm_help>Sipari&#x15F; i&#x15F;leniyor.</mm_help>
+  </order_confirmation_label>
+  <proceed_to_pay>
+    <mm_type>label</mm_type>
+    <mm_label>Devam et</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Devam et</mm_text>
+    <mm_help>Devam et</mm_help>
+  </proceed_to_pay>
+  <sample_links>
+    <mm_type>label</mm_type>
+    <mm_label>&#xD6;rnek Ba&#x11F;lant&#x131;lar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ouml;rnek Ba&#x11F;lant&#x131;lar</mm_text>
+    <mm_help>&amp;Ouml;rnek Ba&#x11F;lant&#x131;lar</mm_help>
+  </sample_links>
+  <downloadable_link>
+    <mm_type>label</mm_type>
+    <mm_label>&#x130;ndirilebilir Ba&#x11F;lant&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;ndirilebilir Ba&#x11F;lant&#x131;</mm_text>
+    <mm_help>&#x130;ndirilebilir Ba&#x11F;lant&#x131;</mm_help>
+  </downloadable_link>
+  <oh_dear_its_empty_here>
+    <mm_type>label</mm_type>
+    <mm_label>Kay&#x131;tl&#x131; Adres Yok</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kay&#x131;tl&#x131; Adres Yok</mm_text>
+    <mm_help>Kay&#x131;tl&#x131; Adres Yok</mm_help>
+  </oh_dear_its_empty_here>
+  <to_add_address_tap_plus_button>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F;lerinizi daha h&#x131;zl&#x131; vermek i&#xE7;in teslim yerinizi kaydedin!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F;lerinizi daha h&#x131;zl&#x131; vermek i&amp;ccedil;in teslim yerinizi kaydedin!</mm_text>
+    <mm_help>Sipari&#x15F;lerinizi daha h&#x131;zl&#x131; vermek i&amp;ccedil;in teslim yerinizi kaydedin!</mm_help>
+  </to_add_address_tap_plus_button>
+  <add_address>
+    <mm_type>label</mm_type>
+    <mm_label>Adres Ekle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adres Ekle</mm_text>
+    <mm_help>Adres Ekle</mm_help>
+  </add_address>
+  <your_cart_is_empty>
+    <mm_type>label</mm_type>
+    <mm_label>Sepetiniz bo&#x15F;!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sepetiniz bo&#x15F;!</mm_text>
+    <mm_help>Sepetiniz bo&#x15F;!</mm_help>
+  </your_cart_is_empty>
+  <you_dont_have_items_in_your_cart>
+    <mm_type>label</mm_type>
+    <mm_label>&#x15E;imdi &#xF6;&#x11F;eler ekleyin.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x15E;imdi &amp;ouml;&#x11F;eler ekleyin.</mm_text>
+    <mm_help>&#x15E;imdi &amp;ouml;&#x11F;eler ekleyin.</mm_help>
+  </you_dont_have_items_in_your_cart>
+  <shop_now>
+    <mm_type>label</mm_type>
+    <mm_label>&#x15E;imdi sat&#x131;n al</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x15E;imdi sat&#x131;n al</mm_text>
+    <mm_help>&#x15E;imdi sat&#x131;n al</mm_help>
+  </shop_now>
+  <nothing_here>
+    <mm_type>label</mm_type>
+    <mm_label>Yeni Bildirim Yok</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Yeni Bildirim Yok</mm_text>
+    <mm_help>Yeni Bildirim Yok</mm_help>
+  </nothing_here>
+  <we_will_let_you_know>
+    <mm_type>label</mm_type>
+    <mm_label>Sana bir &#x15F;ey buldu&#x11F;umuzda sana haber veririz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sana bir &#x15F;ey buldu&#x11F;umuzda sana haber veririz</mm_text>
+    <mm_help>Sana bir &#x15F;ey buldu&#x11F;umuzda sana haber veririz</mm_help>
+  </we_will_let_you_know>
+  <notification_settings>
+    <mm_type>label</mm_type>
+    <mm_label>Bildirim ayarlar&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bildirim ayarlar&#x131;</mm_text>
+    <mm_help>Bildirim ayarlar&#x131;</mm_help>
+  </notification_settings>
+  <go_to_home>
+    <mm_type>label</mm_type>
+    <mm_label>Eve gitmek</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Eve gitmek</mm_text>
+    <mm_help>Eve gitmek</mm_help>
+  </go_to_home>
+  <you_can_keep_track_of_orders>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F;leri takip edebilirsiniz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F;leri takip edebilirsiniz</mm_text>
+    <mm_help>Sipari&#x15F;leri takip edebilirsiniz</mm_help>
+  </you_can_keep_track_of_orders>
+  <no_products_found>
+    <mm_type>label</mm_type>
+    <mm_label>Hi&#xE7;bir &#xFC;r&#xFC;n bulunamad&#x131;!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Hi&amp;ccedil;bir &amp;uuml;r&amp;uuml;n bulunamad&#x131;!</mm_text>
+    <mm_help>Hi&amp;ccedil;bir &amp;uuml;r&amp;uuml;n bulunamad&#x131;!</mm_help>
+  </no_products_found>
+  <we_could_not_find_product>
+    <mm_type>label</mm_type>
+    <mm_label>Sorgunuz i&#xE7;in hi&#xE7;bir &#xFC;r&#xFC;n bulam&#x131;yoruz. Arama sorgunuzu / anahtar kelimenizi ayarlaman&#x131;z gerekir.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sorgunuz i&amp;ccedil;in hi&amp;ccedil;bir &amp;uuml;r&amp;uuml;n bulam&#x131;yoruz. Arama sorgunuzu / anahtar kelimenizi ayarlaman&#x131;z gerekir.</mm_text>
+    <mm_help>Sorgunuz i&amp;ccedil;in hi&amp;ccedil;bir &amp;uuml;r&amp;uuml;n bulam&#x131;yoruz. Arama sorgunuzu / anahtar kelimenizi ayarlaman&#x131;z gerekir.</mm_help>
+  </we_could_not_find_product>
+  <your_wishlist_is_empty>
+    <mm_type>label</mm_type>
+    <mm_label>&#x130;stek listeniz bo&#x15F;!</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;stek listeniz bo&#x15F;!</mm_text>
+    <mm_help>&#x130;stek listeniz bo&#x15F;!</mm_help>
+  </your_wishlist_is_empty>
+  <explore_more>
+    <mm_type>label</mm_type>
+    <mm_label>Baz&#x131; &#xF6;&#x11F;elere daha fazla ve k&#x131;sa listeye bakma</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Baz&#x131; &amp;ouml;&#x11F;elere daha fazla ve k&#x131;sa listeye bakma</mm_text>
+    <mm_help>Baz&#x131; &amp;ouml;&#x11F;elere daha fazla ve k&#x131;sa listeye bakma</mm_help>
+  </explore_more>
+  <start_exploring>
+    <mm_type>label</mm_type>
+    <mm_label>Ke&#x15F;fi etmeye ba&#x15F;la</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ke&#x15F;fi etmeye ba&#x15F;la</mm_text>
+    <mm_help>Ke&#x15F;fi etmeye ba&#x15F;la</mm_help>
+  </start_exploring>
+  <sort>
+    <mm_type>label</mm_type>
+    <mm_label>&#xC7;e&#x15F;it</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ccedil;e&#x15F;it</mm_text>
+    <mm_help>&amp;Ccedil;e&#x15F;it</mm_help>
+  </sort>
+  <filters>
+    <mm_type>label</mm_type>
+    <mm_label>Filtreler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Filtreler</mm_text>
+    <mm_help>Filtreler</mm_help>
+  </filters>
+  <masonry_view>
+    <mm_type>label</mm_type>
+    <mm_label>Izgara G&#xF6;r&#xFC;n&#xFC;m&#xFC;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Izgara G&amp;ouml;r&amp;uuml;n&amp;uuml;m&amp;uuml;</mm_text>
+    <mm_help>Izgara G&amp;ouml;r&amp;uuml;n&amp;uuml;m&amp;uuml;</mm_help>
+  </masonry_view>
+  <grid_view>
+    <mm_type>label</mm_type>
+    <mm_label>Izgara G&#xF6;r&#xFC;n&#xFC;m&#xFC;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Izgara G&amp;ouml;r&amp;uuml;n&amp;uuml;m&amp;uuml;</mm_text>
+    <mm_help>Izgara G&amp;ouml;r&amp;uuml;n&amp;uuml;m&amp;uuml;</mm_help>
+  </grid_view>
+  <list_view>
+    <mm_type>label</mm_type>
+    <mm_label>Liste g&#xF6;r&#xFC;n&#xFC;m&#xFC;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Liste g&amp;ouml;r&amp;uuml;n&amp;uuml;m&amp;uuml;</mm_text>
+    <mm_help>Liste g&amp;ouml;r&amp;uuml;n&amp;uuml;m&amp;uuml;</mm_help>
+  </list_view>
+  <full_view>
+    <mm_type>label</mm_type>
+    <mm_label>Tam g&#xF6;r&#xFC;nt&#xFC;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Tam g&amp;ouml;r&amp;uuml;nt&amp;uuml;</mm_text>
+    <mm_help>Tam g&amp;ouml;r&amp;uuml;nt&amp;uuml;</mm_help>
+  </full_view>
+  <search_placeholder>
+    <mm_type>label</mm_type>
+    <mm_label>Anahtar kelimenizi giriniz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Anahtar kelimenizi giriniz</mm_text>
+    <mm_help>Anahtar kelimenizi giriniz</mm_help>
+  </search_placeholder>
+  <search_product>
+    <mm_type>label</mm_type>
+    <mm_label>&#xDC;r&#xFC;n&#xFC; Ara</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Uuml;r&amp;uuml;n&amp;uuml; Ara</mm_text>
+    <mm_help>&amp;Uuml;r&amp;uuml;n&amp;uuml; Ara</mm_help>
+  </search_product>
+  <welcome>
+    <mm_type>label</mm_type>
+    <mm_label>Ho&#x15F;geldiniz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ho&#x15F;geldiniz</mm_text>
+    <mm_help>Ho&#x15F;geldiniz</mm_help>
+  </welcome>
+  <login_signup>
+    <mm_type>label</mm_type>
+    <mm_label>Oturum a&#xE7;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Oturum a&amp;ccedil;</mm_text>
+    <mm_help>Oturum a&amp;ccedil;</mm_help>
+  </login_signup>
+  <view_more>
+    <mm_type>label</mm_type>
+    <mm_label>Daha fazla g&#xF6;ster</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Daha fazla g&amp;ouml;ster</mm_text>
+    <mm_help>Daha fazla g&amp;ouml;ster</mm_help>
+  </view_more>
+  <info>
+    <mm_type>label</mm_type>
+    <mm_label>Hakk&#x131;m&#x131;zda</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Hakk&#x131;m&#x131;zda</mm_text>
+    <mm_help>Hakk&#x131;m&#x131;zda</mm_help>
+  </info>
+  <call_us>
+    <mm_type>label</mm_type>
+    <mm_label>Bizi aray&#x131;n</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bizi aray&#x131;n</mm_text>
+    <mm_help>Bizi aray&#x131;n</mm_help>
+  </call_us>
+  <write_to_us>
+    <mm_type>label</mm_type>
+    <mm_label>Bize e-posta g&#xF6;nder</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bize e-posta g&amp;ouml;nder</mm_text>
+    <mm_help>Bize e-posta g&amp;ouml;nder</mm_help>
+  </write_to_us>
+  <rate_app>
+    <mm_type>label</mm_type>
+    <mm_label>App'&#x131; Oyla</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>App\'&#x131; Oyla</mm_text>
+    <mm_help>App\'&#x131; Oyla</mm_help>
+  </rate_app>
+  <send_app_feedback>
+    <mm_type>label</mm_type>
+    <mm_label>Uygulama Geri Bildirimi G&#xF6;nder</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Uygulama Geri Bildirimi G&amp;ouml;nder</mm_text>
+    <mm_help>Uygulama Geri Bildirimi G&amp;ouml;nder</mm_help>
+  </send_app_feedback>
+  <share_app>
+    <mm_type>label</mm_type>
+    <mm_label>Uygulamay&#x131; Payla&#x15F;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Uygulamay&#x131; Payla&#x15F;</mm_text>
+    <mm_help>Uygulamay&#x131; Payla&#x15F;</mm_help>
+  </share_app>
+  <follow_us>
+    <mm_type>label</mm_type>
+    <mm_label>Bizi takip et</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bizi takip et</mm_text>
+    <mm_help>Bizi takip et</mm_help>
+  </follow_us>
+  <password>
+    <mm_type>label</mm_type>
+    <mm_label>Parola</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Parola</mm_text>
+    <mm_help>Parola</mm_help>
+  </password>
+  <login>
+    <mm_type>label</mm_type>
+    <mm_label>Oturum a&#xE7;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Oturum a&amp;ccedil;</mm_text>
+    <mm_help>Oturum a&amp;ccedil;</mm_help>
+  </login>
+  <register_now>
+    <mm_type>label</mm_type>
+    <mm_label>&#x15E;imdi &#xFC;ye Ol</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x15E;imdi &amp;uuml;ye Ol</mm_text>
+    <mm_help>&#x15E;imdi &amp;uuml;ye Ol</mm_help>
+  </register_now>
+  <forgot_password>
+    <mm_type>label</mm_type>
+    <mm_label>Parolan&#x131;z&#x131; m&#x131; unuttunuz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Parolan&#x131;z&#x131; m&#x131; unuttunuz</mm_text>
+    <mm_help>Parolan&#x131;z&#x131; m&#x131; unuttunuz</mm_help>
+  </forgot_password>
+  <male>
+    <mm_type>label</mm_type>
+    <mm_label>Erkek</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Erkek</mm_text>
+    <mm_help>Erkek</mm_help>
+  </male>
+  <female>
+    <mm_type>label</mm_type>
+    <mm_label>Kad&#x131;n</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kad&#x131;n</mm_text>
+    <mm_help>Kad&#x131;n</mm_help>
+  </female>
+  <already_have_account>
+    <mm_type>label</mm_type>
+    <mm_label>Mevcut kullan&#x131;c&#x131;?</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mevcut kullan&#x131;c&#x131;?</mm_text>
+    <mm_help>Mevcut kullan&#x131;c&#x131;?</mm_help>
+  </already_have_account>
+  <submit>
+    <mm_type>label</mm_type>
+    <mm_label>G&#xF6;nder</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>G&amp;ouml;nder</mm_text>
+    <mm_help>G&amp;ouml;nder</mm_help>
+  </submit>
+  <or_login_with>
+    <mm_type>label</mm_type>
+    <mm_label>Veya Giri&#x15F; Yap&#x131;n</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Veya Giri&#x15F; Yap&#x131;n</mm_text>
+    <mm_help>Veya Giri&#x15F; Yap&#x131;n</mm_help>
+  </or_login_with>
+  <checkout_as_guest>
+    <mm_type>label</mm_type>
+    <mm_label>&#xD6;deme Misafir olarak</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ouml;deme Misafir olarak</mm_text>
+    <mm_help>&amp;Ouml;deme Misafir olarak</mm_help>
+  </checkout_as_guest>
+  <order_history>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F;lerim</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F;lerim</mm_text>
+    <mm_help>Sipari&#x15F;lerim</mm_help>
+  </order_history>
+  <wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>Be&#x11F;enilenler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Be&#x11F;enilenler</mm_text>
+    <mm_help>Be&#x11F;enilenler</mm_help>
+  </wishlist>
+  <address_book>
+    <mm_type>label</mm_type>
+    <mm_label>Adres defteri</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adres defteri</mm_text>
+    <mm_help>Adres defteri</mm_help>
+  </address_book>
+  <change_password>
+    <mm_type>label</mm_type>
+    <mm_label>&#x15E;ifre de&#x11F;i&#x15F;tir</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x15E;ifre de&#x11F;i&#x15F;tir</mm_text>
+    <mm_help>&#x15E;ifre de&#x11F;i&#x15F;tir</mm_help>
+  </change_password>
+  <preferences>
+    <mm_type>label</mm_type>
+    <mm_label>Tercihler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Tercihler</mm_text>
+    <mm_help>Tercihler</mm_help>
+  </preferences>
+  <logout>
+    <mm_type>label</mm_type>
+    <mm_label>&#xC7;&#x131;k&#x131;&#x15F; Yap</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ccedil;&#x131;k&#x131;&#x15F; Yap</mm_text>
+    <mm_help>&amp;Ccedil;&#x131;k&#x131;&#x15F; Yap</mm_help>
+  </logout>
+  <check_internet_connection_label>
+    <mm_type>label</mm_type>
+    <mm_label>Cihaz&#x131;n&#x131;z&#x131;n &#x130;nternet ba&#x11F;lant&#x131;s&#x131;na ba&#x11F;l&#x131; olup olmad&#x131;&#x11F;&#x131;n&#x131; kontrol edin (bir mobil &#x15F;ebeke veya WiFi)</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Cihaz&#x131;n&#x131;z&#x131;n &#x130;nternet ba&#x11F;lant&#x131;s&#x131;na ba&#x11F;l&#x131; olup olmad&#x131;&#x11F;&#x131;n&#x131; kontrol edin (bir mobil &#x15F;ebeke veya WiFi)</mm_text>
+    <mm_help>Cihaz&#x131;n&#x131;z&#x131;n &#x130;nternet ba&#x11F;lant&#x131;s&#x131;na ba&#x11F;l&#x131; olup olmad&#x131;&#x11F;&#x131;n&#x131; kontrol edin (bir mobil &#x15F;ebeke veya WiFi)</mm_help>
+  </check_internet_connection_label>
+  <try_again>
+    <mm_type>label</mm_type>
+    <mm_label>Tekrar dene</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Tekrar dene</mm_text>
+    <mm_help>Tekrar dene</mm_help>
+  </try_again>
+  <reorder>
+    <mm_type>label</mm_type>
+    <mm_label>Yeniden sipari&#x15F; ver</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Yeniden sipari&#x15F; ver</mm_text>
+    <mm_help>Yeniden sipari&#x15F; ver</mm_help>
+  </reorder>
+  <order_date>
+    <mm_type>label</mm_type>
+    <mm_label>&#xDC;zerinde Sipari&#x15F; Edildi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Uuml;zerinde Sipari&#x15F; Edildi</mm_text>
+    <mm_help>&amp;Uuml;zerinde Sipari&#x15F; Edildi</mm_help>
+  </order_date>
+  <shipping_method>
+    <mm_type>label</mm_type>
+    <mm_label>Nakliye Y&#xF6;ntemi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Nakliye Y&amp;ouml;ntemi</mm_text>
+    <mm_help>Nakliye Y&amp;ouml;ntemi</mm_help>
+  </shipping_method>
+  <write_review>
+    <mm_type>label</mm_type>
+    <mm_label>&#xDC;r&#xFC;n&#xFC; Oran ve &#x130;nceleme</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Uuml;r&amp;uuml;n&amp;uuml; Oran ve &#x130;nceleme</mm_text>
+    <mm_help>&amp;Uuml;r&amp;uuml;n&amp;uuml; Oran ve &#x130;nceleme</mm_help>
+  </write_review>
+  <delivery>
+    <mm_type>label</mm_type>
+    <mm_label>Nakliye &#xDC;cretleri</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Nakliye &amp;Uuml;cretleri</mm_text>
+    <mm_help>Nakliye &amp;Uuml;cretleri</mm_help>
+  </delivery>
+  <ordered_items>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F; Verilen &#xD6;&#x11F;eler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F; Verilen &amp;Ouml;&#x11F;eler</mm_text>
+    <mm_help>Sipari&#x15F; Verilen &amp;Ouml;&#x11F;eler</mm_help>
+  </ordered_items>
+  <total>
+    <mm_type>label</mm_type>
+    <mm_label>Genel Toplam</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Genel Toplam</mm_text>
+    <mm_help>Genel Toplam</mm_help>
+  </total>
+  <total_qty>
+    <mm_type>label</mm_type>
+    <mm_label>&#xD6;&#x11F;eler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ouml;&#x11F;eler</mm_text>
+    <mm_help>&amp;Ouml;&#x11F;eler</mm_help>
+  </total_qty>
+  <credit_card_type>
+    <mm_type>label</mm_type>
+    <mm_label>kredi kart tipi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>kredi kart tipi</mm_text>
+    <mm_help>kredi kart tipi</mm_help>
+  </credit_card_type>
+  <name_on_card>
+    <mm_type>label</mm_type>
+    <mm_label>Kart &#xDC;zerinde Ad</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kart &amp;Uuml;zerinde Ad</mm_text>
+    <mm_help>Kart &amp;Uuml;zerinde Ad</mm_help>
+  </name_on_card>
+  <credit_card_number>
+    <mm_type>label</mm_type>
+    <mm_label>Kredi Kart&#x131; Numaras&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kredi Kart&#x131; Numaras&#x131;</mm_text>
+    <mm_help>Kredi Kart&#x131; Numaras&#x131;</mm_help>
+  </credit_card_number>
+  <month>
+    <mm_type>label</mm_type>
+    <mm_label>Ay</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ay</mm_text>
+    <mm_help>Ay</mm_help>
+  </month>
+  <year>
+    <mm_type>label</mm_type>
+    <mm_label>Y&#x131;l</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Y&#x131;l</mm_text>
+    <mm_help>Y&#x131;l</mm_help>
+  </year>
+  <cvv>
+    <mm_type>label</mm_type>
+    <mm_label>CVV</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>CVV</mm_text>
+    <mm_help>CVV</mm_help>
+  </cvv>
+  <edit>
+    <mm_type>label</mm_type>
+    <mm_label>D&#xFC;zenle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>D&amp;uuml;zenle</mm_text>
+    <mm_help>D&amp;uuml;zenle</mm_help>
+  </edit>
+  <account>
+    <mm_type>label</mm_type>
+    <mm_label>Hesab&#x131;m</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Hesab&#x131;m</mm_text>
+    <mm_help>Hesab&#x131;m</mm_help>
+  </account>
+  <notifications>
+    <mm_type>label</mm_type>
+    <mm_label>Bildirimler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bildirimler</mm_text>
+    <mm_help>Bildirimler</mm_help>
+  </notifications>
+  <description>
+    <mm_type>label</mm_type>
+    <mm_label>A&#xE7;&#x131;klama</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>A&amp;ccedil;&#x131;klama</mm_text>
+    <mm_help>A&amp;ccedil;&#x131;klama</mm_help>
+  </description>
+  <additional_information>
+    <mm_type>label</mm_type>
+    <mm_label>&#x130;lave bilgi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;lave bilgi</mm_text>
+    <mm_help>&#x130;lave bilgi</mm_help>
+  </additional_information>
+  <push_notifications>
+    <mm_type>label</mm_type>
+    <mm_label>&#x130;tme Bildirimini etkinle&#x15F;tir</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;tme Bildirimini etkinle&#x15F;tir</mm_text>
+    <mm_help>&#x130;tme Bildirimini etkinle&#x15F;tir</mm_help>
+  </push_notifications>
+  <store>
+    <mm_type>label</mm_type>
+    <mm_label>Ma&#x11F;aza</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ma&#x11F;aza</mm_text>
+    <mm_help>Ma&#x11F;aza</mm_help>
+  </store>
+  <currency>
+    <mm_type>label</mm_type>
+    <mm_label>Para birimi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Para birimi</mm_text>
+    <mm_help>Para birimi</mm_help>
+  </currency>
+  <add_to_cart>
+    <mm_type>label</mm_type>
+    <mm_label>Sepete ekle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sepete ekle</mm_text>
+    <mm_help>Sepete ekle</mm_help>
+  </add_to_cart>
+  <buy_now>
+    <mm_type>label</mm_type>
+    <mm_label>&#x15E;imdi sat&#x131;n al</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x15E;imdi sat&#x131;n al</mm_text>
+    <mm_help>&#x15E;imdi sat&#x131;n al</mm_help>
+  </buy_now>
+  <out_of_stock>
+    <mm_type>label</mm_type>
+    <mm_label>Stoklar t&#xFC;kendi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Stoklar t&amp;uuml;kendi</mm_text>
+    <mm_help>Stoklar t&amp;uuml;kendi</mm_help>
+  </out_of_stock>
+  <off>
+    <mm_type>label</mm_type>
+    <mm_label>KAPALI</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>KAPALI</mm_text>
+    <mm_help>KAPALI</mm_help>
+  </off>
+  <share>
+    <mm_type>label</mm_type>
+    <mm_label>Pay</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Pay</mm_text>
+    <mm_help>Pay</mm_help>
+  </share>
+  <item_details>
+    <mm_type>label</mm_type>
+    <mm_label>&#xDC;r&#xFC;n Ayr&#x131;nt&#x131;lar&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Uuml;r&amp;uuml;n Ayr&#x131;nt&#x131;lar&#x131;</mm_text>
+    <mm_help>&amp;Uuml;r&amp;uuml;n Ayr&#x131;nt&#x131;lar&#x131;</mm_help>
+  </item_details>
+  <know_more>
+    <mm_type>label</mm_type>
+    <mm_label>Daha Fazla Bilgi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Daha Fazla Bilgi</mm_text>
+    <mm_help>Daha Fazla Bilgi</mm_help>
+  </know_more>
+  <customer_rating_and_reviews>
+    <mm_type>label</mm_type>
+    <mm_label>M&#xFC;&#x15F;teri De&#x11F;erlendirme ve &#x130;ncelemeler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>M&amp;uuml;&#x15F;teri De&#x11F;erlendirme ve &#x130;ncelemeler</mm_text>
+    <mm_help>M&amp;uuml;&#x15F;teri De&#x11F;erlendirme ve &#x130;ncelemeler</mm_help>
+  </customer_rating_and_reviews>
+  <be_the_first_one_to_review>
+    <mm_type>label</mm_type>
+    <mm_label>inceleyecek ilk ki&#x15F;i ol</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>inceleyecek ilk ki&#x15F;i ol</mm_text>
+    <mm_help>inceleyecek ilk ki&#x15F;i ol</mm_help>
+  </be_the_first_one_to_review>
+  <reviews>
+    <mm_type>label</mm_type>
+    <mm_label>Musteri degerlendirmeleri</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Musteri degerlendirmeleri</mm_text>
+    <mm_help>Musteri degerlendirmeleri</mm_help>
+  </reviews>
+  <all_reviews>
+    <mm_type>label</mm_type>
+    <mm_label>T&#xFC;m Yorumlar&#x131; G&#xF6;r</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>T&amp;uuml;m Yorumlar&#x131; G&amp;ouml;r</mm_text>
+    <mm_help>T&amp;uuml;m Yorumlar&#x131; G&amp;ouml;r</mm_help>
+  </all_reviews>
+  <similar_products>
+    <mm_type>label</mm_type>
+    <mm_label>benzer &#xFC;r&#xFC;nler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>benzer &amp;uuml;r&amp;uuml;nler</mm_text>
+    <mm_help>benzer &amp;uuml;r&amp;uuml;nler</mm_help>
+  </similar_products>
+  <clear>
+    <mm_type>label</mm_type>
+    <mm_label>A&#xE7;&#x131;k</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>A&amp;ccedil;&#x131;k</mm_text>
+    <mm_help>A&amp;ccedil;&#x131;k</mm_help>
+  </clear>
+  <min_price>
+    <mm_type>label</mm_type>
+    <mm_label>Minimum Fiyat</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Minimum Fiyat</mm_text>
+    <mm_help>Minimum Fiyat</mm_help>
+  </min_price>
+  <max_price>
+    <mm_type>label</mm_type>
+    <mm_label>Maksimum Fiyat</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Maksimum Fiyat</mm_text>
+    <mm_help>Maksimum Fiyat</mm_help>
+  </max_price>
+  <search>
+    <mm_type>label</mm_type>
+    <mm_label>Arama</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Arama</mm_text>
+    <mm_help>Arama</mm_help>
+  </search>
+  <all>
+    <mm_type>label</mm_type>
+    <mm_label>Her&#x15F;ey</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Her&#x15F;ey</mm_text>
+    <mm_help>Her&#x15F;ey</mm_help>
+  </all>
+  <current_password>
+    <mm_type>label</mm_type>
+    <mm_label>&#x15E;imdiki &#x15E;ifre</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x15E;imdiki &#x15E;ifre</mm_text>
+    <mm_help>&#x15E;imdiki &#x15E;ifre</mm_help>
+  </current_password>
+  <new_password>
+    <mm_type>label</mm_type>
+    <mm_label>Yeni &#x15E;ifre</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Yeni &#x15E;ifre</mm_text>
+    <mm_help>Yeni &#x15E;ifre</mm_help>
+  </new_password>
+  <confirm_new_password>
+    <mm_type>label</mm_type>
+    <mm_label>Yeni &#x15F;ifreyi onayla</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Yeni &#x15F;ifreyi onayla</mm_text>
+    <mm_help>Yeni &#x15F;ifreyi onayla</mm_help>
+  </confirm_new_password>
+  <choose_gender>
+    <mm_type>label</mm_type>
+    <mm_label>Cinsiyet Se&#xE7;iniz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Cinsiyet Se&amp;ccedil;iniz</mm_text>
+    <mm_help>Cinsiyet Se&amp;ccedil;iniz</mm_help>
+  </choose_gender>
+  <nickname>
+    <mm_type>label</mm_type>
+    <mm_label>Takma ad&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Takma ad&#x131;</mm_text>
+    <mm_help>Takma ad&#x131;</mm_help>
+  </nickname>
+  <summary_of_review>
+    <mm_type>label</mm_type>
+    <mm_label>Yorumunuzun &#xD6;zeti</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Yorumunuzun &amp;Ouml;zeti</mm_text>
+    <mm_help>Yorumunuzun &amp;Ouml;zeti</mm_help>
+  </summary_of_review>
+  <comments>
+    <mm_type>label</mm_type>
+    <mm_label>Yorumlar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Yorumlar</mm_text>
+    <mm_help>Yorumlar</mm_help>
+  </comments>
+  <submit_review>
+    <mm_type>label</mm_type>
+    <mm_label>&#x130;ncelemeyi G&#xF6;nder</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;ncelemeyi G&amp;ouml;nder</mm_text>
+    <mm_help>&#x130;ncelemeyi G&amp;ouml;nder</mm_help>
+  </submit_review>
+  <maximum_number_of_characters>
+    <mm_type>label</mm_type>
+    <mm_label>Maksimum karakter say&#x131;s&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Maksimum karakter say&#x131;s&#x131;</mm_text>
+    <mm_help>Maksimum karakter say&#x131;s&#x131;</mm_help>
+  </maximum_number_of_characters>
+  <please_wait>
+    <mm_type>label</mm_type>
+    <mm_label>L&#xFC;tfen bekleyin, son i&#x15F;lem hala devam ediyor</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>L&amp;uuml;tfen bekleyin, son i&#x15F;lem hala devam ediyor</mm_text>
+    <mm_help>L&amp;uuml;tfen bekleyin, son i&#x15F;lem hala devam ediyor</mm_help>
+  </please_wait>
+  <clear_all>
+    <mm_type>label</mm_type>
+    <mm_label>Listeyi temizle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Listeyi temizle</mm_text>
+    <mm_help>Listeyi temizle</mm_help>
+  </clear_all>
+  <confirm>
+    <mm_type>label</mm_type>
+    <mm_label>Adres Kald&#x131;r</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adres Kald&#x131;r</mm_text>
+    <mm_help>Adres Kald&#x131;r</mm_help>
+  </confirm>
+  <done>
+    <mm_type>label</mm_type>
+    <mm_label>Bitti</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bitti</mm_text>
+    <mm_help>Bitti</mm_help>
+  </done>
+  <delete>
+    <mm_type>label</mm_type>
+    <mm_label>Sil</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sil</mm_text>
+    <mm_help>Sil</mm_help>
+  </delete>
+  <delete_this_address>
+    <mm_type>label</mm_type>
+    <mm_label>Bu adresi silmek istedi&#x11F;inizden emin misiniz?</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bu adresi silmek istedi&#x11F;inizden emin misiniz?</mm_text>
+    <mm_help>Bu adresi silmek istedi&#x11F;inizden emin misiniz?</mm_help>
+  </delete_this_address>
+  <cancelled>
+    <mm_type>label</mm_type>
+    <mm_label>iptal edildi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>iptal edildi</mm_text>
+    <mm_help>iptal edildi</mm_help>
+  </cancelled>
+  <select>
+    <mm_type>label</mm_type>
+    <mm_label>Se&#xE7;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Se&amp;ccedil;</mm_text>
+    <mm_help>Se&amp;ccedil;</mm_help>
+  </select>
+  <recently_viewed>
+    <mm_type>label</mm_type>
+    <mm_label>Son bak&#x131;lan e&#x15F;yalar</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Son bak&#x131;lan e&#x15F;yalar</mm_text>
+    <mm_help>Son bak&#x131;lan e&#x15F;yalar</mm_help>
+  </recently_viewed>
+  <january>
+    <mm_type>label</mm_type>
+    <mm_label>Ocak ay&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ocak ay&#x131;</mm_text>
+    <mm_help>Ocak ay&#x131;</mm_help>
+  </january>
+  <february>
+    <mm_type>label</mm_type>
+    <mm_label>&#x15E;ubat ay&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x15E;ubat ay&#x131;</mm_text>
+    <mm_help>&#x15E;ubat ay&#x131;</mm_help>
+  </february>
+  <march>
+    <mm_type>label</mm_type>
+    <mm_label>Mart</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Mart</mm_text>
+    <mm_help>Mart</mm_help>
+  </march>
+  <april>
+    <mm_type>label</mm_type>
+    <mm_label>Nisan</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Nisan</mm_text>
+    <mm_help>Nisan</mm_help>
+  </april>
+  <may>
+    <mm_type>label</mm_type>
+    <mm_label>May&#x131;s ay&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>May&#x131;s ay&#x131;</mm_text>
+    <mm_help>May&#x131;s ay&#x131;</mm_help>
+  </may>
+  <june>
+    <mm_type>label</mm_type>
+    <mm_label>Haziran</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Haziran</mm_text>
+    <mm_help>Haziran</mm_help>
+  </june>
+  <july>
+    <mm_type>label</mm_type>
+    <mm_label>Temmuz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Temmuz</mm_text>
+    <mm_help>Temmuz</mm_help>
+  </july>
+  <august>
+    <mm_type>label</mm_type>
+    <mm_label>A&#x11F;ustos</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>A&#x11F;ustos</mm_text>
+    <mm_help>A&#x11F;ustos</mm_help>
+  </august>
+  <september>
+    <mm_type>label</mm_type>
+    <mm_label>Eyl&#xFC;l</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Eyl&amp;uuml;l</mm_text>
+    <mm_help>Eyl&amp;uuml;l</mm_help>
+  </september>
+  <october>
+    <mm_type>label</mm_type>
+    <mm_label>Ekim</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ekim</mm_text>
+    <mm_help>Ekim</mm_help>
+  </october>
+  <november>
+    <mm_type>label</mm_type>
+    <mm_label>Kas&#x131;m</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kas&#x131;m</mm_text>
+    <mm_help>Kas&#x131;m</mm_help>
+  </november>
+  <december>
+    <mm_type>label</mm_type>
+    <mm_label>Aral&#x131;k</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Aral&#x131;k</mm_text>
+    <mm_help>Aral&#x131;k</mm_help>
+  </december>
+  <estimate_shipping_tax>
+    <mm_type>label</mm_type>
+    <mm_label>Tahmini Nakliye ve Vergi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Tahmini Nakliye ve Vergi</mm_text>
+    <mm_help>Tahmini Nakliye ve Vergi</mm_help>
+  </estimate_shipping_tax>
+  <products>
+    <mm_type>label</mm_type>
+    <mm_label>&#xDC;r&#xFC;nler</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Uuml;r&amp;uuml;nler</mm_text>
+    <mm_help>&amp;Uuml;r&amp;uuml;nler</mm_help>
+  </products>
+  <edit_profile>
+    <mm_type>label</mm_type>
+    <mm_label>Profili D&#xFC;zenle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Profili D&amp;uuml;zenle</mm_text>
+    <mm_help>Profili D&amp;uuml;zenle</mm_help>
+  </edit_profile>
+  <addresses>
+    <mm_type>label</mm_type>
+    <mm_label>Adres defteri</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adres defteri</mm_text>
+    <mm_help>Adres defteri</mm_help>
+  </addresses>
+  <add_review>
+    <mm_type>label</mm_type>
+    <mm_label>Yorum Ekle</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Yorum Ekle</mm_text>
+    <mm_help>Yorum Ekle</mm_help>
+  </add_review>
+  <cart>
+    <mm_type>label</mm_type>
+    <mm_label>Araba</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Araba</mm_text>
+    <mm_help>Araba</mm_help>
+  </cart>
+  <contact>
+    <mm_type>label</mm_type>
+    <mm_label>Temas</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Temas</mm_text>
+    <mm_help>Temas</mm_help>
+  </contact>
+  <credit_card>
+    <mm_type>label</mm_type>
+    <mm_label>Kredi kart&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kredi kart&#x131;</mm_text>
+    <mm_help>Kredi kart&#x131;</mm_help>
+  </credit_card>
+  <error>
+    <mm_type>label</mm_type>
+    <mm_label>Hata</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Hata</mm_text>
+    <mm_help>Hata</mm_help>
+  </error>
+  <my_profile>
+    <mm_type>label</mm_type>
+    <mm_label>Benim profilim</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Benim profilim</mm_text>
+    <mm_help>Benim profilim</mm_help>
+  </my_profile>
+  <my_orders>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F;lerim</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F;lerim</mm_text>
+    <mm_help>Sipari&#x15F;lerim</mm_help>
+  </my_orders>
+  <order_review>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F; &#x130;nceleme</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F; &#x130;nceleme</mm_text>
+    <mm_help>Sipari&#x15F; &#x130;nceleme</mm_help>
+  </order_review>
+  <order_success>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F; Yerle&#x15F;tirildi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F; Yerle&#x15F;tirildi</mm_text>
+    <mm_help>Sipari&#x15F; Yerle&#x15F;tirildi</mm_help>
+  </order_success>
+  <order_detail>
+    <mm_type>label</mm_type>
+    <mm_label>Sipari&#x15F; detay&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sipari&#x15F; detay&#x131;</mm_text>
+    <mm_help>Sipari&#x15F; detay&#x131;</mm_help>
+  </order_detail>
+  <shipping>
+    <mm_type>label</mm_type>
+    <mm_label>Nakliye ve Fatura Adresi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Nakliye ve Fatura Adresi</mm_text>
+    <mm_help>Nakliye ve Fatura Adresi</mm_help>
+  </shipping>
+  <no_more_records>
+    <mm_type>label</mm_type>
+    <mm_label>Daha fazla kay&#x131;t yok</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Daha fazla kay&#x131;t yok</mm_text>
+    <mm_help>Daha fazla kay&#x131;t yok</mm_help>
+  </no_more_records>
+  <popularity>
+    <mm_type>label</mm_type>
+    <mm_label>Pop&#xFC;lerlik</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Pop&amp;uuml;lerlik</mm_text>
+    <mm_help>Pop&amp;uuml;lerlik</mm_help>
+  </popularity>
+  <position>
+    <mm_type>label</mm_type>
+    <mm_label>Pozisyon</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Pozisyon</mm_text>
+    <mm_help>Pozisyon</mm_help>
+  </position>
+  <price_high_to_low>
+    <mm_type>label</mm_type>
+    <mm_label>Fiyat - Y&#xFC;ksekten D&#xFC;&#x15F;&#xFC;&#x11F;e</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Fiyat - Y&amp;uuml;ksekten D&amp;uuml;&#x15F;&amp;uuml;&#x11F;e</mm_text>
+    <mm_help>Fiyat - Y&amp;uuml;ksekten D&amp;uuml;&#x15F;&amp;uuml;&#x11F;e</mm_help>
+  </price_high_to_low>
+  <price_low_to_high>
+    <mm_type>label</mm_type>
+    <mm_label>Fiyat - D&#xFC;&#x15F;&#xFC;kten Y&#xFC;kse&#x11F;e</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Fiyat - D&amp;uuml;&#x15F;&amp;uuml;kten Y&amp;uuml;kse&#x11F;e</mm_text>
+    <mm_help>Fiyat - D&amp;uuml;&#x15F;&amp;uuml;kten Y&amp;uuml;kse&#x11F;e</mm_help>
+  </price_low_to_high>
+  <rating>
+    <mm_type>label</mm_type>
+    <mm_label>De&#x11F;erlendirme</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>De&#x11F;erlendirme</mm_text>
+    <mm_help>De&#x11F;erlendirme</mm_help>
+  </rating>
+  <a_to_z>
+    <mm_type>label</mm_type>
+    <mm_label>A - Z</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>A - Z</mm_text>
+    <mm_help>A - Z</mm_help>
+  </a_to_z>
+  <z_to_a>
+    <mm_type>label</mm_type>
+    <mm_label>Z - A</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Z - A</mm_text>
+    <mm_help>Z - A</mm_help>
+  </z_to_a>
+  <newest>
+    <mm_type>label</mm_type>
+    <mm_label>En yeni</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>En yeni</mm_text>
+    <mm_help>En yeni</mm_help>
+  </newest>
+  <f_home>
+    <mm_type>label</mm_type>
+    <mm_label>Ev</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ev</mm_text>
+    <mm_help>Ev</mm_help>
+  </f_home>
+  <f_search>
+    <mm_type>label</mm_type>
+    <mm_label>Arama</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Arama</mm_text>
+    <mm_help>Arama</mm_help>
+  </f_search>
+  <f_wishlist>
+    <mm_type>label</mm_type>
+    <mm_label>WIshlist</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>WIshlist</mm_text>
+    <mm_help>WIshlist</mm_help>
+  </f_wishlist>
+  <f_cart>
+    <mm_type>label</mm_type>
+    <mm_label>Araba</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Araba</mm_text>
+    <mm_help>Araba</mm_help>
+  </f_cart>
+  <f_account>
+    <mm_type>label</mm_type>
+    <mm_label>Hesap</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Hesap</mm_text>
+    <mm_help>Hesap</mm_help>
+  </f_account>
+  <press_again_to_close_app>
+    <mm_type>message</mm_type>
+    <mm_label>Uygulamay&#x131; kapatmak i&#xE7;in tekrar bas&#x131;n</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Uygulamay&#x131; kapatmak i&amp;ccedil;in tekrar bas&#x131;n</mm_text>
+    <mm_help>Uygulamay&#x131; kapatmak i&amp;ccedil;in tekrar bas&#x131;n</mm_help>
+  </press_again_to_close_app>
+  <invalid_format>
+    <mm_type>message</mm_type>
+    <mm_label>Ge&#xE7;ersiz format</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ge&amp;ccedil;ersiz format</mm_text>
+    <mm_help>Ge&amp;ccedil;ersiz format</mm_help>
+  </invalid_format>
+  <plugin_not_supported>
+    <mm_type>message</mm_type>
+    <mm_label>Ah! Bu i&#x15F;lem bu cihazda ger&#xE7;ekle&#x15F;tirilemez. Gerekli destek bu cihazda mevcut de&#x11F;ildir.</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ah! Bu i&#x15F;lem bu cihazda ger&amp;ccedil;ekle&#x15F;tirilemez. Gerekli destek bu cihazda mevcut de&#x11F;ildir.</mm_text>
+    <mm_help>Ah! Bu i&#x15F;lem bu cihazda ger&amp;ccedil;ekle&#x15F;tirilemez. Gerekli destek bu cihazda mevcut de&#x11F;ildir.</mm_help>
+  </plugin_not_supported>
+  <please_select>
+    <mm_type>message</mm_type>
+    <mm_label>L&#xFC;tfen se&#xE7;in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>L&amp;uuml;tfen se&amp;ccedil;in</mm_text>
+    <mm_help>L&amp;uuml;tfen se&amp;ccedil;in</mm_help>
+  </please_select>
+  <please_enter_coupon_code>
+    <mm_type>message</mm_type>
+    <mm_label>Ge&#xE7;erli kupon kodunu girin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ge&amp;ccedil;erli kupon kodunu girin</mm_text>
+    <mm_help>Ge&amp;ccedil;erli kupon kodunu girin</mm_help>
+  </please_enter_coupon_code>
+  <enter_shipping_country>
+    <mm_type>message</mm_type>
+    <mm_label>Nakliye &#xFC;lkesine girin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Nakliye &amp;uuml;lkesine girin</mm_text>
+    <mm_help>Nakliye &amp;uuml;lkesine girin</mm_help>
+  </enter_shipping_country>
+  <enter_shipping_state>
+    <mm_type>message</mm_type>
+    <mm_label>Nakliye durumunu giriniz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Nakliye durumunu giriniz</mm_text>
+    <mm_help>Nakliye durumunu giriniz</mm_help>
+  </enter_shipping_state>
+  <enter_shipping_pincode>
+    <mm_type>message</mm_type>
+    <mm_label>G&#xF6;nderim pin kodunu girin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>G&amp;ouml;nderim pin kodunu girin</mm_text>
+    <mm_help>G&amp;ouml;nderim pin kodunu girin</mm_help>
+  </enter_shipping_pincode>
+  <choose_shipping_method_error>
+    <mm_type>message</mm_type>
+    <mm_label>G&#xF6;nderim y&#xF6;ntemini se&#xE7;in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>G&amp;ouml;nderim y&amp;ouml;ntemini se&amp;ccedil;in</mm_text>
+    <mm_help>G&amp;ouml;nderim y&amp;ouml;ntemini se&amp;ccedil;in</mm_help>
+  </choose_shipping_method_error>
+  <moved_to_wishlist>
+    <mm_type>message</mm_type>
+    <mm_label>&#xD6;&#x11F;e, dilek listesine ta&#x15F;&#x131;nd&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ouml;&#x11F;e, dilek listesine ta&#x15F;&#x131;nd&#x131;</mm_text>
+    <mm_help>&amp;Ouml;&#x11F;e, dilek listesine ta&#x15F;&#x131;nd&#x131;</mm_help>
+  </moved_to_wishlist>
+  <payment_cancelled>
+    <mm_type>message</mm_type>
+    <mm_label>&#xD6;deme ba&#x15F;ar&#x131;s&#x131;z</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ouml;deme ba&#x15F;ar&#x131;s&#x131;z</mm_text>
+    <mm_help>&amp;Ouml;deme ba&#x15F;ar&#x131;s&#x131;z</mm_help>
+  </payment_cancelled>
+  <please_select_all_agreements>
+    <mm_type>message</mm_type>
+    <mm_label>T&#xFC;m anla&#x15F;malar&#x131; kabul etmelisin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>T&amp;uuml;m anla&#x15F;malar&#x131; kabul etmelisin</mm_text>
+    <mm_help>T&amp;uuml;m anla&#x15F;malar&#x131; kabul etmelisin</mm_help>
+  </please_select_all_agreements>
+  <invalid_deeplink_url>
+    <mm_type>message</mm_type>
+    <mm_label>Ge&#xE7;ersiz URL</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ge&amp;ccedil;ersiz URL</mm_text>
+    <mm_help>Ge&amp;ccedil;ersiz URL</mm_help>
+  </invalid_deeplink_url>
+  <cart_is_empty>
+    <mm_type>message</mm_type>
+    <mm_label>Sepet Bo&#x15F;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sepet Bo&#x15F;</mm_text>
+    <mm_help>Sepet Bo&#x15F;</mm_help>
+  </cart_is_empty>
+  <cart_item_error>
+    <mm_type>message</mm_type>
+    <mm_label>Sepetinizin &#xF6;&#x11F;elerinden birinde hata var</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sepetinizin &amp;ouml;&#x11F;elerinden birinde hata var</mm_text>
+    <mm_help>Sepetinizin &amp;ouml;&#x11F;elerinden birinde hata var</mm_help>
+  </cart_item_error>
+  <cc_name_error>
+    <mm_type>message</mm_type>
+    <mm_label>Karta ad&#x131;n&#x131; gir</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Karta ad&#x131;n&#x131; gir</mm_text>
+    <mm_help>Karta ad&#x131;n&#x131; gir</mm_help>
+  </cc_name_error>
+  <cc_number_error>
+    <mm_type>message</mm_type>
+    <mm_label>Kart numaras&#x131;n&#x131; gir</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kart numaras&#x131;n&#x131; gir</mm_text>
+    <mm_help>Kart numaras&#x131;n&#x131; gir</mm_help>
+  </cc_number_error>
+  <cc_month_error>
+    <mm_type>message</mm_type>
+    <mm_label>Son kullanma ay&#x131;n&#x131; se&#xE7;in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Son kullanma ay&#x131;n&#x131; se&amp;ccedil;in</mm_text>
+    <mm_help>Son kullanma ay&#x131;n&#x131; se&amp;ccedil;in</mm_help>
+  </cc_month_error>
+  <cc_year_error>
+    <mm_type>message</mm_type>
+    <mm_label>Son kullanma y&#x131;l&#x131; se&#xE7;in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Son kullanma y&#x131;l&#x131; se&amp;ccedil;in</mm_text>
+    <mm_help>Son kullanma y&#x131;l&#x131; se&amp;ccedil;in</mm_help>
+  </cc_year_error>
+  <cc_cvv_error>
+    <mm_type>message</mm_type>
+    <mm_label>CVV numaras&#x131;n&#x131; girin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>CVV numaras&#x131;n&#x131; girin</mm_text>
+    <mm_help>CVV numaras&#x131;n&#x131; girin</mm_help>
+  </cc_cvv_error>
+  <cc_type_error>
+    <mm_type>message</mm_type>
+    <mm_label>Kart t&#xFC;r&#xFC;n&#xFC; se&#xE7;in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kart t&amp;uuml;r&amp;uuml;n&amp;uuml; se&amp;ccedil;in</mm_text>
+    <mm_help>Kart t&amp;uuml;r&amp;uuml;n&amp;uuml; se&amp;ccedil;in</mm_help>
+  </cc_type_error>
+  <choose_rating_option_error>
+    <mm_type>message</mm_type>
+    <mm_label>Her derecelendirme parametresi i&#xE7;in bir puan se&#xE7;in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Her derecelendirme parametresi i&amp;ccedil;in bir puan se&amp;ccedil;in</mm_text>
+    <mm_help>Her derecelendirme parametresi i&amp;ccedil;in bir puan se&amp;ccedil;in</mm_help>
+  </choose_rating_option_error>
+  <rating_nickname_error>
+    <mm_type>message</mm_type>
+    <mm_label>Takma ad girin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Takma ad girin</mm_text>
+    <mm_help>Takma ad girin</mm_help>
+  </rating_nickname_error>
+  <rating_summary_error>
+    <mm_type>message</mm_type>
+    <mm_label>&#x130;ncelemenizin &#xF6;zetini girin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;ncelemenizin &amp;ouml;zetini girin</mm_text>
+    <mm_help>&#x130;ncelemenizin &amp;ouml;zetini girin</mm_help>
+  </rating_summary_error>
+  <rating_comment_error>
+    <mm_type>message</mm_type>
+    <mm_label>Inceleme yorumlar&#x131;n&#x131; girin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Inceleme yorumlar&#x131;n&#x131; girin</mm_text>
+    <mm_help>Inceleme yorumlar&#x131;n&#x131; girin</mm_help>
+  </rating_comment_error>
+  <email_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>Email adresini gir</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Email adresini gir</mm_text>
+    <mm_help>Email adresini gir</mm_help>
+  </email_required_error>
+  <password_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>Parolan&#x131; Gir</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Parolan&#x131; Gir</mm_text>
+    <mm_help>Parolan&#x131; Gir</mm_help>
+  </password_required_error>
+  <firstname_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>Ilk ad&#x131; girin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ilk ad&#x131; girin</mm_text>
+    <mm_help>Ilk ad&#x131; girin</mm_help>
+  </firstname_required_error>
+  <lastname_required_error>
+    <mm_type>message</mm_type>
+    <mm_label>Soyad&#x131;n&#x131; girin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Soyad&#x131;n&#x131; girin</mm_text>
+    <mm_help>Soyad&#x131;n&#x131; girin</mm_help>
+  </lastname_required_error>
+  <email_valid_error>
+    <mm_type>message</mm_type>
+    <mm_label>Ge&#xE7;erli bir e-posta adresini girin</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ge&amp;ccedil;erli bir e-posta adresini girin</mm_text>
+    <mm_help>Ge&amp;ccedil;erli bir e-posta adresini girin</mm_help>
+  </email_valid_error>
+  <invalid_login_message>
+    <mm_type>message</mm_type>
+    <mm_label>Ge&#xE7;ersiz kullan&#x131;c&#x131; ad&#x131; veya &#x15F;ifre</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ge&amp;ccedil;ersiz kullan&#x131;c&#x131; ad&#x131; veya &#x15F;ifre</mm_text>
+    <mm_help>Ge&amp;ccedil;ersiz kullan&#x131;c&#x131; ad&#x131; veya &#x15F;ifre</mm_help>
+  </invalid_login_message>
+  <registration_success_message>
+    <mm_type>message</mm_type>
+    <mm_label>Kutlama! Ba&#x15F;ar&#x131;yla kay&#x131;tl&#x131;s&#x131;n</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kutlama! Ba&#x15F;ar&#x131;yla kay&#x131;tl&#x131;s&#x131;n</mm_text>
+    <mm_help>Kutlama! Ba&#x15F;ar&#x131;yla kay&#x131;tl&#x131;s&#x131;n</mm_help>
+  </registration_success_message>
+  <please_check_email>
+    <mm_type>message</mm_type>
+    <mm_label>L&#xFC;tfen e-postay&#x131; kontrol et</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>L&amp;uuml;tfen e-postay&#x131; kontrol et</mm_text>
+    <mm_help>L&amp;uuml;tfen e-postay&#x131; kontrol et</mm_help>
+  </please_check_email>
+  <wishlist_added_message>
+    <mm_type>message</mm_type>
+    <mm_label>&#xD6;&#x11F;e wishlist'e eklendi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ouml;&#x11F;e wishlist\'e eklendi</mm_text>
+    <mm_help>&amp;Ouml;&#x11F;e wishlist\'e eklendi</mm_help>
+  </wishlist_added_message>
+  <item_removed_message>
+    <mm_type>message</mm_type>
+    <mm_label>&#xD6;&#x11F;e, dilek listesinden silindi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Ouml;&#x11F;e, dilek listesinden silindi</mm_text>
+    <mm_help>&amp;Ouml;&#x11F;e, dilek listesinden silindi</mm_help>
+  </item_removed_message>
+  <cart_updated_message>
+    <mm_type>message</mm_type>
+    <mm_label>Sepetiniz g&#xFC;ncellendi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Sepetiniz g&amp;uuml;ncellendi</mm_text>
+    <mm_help>Sepetiniz g&amp;uuml;ncellendi</mm_help>
+  </cart_updated_message>
+  <item_added_message>
+    <mm_type>message</mm_type>
+    <mm_label>&#xDC;r&#xFC;n sepete eklendi</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Uuml;r&amp;uuml;n sepete eklendi</mm_text>
+    <mm_help>&amp;Uuml;r&amp;uuml;n sepete eklendi</mm_help>
+  </item_added_message>
+  <couponcode_applied_message>
+    <mm_type>message</mm_type>
+    <mm_label>Kupon kodu uyguland&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kupon kodu uyguland&#x131;</mm_text>
+    <mm_help>Kupon kodu uyguland&#x131;</mm_help>
+  </couponcode_applied_message>
+  <couponcode_removed_message>
+    <mm_type>message</mm_type>
+    <mm_label>Kupon kodu kald&#x131;r&#x131;ld&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Kupon kodu kald&#x131;r&#x131;ld&#x131;</mm_text>
+    <mm_help>Kupon kodu kald&#x131;r&#x131;ld&#x131;</mm_help>
+  </couponcode_removed_message>
+  <choose_payment_method_error>
+    <mm_type>message</mm_type>
+    <mm_label>&#xF6;deme y&#xF6;ntemini se&#xE7;in</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;ouml;deme y&amp;ouml;ntemini se&amp;ccedil;in</mm_text>
+    <mm_help>&amp;ouml;deme y&amp;ouml;ntemini se&amp;ccedil;in</mm_help>
+  </choose_payment_method_error>
+  <account_already_exists>
+    <mm_type>message</mm_type>
+    <mm_label>Bu Hesap Zaten Mevcut</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bu Hesap Zaten Mevcut</mm_text>
+    <mm_help>Bu Hesap Zaten Mevcut</mm_help>
+  </account_already_exists>
+  <please_login_to_continue>
+    <mm_type>message</mm_type>
+    <mm_label>Devam etmek i&#xE7;in l&#xFC;tfen giri&#x15F; yap&#x131;n&#x131;z</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Devam etmek i&amp;ccedil;in l&amp;uuml;tfen giri&#x15F; yap&#x131;n&#x131;z</mm_text>
+    <mm_help>Devam etmek i&amp;ccedil;in l&amp;uuml;tfen giri&#x15F; yap&#x131;n&#x131;z</mm_help>
+  </please_login_to_continue>
+  <cannot_reorder_this_order>
+    <mm_type>message</mm_type>
+    <mm_label>Bu s&#x131;ray&#x131; yeniden d&#xFC;zenleyemezsiniz</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bu s&#x131;ray&#x131; yeniden d&amp;uuml;zenleyemezsiniz</mm_text>
+    <mm_help>Bu s&#x131;ray&#x131; yeniden d&amp;uuml;zenleyemezsiniz</mm_help>
+  </cannot_reorder_this_order>
+  <invalid_qrcode>
+    <mm_type>message</mm_type>
+    <mm_label>Ge&#xE7;ersiz QR kodu</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ge&amp;ccedil;ersiz QR kodu</mm_text>
+    <mm_help>Ge&amp;ccedil;ersiz QR kodu</mm_help>
+  </invalid_qrcode>
+  <product_not_available>
+    <mm_type>message</mm_type>
+    <mm_label>&#xDC;r&#xFC;n mevcut de&#x11F;il</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&amp;Uuml;r&amp;uuml;n mevcut de&#x11F;il</mm_text>
+    <mm_help>&amp;Uuml;r&amp;uuml;n mevcut de&#x11F;il</mm_help>
+  </product_not_available>
+  <message_agree_terms>
+    <mm_type>message</mm_type>
+    <mm_label>L&#xFC;tfen t&#xFC;m &#x15F;artlar&#x131; ve ko&#x15F;ullar&#x131; kabul et</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>L&amp;uuml;tfen t&amp;uuml;m &#x15F;artlar&#x131; ve ko&#x15F;ullar&#x131; kabul et</mm_text>
+    <mm_help>L&amp;uuml;tfen t&amp;uuml;m &#x15F;artlar&#x131; ve ko&#x15F;ullar&#x131; kabul et</mm_help>
+  </message_agree_terms>
+  <invalid_data>
+    <mm_type>message</mm_type>
+    <mm_label>Ge&#xE7;ersiz veri</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Ge&amp;ccedil;ersiz veri</mm_text>
+    <mm_help>Ge&amp;ccedil;ersiz veri</mm_help>
+  </invalid_data>
+  <address_save_error>
+    <mm_type>message</mm_type>
+    <mm_label>Adres kaydedilemiyor</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Adres kaydedilemiyor</mm_text>
+    <mm_help>Adres kaydedilemiyor</mm_help>
+  </address_save_error>
+  <account_not_found_error>
+    <mm_type>message</mm_type>
+    <mm_label>Verilen e-posta adresi ile hesap mevcut de&#x11F;il</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Verilen e-posta adresi ile hesap mevcut de&#x11F;il</mm_text>
+    <mm_help>Verilen e-posta adresi ile hesap mevcut de&#x11F;il</mm_help>
+  </account_not_found_error>
+  <wishlist_not_found_error>
+    <mm_type>message</mm_type>
+    <mm_label>&#x130;stek listesi bulunamad&#x131;</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>&#x130;stek listesi bulunamad&#x131;</mm_text>
+    <mm_help>&#x130;stek listesi bulunamad&#x131;</mm_help>
+  </wishlist_not_found_error>
+  <products_found>
+    <mm_type>message</mm_type>
+    <mm_label>Bulunan &#xDC;r&#xFC;n Bulundu</mm_label>
+    <mm_maxlength>255</mm_maxlength>
+    <mm_text>Bulunan &amp;Uuml;r&amp;uuml;n Bulundu</mm_text>
+    <mm_help>Bulunan &amp;Uuml;r&amp;uuml;n Bulundu</mm_help>
+  </products_found>
+</mobicommerce_multilanguage>

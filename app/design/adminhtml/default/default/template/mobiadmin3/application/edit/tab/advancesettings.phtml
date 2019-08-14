@@ -1,0 +1,325 @@
+<?php
+$advancesettings = $this->getAdvanceSettings();
+//echo '<pre>';print_r($advancesettings);exit;
+$homepage_categories = $this->getHomepageCategories();
+$productAttributes = Mage::helper('mobiadmin3')->getProductAttributes();
+$categories = $this->getFirstLevelCategories();
+?>
+
+<div class="advancesettings entry-edit">
+	<div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Category Settings <span class="app-scope">[Website]</span>')?></h4>
+	</div>
+	<div class="fieldset">
+		<p class="guideline-text"><?php echo $this->__('Selected categories will be displayed in Category menu of the mobile app.'); ?></p>
+		<table cellspacing="0" class="form-list">
+			<tbody>
+				<tr>
+					<td class="label"><?php echo $this->__('Categories To Show : ')?></td>
+					<td class="value">
+						<select name="homepage_categories[]" multiple="multiple" class="select multiselect" size="10">
+							<?php
+							if($categories){
+								foreach($categories as $_category){
+									?>
+										<option <?php if(isset($homepage_categories[$_category['id']])) echo 'selected'; ?> value="<?php echo $_category['id']; ?>"><?php echo $_category['name']; ?></option>
+									<?php
+								}
+							}
+							?>
+						</select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Image Settings <span class="app-scope">[Website]</span>')?></h4>
+	</div>
+	<div class="fieldset">
+		<p class="guideline-text"><?php echo $this->__('Provide image dimension which you are using for your product & category images. image container in mobile app will be adjust according to defined shapes and make the app best suit according to your product line.'); ?></p>
+		<table cellspacing="0" class="form-list">
+			<tbody>
+				<tr>
+					<td class="label"><?php echo $this->__('Category Image Dimension : ')?></td>
+					<td class="value">
+						<input class="required-entry validate-number input-text" name="advancesettings[image][category_ratio_width]" value="<?php echo $advancesettings['image']['category_ratio_width']; ?>" type="text" style="width:25px !important;"> : 
+						<input class="required-entry validate-number input-text" name="advancesettings[image][category_ratio_height]" value="<?php echo $advancesettings['image']['category_ratio_height']; ?>" type="text" style="width:25px !important;">
+					</td>
+				</tr>
+
+				<tr>
+					<td class="label"><?php echo $this->__('Product Image Dimension : ')?></td>
+					<td class="value">
+						<input class="required-entry validate-number input-text" name="advancesettings[image][product_ratio_width]" value="<?php echo $advancesettings['image']['product_ratio_width']; ?>" type="text" style="width:25px !important;"> : 
+						<input class="required-entry validate-number input-text" name="advancesettings[image][product_ratio_height]" value="<?php echo $advancesettings['image']['product_ratio_height']; ?>" type="text" style="width:25px !important;">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+    <div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Miscellaneous Settings <span class="app-scope">[Website]</span>')?></h4>
+	</div>
+	<div class="fieldset">
+		<p class="guideline-text"><?php echo $this->__('Enable/disable module or features for the whole mobile app, disabled module will no longer available in the mobile app.'); ?></p>
+		<table cellspacing="0" class="form-list">
+			<tbody>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Rating Feature : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['miscellaneous']['enable_rating'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][enable_rating]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['miscellaneous']['enable_rating'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_rating]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Wishlist Feature : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['miscellaneous']['enable_wishlist'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][enable_wishlist]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['miscellaneous']['enable_wishlist'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_wishlist]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Social Media Sharing : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['miscellaneous']['enable_socialsharing'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][enable_socialsharing]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['miscellaneous']['enable_socialsharing'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_socialsharing]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Discount Coupon : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['miscellaneous']['enable_discountcoupon'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][enable_discountcoupon]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['miscellaneous']['enable_discountcoupon'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_discountcoupon]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Product Search Facility : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['miscellaneous']['enable_productsearch'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][enable_productsearch]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['miscellaneous']['enable_productsearch'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_productsearch]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Guest Checkout : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['miscellaneous']['enable_guestcheckout'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][enable_guestcheckout]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['miscellaneous']['enable_guestcheckout'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_guestcheckout]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Estimated Shipping Cost : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['miscellaneous']['enable_estimatedshippingcost'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][enable_estimatedshippingcost]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['miscellaneous']['enable_estimatedshippingcost'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_estimatedshippingcost]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Show Category Icon : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['miscellaneous']['enable_categoryicon'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][enable_categoryicon]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['miscellaneous']['enable_categoryicon'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_categoryicon]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Category Widgets : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['miscellaneous']['enable_categorywidget'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][enable_categorywidget]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['miscellaneous']['enable_categorywidget'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_categorywidget]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Social Login : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['miscellaneous']['enable_sociallogin'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][enable_sociallogin]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['miscellaneous']['enable_sociallogin'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][enable_sociallogin]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Show Push in Preferences : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['miscellaneous']['show_push_in_preferences'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[miscellaneous][show_push_in_preferences]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['miscellaneous']['show_push_in_preferences'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[miscellaneous][show_push_in_preferences]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__(' No of Sub-Category shown on left panel : ')?></td>
+					<td class="value">
+						<input class="input-text" name="advancesettings[miscellaneous][show_max_subcategory]" value="<?php echo $advancesettings['miscellaneous']['show_max_subcategory']; ?>" type="text">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Product Listing Settings <span class="app-scope">[Website]</span>')?></h4>
+	</div>
+	<div class="fieldset">
+		<table cellspacing="0" class="form-list">
+			<tbody>
+				<tr>
+					<td class="label"><?php echo $this->__('Show Product Name : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['productlist']['showname'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[productlist][showname]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['productlist']['showname'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[productlist][showname]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Show Product Price : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['productlist']['showprice'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[productlist][showprice]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['productlist']['showprice'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[productlist][showprice]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Show Product Rating : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['productlist']['showrating'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[productlist][showrating]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['productlist']['showrating'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[productlist][showrating]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Sort By option : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['productlist']['enablesort'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[productlist][enablesort]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['productlist']['enablesort'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[productlist][enablesort]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Default Product Sorting : ')?></td>
+					<td class="value">
+						<select name="advancesettings[productlist][default_sorting]">
+							<option value="popularity" <?php if($advancesettings['productlist']['default_sorting'] == 'popularity') echo "selected"?>>Popularity</option>
+							<option value="position" <?php if($advancesettings['productlist']['default_sorting'] == 'position') echo "selected"?>>Position</option>
+							<option value="price-h-l" <?php if($advancesettings['productlist']['default_sorting'] == 'price-h-l') echo "selected"?>>Price High to Low</option>
+							<option value="price-l-h" <?php if($advancesettings['productlist']['default_sorting'] == 'price-l-h') echo "selected"?>>Price Low to High</option>
+							<option value="rating-h-l" <?php if($advancesettings['productlist']['default_sorting'] == 'rating-h-l') echo "selected"?>>Rating</option>
+							<option value="name-a-z" <?php if($advancesettings['productlist']['default_sorting'] == 'name-a-z') echo "selected"?>>Name A-Z</option>
+							<option value="name-z-a" <?php if($advancesettings['productlist']['default_sorting'] == 'name-z-a') echo "selected"?>>Name Z-A</option>
+							<option value="newest" <?php if($advancesettings['productlist']['default_sorting'] == 'newest') echo "selected"?>>Newest</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Default Product View : ')?></td>
+					<td class="value">
+						<select name="advancesettings[productlist][default_view]">
+							<option value="list" <?php if($advancesettings['productlist']['default_view'] == 'list') echo "selected"?>>List</option>
+							<option value="grid" <?php if($advancesettings['productlist']['default_view'] == 'grid') echo "selected"?>>Grid</option>
+							<option value="full" <?php if($advancesettings['productlist']['default_view'] == 'full') echo "selected"?>>Image</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Change Product View : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['productlist']['enablechangeproductview'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[productlist][enablechangeproductview]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['productlist']['enablechangeproductview'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[productlist][enablechangeproductview]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Persistent View : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['productlist']['persistent_view'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[productlist][persistent_view]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['productlist']['persistent_view'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[productlist][persistent_view]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Filter Option : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['productlist']['enablefilter'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[productlist][enablefilter]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['productlist']['enablefilter'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[productlist][enablefilter]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Masonry View : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['productlist']['enablemasonry'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[productlist][enablemasonry]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['productlist']['enablemasonry'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[productlist][enablemasonry]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="entry-edit-head">
+	    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Product Detail Settings <span class="app-scope">[Website]</span>')?></h4>
+	</div>
+	<div class="fieldset">
+		<table cellspacing="0" class="form-list">
+			<tbody>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable product Zoom : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['productdetail']['enable_productzoom'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[productdetail][enable_productzoom]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['productdetail']['enable_productzoom'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[productdetail][enable_productzoom]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Endless Slider : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['productdetail']['enable_endless_slider'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[productdetail][enable_endless_slider]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['productdetail']['enable_endless_slider'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[productdetail][enable_endless_slider]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Enable Related Products : ')?></td>
+					<td class="value">
+						<input <?php if($advancesettings['productdetail']['enable_youmaylike_slider'] == 1) echo "checked"; ?> type="radio" value="1" name="advancesettings[productdetail][enable_youmaylike_slider]" />&nbsp;<?php echo $this->__('Yes'); ?>
+						<input <?php if($advancesettings['productdetail']['enable_youmaylike_slider'] == 0) echo "checked"; ?> type="radio" value="0" name="advancesettings[productdetail][enable_youmaylike_slider]" />&nbsp;<?php echo $this->__('No'); ?>
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Maximum Number of Related Products on Product Detail Page : ')?></td>
+					<td class="value">
+						<input class="input-text" type="text" name="advancesettings[productdetail][show_max_related_products]" value="<?php echo $advancesettings['productdetail']['show_max_related_products']; ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="label"><?php echo $this->__('Select Attributes to show on Product Detail Page : ')?></td>
+					<td class="value">
+						<select name="advancesettings[productdetail][showattribute][]" multiple="multiple" class="select multiselect" size="10">
+							<?php
+							if($productAttributes){
+								foreach($productAttributes as $_attr){
+									?>
+									<option value="<?php echo $_attr['code']; ?>" <?php if(!isset($advancesettings['productdetail']['showattribute'])) echo 'selected'; else if(!array_key_exists($_attr['code'], $advancesettings['productdetail']['showattribute'])) echo "selected"; ?>><?php echo $_attr['label']; ?></option>
+									<?php
+								}
+							}
+							?>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="label"><?php echo $this->__('Select Attributes to show on Know More Screen (popup screen) : ')?></td>
+					<td class="value">
+						<select name="advancesettings[productdetail][showattribute_popup][]" multiple="multiple" class="select multiselect" size="10">
+							<?php
+							if($productAttributes){
+								foreach($productAttributes as $_attr){
+									?>
+									<option value="<?php echo $_attr['code']; ?>" <?php if(!isset($advancesettings['productdetail']['showattribute_popup'])) echo 'selected'; else if(!array_key_exists($_attr['code'], $advancesettings['productdetail']['showattribute_popup'])) echo "selected"; ?>><?php echo $_attr['label']; ?></option>
+									<?php
+								}
+							}
+							?>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="label"><?php echo $this->__('Maximum Number of Attributes on Product Detail Page : ')?></td>
+					<td class="value">
+						<input class="input-text" type="text" name="advancesettings[productdetail][show_max_attributes]" value="<?php echo $advancesettings['productdetail']['show_max_attributes']; ?>" />
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+</div>
